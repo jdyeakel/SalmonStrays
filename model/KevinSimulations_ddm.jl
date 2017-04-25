@@ -580,6 +580,27 @@ dev.off()
 """
 
 
+#Portfolio muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelthetasig_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$mvec,y=$sigmavec,z=sqrt((t($(n1mean[1,:,:]))-t($(n2mean[1,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='sigma_G',main=paste(c('thetadiff=',$(thetadiffvec[1]))))
+image(x=$mvec,y=$sigmavec,z=sqrt((t($(n1mean[5,:,:]))-t($(n2mean[5,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='sigma_G',main=paste(c('thetadiff=',$(thetadiffvec[5]))))
+image(x=$mvec,y=$sigmavec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='sigma_G',main=paste(c('thetadiff=',$(thetadiffvec[10]))))
+image(x=$mvec,y=$sigmavec,z=sqrt((t($(n1mean[15,:,:]))-t($(n2mean[15,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='sigma_G',main=paste(c('thetadiff=',$(thetadiffvec[15]))))
+image(x=$mvec,y=$sigmavec,z=sqrt((t($(n1mean[20,:,:]))-t($(n2mean[20,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='sigma_G',main=paste(c('thetadiff=',$(thetadiffvec[20]))))
+image(x=$mvec,y=$sigmavec,z=sqrt((t($(n1mean[25,:,:]))-t($(n2mean[25,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='sigma_G',main=paste(c('thetadiff=',$(thetadiffvec[25]))))
+legend(x=max($mvec),y=max($sigmavec),legend=seq(0,1500,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+
+
 
 
 #Evaluating the m value where PE is maximized across
