@@ -13,10 +13,10 @@ theta1=5.0;
 thetadiff=5.0;
 tau=1.0;
 h=1.0;
-sigmaE=0.25;
-sigmaG=0.25;
-m=0.27;
-perror=0.0000000;
+sigmaE=0;
+sigmaG=1.0;
+m=0.49;
+perror=0.05;
 n1, n2, x1, x2, w1, w2 = 
 KevinEvolve(
   tmax,
@@ -34,6 +34,7 @@ KevinEvolve(
   );
   
   R"""
+  par(mfrow=c(1,2))
   library(RColorBrewer)
   cols = brewer.pal(3,'Set1')
   plot($(n1),type="l",col=cols[1],ylim=c(0,max(c(as.vector($n1),as.vector($n2)))))
@@ -398,7 +399,7 @@ dev.off()
 #Analysis over m & theta divergence
 mvec=collect(0.0:0.001:0.5);
 thetadiffvec = collect(5:0.2:10);
-sigmavec = collect(0.1:0.1:2.0);
+sigmavec = collect(0.1:0.1:3.0);
 
 tmax=50000;
 z=0.5;

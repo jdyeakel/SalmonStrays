@@ -5,7 +5,7 @@ include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_dd
 include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
 
 
-tmax=1000;
+tmax=10000;
 z=0.5;
 rmax=2.0;
 beta=0.001;
@@ -13,11 +13,13 @@ theta1=5.0;
 thetadiff=5.0;
 tau=1.0;
 h=1.0;
-a0 = 0.6;
-C=100;
+indm=0.495;
+C=1000;
 sigmaE=0.0;
-sigmaG=1;
+sigmaG=1.0;
 perror=0.05;
+
+a0 = 1-indm;
 
 n1, n2, x1, x2, w1, w2 = 
 KevinEvolve_ddm(
@@ -431,7 +433,7 @@ pe=SharedArray(Float64,length(thetadiffvec),length(sigmavec),length(indmvec));
   for k=1:length(sigmavec)
     sigmaG = sigmavec[k];
     
-    for j=1:length(mvec)
+    for j=1:length(indmvec)
       a0 = 1 - indmvec[j];
       
       n1, n2, x1, x2, w1, w2 = 
@@ -584,7 +586,7 @@ perror=0.05;
   for k=1:length(hvec)
     h = hvec[k];
     
-    for j=1:length(mvec)
+    for j=1:length(indmvec)
       a0 = 1 - indmvec[j];
       
       n1, n2, x1, x2, w1, w2 = 
