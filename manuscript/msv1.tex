@@ -58,8 +58,13 @@
 
 \section*{Model Description}
 
-Here we consider a local population $N_i$ and a remote population $N_j$, each with a trait value $x_i$ and $x_j$ that determines the recruitment rate, are assumed to be normally distributed with means $\mu_i$ and $\mu_j$ and a standard deviation $\sigma$, and are subject to selection across ecological timescales.
+Here we consider a local population $N_i$ and a remote population $N_j$ with a trait value $x_i$ and $x_j$ that determines the recrutiment rate for the respective population.
+We assume that there is an optimum trait value $\theta_i$ and $\theta_j$ associated with each site, where recruitment is maximized if $x = \theta$.
+
 Each population in its respective site has an optimum trait value $\theta_i$ where the rate of recruitment is maximized if $x_i = \theta_i$.
+
+determines the recruitment rate, are assumed to be normally distributed with means $\mu_i$ and $\mu_j$ and a standard deviation $\sigma$, and are subject to selection across ecological timescales.
+
 If there is no straying between these populations (such that they are independent), then the trait value should evolve towards the optimum ($x_i \rightarrow \theta_i$) and the recruitment rate will become maximized.
 If there is straying between populations at rate $m$, then the traits in each respective location will be pulled away from the optimum, and recruitment rates will be lower, i.e. have lower fitness.
 As $m$ becomes large, the populations should act as a single population.
@@ -117,9 +122,17 @@ You can see from the elements of the difference equations that demographics dire
 
 \section*{Results}
 
+%The effects of trait evolution :: trait heritability, trait variance, and habitat heterogeneity
+%% When stray rates are moderate-low, greater heritability leads to higher steady-state populations with higher PE's.
+%% Lower heritability gives way to alternative stable states at lower stray rates, which become increasingly divergent
+%% With habitat heterogeneity?
+
 % Constant m
 %% Fold bifurcation @ intermediate values of m
-%% PE > 1 for low values of m
+%% This bifurcation creates a region of depressed total biomass & depressed PE at increased stray rates and lower trait variances
+
+
+%% PE >> 1 for low values of m
 %% Spike in PE at the fold bifurcation (spike in indvidual population SD)
 %% Increased environmental heterogeneity leads to spikes in PE at lower stray rates
 %% Effects of heritability vs. trait variation and stable states
