@@ -930,7 +930,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualhsig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualhsig_theta8.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -946,7 +946,7 @@ legend(x=max($sigmavec),y=max($hvec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualmsig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualmsig_theta8.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -963,7 +963,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEpanelmh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEpanelmh_theta8.pdf");
 
 R"""
 library(RColorBrewer)
@@ -982,26 +982,26 @@ dev.off()
 
 
 #MEAN muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MEANpanelmh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MEANpanelmh_theta8.pdf");
 
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=4,width=14)
 par(mfrow=c(1,6))
-  image(x=$mvec,y=$hvec,z=t($(n1mean[1,:,:]))+t($(n2mean[1,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
-image(x=$mvec,y=$hvec,z=t($(n1mean[5,:,:]))+t($(n2mean[5,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
-image(x=$mvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
-image(x=$mvec,y=$hvec,z=t($(n1mean[15,:,:]))+t($(n2mean[15,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
-image(x=$mvec,y=$hvec,z=t($(n1mean[20,:,:]))+t($(n2mean[20,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
-image(x=$mvec,y=$hvec,z=t($(n1mean[25,:,:]))+t($(n2mean[25,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
-legend(x=max($mvec),y=max($hvec),legend=seq(1,3000,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+  image(x=$mvec,y=$hvec,z=t($(n1mean[1,:,:]))+t($(n2mean[1,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$mvec,y=$hvec,z=t($(n1mean[5,:,:]))+t($(n2mean[5,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$mvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$mvec,y=$hvec,z=t($(n1mean[15,:,:]))+t($(n2mean[15,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$mvec,y=$hvec,z=t($(n1mean[20,:,:]))+t($(n2mean[20,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$mvec,y=$hvec,z=t($(n1mean[25,:,:]))+t($(n2mean[25,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($mvec),y=max($hvec),legend=seq(0,3000,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
 dev.off()
 """
 
 
 #DIFFERENCE muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelmh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelmh_theta8.pdf");
 
 R"""
 library(RColorBrewer)
@@ -1018,13 +1018,13 @@ legend(x=max($mvec),y=max($hvec),legend=seq(1,1500,length.out=9),col=pal,pch=22,
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MDPE_hm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MDPE_hm_theta8.pdf");
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
-image(x=$mvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
+image(x=$mvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
 image(x=$mvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
 dev.off()
