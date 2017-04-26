@@ -68,9 +68,9 @@ function KevinEvolve_ddm(
     ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-(((theta1 + thetadiff)-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w2[t])*tau)/
     (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w2[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
     
-    x1[t+1] = w1[t]*x1[t] + (1-w1[t])*x2[t] + (h^2)*(( sigmaG^2))*meanfit1[t];
+    x1[t+1] = w1[t]*x1[t] + (1-w1[t])*x2[t] + (h)*(( sigmaG^2))*meanfit1[t];
     
-    x2[t+1] = w2[t]*x2[t] + (1-w2[t])*x1[t] + (h^2)*(( sigmaG^2))*meanfit2[t];
+    x2[t+1] = w2[t]*x2[t] + (1-w2[t])*x1[t] + (h)*(( sigmaG^2))*meanfit2[t];
     
   end
   
