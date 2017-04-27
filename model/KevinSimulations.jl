@@ -608,7 +608,7 @@ dev.off()
 #Analysis over m & theta divergence
 mvec=collect(0.0:0.001:0.45);
 sigmavec = collect(0.1:0.1:3.0);
-hvec = collect(0.1:0.05:1.0);
+hvec = collect(0.0:0.01:1.0);
 
 
 n1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
@@ -617,7 +617,7 @@ x1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
 x2mean=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
 pe=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
 
-tmax=50000;
+tmax=10000;
 z=0.5;
 rmax=2.0;
 beta=0.001;
@@ -627,7 +627,7 @@ tau=1.0;
 sigmaE=0;
 
 
-perror=0.05;
+perror=0.01;
 
 @sync @parallel for i=1:length(sigmavec)
   sigmaG = sigmavec[i];
@@ -653,7 +653,7 @@ perror=0.05;
         m,
         perror
         );
-      burnin=0.99
+      burnin=0.8
       n1trim = n1[Int64(floor(tmax*burnin)):tmax];
       n2trim = n2[Int64(floor(tmax*burnin)):tmax];
       x1trim = x1[Int64(floor(tmax*burnin)):tmax];
@@ -806,11 +806,21 @@ library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
-image(x=$mvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
+image(x=$mvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
 image(x=$mvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
 dev.off()
 """
+
+hvals = [1,6];
+R"""
+library(RColorBrewer)
+pal = brewer.pal(3,"Set1")
+plot($mvec,$(pe[10,hvals[1],:]),xlab='m',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2))
+points($mvec,$(pe[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5)
+legend(x=0.38,y=2,legend=$(hvec[hvals]),col=pal,pt.bg=pal,pch=16,title='h',bty="n",cex=0.8)
+"""
+
 
 #THETADIFF = 8
 
@@ -826,7 +836,7 @@ dev.off()
 #Analysis over m & theta divergence
 mvec=collect(0.0:0.001:0.45);
 sigmavec = collect(0.1:0.1:3.0);
-hvec = collect(0.1:0.05:1.0);
+hvec = collect(0.0:0.01:1.0);
 
 
 n1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
@@ -835,7 +845,7 @@ x1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
 x2mean=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
 pe=SharedArray(Float64,length(sigmavec),length(hvec),length(mvec));
 
-tmax=50000;
+tmax=10000;
 z=0.5;
 rmax=2.0;
 beta=0.001;
@@ -845,7 +855,7 @@ tau=1.0;
 sigmaE=0;
 
 
-perror=0.05;
+perror=0.01;
 
 @sync @parallel for i=1:length(sigmavec)
   sigmaG = sigmavec[i];
@@ -871,7 +881,7 @@ perror=0.05;
         m,
         perror
         );
-      burnin=0.99
+      burnin=0.8
       n1trim = n1[Int64(floor(tmax*burnin)):tmax];
       n2trim = n2[Int64(floor(tmax*burnin)):tmax];
       x1trim = x1[Int64(floor(tmax*burnin)):tmax];
