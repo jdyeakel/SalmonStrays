@@ -157,7 +157,7 @@ points(1-$a0vec,$n2mean,pch=16,col=cols[2],cex=0.5)
 
 
 #Steady state plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_SSm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_SSm.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -167,7 +167,7 @@ points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
 dev.off()
 """
 #Trait offset plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_Traitm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_Traitm.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -177,7 +177,7 @@ points($mvec,$x2mean,pch=".",col=cols[2])
 dev.off()
 """
 #Portfolio effect plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_pem.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_pem.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -244,7 +244,7 @@ plot($(n1mean),$maxeigs,pch=16,cex=0.5,col=cols[1],xlab="n1 mean",ylab="max re(e
 
 
 #Steady state plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_SSm2.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_SSm2.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -339,7 +339,7 @@ end
 
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_SSmtheta.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_SSmtheta.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(11,'Spectral')
@@ -361,7 +361,7 @@ dev.off()
 """
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEmtheta.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEmtheta.pdf");
 #Portfolio effect
 R"""
 library(RColorBrewer)
@@ -509,7 +509,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualthetasig_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualthetasig_ddm.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -525,7 +525,7 @@ legend(x=10,y=2,legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualthetam_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualthetam_ddm.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -543,7 +543,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEpanelthetasig_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEpanelthetasig_ddm.pdf");
 
 R"""
 library(RColorBrewer)
@@ -562,7 +562,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MEANpanelthetasig_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MEANpanelthetasig_ddm.pdf");
 
 R"""
 library(RColorBrewer)
@@ -581,7 +581,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelthetasig_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_DIFFpanelthetasig_ddm.pdf");
 
 R"""
 library(RColorBrewer)
@@ -617,9 +617,9 @@ dev.off()
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_ddm.jl")
 
 #Analysis over m & theta divergence
-indmvec=collect(0.0:0.001:0.5);
+indmvec=collect(0.0:0.001:0.45);
 sigmavec = collect(0.1:0.1:3.0);
-hvec = collect(0.1:0.05:1.0);
+hvec = collect(0.0:0.01:1.0);
 
 
 n1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
@@ -628,7 +628,7 @@ x1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
 x2mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
 pe=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
 
-tmax=50000;
+tmax=10000;
 z=0.5;
 rmax=2.0;
 beta=0.001;
@@ -639,7 +639,7 @@ C=1000;
 sigmaE=0;
 
 
-perror=0.05;
+perror=0.01;
 
 @sync @parallel for i=1:length(sigmavec)
   sigmaG = sigmavec[i];
@@ -666,7 +666,7 @@ perror=0.05;
         sigmaG,
         perror
         );
-      burnin=0.99
+      burnin=0.80
       n1trim = n1[Int64(floor(tmax*burnin)):tmax];
       n2trim = n2[Int64(floor(tmax*burnin)):tmax];
       x1trim = x1[Int64(floor(tmax*burnin)):tmax];
@@ -725,7 +725,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualhsig_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualhsig_ddm.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -742,7 +742,7 @@ legend(x=max($sigmavec),y=max($hvec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.
 """
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualmsig_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualmsig_ddm.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -756,6 +756,295 @@ image(x=$indmvec,y=$sigmavec,z=t($(qualss[:,19,:])),zlim=c(0,2),col=pal,xlab='m'
 legend(x=max($indmvec),y=max($sigmavec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
 dev.off()
 """
+
+
+#Portfolio muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEpanelmh_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$indmvec,y=$hvec,z=t($(pe[1,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[5,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[15,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[20,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[25,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($indmvec),y=max($hvec),legend=seq(1,2,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+#MEAN muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MEANpanelmh_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$indmvec,y=$hvec,z=t($(n1mean[1,:,:]))+t($(n2mean[1,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[5,:,:]))+t($(n2mean[5,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[15,:,:]))+t($(n2mean[15,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[20,:,:]))+t($(n2mean[20,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[25,:,:]))+t($(n2mean[25,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($indmvec),y=max($hvec),legend=seq(1,3000,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+#DIFFERENCE muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_DIFFpanelmh_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[1,:,:]))-t($(n2mean[1,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[5,:,:]))-t($(n2mean[5,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[15,:,:]))-t($(n2mean[15,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[20,:,:]))-t($(n2mean[20,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[25,:,:]))-t($(n2mean[25,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($indmvec),y=max($hvec),legend=seq(1,1500,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm_ddm.pdf");
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=3,width=8)
+par(mfrow=c(1,3))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+image(x=$indmvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
+dev.off()
+"""
+
+
+
+
+#THETADIFF=8
+
+
+#Analysis over m & theta divergence
+indmvec=collect(0.0:0.001:0.45);
+sigmavec = collect(0.1:0.1:3.0);
+hvec = collect(0.0:0.01:1.0);
+
+
+n1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
+n2mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
+x1mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
+x2mean=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
+pe=SharedArray(Float64,length(sigmavec),length(hvec),length(indmvec));
+
+tmax=10000;
+z=0.5;
+rmax=2.0;
+beta=0.001;
+theta1=5.0;
+thetadiff=3.0;
+tau=1.0;
+C=1000;
+sigmaE=0;
+
+
+perror=0.01;
+
+@sync @parallel for i=1:length(sigmavec)
+  sigmaG = sigmavec[i];
+  
+  for k=1:length(hvec)
+    h = hvec[k];
+    
+    for j=1:length(indmvec)
+      a0 = 1 - indmvec[j];
+      
+      n1, n2, x1, x2, w1, w2 = 
+      KevinEvolve_ddm(
+        tmax,
+        z,
+        rmax,
+        beta,
+        theta1,
+        thetadiff,
+        tau,
+        h,
+        a0,
+        C,
+        sigmaE,
+        sigmaG,
+        perror
+        );
+      burnin=0.80
+      n1trim = n1[Int64(floor(tmax*burnin)):tmax];
+      n2trim = n2[Int64(floor(tmax*burnin)):tmax];
+      x1trim = x1[Int64(floor(tmax*burnin)):tmax];
+      x2trim = x2[Int64(floor(tmax*burnin)):tmax]
+      
+      n1mean[i,k,j] = mean(n1trim);
+      n2mean[i,k,j] = mean(n2trim);
+      x1mean[i,k,j] = theta1-mean(x1trim);
+      x2mean[i,k,j] = (theta1+thetadiff)-mean(x2trim);
+      
+      pe[i,k,j] = (mean([std(n1trim),std(n2trim)])/mean([mean(n1trim),mean(n2trim)])) *
+      (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
+    end
+  end
+end
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_theta3_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+
+
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_theta8_ddm.jld"));
+#This loads the dictionary
+n1mean = d["n1mean"];
+n2mean = d["n2mean"];
+x1mean = d["x1mean"];
+x2mean = d["x2mean"];
+pe = d["pe"];
+
+maxPE = Array{Float64}(length(sigmavec),length(hvec));
+maxPEvalue = Array{Float64}(length(sigmavec),length(hvec));
+for i=1:length(sigmavec)
+  for k=1:length(hvec)
+    pecorr = pe[i,k,:];
+    pecorr[pecorr.==Inf]=0;
+    #Where is the highest PE?
+    maxPEvalue[i,k] = maximum(pecorr);
+    maxPE[i,k] = indmvec[find(x->x==maximum(pecorr),pecorr)][1];
+  end
+end
+
+namespace= string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_maxPE_sigh_ddm.csv");
+R"write.table($maxPE,file=$namespace,row.names=F,col.names=F)"
+namespace= string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_maxPEvalue_sigh_ddm.csv");
+R"write.table($maxPEvalue,file=$namespace,row.names=F,col.names=F)"
+
+
+R"image($(maxPE))"    
+    
+R"plot($(maxPE[:,10]))"
+
+
+R"plot($mvec,$(pe[1,5,:]),ylim=c(0,5))"
+
+
+qualss = qualsfunc(
+n1mean,n2mean,
+1.0, #extinct_threshold
+30.0 #similarity_threshold=
+);
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualhsig_theta3_ddm.pdf");
+R"""
+library(RColorBrewer)
+pal = brewer.pal(3,"Set1")
+#pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,1]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[1]))))
+image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,100]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[100]))))
+image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,200]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[200]))))
+image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,300]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[300]))))
+image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,400]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[400]))))
+image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,450]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[450]))))
+legend(x=max($sigmavec),y=max($hvec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+#dev.off()
+"""
+
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualmsig_theta3_ddm.pdf");
+R"""
+library(RColorBrewer)
+pal = brewer.pal(3,"Set1")
+pdf($namespace,height=4,width=12)
+par(mfrow=c(1,5))
+image(x=$indmvec,y=$sigmavec,z=t($(qualss[:,1,:])),zlim=c(0,2),col=pal,xlab='m',ylab='sigma_G',main=paste(c('h=',$(hvec[1]))))
+image(x=$indmvec,y=$sigmavec,z=t($(qualss[:,5,:])),zlim=c(0,2),col=pal,xlab='m',ylab='sigma_G',main=paste(c('h=',$(hvec[5]))))
+image(x=$indmvec,y=$sigmavec,z=t($(qualss[:,10,:])),zlim=c(0,2),col=pal,xlab='m',ylab='sigma_G',main=paste(c('h=',$(hvec[10]))))
+image(x=$indmvec,y=$sigmavec,z=t($(qualss[:,15,:])),zlim=c(0,2),col=pal,xlab='m',ylab='sigma_G',main=paste(c('h=',$(hvec[15]))))
+image(x=$indmvec,y=$sigmavec,z=t($(qualss[:,19,:])),zlim=c(0,2),col=pal,xlab='m',ylab='sigma_G',main=paste(c('h=',$(hvec[19]))))
+legend(x=max($indmvec),y=max($sigmavec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+#Portfolio muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEpanelmh_theta3_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$indmvec,y=$hvec,z=t($(pe[1,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[5,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[15,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[20,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$indmvec,y=$hvec,z=t($(pe[25,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($indmvec),y=max($hvec),legend=seq(1,2,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+#MEAN muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MEANpanelmh_theta3_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$indmvec,y=$hvec,z=t($(n1mean[1,:,:]))+t($(n2mean[1,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[5,:,:]))+t($(n2mean[5,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[15,:,:]))+t($(n2mean[15,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[20,:,:]))+t($(n2mean[20,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[25,:,:]))+t($(n2mean[25,:,:])),zlim=c(1,3000),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($indmvec),y=max($hvec),legend=seq(1,3000,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+#DIFFERENCE muli-panel plot
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_DIFFpanelmh_theta3_ddm.pdf");
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=14)
+par(mfrow=c(1,6))
+  image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[1,:,:]))-t($(n2mean[1,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[1]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[5,:,:]))-t($(n2mean[5,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[5]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[10]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[15,:,:]))-t($(n2mean[15,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[15]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[20,:,:]))-t($(n2mean[20,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[20]))))
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[25,:,:]))-t($(n2mean[25,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main=paste(c('sigma_G=',$(sigmavec[25]))))
+legend(x=max($indmvec),y=max($hvec),legend=seq(1,1500,length.out=9),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
+dev.off()
+"""
+
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm_theta3_ddm.pdf");
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=3,width=8)
+par(mfrow=c(1,3))
+image(x=$indmvec,y=$hvec,z=t($(n1mean[10,:,:]))+t($(n2mean[10,:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+image(x=$indmvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
+dev.off()
+"""
+
+
 
 
 
@@ -881,7 +1170,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualthetah_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualthetah_ddm.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")

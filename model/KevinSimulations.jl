@@ -12,11 +12,11 @@ beta=0.001;
 theta1=5.0;
 thetadiff=5.0;
 tau=1.0;
-h=1.0;
+h=0.05;
 sigmaE=0;
 sigmaG=1.0;
-m=0.49;
-perror=0.05;
+m=0.35;
+perror=0.01;
 n1, n2, x1, x2, w1, w2 = 
 KevinEvolve(
   tmax,
@@ -151,7 +151,7 @@ points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
 
 
 #Steady state plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_SSm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_SSm.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -161,7 +161,7 @@ points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
 dev.off()
 """
 #Trait offset plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_Traitm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_Traitm.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -171,7 +171,7 @@ points($mvec,$x2mean,pch=".",col=cols[2])
 dev.off()
 """
 #Portfolio effect plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_pem.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_pem.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -238,7 +238,7 @@ plot($(n1mean),$maxeigs,pch=16,cex=0.5,col=cols[1],xlab="n1 mean",ylab="max re(e
 
 
 #Steady state plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_SSm2.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_SSm2.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
@@ -331,7 +331,7 @@ end
 
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_SSmtheta.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_SSmtheta.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(11,'Spectral')
@@ -353,7 +353,7 @@ dev.off()
 """
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEmtheta.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEmtheta.pdf");
 #Portfolio effect
 R"""
 library(RColorBrewer)
@@ -500,7 +500,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualthetasig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualthetasig.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -516,7 +516,7 @@ legend(x=10,y=2,legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualthetam.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualthetam.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -533,7 +533,7 @@ dev.off()
 """
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEpanelthetasig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEpanelthetasig.pdf");
 
 R"""
 library(RColorBrewer)
@@ -552,7 +552,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MEANpanelthetasig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MEANpanelthetasig.pdf");
 
 R"""
 library(RColorBrewer)
@@ -570,7 +570,7 @@ dev.off()
 """
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelthetasig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_DIFFpanelthetasig.pdf");
 
 R"""
 library(RColorBrewer)
@@ -712,7 +712,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualhsig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualhsig.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -728,7 +728,7 @@ legend(x=max($sigmavec),y=max($hvec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualmsig.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualmsig.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -745,7 +745,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEpanelmh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEpanelmh.pdf");
 
 R"""
 library(RColorBrewer)
@@ -764,7 +764,7 @@ dev.off()
 
 
 #MEAN muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MEANpanelmh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MEANpanelmh.pdf");
 
 R"""
 library(RColorBrewer)
@@ -783,7 +783,7 @@ dev.off()
 
 
 #DIFFERENCE muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelmh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_DIFFpanelmh.pdf");
 
 R"""
 library(RColorBrewer)
@@ -800,7 +800,7 @@ legend(x=max($mvec),y=max($hvec),legend=seq(1,1500,length.out=9),col=pal,pch=22,
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MDPE_hm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm.pdf");
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
@@ -812,14 +812,9 @@ image(x=$mvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',m
 dev.off()
 """
 
-hvals = [1,6];
-R"""
-library(RColorBrewer)
-pal = brewer.pal(3,"Set1")
-plot($mvec,$(pe[10,hvals[1],:]),xlab='m',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2))
-points($mvec,$(pe[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5)
-legend(x=0.38,y=2,legend=$(hvec[hvals]),col=pal,pt.bg=pal,pch=16,title='h',bty="n",cex=0.8)
-"""
+
+
+
 
 
 #THETADIFF = 8
@@ -850,7 +845,7 @@ z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=8.0;
+thetadiff=3.0;
 tau=1.0;
 sigmaE=0;
 
@@ -897,7 +892,7 @@ perror=0.01;
     end
   end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_m_theta8.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_m_theta3.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
 d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_m_theta8.jld"));
@@ -940,7 +935,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualhsig_theta8.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualhsig_theta3.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -956,7 +951,7 @@ legend(x=max($sigmavec),y=max($hvec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualmsig_theta8.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualmsig_theta3.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
@@ -973,7 +968,7 @@ dev.off()
 
 
 #Portfolio muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_PEpanelmh_theta8.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_PEpanelmh_theta3.pdf");
 
 R"""
 library(RColorBrewer)
@@ -992,7 +987,7 @@ dev.off()
 
 
 #MEAN muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MEANpanelmh_theta8.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MEANpanelmh_theta3.pdf");
 
 R"""
 library(RColorBrewer)
@@ -1011,7 +1006,7 @@ dev.off()
 
 
 #DIFFERENCE muli-panel plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_DIFFpanelmh_theta8.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_DIFFpanelmh_theta3.pdf");
 
 R"""
 library(RColorBrewer)
@@ -1028,7 +1023,7 @@ legend(x=max($mvec),y=max($hvec),legend=seq(1,1500,length.out=9),col=pal,pch=22,
 dev.off()
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_MDPE_hm_theta8.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm_theta3.pdf");
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
@@ -1039,6 +1034,70 @@ image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[10,:,:]))-t($(n2mean[10,:,:])))^2),zlim
 image(x=$mvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
 dev.off()
 """
+
+
+
+
+########
+pe3=pe;
+pe5=pe;
+pe8=pe;
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm_cross358.pdf");
+hvals = [11,51];
+R"""
+library(RColorBrewer)
+pdf($namespace,height=6,width=4)
+par(mfrow=c(3,1))
+par(mar=c(2.5,3.5, 0.2, .5))
+par(mgp=c(1.5, .5, 0))
+pal = brewer.pal(3,"Set1")
+plot($mvec,$(pe3[10,hvals[1],:]),xlab='',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2),xaxt='n')
+points($mvec,$(pe3[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5,cex.axis=.8 )
+mtext("thetadiff=3",at=c(0.24,0.8),cex=0.65)
+legend(x=0.4,y=2,legend=$(hvec[hvals]),col=pal,pt.bg=pal,pch=16,title='h',bty="n",cex=1)
+#par(mar=c(0.1,4.1,2.1,2.1))
+plot($mvec,$(pe5[10,hvals[1],:]),xlab='',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2),xaxt='n')
+points($mvec,$(pe5[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5,cex.axis=.8 )
+mtext("thetadiff=5",at=c(0.24,0.8),cex=0.65)
+#par(mar=c(10.1,4.1,04.1,2.1))
+plot($mvec,$(pe8[10,hvals[1],:]),xlab='m',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2))
+points($mvec,$(pe8[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5,cex.axis=.8 )
+mtext("thetadiff=8",at=c(0.24,0.8),cex=0.65)
+dev.off()
+"""
+
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm_cross58.pdf");
+hvals = [11,51];
+R"""
+library(RColorBrewer)
+pdf($namespace,height=6,width=4)
+par(mfrow=c(2,1))
+par(mar=c(0.1,4.1,5.1,2.1))
+pal = brewer.pal(3,"Set1")
+plot($mvec,$(pe5[10,hvals[1],:]),xlab='',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2),xaxt='n')
+points($mvec,$(pe5[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5)
+legend(x=0.38,y=2,legend=$(hvec[hvals]),col=pal,pt.bg=pal,pch=16,title='h',bty="n",cex=0.8)
+par(mar=c(5.1,4.1,0.1,2.1))
+plot($mvec,$(pe8[10,hvals[1],:]),xlab='m',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2))
+points($mvec,$(pe8[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5)
+dev.off()
+"""
+
+
+R"""
+m <- rbind(c(1), c(2))
+layout(m)
+par(mar = c(2, 1, 0.1, 1))
+pal = brewer.pal(3,"Set1")
+plot($mvec,$(pe5[10,hvals[1],:]),xlab='',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2),xaxt='n')
+points($mvec,$(pe5[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5)
+legend(x=0.38,y=2,legend=$(hvec[hvals]),col=pal,pt.bg=pal,pch=16,title='h',bty="n",cex=0.8)
+plot($mvec,$(pe8[10,hvals[1],:]),xlab='m',ylab='h',col=pal[1],pch=16,cex=0.5,ylim=c(1,2))
+points($mvec,$(pe8[10,hvals[2],:]),col=pal[2],pch=16,cex=0.5)
+"""
+
 
 
 
@@ -1164,7 +1223,7 @@ n1mean,n2mean,
 30.0 #similarity_threshold=
 );
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fig_qualthetah.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_qualthetah.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
