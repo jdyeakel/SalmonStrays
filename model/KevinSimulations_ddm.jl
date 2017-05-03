@@ -65,37 +65,37 @@ eigvals(Jac)
 
 #Analysis over a0
 tmax=10000;
-a0vec = collect(0.0:0.002:1.0);
-n1ts = zeros(Float64,length(a0vec),tmax);
-n2ts = zeros(Float64,length(a0vec),tmax);
-n1mean=zeros(Float64,length(a0vec));
-n2mean=zeros(Float64,length(a0vec));
-n1sd=zeros(Float64,length(a0vec));
-n2sd=zeros(Float64,length(a0vec));
-aggmean=zeros(Float64,length(a0vec));
-aggsd=zeros(Float64,length(a0vec));
-x1mean=zeros(Float64,length(a0vec));
-x2mean=zeros(Float64,length(a0vec));
-pe=zeros(Float64,length(a0vec));
-eigs = Array(Array{Complex{Float64}},length(a0vec));
-maxeigs = Array{Float64}(length(a0vec));
-maximeigs = Array{Float64}(length(a0vec));
+indmvec = collect(0.0:0.002:0.5);
+n1ts = zeros(Float64,length(indmvec),tmax);
+n2ts = zeros(Float64,length(indmvec),tmax);
+n1mean=zeros(Float64,length(indmvec));
+n2mean=zeros(Float64,length(indmvec));
+n1sd=zeros(Float64,length(indmvec));
+n2sd=zeros(Float64,length(indmvec));
+aggmean=zeros(Float64,length(indmvec));
+aggsd=zeros(Float64,length(indmvec));
+x1mean=zeros(Float64,length(indmvec));
+x2mean=zeros(Float64,length(indmvec));
+pe=zeros(Float64,length(indmvec));
+eigs = Array(Array{Complex{Float64}},length(indmvec));
+maxeigs = Array{Float64}(length(indmvec));
+maximeigs = Array{Float64}(length(indmvec));
 
 z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=8;
+thetadiff=5;
 tau=1.0;
 h=0.2;
-C=1000;
+C=100;
 sigmaE=0;
-sigmaG=2;
-perror=0.05;
+sigmaG=1;
+perror=0.01;
 
-burnin=0.99
-@time for i=1:length(a0vec)
-  a0 = a0vec[i];
+burnin=0.80
+@time for i=1:length(indmvec)
+  a0 = 1-indmvec[i];
   
   n1, n2, x1, x2, w1, w2 = 
   KevinEvolve_ddm(
@@ -151,8 +151,8 @@ end
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
-plot(1-$a0vec,$n1mean,pch=16,col=cols[1],xlab="Individual Stray Rate",ylab="Steady state",cex=0.5)
-points(1-$a0vec,$n2mean,pch=16,col=cols[2],cex=0.5)
+plot($indmvec,$n1mean,pch=16,col=cols[1],xlab="Individual Stray Rate",ylab="Steady state",cex=0.5)
+points($indmvec,$n2mean,pch=16,col=cols[2],cex=0.5)
 """
 
 
@@ -188,7 +188,7 @@ dev.off()
 
 #Portfolio effect plot
 R"""
-plot(1-$a0vec,$pe)
+plot($indmvec,$pe)
 """
 
 
@@ -276,16 +276,16 @@ x1mean=SharedArray(Float64,length(thetadiffvec),length(a0vec));
 x2mean=SharedArray(Float64,length(thetadiffvec),length(a0vec));
 pe=SharedArray(Float64,length(thetadiffvec),length(a0vec));
 
-tmax=100000;
+tmax=10000;
 z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
 tau=1.0;
-h=1.0;
+h=0.50;
 C=1000;
 sigma=1.0;
-perror=0.05;
+perror=0.01;
 
 @sync @parallel for i=1:length(thetadiffvec)
   for j=1:length(a0vec)
@@ -308,7 +308,7 @@ perror=0.05;
       sigma,
       perror
       );
-    burnin=0.99
+    burnin=0.80
     n1trim = n1[Int64(floor(tmax*0.9)):tmax];
     n2trim = n2[Int64(floor(tmax*0.9)):tmax];
     x1trim = x1[Int64(floor(tmax*0.9)):tmax];
@@ -407,17 +407,17 @@ indmvec=collect(0.0:0.001:0.5);
 thetadiffvec = collect(5:0.2:10);
 sigmavec = collect(0.1:0.1:3.0);
 
-tmax=50000;
+tmax=10000;
 z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
 tau=1.0;
-h=1.0;
+h=0.5;
 C=1000;
 sigmaE=0;
 
-perror=0.05;
+perror=0.01;
 
 n1mean=SharedArray(Float64,length(thetadiffvec),length(sigmavec),length(indmvec));
 n2mean=SharedArray(Float64,length(thetadiffvec),length(sigmavec),length(indmvec));
@@ -452,7 +452,7 @@ pe=SharedArray(Float64,length(thetadiffvec),length(sigmavec),length(indmvec));
         sigmaG,
         perror
         );
-      burnin=0.99
+      burnin=0.80
       n1trim = n1[Int64(floor(tmax*burnin)):tmax];
       n2trim = n2[Int64(floor(tmax*burnin)):tmax];
       x1trim = x1[Int64(floor(tmax*burnin)):tmax];

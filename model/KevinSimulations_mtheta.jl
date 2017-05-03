@@ -113,6 +113,8 @@ plot($mvec,$pe)
 
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_mtheta.jl")
 
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
+
 
 #Analysis over m & theta divergence
 mvec=collect(0.0:0.001:0.45);
@@ -454,7 +456,7 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,"Set1")
-#pdf($namespace,height=4,width=14)
+pdf($namespace,height=4,width=14)
 par(mfrow=c(1,6))
 image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,1]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[1]))))
 image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,100]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[100]))))
@@ -463,7 +465,7 @@ image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,300]),zlim=c(0,2),col=pal,xlab='sigma_g
 image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,400]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[400]))))
 image(x=$sigmavec,y=$hvec,z=$(qualss[:,:,450]),zlim=c(0,2),col=pal,xlab='sigma_g',ylab='heritability',main=paste(c('m=',$(mvec[450]))))
 legend(x=max($sigmavec),y=max($hvec),legend=seq(0,2),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n")
-#dev.off()
+dev.off()
 """
 
 

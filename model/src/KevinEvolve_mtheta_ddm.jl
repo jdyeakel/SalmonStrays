@@ -14,8 +14,9 @@ function KevinEvolve_mtheta_ddm(
   perror
   )
   
+  m0 = 1-a0;
   #Initialize variables
-  thetadiff = (1-2*m)/(thetascale*m);
+  thetadiff = (1-2*m0)/(thetascale*m0);
   
   n1 = zeros(Float64,tmax); n1[1]=2;
   n2 = zeros(Float64,tmax); n2[1]=2;
