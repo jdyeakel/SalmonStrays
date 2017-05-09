@@ -1,4 +1,4 @@
-\documentclass[onecolumn,preprintnumbers,amsmath,amssymb,superscriptaddress]{revtex4}
+\documentclass[twocolumn,preprintnumbers,amsmath,amssymb,superscriptaddress]{revtex4}
 %\usepackage[pdftex]{graphicx}
 
 \usepackage{amsmath,amsfonts,amssymb}
@@ -14,9 +14,9 @@
 \usepackage{stmaryrd}
 \usepackage{anyfontsize}
 
-%\usepackage{caption}
+\usepackage{caption}
 \usepackage{subcaption}
-\usepackage{graphicx}
+\captionsetup{compatibility=false}
 
 %\usepackage{epstopdf}
 %\usepackage{array}
@@ -42,7 +42,7 @@
 
 %\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
 %\title{Community assembly and dynamics by the deconstruction of species interactions}
-\title{Salmon straying description}
+\title{Eco-evolutionary model of salmon straying in a metapopulation (but with a cool title)}
 %\author{Justin D. Yeakel${}^{1,2,*}$, Christopher P. Kempes${}^{2}$, \& Sidney Redner${}^{2,3}$ \\ \\
 %${}^1$School of Natural Science, University of California Merced, Merced, CA \\
 %${}^2$The Santa Fe Institute, Santa Fe, NM \\
@@ -58,6 +58,7 @@
 
 \section*{Introduction}
 
+Salmony salmons
 
 \section*{Model Description}
 
@@ -72,23 +73,34 @@ If there is no straying between these populations (such that they are independen
 If there is straying between populations at rate $m$, then the traits in each respective location will be pulled away from the optimum, and recruitment rates will be lowered.
 As $m \rightarrow 0.5$, the populations are perfectly mixed, acting as a single population.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figs/fig_Density.pdf}
+\caption{
+A) The steady state densities of $N_1$ and $N_2$ as a function of a constant stray rate $m$.
+B) The steady state trait values measured as $theta_i - x_i$, as a function of a constant stray rate $m$. 
+} \label{fig:traj}
+\end{figure}
 
 We use the discrete Ricker population dynamic framework described by Shelton and Mangel \cite{} as the basis for our two-site model, with the added effect of the local population $N_i$ mixing with a set proportion $m$ of a remote population $N_j$ that is straying into it.
 We first assume that the proportion ${\rm e}^{-Z}$ of both populations survive, and that the aggregated mix of the populations (local individuals in addition to the straying individuals) are subject to the same compensatory effects, determined by the parameter $\beta$.
 For a local site $i\in(1,2)$ that collects straying individuals from a remote site $j\in(1,2)$, if $N_i$ is the local site and $N_j$ is the remote site, the difference equation that determine changes in population size is
 
 \begin{align}
-  N_i(t+1) &= \left((1-m)N_i(t) + m N_j(t) \right){\rm e}^{-Z} \\ \nonumber
-  &+ \left((R_i[\mu_i(t)|\theta_i]+\tilde{P}) (1-m)N_i(t) + (R_i[\mu_j(t)|\theta_i]+\tilde{P}) m N_j(t)\right) {\rm e}^{-\beta ((1-m)N_i(t) + m N_j(t))},
+  &N_i(t+1) = \\ \nonumber
+  &\left((1-m)N_i(t) + m N_j(t) \right){\rm e}^{-Z} \\ \nonumber
+  &+ \left(R_i[\mu_i(t)|\theta_i] (1-m)N_i(t) + R_i[\mu_j(t)|\theta_i] m N_j(t)\right) \\ \nonumber
+  &\times {\rm e}^{-\beta ((1-m)N_i(t) + m N_j(t))},
   \label{eq:N}
 \end{align}
 
-\noindent where we include demographic process error with $\tilde{P}\sim \mathcal{N}(0,s)$, where $s$ is assumed to be small, and where the difference equation for $N_j$ mirrors that for $N_i$.
+\noindent where a small amount of demographic process error is added to the reproductive rate, and where the difference equation for $N_j$ mirrors that for $N_i$.
 
 The combined recruitment of local individuals $(1-m)N_i(t)$ and incoming strays $mN_j(t)$, as a function of their mean trait value at time $t$ and given the local trait optimum $\theta_i$, is then
 
 \begin{align}
-  R_i[\mu_i(t)|\theta_i] &= \int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i(t)-\theta_i)^2}{2\tau^2}\right\} {\rm pr}(x_i(t)|\mu_i,\sigma^2) {\rm d}x_i(t) \\ \nonumber
+  &R_i[\mu_i(t)|\theta_i] = \\ \nonumber
+  &\int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i(t)-\theta_i)^2}{2\tau^2}\right\} {\rm pr}(x_i(t)|\mu_i,\sigma^2) {\rm d}x_i(t) \\ \nonumber
   &= \frac{r_{\rm max} \tau  }{\sqrt{\sigma ^2+\tau ^2}}\exp\left\{-\frac{(\theta_i-\mu_i(t))^2}{2 \left(\sigma ^2+\tau ^2\right)}\right\}.
   \label{eq:R}
 \end{align}
@@ -97,23 +109,38 @@ The combined recruitment of local individuals $(1-m)N_i(t)$ and incoming strays 
 The parameter $\tau$ controls the sensitivity of recruitment to changes in the mean trait value away from the optimum, which we set as $\tau=1$ here and throughout.
 % The compensatory effects are then determined by the exponential, following the Ricker stock-recruitment relationship.
 
+\begin{figure*}
+\centering
+\includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm.pdf}
+\caption{
+Total means $N_t$, difference in means $\Delta N$, and the portfolio effect PE as a function of heritability $h^2$ and a constant stray rate $m$. Light colors = high values.
+} \label{fig:PE}
+\end{figure*}
 
-Because individuals from the local population are mixed with individuals from the remote population via staying, the resulting trait distribution is a mixed normal with weights corresponding to the proportion of the mixed population that are local individuals, $w_i$, and for the straying individuals, $1-w_i$, where $w_i=(1-m)N_i(t)/((1-m) N_i(t) + m N_j(t))$.
+Because individuals from the local population are mixed with individuals from the remote population via staying, the resulting trait distribution is a mixed normal with weights corresponding to the proportion of the mixed population that are local individuals, $w_i$, and for the straying individuals, $1-w_i$, where 
+\begin{equation}
+w_i=\frac{(1-m)N_i(t)}{(1-m) N_i(t) + m N_j(t)}.
+\end{equation}
 We make two simplifying assumptions.
 First, we assume that the distribution resulting from the mix of remote and local individuals, following reproduction, is also normal with a mean value being that of the mixed-normal.
 Second, we assume that changes in trait variance through time are minimal, such that $\sigma$ is assumed to be constant.
 
+
+
 An increasing flow of incoming strays is thus expected to pull the mean trait value of the local population away from its optimum, which will decrease its rate of recruitment.
 The mean trait value thus changes through time according to the difference equation
 
-\begin{equation}
-  \mu_i(t+1) = w_i\mu_i(t) + (1-w_i)\mu_j(t) + \frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i(t)|\theta_i] + (1-w_i)R_i[\mu_j(t)|\theta_i]  \right),
+\begin{align}
+  \mu_i(t+1) &= w_i\mu_i(t) + (1-w_i)\mu_j(t) \\ \nonumber
+  &+ \frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i(t)|\theta_i] + (1-w_i)R_i[\mu_j(t)|\theta_i]  \right),
   \label{eq:mu}
-\end{equation}
+\end{align}
 
 \noindent where the first two factors determine the mixed normal average of the now-mixed local and remote populations.
 This mixed normal is weighted by the proportion of the population that is local and remote, respectively, which depends on the stray rate $m$.
 The partial derivative in the Eq. \ref{eq:mu} determines how the mean trait changes through time due to natural selection (REF), which is proportional to the change in mean fitness with respect to $\mu_i$.
+
+
 
 
 %Density dependent m
@@ -148,40 +175,116 @@ Thus, we can integrate these two variables by setting $m,m_0 = (2 + \epsilon (\t
 %% There is a peak in the portfolio effect directly before this bifurcation is crossed (early warning signal), and then a decline in PE with high m
 %% When trait heritability is high, there is a greater sensitivity of total biomass to increasing stray rates, though a LOWER sensitivity of the difference between alternative steady state values for increasing stray rates (and vice versa)
 %% For low heritability (h = 0.01 - 0.2 or so), moderate and insensitive changes in total biomass, but large differences between the values of alternative steady states leads to a local maximum for PE at low-moderate stray rates
-%% Increased habitat heterogeneity
-  %%% 1) exaggerates lowering of mean biomass with increasing stray rates
-  %%% 2) increases the likelihood of alternative stable sites & increases the differences in alternative stable state values with increasing stray rates
-  %%% 3) decreases the PE (!!)
+
+
 
 %Alternative stable states
-Straying generally lowers steady state densities for both local and remote populations. %, regardless of trait heritability and variance or habitat heterogeneity
-The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state splits and becomes two alternative steady states: one at high biomass density, and one at low biomass density (Fig. \ref{}).
-This bifurcation occurs at lower values of the stray rate $m$ for lower levels of trait heritability $h^2$, indicating that tighter coupling between ecological and evolutionary dynamics  requires higher rates of straying to give rise to alternative stable states.
+{\bf Nonlinear effects of straying on the Portfolio Effect} Straying generally lowers steady state densities for both local and remote populations. %, regardless of trait heritability and variance or habitat heterogeneity
+The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state among both sites becomes two alternative steady states: one at high biomass density, and one at low biomass density (Fig. \ref{fig:traj}A,B).
+This bifurcation occurs at lower values of the stray rate $m$ for low trait heritability $h^2$ (Fig \ref{fig:PE}A), indicating that greater coupling between ecological and evolutionary dynamics in addition to greater rates of straying results in alternative stable states among the two sites.
 
 Trait heritability also has a large impact on the sensitivity of both the total steady state density ($N^*_T=N^*_1+N^*_2$) as well as the difference between steady state densities ($\Delta N=\sqrt{(N^*_1-N^*_2)^2}$).
-Greater trait heritability (high $h^2$) results in a larger decline in $N_T^*$ for increasing stray rates $m$, though a moderate change in $\Delta N$ with increasing stray rates.
-Conversely, if the trait has a low heritability, an increase in the stray rate has little impact on the total biomass density, though very large impacts on the difference in population densities between sites. 
+Greater trait heritability results in a larger decline in $N_T^*$ for increasing stray rates $m$, though results in only moderate changes to $\Delta N$ (Figs. \ref{fig:PE}A,B).
+Conversely, if the trait is less heritable, an increase in the stray rate has little impact on the total biomass density and contrastingly large effects on the difference in population densities between sites (Fig. \ref{fig:PE}A,B).
 
-Together these differences in steady state population densities as a function of trait heritability and the rate of straying between populations results in nonlinear changes to the portfolio effect, quantified as
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{figs/fig_thetaPE.pdf}
+\caption{
+Median portfolio effect as a function of stray rate $m$ for lower trait heritability ($h^2 < 0.5$)
+} \label{fig:thetaPE}
+\end{figure}
+
+
+
+Together these changes in steady state population densities in terms of $N_T$ and $\Delta N$ as a function of trait heritability and the rate of straying between populations give rise to highly nonlinear portfolio effects, quantified here as
 
 \begin{equation}
   {\rm PE} = \frac{\overline{{\rm CV}}_{i,j}}{{\rm CV}_T}.
   \label{eq:pe}
 \end{equation}
 
-\noindent We define $\overline{{\rm CV}}_{i,j}$ as the average coefficient of variation across the local population $i$ and the remote population $j$, and ${\rm CV}_T$ as the coefficient of variation of the total or aggregated population.
-Higher ${\rm PE}$ corresponds to an increased potential for ecological rescue between populations, thus buffering the system as a whole from extinction, whereas the lowest possible value is ${\rm PE_min}=1$
+\noindent We define $\overline{{\rm CV}}_{i,j}$ as the average coefficient of variation across the local population $i$ and the remote population $j$ at steady state densities, and ${\rm CV}_T$ as the coefficient of variation of the total or aggregated population at steady state densities.
+The minimum portfolio effect is by definition ${\rm PE_min}=1$, whereas portfolio effects greater than unity corresponds to a greater potential for ecological rescue among populations, thus buffering the system as a whole against extinction. 
 
-In the region where there is a single steady state value there is a correspondingly high portfolio effect.
-As the fold bifurcation is approached with greater rates of straying, the portfolio effect spikes due to a large increase in the standard deviation of individual trajectories.
-This explosion in variance is a well-known phenomenon that occurs near a fold bifurcation and lies at the heart of early warning signal research (REFS).
-Directly to the right of the fold bifurcation (in Fig \ref{fig:PE}C) where there are two alternative steady state densities, the portfolio effect is minimized if heritability is low, and it remains elevated if heritability is high.
-As the stray rate increases to the right of the bifurcation, increased trait heritability results in a steady decrease in the portfolio effect.
-If trait hertitability is low, the portfolio effect changes nonlinearly: after the spike associated with the fold bifurcation, {\rm PE} first increases at intermediate stray rates and then declines as $m\rightarrow0.5$. 
+In the region where there is a single steady state among both populations, we find a correspondingly high portfolio effect, primarily due to the elevated mean values of $N_T$.
+As the fold bifurcation is approached with greater rates of straying, the portfolio effect spikes due to a large increase in the standard deviation of both populations.
+This explosion in variance is a well-known phenomenon that occurs near a fold bifurcation and lies at the heart of early warning signal theory (REFS).
+For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}C), where there is a high and low steady state density among the sites, if heritability is low the portfolio effect becomes minimized, is elevated and then declines as $m\rightarrow 0.5$.
+If heritability is high, the portfolio effect declines steadily after the explosion in variance associated with the development of alternative stable states.
+% As the stray rate increases to the right of the bifurcation, increased trait heritability results in a steady decrease in the portfolio effect.
+% If trait heritability is low, the portfolio effect is nonlinear over increasing stray rates: after the spike associated with the fold bifurcation, {\rm PE} first increases at intermediate stray rates and then declines as $m\rightarrow0.5$. 
+
+% \begin{figure*}[htp]
+% \centering
+% \begin{subfigure}[t]{0.55\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{figs/fig_MDPE_hm_theta3.pdf} 
+% \caption{Low habitat heterogeneity ($\Delta\theta=3$)} \label{fig:thetadiff1}
+% \end{subfigure}
+% \begin{subfigure}[t]{0.55\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{figs/fig_MDPE_hm_theta8.pdf} 
+% \caption{High habitat heterogeneity ($\Delta\theta=8$)} \label{fig:thetadiff2}
+% \end{subfigure}
+% \caption{Total means $N_t$, difference in means $\Delta N$, and the portfolio effect PE for different habitat heterogeneities $\Delta\theta$. Light colors = high values.
+% }
+% \end{figure*}
+
 
 % Density dependent m
 %% Because m[t] @ steady state 0<m[t]<m0, we observe the same dynamics for higher m0 as we do for lower constant m.
 %% Higher rates of straying are tolerable (there is a not a decline in PE for very high m0 as there is for constant m)
+If we assume that the rate of straying is density dependent, the probability of straying at the individual level $m_0$ determines the rate of straying within the population, such that $m(t)$ becomes lower as $N(t)$ increases.
+At steady state values, $m(t)$ also becomes constant, though by definition is always less than $m_0$, such that $0 < m(t) < m_0$.
+We find that this dynamic has negligible impact on the qualitative results on our system (Fig. \ref{fig:diffddm}, Appendix Fig. \ref{fig:ddm}).
+Quantitatively, density dependent straying serves to lessen the effect of straying on $N_T$, $\Delta N$ and PE, given that the effective stray rate is effectively lessened by collective navigation.
+%Because density dependent straying does not alter that qualitative results of our model, we limit additional analyses 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{figs/fig_diffddm.pdf}
+\caption{
+.
+} \label{fig:diffddm}
+\end{figure}
+ 
+ 
+%% Increased habitat heterogeneity
+  %%% 1) exaggerates lowering of mean biomass with increasing stray rates
+  %%% 2) increases the likelihood of alternative stable sites & increases the differences in alternative stable state values with increasing stray rates
+  %%% 3) decreases the PE (!!)
+{\bf The role of habitat heterogeneity} Increased differences in optimal trait values between sites ($\Delta\theta = \left|\theta_i - \theta_j\right|$) corresponds to greater between-site differences in conditions that favor alternative physiologies, which we interpret here as increased habitat heterogeneity.
+If both populations were isolated, natural selection would direct the mean trait values of both populations towards their respective optima.
+%difference in optimal trait values between the local and remote populations, which we call .
+However when straying is allowed, we find that increasingly different trait optima generally lowers $N_T$ and exaggerates $\Delta N$, such that one population has the majority of the biomass (Appendix Fig. \ref{fig:thetadiff1},\ref{thetadiff2}).
+The impact of habitat heterogeneity on the portfolio effect is more complex, serving to emphasize the nonlinear relationship between the stray rate and the PE, regardless of heritability.
+%The rate of straying that gives rise to a large PE at the fold bifurcation is conditioned on the difference in optimal trait values between the local and remote populations, which we call $\Delta\theta = \sqrt{(\theta_i - \theta_j)^2}$.
+The extent of the nonlinearity between $m$ and the PE depends very much on $\Delta\theta$, particularly when trait heritability is low, such that $h^2<0.5$.
+As habitat heterogeneity increases, the PE spike generally occurs for lower values of stray rates, meaning that a smaller amount of straying can give rise to alternative stable states (Fig. \ref{fig:thetaPE}).
+In the region where alternative stable states are encountered (Fig. \ref{fig:thetaPE}), additional straying increases the portfolio effect to a local maximum before its negative effects serve to lower PE with $m\rightarrow 0.5$, and this effect is exaggerated with increasing habitat heterogeneity.
+
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.4\textwidth]{figs/fig_MDPE_hm_cross358.pdf}
+% \caption{
+% The portfolio effect over the stray rate $m$ for trait heritability $h^2=(0.1,0.5)$ for systems with different habitat heterogeneities $\Delta\theta$. Light colors = high values.
+% } \label{fig:PEcross}
+% \end{figure}
+
+
+
+
+% \begin{figure*}[h!]
+% \centering
+% \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_ddm.pdf}
+% \caption{
+% The same simulations as presented in Figure \ref{fig:PE}, except with density dependent straying, where $m(t) = m_0\left(1-N(t)/(C+N(t)\right)$. Light colors = high values.
+% } \label{fig:ddm}
+% \end{figure*}
+
+
+
 
 % When m and thetadiff are linked
 %%Constant m
@@ -189,76 +292,68 @@ If trait hertitability is low, the portfolio effect changes nonlinearly: after t
   %%% High stray rate (low theta1-theta2) increases the steady state (and no A.S.S.)... 
   %%% This suggests that space naturally buffers against the negative effects of mixing dissimilar populations, however it is NOT SMOOTH
   %%% This is particularly true for low heritability. High heritability eliminates the A.S.S. region
-%% Similar results for DDm
+  %%% (!!!) Even low levels of straying from distant populations can result in highly divergent alternative steady states! THIS IS A COOL RESULT
+
+  \begin{figure*}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_mtheta.pdf}
+    \caption{
+    Assuming that the rate of straying is linked directly to habitat heterogeneity. A low stray rate corresponds to very different (or distant) habitats (high $\Delta\theta$), whereas a higher rate of straying corresponds to very similar (or nearby) habitats (low $\Delta\theta$). Light colors = high values.
+    } \label{fig:mtheta}
+  \end{figure*}
 
 
 
 
-%% PE >> 1 for low values of m
-%% Spike in PE at the fold bifurcation (spike in indvidual population SD)
-%% Increased environmental heterogeneity leads to spikes in PE at lower stray rates
-%% Effects of heritability vs. trait variation and stable states
+{\bf Linking stray rate and habitat heterogeneity} We have so far treated $\Delta\theta$ and $m$ as independent parameters, however we may also assume that if environmental heterogeneity increases with distance -- in particular North-South difference if trait optimality is largely temperature-dependent -- the rate of straying may be expected to decline with distance.
+If we assume this interdependence of $m$ and $\Delta\theta$, low values of straying would correspond to mixing dissimilar (distant) populations, and high values of straying would correspond to mixing similar (nearby) populations.
+
+In this case we find that alternative stable states now appear for low stray rates and low trait heritability, whereas increasing stray rates result in a single stable state with relatively high $N_T$.
+As before, there is a spike in the PE along the fold bifurcation separating the alternative stable state regime from the single stable state regime, but a sharp decline in the PE as stray rates become very low.
+This is in accordance with intuition as increasing stray rates mean that two very similar populations are mixing, resulting in little negative effect of trait dissimilarity.
+
+However, that alternative stable states appear and that PE becomes severely depressed for very low values of PE is surprising: this means that even a small amount of straying of individuals from distant or dissimilar populations can qualitatively alter the dynamics of the metapopulation.
+(for the discussion: an example of this situation may be the salmon populations during the last glacial maximum, where any mixing would be from geographically distant populations)
 
 
 
-% Density dependent m
-%% 
 
 
 
-{\bf Initial results -- subject to to change:} As the proportion of strays increases, the average traits of both populations veer farther from their optimal values, and this results in the decline of the population steady state (because the recruitment rate is now sub-optimal for both populations). This is the nice, expected result.
 
-The unexpected result are the alternative stable states that arise for lower values of $m$. Just where these alternative stable states arise depends on the variance as well as the difference in optimal trait values between sites ($\theta_i-\theta_j$), but you can see that this has big impacts on the portfolio effect.
-Which trajectory goes to the higher or lower alternative stable state is random - an effect of the process noise injected into the system.
-The change in the PE appears to be caused by large spikes in the variance of individual population trajectories where the alternative stable states begin (at the fold bifurcation).
-This is a well-known phenomenon that forms the basis for early warning signals of phase transitions.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{figs/fig_Density.pdf}
-\caption{} \label{fig:traj}
-\end{figure}
-
-
-The differences in optimal trait values between sites ($\theta_i-\theta_j$) influence at what straying rate the alternative stable states appear.
-Large differences in $\theta_i$ and $\theta_j$ can be interpreted as high environmental heterogeneity.
-A cursory analysis shows that increasing environmental heterogeneity tends to lower the stray rate value $m^*$ at which the maximum PE is expected to occur.
-Moreover, if the trait variance is much larger than the difference in optimal trait values between sites (such that selection is weaker), the alternative stable state phenomenon disappears, as does the spike in the portfolio effect.
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm.pdf}
-\caption{} \label{fig:PE}
-\end{figure}
-
-
-
-\begin{figure}
-\centering
-\begin{subfigure}[t]{0.8\textwidth}
-\centering
-\includegraphics[width=\textwidth]{figs/fig_MDPE_hm_theta3.pdf} 
-\caption{Low habitat heterogeneity ($\Delta\theta=3$)} \label{fig:hetero1}
-\end{subfigure}
-
-\begin{subfigure}[t]{0.8\textwidth}
-\centering
-\includegraphics[width=\textwidth]{figs/fig_MDPE_hm_theta8.pdf} 
-\caption{High habitat heterogeneity ($\Delta\theta=8$)} \label{fig:hetero2}
-\end{subfigure}
-
- \caption{Changes in total means, difference in means, and the portfolio effect for different habitat heterogeneities}
-
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{figs/fig_MDPE_hm_cross358.pdf}
-\caption{} \label{fig:PE}
-\end{figure}
 
 
 \section*{Discussion}
+
+\clearpage
+\setcounter{figure}{0}
+\section*{Appendix}
+
+
+\begin{figure*}[h!]
+\centering
+\begin{subfigure}[t]{0.55\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figs/fig_MDPE_hm_theta3.pdf} 
+\caption{Low habitat heterogeneity ($\Delta\theta=3$)} \label{fig:thetadiff1}
+\end{subfigure}
+\begin{subfigure}[t]{0.55\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figs/fig_MDPE_hm_theta8.pdf} 
+\caption{High habitat heterogeneity ($\Delta\theta=8$)} \label{fig:thetadiff2}
+\end{subfigure}
+\caption{Total means $N_t$, difference in means $\Delta N$, and the portfolio effect PE for different habitat heterogeneities $\Delta\theta$. Light colors = high values.
+}
+\end{figure*}
+
+
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_ddm.pdf}
+\caption{
+The same simulations as presented in Figure \ref{fig:PE}, except with density dependent straying, where $m(t) = m_0\left(1-N(t)/(C+N(t)\right)$. Light colors = high values.
+} \label{fig:ddm}
+\end{figure*}
+
 
 \end{document}

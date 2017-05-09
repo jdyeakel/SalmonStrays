@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 MAY 2017 21:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  8 MAY 2017 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -280,9 +280,6 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (/usr/local/texlive/2016/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
@@ -311,12 +308,14 @@ te \@footnotemark@gobble #1: #2\par \endgroup }{\global \@minipagefalse \hb@xt@
  \hsize {\hfil \unhbox \@tempboxa \hfil }}\endgroup \vskip \belowcaptionskip .
 \c@ContinuedFloat=\count112
 Package caption Info: float package is loaded.
-)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 \c@subfigure=\count113
 \c@subtable=\count114
-) (./msv1.aux
+)
+(./msv1.aux
 
-LaTeX Warning: Label `fig:PE' multiply defined.
+LaTeX Warning: Label `fig:ddm' multiply defined.
 
 )
 \openout1 = `msv1.aux'.
@@ -406,81 +405,105 @@ fx \csname @float@c@\@captype \endcsname \relax \else \expandafter \expandafter
 rg {\@tempf \@captype }.
 
 
-Package caption Warning: \caption will not be redefined since it's already
-(caption)                redefined by a document class or package which is
-(caption)                unknown to the caption package.
+Package caption Warning: Forced redefinition of \caption since the
+(caption)                unsupported(!) package option `compatibility=false'
+(caption)                was given.
 See the caption package documentation for explanation.
 
-
-! Package caption Error: The `subcaption' package does not work correctly
-(caption)                in compatibility mode.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.40 \begin{document}
-                     
-? 
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 64.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 65.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1{/usr/local
-/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
-LaTeX Warning: Reference `' on page 2 undefined on input line 158.
-
-[2] <figs/fig_Density.pdf, id=21, 276.03125pt x 512.91624pt>
+pdfTeX warning: pdflatex (file ./figs/fig_Density.pdf): PDF inclusion: found PD
+F version <1.7>, but at most version <1.5> allowed
+<figs/fig_Density.pdf, id=1, 269.005pt x 349.305pt>
 File: figs/fig_Density.pdf Graphic file (type pdf)
-
-<use figs/fig_Density.pdf>
-Package pdftex.def Info: figs/fig_Density.pdf used on input line 218.
-(pdftex.def)             Requested size: 203.99689pt x 379.08249pt.
- <figs/fig_MDPE_hm.pdf, id=22, 578.16pt x 216.81pt>
-File: figs/fig_MDPE_hm.pdf Graphic file (type pdf)
-
-<use figs/fig_MDPE_hm.pdf>
-Package pdftex.def Info: figs/fig_MDPE_hm.pdf used on input line 231.
-(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
- [3 <./figs/fig_Density.pdf>]
-<figs/fig_MDPE_hm_theta3.pdf, id=46, 578.16pt x 216.81pt>
-File: figs/fig_MDPE_hm_theta3.pdf Graphic file (type pdf)
-
-<use figs/fig_MDPE_hm_theta3.pdf>
-Package pdftex.def Info: figs/fig_MDPE_hm_theta3.pdf used on input line 241.
-(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
-
-<figs/fig_MDPE_hm_theta8.pdf, id=47, 578.16pt x 216.81pt>
-File: figs/fig_MDPE_hm_theta8.pdf Graphic file (type pdf)
-
-<use figs/fig_MDPE_hm_theta8.pdf>
-Package pdftex.def Info: figs/fig_MDPE_hm_theta8.pdf used on input line 247.
-(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
-
-
-pdfTeX warning: pdflatex (file ./figs/fig_MDPE_hm_cross358.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<figs/fig_MDPE_hm_cross358.pdf, id=48, 289.08pt x 433.62pt>
-File: figs/fig_MDPE_hm_cross358.pdf Graphic file (type pdf)
-
-<use figs/fig_MDPE_hm_cross358.pdf>
-Package pdftex.def Info: figs/fig_MDPE_hm_cross358.pdf used on input line 257.
-(pdftex.def)             Requested size: 255.0pt x 382.49986pt.
+ <use figs/fig_Density.pdf>
+Package pdftex.def Info: figs/fig_Density.pdf used on input line 78.
+(pdftex.def)             Requested size: 203.99689pt x 264.89359pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4 <./figs/fig_MDPE_hm.pdf>] [5 <./figs/fig_MDPE_hm_theta3.pdf> <./figs/fig_MDP
-E_hm_theta8.pdf>] [6 <./figs/fig_MDPE_hm_cross358.pdf>] (./msv1.aux)
+<figs/fig_MDPE_hm.pdf, id=2, 578.16pt x 216.81pt>
+File: figs/fig_MDPE_hm.pdf Graphic file (type pdf)
+ <use figs/fig_MDPE_hm.pdf>
+Package pdftex.def Info: figs/fig_MDPE_hm.pdf used on input line 114.
+(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
+
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./fig
+s/fig_Density.pdf>]
+Overfull \hbox (0.8253pt too wide) in paragraph at lines 137--137
+[] 
+ []
+
+
+LaTeX Warning: Reference `eq:mu' on page 2 undefined on input line 141.
+
+[2 <./figs/fig_MDPE_hm.pdf>]
+<figs/fig_thetaPE.pdf, id=46, 433.62pt x 361.35pt>
+File: figs/fig_thetaPE.pdf Graphic file (type pdf)
+ <use figs/fig_thetaPE.pdf>
+Package pdftex.def Info: figs/fig_thetaPE.pdf used on input line 192.
+(pdftex.def)             Requested size: 203.99689pt x 169.99994pt.
+
+<figs/fig_diffddm.pdf, id=47, 361.35pt x 289.08pt>
+File: figs/fig_diffddm.pdf Graphic file (type pdf)
+ <use figs/fig_diffddm.pdf>
+Package pdftex.def Info: figs/fig_diffddm.pdf used on input line 280.
+(pdftex.def)             Requested size: 203.99689pt x 163.19817pt.
+
+<figs/fig_MDPE_hm_mtheta.pdf, id=48, 578.16pt x 216.81pt>
+File: figs/fig_MDPE_hm_mtheta.pdf Graphic file (type pdf)
+
+<use figs/fig_MDPE_hm_mtheta.pdf>
+Package pdftex.def Info: figs/fig_MDPE_hm_mtheta.pdf used on input line 298.
+(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
+ [3 <./figs/fig_thetaPE.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 309.
+
+[4 <./figs/fig_diffddm.pdf>] [5 <./figs/fig_MDPE_hm_mtheta.pdf>]
+<figs/fig_MDPE_hm_theta3.pdf, id=75, 578.16pt x 216.81pt>
+File: figs/fig_MDPE_hm_theta3.pdf Graphic file (type pdf)
+
+<use figs/fig_MDPE_hm_theta3.pdf>
+Package pdftex.def Info: figs/fig_MDPE_hm_theta3.pdf used on input line 336.
+(pdftex.def)             Requested size: 280.50156pt x 105.18579pt.
+
+<figs/fig_MDPE_hm_theta8.pdf, id=76, 578.16pt x 216.81pt>
+File: figs/fig_MDPE_hm_theta8.pdf Graphic file (type pdf)
+
+<use figs/fig_MDPE_hm_theta8.pdf>
+Package pdftex.def Info: figs/fig_MDPE_hm_theta8.pdf used on input line 341.
+(pdftex.def)             Requested size: 280.50156pt x 105.18579pt.
+
+
+Class revtex4 Warning: Float cannot be placed.
+
+<figs/fig_MDPE_hm_ddm.pdf, id=77, 578.16pt x 216.81pt>
+File: figs/fig_MDPE_hm_ddm.pdf Graphic file (type pdf)
+
+<use figs/fig_MDPE_hm_ddm.pdf>
+Package pdftex.def Info: figs/fig_MDPE_hm_ddm.pdf used on input line 351.
+(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
+
+
+Class revtex4 Warning: Float cannot be placed.
+
+[6] [7 <./figs/fig_MDPE_hm_theta3.pdf> <./figs/fig_MDPE_hm_theta8.pdf> <./figs/
+fig_MDPE_hm_ddm.pdf>] (./msv1.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -489,13 +512,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6643 strings out of 493014
- 93797 string characters out of 6133351
- 183525 words of memory out of 5000000
- 10047 multiletter control sequences out of 15000+600000
+ 6664 strings out of 493014
+ 94245 string characters out of 6133351
+ 183544 words of memory out of 5000000
+ 10066 multiletter control sequences out of 15000+600000
  18684 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,372b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,39p,428b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -512,10 +535,10 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 6/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/
 texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/te
 xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on msv1.pdf (6 pages, 1856024 bytes).
+Output written on msv1.pdf (7 pages, 2614008 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 156 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -83,12 +83,12 @@ beta=0.001;
 theta1=5.0;
 thetadiff=5;
 tau=1.0;
-h=0.2;
+h=0.1;
 sigmaE=0;
-sigmaG=0.2;
-perror=0.05;
+sigmaG=1;
+perror=0.01;
 
-burnin=0.99
+burnin=0.80
 @time for i=1:length(mvec)
   m=mvec[i];
   
@@ -812,7 +812,13 @@ image(x=$mvec,y=$hvec,z=t($(pe[10,:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',m
 dev.off()
 """
 
-
+#Average pe over m
+medpe = Array{Float64}(length(mvec));
+pena = pe;
+pena[find(x->x==true,isnan(pe))] = 1;
+for i=1:length(mvec)
+  medpe[i] = median(pena[10,:,i])
+end
 
 
 
@@ -895,13 +901,15 @@ end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_m_theta3.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_m_theta8.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data_sig_h_m_theta3.jld"));
 #This loads the dictionary
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
 x1mean = d["x1mean"];
 x2mean = d["x2mean"];
 pe = d["pe"];
+pena = pe;
+pena[find(x->x==true,isnan(pe))] = 1;
 
 maxPE = Array{Float64}(length(sigmavec),length(hvec));
 maxPEvalue = Array{Float64}(length(sigmavec),length(hvec));
@@ -1037,6 +1045,45 @@ dev.off()
 
 
 
+medpe3 = Array{Float64}(length(mvec));
+medpe5 = Array{Float64}(length(mvec));
+medpe8 = Array{Float64}(length(mvec));
+for i=1:length(mvec)
+  medpe3[i] = median(pena3[10,1:51,i])
+  medpe5[i] = median(pena5[10,1:51,i])
+  medpe8[i] = median(pena8[10,1:51,i])
+end
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_thetaPE.pdf");
+R"""
+library(RColorBrewer)
+pal = brewer.pal(3,'Set1')
+pdf($namespace,height=5,width=6)
+plot($mvec,$medpe3,col=pal[1],pch=16,ylim=c(1,1.5),xlab='m',ylab='PE',cex=0.5)
+points($mvec,$medpe5,col=pal[2],pch=16,cex=0.5)
+points($mvec,$medpe8,col=pal[3],pch=16,cex=0.5)
+legend(x=0.4,y=1.5,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n",title='Dtheta')
+dev.off()
+"""
+
+medpe3 = Array{Float64}(length(mvec));
+medpe5 = Array{Float64}(length(mvec));
+medpe8 = Array{Float64}(length(mvec));
+for i=1:length(mvec)
+  medpe3[i] = median(pena3[10,51:101,i])
+  medpe5[i] = median(pena5[10,51:101,i])
+  medpe8[i] = median(pena8[10,51:101,i])
+end
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_thetaPE_highH.pdf");
+R"""
+library(RColorBrewer)
+pal = brewer.pal(3,'Set1')
+pdf($namespace,height=5,width=6)
+plot($mvec,$medpe3,col=pal[1],pch=16,ylim=c(1,1.5),xlab='m',ylab='PE',cex=0.5)
+points($mvec,$medpe5,col=pal[2],pch=16,cex=0.5)
+points($mvec,$medpe8,col=pal[3],pch=16,cex=0.5)
+legend(x=0.4,y=1.5,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n",title='Dtheta')
+dev.off()
+"""
 
 ########
 pe3=pe;

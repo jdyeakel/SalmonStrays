@@ -692,6 +692,8 @@ n2mean = d["n2mean"];
 x1mean = d["x1mean"];
 x2mean = d["x2mean"];
 pe = d["pe"];
+penaddm = pe;
+penaddm[find(x->x==true,isnan(pe))] = 1;
 
 maxPE = Array{Float64}(length(sigmavec),length(hvec));
 maxPEvalue = Array{Float64}(length(sigmavec),length(hvec));
@@ -828,6 +830,20 @@ dev.off()
 """
 
 
+dpena = pena5-penaddm;
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_diffddm.pdf");
+R"""
+pdf($namespace,height=4,width=5)
+hist($dpena,freq=FALSE,breaks=500,xlim=c(-1,1),xlab='pe-peddm',ylab='Probability',main='',col='lightgray')
+dev.off()
+"""
+dpena2 = pena5-penaddm;
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_diffddm.pdf");
+R"""
+pdf($namespace,height=4,width=5)
+hist($dpena,freq=F,breaks=300,xlim=c(-1,1),xlab='pe-peddm',ylab='Probability',main='',col='lightgray')
+dev.off()
+"""
 
 
 #THETADIFF=8
