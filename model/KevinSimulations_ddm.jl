@@ -834,7 +834,10 @@ dpena = pena5-penaddm;
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_diffddm.pdf");
 R"""
 pdf($namespace,height=4,width=5)
-hist($dpena,freq=FALSE,breaks=500,xlim=c(-1,1),xlab='pe-peddm',ylab='Probability',main='',col='lightgray')
+h <- hist($dpena,breaks=500,plot=FALSE)
+h$counts
+h$counts=h$counts/sum(h$counts)
+plot(h,xlim=c(-1,1),xlab='PE (constant m)-PE (D.D. m)',ylab='Probability',main='',col='lightgray')
 dev.off()
 """
 dpena2 = pena5-penaddm;

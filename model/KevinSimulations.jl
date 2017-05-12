@@ -12,7 +12,7 @@ beta=0.001;
 theta1=5.0;
 thetadiff=5.0;
 tau=1.0;
-h=0.05;
+h=0.49;
 sigmaE=0;
 sigmaG=1.0;
 m=0.35;
@@ -821,6 +821,31 @@ for i=1:length(mvec)
 end
 
 
+#namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_MDPE_hm.pdf");
+traitdiff = abs(-1*(x1mean[10,:,:]-theta1) - (-1*(x2mean[10,:,:]-(theta1+thetadiff))));
+
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+#pdf($namespace,height=3,width=8)
+par(mfrow=c(1,1))
+image(x=$mvec,y=$hvec,z=t($traitdiff),zlim=c(0,5),col=pal,xlab='m',ylab='h',main='Phenotypic diversity')
+#dev.off()
+"""
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_traitdiff.pdf");
+traitdiff = abs(-1*(x1mean[10,:,:]-theta1) - (-1*(x2mean[10,:,:]-(theta1+thetadiff))));
+R"""
+pdf($namespace,height=4,width=5)
+plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste(Delta,mu)),xlab='m')
+lines($mvec,$(traitdiff[51,:]),type='l')
+lines($mvec,$(traitdiff[76,:]),type='l')
+lines($mvec,$(traitdiff[101,:]),type='l')
+text(rep(0.49,4),$(traitdiff[[26 51 76 101],451]),c('0.25','0.50','0.75','1.00'),cex=0.8)
+text(0.48,2.1,expression(paste(h^2)),cex=0.8)
+dev.off()
+"""
+
+
 
 
 #THETADIFF = 8
@@ -1053,6 +1078,10 @@ for i=1:length(mvec)
   medpe5[i] = median(pena5[10,1:51,i])
   medpe8[i] = median(pena8[10,1:51,i])
 end
+bifsite5 = find(x->x==maximum(abs(diff(medpe5))),abs(diff(medpe5)));
+bif5 = mvec[bifsite5];
+bifsite8 = find(x->x==maximum(abs(diff(medpe8))),abs(diff(medpe8)));
+bif8 = mvec[bifsite8];
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_thetaPE.pdf");
 R"""
 library(RColorBrewer)
@@ -1060,10 +1089,13 @@ pal = brewer.pal(3,'Set1')
 pdf($namespace,height=5,width=6)
 plot($mvec,$medpe3,col=pal[1],pch=16,ylim=c(1,1.5),xlab='m',ylab='PE',cex=0.5)
 points($mvec,$medpe5,col=pal[2],pch=16,cex=0.5)
+lines(cbind(rep($bif5,2),c($(medpe5[bifsite5-1]),$(medpe5[bifsite5+1]))),col=pal[2],lty=2,lwd=2)
 points($mvec,$medpe8,col=pal[3],pch=16,cex=0.5)
-legend(x=0.4,y=1.5,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n",title='Dtheta')
+lines(cbind(rep($bif8,2),c($(medpe8[bifsite8-1]),$(medpe8[bifsite8+1]))),col=pal[3],lty=2,lwd=2)
+legend(x=0.4,y=1.5,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n",title=expression(paste(Delta,theta)))
 dev.off()
 """
+
 
 medpe3 = Array{Float64}(length(mvec));
 medpe5 = Array{Float64}(length(mvec));
@@ -1073,6 +1105,10 @@ for i=1:length(mvec)
   medpe5[i] = median(pena5[10,51:101,i])
   medpe8[i] = median(pena8[10,51:101,i])
 end
+bifsite5 = find(x->x==maximum(abs(diff(medpe5))),abs(diff(medpe5)));
+bif5 = mvec[bifsite5];
+bifsite8 = find(x->x==maximum(abs(diff(medpe8))),abs(diff(medpe8)));
+bif8 = mvec[bifsite8];
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_thetaPE_highH.pdf");
 R"""
 library(RColorBrewer)
@@ -1080,8 +1116,10 @@ pal = brewer.pal(3,'Set1')
 pdf($namespace,height=5,width=6)
 plot($mvec,$medpe3,col=pal[1],pch=16,ylim=c(1,1.5),xlab='m',ylab='PE',cex=0.5)
 points($mvec,$medpe5,col=pal[2],pch=16,cex=0.5)
+lines(cbind(rep($bif5,2),c($(medpe5[bifsite5-1]),$(medpe5[bifsite5+1]))),col=pal[2],lty=2)
 points($mvec,$medpe8,col=pal[3],pch=16,cex=0.5)
-legend(x=0.4,y=1.5,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n",title='Dtheta')
+lines(cbind(rep($bif8,2),c($(medpe8[bifsite8-1]),$(medpe8[bifsite8+1]))),col=pal[3],lty=2)
+legend(x=0.4,y=1.5,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal, bty="n",title=expression(paste(Delta,theta)))
 dev.off()
 """
 
