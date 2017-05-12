@@ -265,6 +265,7 @@ Together these changes in steady state population densities in terms of $N_T$ an
 \noindent We define $\overline{{\rm CV}}_{i,j}$ as the average coefficient of variation across the local population $i$ and the remote population $j$ at steady state densities, and ${\rm CV}_T$ as the coefficient of variation of the total or aggregated population at steady state densities.
 The minimum portfolio effect is by definition ${\rm PE_min}=1$, whereas portfolio effects greater than unity corresponds to a greater potential for ecological rescue among populations, thus buffering the system as a whole against extinction. 
 
+
 In the region where there is a single steady state among both populations, we find a correspondingly high portfolio effect, primarily due to the elevated mean values of $N_T$.
 As the fold bifurcation is approached with greater rates of straying, the portfolio effect spikes due to a large increase in the standard deviation of both populations.
 This explosion in variance is a well-known phenomenon that occurs near a fold bifurcation and lies at the heart of early warning signal theory (REFS).
@@ -273,7 +274,17 @@ If heritability is high, the portfolio effect declines steadily after the explos
 % As the stray rate increases to the right of the bifurcation, increased trait heritability results in a steady decrease in the portfolio effect.
 % If trait heritability is low, the portfolio effect is nonlinear over increasing stray rates: after the spike associated with the fold bifurcation, {\rm PE} first increases at intermediate stray rates and then declines as $m\rightarrow0.5$. 
 
+%Lowering Phenotypic diversity with increasing straying rate
+As expected, increasing rates of straying lowers phenotypic diversity because both local and remote populations become homogenized.
+The sensitivity of this phenotypic homogenization to straying rate is increased with lower heritability because the selective forces acting against trait means far from local optima is lessened for lower $h^2$.
+[A DISCRETE JUMP TO LOW DIVERSITY FOR LOW HERITABILTIY](Fig. \ref{fig:traitdiff}).
 
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{figs/fig_traitdiff.pdf}
+\caption{
+} \label{fig:traitdiff}
+\end{figure}
 
 % Density dependent m
 %% Because m[t] @ steady state 0<m[t]<m0, we observe the same dynamics for higher m0 as we do for lower constant m.
@@ -284,21 +295,6 @@ We find that this dynamic has negligible impact on the qualitative results on ou
 Quantitatively, density dependent straying serves to lessen the effect of straying on $N_T$, $\Delta N$ and PE, given that the effective stray rate is effectively lessened by collective navigation.
 %Because density dependent straying does not alter that qualitative results of our model, we limit additional analyses 
 
-\begin{figure}
-\centering
-\includegraphics[width=0.4\textwidth]{figs/fig_diffddm.pdf}
-\caption{
-Difference in PE for simulations with a constant stray rate $m$ and PE for simulations with a density dependent stray rate $m(t)$. The differences are minimal (mean difference in PE = -0.05) and result in no discernible qualitative difference in dynamics, though density dependent stray rates generally amplify PE.
-} \label{fig:diffddm}
-\end{figure}
-
-\begin{figure*}
-  \centering
-  \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_mtheta.pdf}
-  \caption{
-  Assuming that the rate of straying is linked directly to habitat heterogeneity. A low stray rate corresponds to very different (or distant) habitats (high $\Delta\theta$), whereas a higher rate of straying corresponds to very similar (or nearby) habitats (low $\Delta\theta$). Light colors = high values.
-  } \label{fig:mtheta}
-\end{figure*}
 
  
  
@@ -318,6 +314,21 @@ In the region where alternative stable states are feasible (Fig. \ref{fig:thetaP
 
 
 
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{figs/fig_diffddm.pdf}
+\caption{
+Difference in PE for simulations with a constant stray rate $m$ and PE for simulations with a density dependent stray rate $m(t)$. The differences are minimal (mean difference in PE = -0.05) and result in no discernible qualitative difference in dynamics, though density dependent stray rates generally amplify PE.
+} \label{fig:diffddm}
+\end{figure}
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_mtheta.pdf}
+  \caption{
+  Assuming that the rate of straying is linked directly to habitat heterogeneity. A low stray rate corresponds to very different (or distant) habitats (high $\Delta\theta$), whereas a higher rate of straying corresponds to very similar (or nearby) habitats (low $\Delta\theta$). Light colors = high values.
+  } \label{fig:mtheta}
+\end{figure*}
 
 
 
