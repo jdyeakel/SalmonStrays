@@ -83,7 +83,7 @@ beta=0.001;
 theta1=5.0;
 thetadiff=5;
 tau=1.0;
-h=0.1;
+h=0.3;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -137,7 +137,10 @@ burnin=0.80
   # maxeigs[i] = maximum(re);
   # maximeigs[i] = maximum(im);
   
-  pe[i] = (mean([std(n1trim),std(n2trim)])/mean([mean(n1trim),mean(n2trim)])) *
+  # pe[i] = (mean([std(n1trim),std(n2trim)])/mean([mean(n1trim),mean(n2trim)])) *
+  # (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
+  
+  pe[i] = mean([(std(n1trim)/mean(n1trim)),(std(n2trim)/mean(n2trim))])*
   (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   
 end
