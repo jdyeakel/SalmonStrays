@@ -31,7 +31,9 @@
 %\usepackage{authblk}
 %\usepackage{multicol}
 
-%\bibliographystyle{ieeetr}
+\bibliographystyle{ieeetr}
+
+\usepackage{bibunits}
 
 
 %\linenumbers
@@ -42,13 +44,15 @@
 
 %\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
 %\title{Community assembly and dynamics by the deconstruction of species interactions}
-\title{Eco-evolutionary model of salmon straying in a metapopulation (but with a cool title)}
-%\author{Justin D. Yeakel${}^{1,2,*}$, Christopher P. Kempes${}^{2}$, \& Sidney Redner${}^{2,3}$ \\ \\
-%${}^1$School of Natural Science, University of California Merced, Merced, CA \\
-%${}^2$The Santa Fe Institute, Santa Fe, NM \\
-%${}^3$Department of Physics, Boston University, Boston MA \\
-%${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
-%}
+\title{Lost in space: the eco-evolutionary impacts of straying on metapopulation persistence}
+\author{Justin D. Yeakel${}^{1,2,*}$, Jean Phillipe Gibert${}^{1}$, Sean Anderson${}^{3}$, Peter Westley${}^{4}$, \& Jon W. Moore${}^{5}$ \\
+${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
+${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
+${}^3$Department of Biology, University of Washington, Seattle WA, USA \\
+${}^4$Institute for Arctic Biology, University of Alaska, Fairbanks, Fairbanks AK, USA \\
+${}^5$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
+${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
+}
 
 
 
@@ -56,40 +60,49 @@
 
 
 
-\section*{Introduction}
+\section{Introduction}
 
 
 %Motivation: straying
-The ability of species to follow specific migratory pathways, and in the case of many salmonids to return to their natal streams after years at sea, is among the most celebrated processes observed in the natural world (REFS).
-That individuals do not always follow these paths has long been appreciated (REFS), however only recently have the mechanisms governing `straying' behaviors been systemically investigated (REFS).
-Although the straying of individuals into sites hosting other populations provides connections within the larger metapopulation, potentially promoting ecological rescue, it also serves to introduce maladapted individuals into habitats that are host to different environmental conditions, and this may lower the mean fitness of the local (mixed) population.
+Coordinated mass migrations are one of the great wonders of the natural world, and the ability of individuals and groups to navigate across great distances have long fascinated naturalists \cite{MilnerGulland:2011vm}.
+Anadromous salmonid fishes (genera \emph{Oncorhynchus} and \emph{Salmo}) embody these astonishing migrations by homing with high accuracy and precision to their natal streams for reproduction after years at sea \cite{Quinn:2011tf,Jonsson:2011kg,Keefer:2014gg}.
+Nothwithstanding their philopatric tendancy, not all individuals home, but rather `stray' to non-natal sites to spawn \cite{Quinn:1993ge,Hendry:2004wf,H:2013fs}.
+Although extensive work has been done to document the extent of straying from donor populations and into recipient populations \cite{Keefer:2014gg,Bett:2017ha}, only recently have the abiotic, biotic, and anthropogenic influences of `straying' behaviors been investigated systemically \cite{Keefer:2008bs,Westley:2015to,Bond:2016dz}.
+Most recently the role of social interactions and collective navigation has been hypothesized \cite[][; this volume]{Berdahl:2015kv,Berdahl:2016dx}.
+Although the straying of individuals into sites hosting other populations provides connections within the larger metapopulation, potentially promoting ecological and evolutionary rescue, it also serves to introduce maladapted individuals into habitats that are host to different environmental conditions, and this may lower the mean fitness of the local (mixed) population \cite{Muhlfeld:2014hs}.
+
 
 
 %The tradeoff
-These contrasting effects integrate the ecological dynamics of connected populations as well as the evolutionary dynamics of mixed trait distributions that respond to alternative local conditions.
-Population-level biodiversity is recognized to increase species persistence (REFS), and the resilience and sustainability of highly diverse systems such as the Bristol Bay sockeye populations stand in marked contrast to the comparatively homogeneous chinook salmon of California's Central Valley \cite{Anonymous:2014ku,Satterthwaite:2015ge}.
-Such diversity (or lack thereof) can manifest itself by way of asynchronous population dynamics, where the drivers that give rise to changes in population size vary across a metapopulation, decreasing the potential for synchronization, and correspondingly increasing the potential for ecological rescue (REFS).
+The dual nature of straying as both promoter of connections among metapopulation demes and potential eroder of locally adapted gene complexes highlights the interplay between ecological dynamics of connected populations as well as the evolutionary dynamics of mixed trait distributions that respond to alternative local conditions.
+Population-level biodiversity is recognized to increase species persistence (REFS), and the resilience and sustainability of metapopulations (general REF).
+For example, the long-term sustainability of the Bristol Bay sockeye salmon fishery is due in large part to intact habitat that in conjunction with fine-scale homing and reduced gene flow provides a template for the evolution of countless locally adapted populations \cite{Hilborn:2003gf,Schindler:2010he,Anonymous:2014ku,Satterthwaite:2015ge}.
+In contrast, areas such as California's Central Valley where habitats have been lost, degraded, and homogenized stand in marked contrast.
+Within species diversity (or lack thereof) can manifest itself by way of asynchronous population dynamics, where the drivers that give rise to changes in population size vary across a metapopulation, decreasing the potential for synchronization, and correspondingly increasing the potential for ecological rescue (REFS).
 This statistical buffer against extinction has traditionally been quantified as the Portfolio Effect (PE), which is the ratio of the population CV to the CV of the aggregated metapopulation.
-A second measure of diversity can be quantified as genetic variability among populations, where homogenous stocks are more likely to have similar life-history structures (REFS), be at greater risk disease-induced epidemics (REFS), and recruit sub-optimally in heterogeneous environments (REFS).
-Of course, these two measures of diversity are tightly coupled: for instance, lower genetic diversity increases the likelihood that two populations respond similarly to the same stressors, and this promotes synchronized dynamics, thus lowering portfolio effects.
+Weakened portfolio dynamics can also emerge from homogenization resulting from  reduced genetic variability among populations, where homogenous stocks are more likely to have similar life-history structures (REFS), be at greater risk disease-induced epidemics (REFS), and recruit sub-optimally in heterogeneous environments (REFS).
+Of course, these two measures of diversity often occur concurrently: for instance, lower genetic diversity increases the likelihood that two populations respond similarly to the same stressors, and this promotes synchronized dynamics, thus lowering portfolio effects.
 
 %Eco-evolutionary dynamics in space
 %% From geographic mosaic of coevolution to...
 That evolutionary forces play out heterogeneously across geographic mosaics is now a foundational concept in ecology and evolutionary biology (REFS).
-These mosaics are in part driven by environmental differences between habitats that alter the selective forces acting on different phenotypes (REFS), and a principle underlying assumption is that there is gene flow such that individuals from different habitats mix over space (REFS).
-Although the evolutionary outcomes of these spatial processes have been explored in depth (REFS), it is less well understood how selective mosaics and their consequent evolutionary forces impact population dynamics over ecological timescales.
+These mosaics are in part driven by environmental differences between habitats that alter the selective forces acting on different phenotypes \cite{Endler:1986tz}, and a principle underlying assumption is that there is gene flow such that individuals from different habitats mix over space (REFS).
+Although the evolutionary outcomes of these spatial processes have been explored in depth (REFS), it is less well understood how selective mosaics and their consequent evolutionary forces impact population dynamics over contemporary timescales \cite{Hendry:2016un}.
 How the ecological dynamics of phenotypically diverse metapopulations, wherein constituent populations are subject to different selective regimes, are altered affected by evolutionary forces is less well known. % and the subject of this paper.
 
 %Movement through space (link back to straying)
-Migratory populations that return to a breeding ground or natal stream to reproduce are linked to each other by some proportion of the population that stray into the `wrong' site; we might say that there is a \emph{Kevin} in every school or flock (Fig. \ref{fig:xkcd}).
-The rate at which individuals stray, $m$, has been subject to a growing amount of both theoretical and empirical research (REFS) and may be linked to errors made at an individual-level that are themselves diminished by larger collections of individuals (REFS).
-Regardless of the mechanism behind straying, the effect that it has on the dynamics of individual populations and the metapopulation as a whole is a topic of considerable interest that has tangible conservation implications (REFS).
-Whether and to what extent the ecological consequences of straying depend on the evolutionary dynamics that emerge from populations distributed across a selection mosaic is unknown.
-How the assumed negative evolutionary effects of straying is balanced by the positive effects of ecological rescue is the subject of this contribution.
+Migratory populations that return to a breeding ground or natal stream to reproduce are linked to each other by some proportion of the population that permanently disperse, or stray into the `wrong' site; we might say that there is at least one \emph{Kevin} in every school or flock in every school or flock (Fig. \ref{fig:xkcd}).
+The rate at which individuals stray, $m$, has been subject to a growing amount of both theoretical and empirical research \cite{H:2013fs,Keefer:2014gg,Bett:2017ha} and may be linked to errors made at an individual-level that are themselves diminished by migrating in groups and pooling individual choices \cite{Berdahl:2015kv,Berdahl:2016dx}.
+Regardless of the mechanism's governing straying, the effect that it has on the dynamics of individual populations and the metapopulation as a whole is a topic of considerable interest that has tangible conservation implications \cite{Brenner:2012gl,Johnson:2012fe,Fullerton:2011ii}.
+Whether, and to what extent, the ecological consequences of straying depend on the evolutionary dynamics that emerge from populations distributed across a selection mosaic is unclear.
+How the assumed negative evolutionary effects of straying and subsequent gene flow is balanced by the positive effects of demographic rescue is the subject of this contribution.
 
 %Here we show: pattern formation, dependence on heritability, large effects of small amounts of straying
 
 \begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
 \centering
 \includegraphics[width=0.4\textwidth]{figs/fig_xkcd.png}
 \caption{
@@ -101,45 +114,49 @@ Reprinted under the Creative Commons Attribution-NonCommercial 2.5 License.
 \end{figure}
 
 %Alternative stable state
-Here we investigate a minimal eco-evolutionary model of two populations occupying different sites that are linked by straying, each of which with an associated trait distribution subject to natural selection determined by local conditions.
-An important component of this model is the inclusion of a parameter that defines the difference in local conditions that favor different trait optima, increasing values of which correlates to populations that mix across increasingly heterogeneous environments.
-Although our proposed model is most appropriate for modeling the dynamics of salmon populations, the framework is general and the conclusions are likely relevant to a diverse range of organisms where locally adapted populations are linked by migration.
+Here we ask the overarching question of how collective behavior mediated dispersal and gene flow interact to influence the persistence of locally adapted populations and persistence of those populations.
+To address this question we construct a minimal eco-evolutionary model of two populations occupying different sites that are linked by straying individuals, each of which with an associated trait distribution subject to natural selection determined by local conditions.
+An important and relatively novel component of this model is the inclusion of a parameter that defines the difference in local conditions that favor different trait optima, increasing values of which correlates to populations that mix across increasingly heterogeneous environments \cite[though see ]{Berdahl:2015kv}.
+Although our proposed model is was constructed with the dynamics of salmon populations in mind, the framework is general and the conclusions are likely relevant to a diverse range of migratory organisms where locally adapted populations are linked by dispersal.
 We first show that specific rates of straying and trait heritability can have large effects on the qualitative dynamics of populations over time, in many cases giving rise to alternative steady states where one site is pushed towards very low biomass.
-The emergence of alternative steady states results in a nonlinear response of the portfolio effect, suggesting that metapopulation persistence can be quite sensitive to the combined influences of straying and selective mosaics.
+The emergence of alternative steady states results in a nonlinear response of the portfolio effect, suggesting that metapopulation persistence can be quite sensitive to the combined influences of  collective straying across a selective landscape.
 
 %Habitat heterogeneity
 A second important finding of our minimal model reveals that systems with greater habitat heterogeneity (measured by an increased difference in the trait values that are optimal between sites) host an intermediate range of straying rates where the portfolio effect increases to a local maximum, signaling that under certain conditions moderate amounts of straying between populations can increase the likelihood of persistence despite the deleterious evolutionary effects overall.
-However, if we suppose that the rate of straying between two sites is correlated with distance, and that the difference in trait optima increases with distance as would be the case if the optima were associated with alternative temperature regimes (especially if sites are distributed latitudinally rather than longitudinally), even a very small amount of straying can drastically reduce the portfolio effect.
-Importantly, the qualitative nature of our results do not depend on whether the stray rate is density dependent or constant.
+However, if we suppose that the rate of straying between two sites is correlated with distance (as indicated by empirical evidence), and that the difference in trait optima increases with distance as would be the case if the optima were associated with alternative temperature regimes (especially if sites are distributed latitudinally rather than longitudinally), even a very small amount of straying can drastically reduce the portfolio effect.
+Importantly, the qualitative nature of our results do not depend on whether the stray rate is density dependent or constant, suggesting a limited role of collective dispersal on the dynamics considered herein.
 
 %Concluding paragraph of the intro
 
 
 
 
-\section*{Model Description}
+\section{Model Description}
 
-Here we consider two populations $N_1$ and $N_2$ that are separated in space, each with trait values $x_1$ and $x_2$ determining recruitment rates.
+Here we consider two populations $N_1$ and $N_2$ that are separated in space in distinct habitats, each with trait values $x_1$ and $x_2$ determining recruitment rates.
 We assume that there is an optimum trait value $\theta_1$ and $\theta_2$ associated with each habitat, where recruitment is maximized if the trait value of the local population $x = \theta$.
 Moreover, we assume that $x_{1,2}$ are normally distributed with means $\mu_1$ and $\mu_2$ and have a shared standard deviation $\sigma$.
 As such, the recruitment rate for both populations is determined by the mean trait value of the local population, such that $r_1 = R_1[\mu_1(t)|\theta_1]$.
-Trait means for each population are subject to selection, the strength of which depends on the difference between the population mean and the local trait optimum at a given point in time.
+Trait means for each population are subject to selection, the strength of which depends on the difference between the population mean and the local trait optimum at a given point in time \cite{simpson1953major,Lande:1976ga}.
 
-The two populations are assumed to reproduce in spatially separate sites that are close enough such that a proportion of the population $m$ can stray into the wrong site, and where mortality occurs before individuals return to spawn.
+The two populations are assumed to reproduce in spatially separate sites that are close enough such that a proportion of the population $m$ can stray into the other site, and where mortality occurs before individuals return to reproduce.
 If there is no straying between these populations (such that they are independent), then the mean trait evolves towards the optimal value such that $x_1 \rightarrow \theta_1$, and the recruitment rate for that population will be maximized.
 If there is straying between populations at rate $m$, then the traits in each respective location will be pulled away from the optimum, and recruitment rates will be lowered.
 As $m \rightarrow 0.5$, the populations are perfectly mixed, acting as a single population.
 
 \begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
 \centering
 \includegraphics[width=0.4\textwidth]{figs/fig_Density.pdf}
 \caption{
 A) The steady state densities of $N_1$ and $N_2$ as a function of a constant stray rate $m$.
-B) The steady state trait values measured as $theta_i - x_i$, as a function of a constant stray rate $m$. 
+B) The steady state trait values measured as $\theta_i - x_i$, as a function of a constant stray rate $m$. 
 } \label{fig:traj}
 \end{figure}
 
-We use the discrete Ricker population dynamic framework described by Shelton and Mangel \cite{} as the basis for our two-site model, with the added effect of the local population $N_i$ mixing with a set proportion $m$ of a remote population $N_j$ that is straying into it.
+We use the discrete Ricker population dynamic framework described by Shelton and Mangel \cite{Shelton:2011eq} as the basis for our two-site model, with the added effect of the local population $N_i$ mixing with a set proportion $m$ of a remote population $N_j$ that is straying into it.
 We first assume that the proportion ${\rm e}^{-Z}$ of both populations survive, and that the aggregated mix of the populations (local individuals in addition to the straying individuals) are subject to the same compensatory effects, determined by the parameter $\beta$.
 For a local site $i\in(1,2)$ that collects straying individuals from a remote site $j\in(1,2)$, if $N_i$ is the local site and $N_j$ is the remote site, the difference equation that determine changes in population size is
 
@@ -162,11 +179,14 @@ The combined recruitment of local individuals $(1-m)N_i(t)$ and incoming strays 
   \label{eq:R}
 \end{align}
 
-\noindent As stated previously, it is the mismatch between the local trait mean $\mu_i(t)$ and the local optimum $\theta_i$ that determines the recruitment rate for the population.
+\noindent Again, it is the mismatch between the local trait mean $\mu_i(t)$ and the local optimum $\theta_i$ that determines the recruitment rate for the population.
 The parameter $\tau$ controls the sensitivity of recruitment to changes in the mean trait value away from the optimum, which we set as $\tau=1$ here and throughout.
 % The compensatory effects are then determined by the exponential, following the Ricker stock-recruitment relationship.
 
 \begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
 \centering
 \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm.pdf}
 \caption{
@@ -184,7 +204,7 @@ Second, we assume that changes in trait variance through time are minimal, such 
 
 
 
-An increasing flow of incoming strays is thus expected to pull the mean trait value of the local population away from its optimum, which will decrease its rate of recruitment.
+An increasing flow of incoming strays is generally expected to pull the mean trait value of the local population away from its optimum over time, which will decrease its rate of recruitment.
 The mean trait value thus changes through time according to the difference equation
 
 \begin{align}
@@ -203,7 +223,7 @@ The partial derivative in the Eq. \ref{eq:mu} determines how the mean trait chan
 %Density dependent m
 We have so far assumed that the proportion of strays leaving and entering a population is constant, however there is good evidence that at least in some species the stray rate is density dependent.
 Specifically, the rate at which individuals stray has been linked directly to a collective decision-making phenomenon, where greater numbers of individuals tends to decrease the rate at which individuals stray, thus reducing the overall proportion of a population that strays.
-According to REF, given the probability that an individual strays $m_0$, the proportion of the local population $N_i(t)$ that strays is
+According to \citeauthor{Berdahl:2016dx}, given the probability that an individual strays $m_0$, the proportion of the local population $N_i(t)$ that strays is
 
 \begin{equation}
   m(t) = m_0\left(1- \frac{N_i(t)}{C+N_i(t)}\right),
@@ -217,15 +237,15 @@ Thus, for realistic population densities, $m(t) < m_0$.
 
 
 %Linking m/m0 and thetadiff
-Stray rate is intrinsically linked to the distance between the local and straying population.
+The straying rate is intrinsically linked to the distance between the donor and recipient population.
 The greater the distance between two populations, the lower the expected rate of straying (REF).
-We can account for this interdependence in our model by assuming that $m$ (if the stray rate is constant) or $m_0$ (if the stray rate is density dependent) is a function of $theta_i-theta_j$, which can be assumed to be large if the remote site $j$ is a great distance away from the local site $i$.
-If sites $i$ and $j$ are very close, the stray rate is assumed to maximized at $m,m_0 = 0.5$.
+We can account for this interdependence in our model by assuming that $m$ (if the stray rate is constant) or $m_0$ (if the stray rate is density dependent) is a function of $\theta_i-\theta_j$, which can be assumed to be large if the remote site $j$ is a great distance away from the local site $i$.
+If sites $i$ and $j$ are very close, the stray rate is assumed to maximized at $m,m_0 = 0.5$, assuming both sites are equally attractive to the respective populations.
 Thus, we can integrate these two variables by setting $m,m_0 = (2 + \epsilon (\theta_i-\theta_j))^{-1}$, where $\epsilon$ sets the sensitivity of a declining $m$ to increasing distance (greater values of $\theta_i-\theta_j$).
 
 
 
-\section*{Results}
+\section{Results}
 
 %The effects of trait evolution :: trait heritability, trait variance, and habitat heterogeneity
 %% Bifurcation to alternative stable state occurs at higher stray rates with increased trait heritability
@@ -236,22 +256,15 @@ Thus, we can integrate these two variables by setting $m,m_0 = (2 + \epsilon (\t
 
 
 %Alternative stable states
-{\bf Nonlinear effects of straying on the Portfolio Effect} Straying generally lowers steady state densities for both local and remote populations. %, regardless of trait heritability and variance or habitat heterogeneity
+
+\noindent{\bf (a) Nonlinear effects of straying on the Portfolio Effect} \\
+\noindent Straying generally lowers steady state densities for both recipient and donor populations by \emph{i}) losing locally-adapted individuals due to straying and \emph{ii}) introducing maladapted individuals from the donor population. %, regardless of trait heritability and variance or habitat heterogeneity
 The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state among both sites becomes two alternative steady states: one at high biomass density, and one at low biomass density (Fig. \ref{fig:traj}A,B).
 This bifurcation occurs at lower values of the stray rate $m$ for low trait heritability $h^2$ (Fig \ref{fig:PE}A), indicating that greater coupling between ecological and evolutionary dynamics in addition to greater rates of straying results in alternative stable states among the two sites.
 
 Trait heritability also has a large impact on the sensitivity of both the total steady state density ($N^*_T=N^*_1+N^*_2$) as well as the difference between steady state densities ($\Delta N=\sqrt{(N^*_1-N^*_2)^2}$).
 Greater trait heritability results in a larger decline in $N_T^*$ for increasing stray rates $m$, though results in only moderate changes to $\Delta N$ (Figs. \ref{fig:PE}A,B).
 Conversely, if the trait is less heritable, an increase in the stray rate has little impact on the total biomass density and contrastingly large effects on the difference in population densities between sites (Fig. \ref{fig:PE}A,B).
-
-\begin{figure}
-\centering
-\includegraphics[width=0.4\textwidth]{figs/fig_thetaPE.pdf}
-\caption{
-Median portfolio effect as a function of stray rate $m$ for lower trait heritability ($h^2 < 0.5$).
-Vertical dashed lines represent the fold bifurcation, which occurs at lower stray rates with increased habitat heterogeneity $\Delta \theta$.
-} \label{fig:thetaPE}
-\end{figure}
 
 
 
@@ -263,66 +276,104 @@ Together these changes in steady state population densities in terms of $N_T$ an
 \end{equation}
 
 \noindent We define $\overline{{\rm CV}}_{i,j}$ as the average coefficient of variation across the local population $i$ and the remote population $j$ at steady state densities, and ${\rm CV}_T$ as the coefficient of variation of the total or aggregated population at steady state densities.
-The minimum portfolio effect is by definition ${\rm PE_min}=1$, whereas portfolio effects greater than unity corresponds to a greater potential for ecological rescue among populations, thus buffering the system as a whole against extinction. 
+The minimum portfolio effect is by definition ${\rm PE_{\rm min}}=1$, whereas portfolio effects greater than unity corresponds low synchronization \cite{Loreau:2008ju,Anderson:2014cx,Yeakel:2013vz} and a greater potential for demographic rescue among populations, thus buffering the system as a whole against extinction. 
 
 
 In the region where there is a single steady state among both populations, we find a correspondingly high portfolio effect, primarily due to the elevated mean values of $N_T$.
 As the fold bifurcation is approached with greater rates of straying, the portfolio effect spikes due to a large increase in the standard deviation of both populations.
-This explosion in variance is a well-known phenomenon that occurs near a fold bifurcation and lies at the heart of early warning signal theory (REFS).
+This explosion in variance is due to critical slowing down that leads to a change in variance near fold bifurcations, and this marked change in dynamic behavior has been suggested to serve as an early warning signal of an approaching phase transition \cite{Scheffer:2009gg,Anonymous:2013br,Dakos:2014br}.
+The detectibility of such changes in dynamical behavior among salmonids appears to be idosynchratic across species, and the difficulty in measuring critical slowing down may - ironically - be masked by large portfolio effects \cite{Krkosek:2014ch} [this might be more appropriate for the discussion].
 For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}C), where there is a high and low steady state density among the sites, if heritability is low the portfolio effect becomes minimized, is elevated and then declines as $m\rightarrow 0.5$.
 If heritability is high, the portfolio effect declines steadily after the explosion in variance associated with the development of alternative stable states.
 % As the stray rate increases to the right of the bifurcation, increased trait heritability results in a steady decrease in the portfolio effect.
 % If trait heritability is low, the portfolio effect is nonlinear over increasing stray rates: after the spike associated with the fold bifurcation, {\rm PE} first increases at intermediate stray rates and then declines as $m\rightarrow0.5$. 
 
-%Lowering Phenotypic diversity with increasing straying rate
-As expected, increasing rates of straying lowers phenotypic diversity because both local and remote populations become homogenized.
-The sensitivity of this phenotypic homogenization to straying rate is increased with lower heritability because the selective forces acting against trait means far from local optima is lessened for lower $h^2$.
-[A DISCRETE JUMP TO LOW DIVERSITY FOR LOW HERITABILTIY](Fig. \ref{fig:traitdiff}).
-
 \begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
 \centering
-\includegraphics[width=0.4\textwidth]{figs/fig_traitdiff.pdf}
+\includegraphics[width=0.4\textwidth]{figs/fig_thetaPEmvm.pdf}
 \caption{
-} \label{fig:traitdiff}
+(a) Median portfolio effect as a function of stray rate $m$ for lower trait heritability ($h^2 < 0.5$).
+Vertical dashed lines represent the fold bifurcation, which occurs at lower stray rates with increased habitat heterogeneity $\Delta \theta$.
+(b) Within the box shown in (a), PE as a function of the constant straying rate is shown as the solid line. Paired open circles show PE as a function of a density dependent straying rate. Straying rates are paired because the recipient and donor populations exist in alternative steady states. The lower straying rate of a pair is for the larger population; the higher straying rate is for the smaller population.
+The different steady state regimes that give rise to the range of straying rates were obtained by varying the individual straying probability $m_0$ (where $m_0$ and $m^*$ are linearly related).
+} \label{fig:thetaPE}
 \end{figure}
+
+
+
+%Lowering Phenotypic diversity with increasing straying rate
+As expected, an increased straying rate lowers phenotypic diversity ($\Delta \mu = |\mu_i(t)-\mu_j(t)|$, evaluated at the steady state) because both local and remote populations become homogenized.
+The sensitivity of this phenotypic homogenization to straying is increased with lower heritability because the selective forces acting against trait means far from the local optima is lessened for lower $h^2$.
+Less intuitively, we observe a discrete jump towards low phenotypic diversity at low-moderate ($0.05 \leq m < 0.2$) straying rates, which occurs as the consequence of crossing the fold bifurcation (Fig. \ref{fig:traitdiff}).
+\\
 
 % Density dependent m
 %% Because m[t] @ steady state 0<m[t]<m0, we observe the same dynamics for higher m0 as we do for lower constant m.
 %% Higher rates of straying are tolerable (there is a not a decline in PE for very high m0 as there is for constant m)
-If we assume that the rate of straying is density dependent, the probability of straying at the individual level $m_0$ determines the rate of straying within the population, such that $m(t)$ becomes lower as $N(t)$ increases.
-At steady state values, $m(t)$ also becomes constant, though by definition is always less than $m_0$, such that $0 < m(t) < m_0$.
-We find that this dynamic has negligible impact on the qualitative results on our system (Fig. \ref{fig:diffddm}, Appendix Fig. \ref{fig:ddm}).
-Quantitatively, density dependent straying serves to lessen the effect of straying on $N_T$, $\Delta N$ and PE, given that the effective stray rate is effectively lessened by collective navigation.
-%Because density dependent straying does not alter that qualitative results of our model, we limit additional analyses 
 
+\noindent{\bf (b) The effects of density dependent straying}\\
+\noindent If we assume that the rate of straying is density dependent, the probability of straying at the individual level $m_0$ determines the rate of straying within the population, such that $m(t)$ becomes lower as $N(t)$ increases (Eq. \ref{eq:ddm}).
+At the steady state $m(t)=m^*$ is also constant, though by definition, it is always less than $m_0$ such that $0 < m^* < m_0$.
+Because our analyses concern steady state conditions, the inclusion of density-dependent straying does not have a large impact on the qualitative nature of our findings (Appendix Fig. \ref{fig:ddm}).
 
- 
+The assumption that straying is density dependent alters the strength of the portfolio effect for a given $m^*$.
+As shown in Figure \ref{fig:thetaPE}(b), in the alternative stable state regime, because the recipient and donor population exist at different steady state densities, they have different rates of straying such that a given value of the portfolio effect is now associated with a pair of straying rates $(m_i^*,m_j^*)$.
+A range of $(m_i^*,m_j^*)$ values are obtained by varying $m_0$, which is positively and linearly related to $(m_i^*,m_j^*)$.
+Importantly, we show that metapopulations settling at relatively low rates of straying have lower-than-expected portfolio effects, whereas metapopulations settling at relatively high rates of straying have higher-than expected portfolio effects.
+This suggests that there is a strong tradeoff in the role of density dependent straying on the persistence of metapopulations: as the individual probability of straying is lowered, the straying rates of both recipient and donor populations are similarly lowered, however this diminishes the system's ability to buffer itself against extinction as measured by the portfolio effect.
+Conversely, as the probability that an individual strays increases, so does rate of straying for both recipient and donor populations, and this serves to elevate the portfolio effect compared to a constant $m$.
+This effect remains but is somewhat diminished as habitats become increasingly heterogeneous.
+\\
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.4\textwidth]{figs/fig_traitdiff.pdf}
+\caption{
+Phenotypic diversity ($\Delta \mu$) evaluated at the steady state as a function of straying rate $m$ and trait heritability $h^2$. The descrete jump occurs as the system crosses the fold bifurcation; lower phenoytic diversity emerges with higher straying rates and in the alternative steady state regime. 
+} \label{fig:traitdiff}
+\end{figure}
+
  
 %% Increased habitat heterogeneity
   %%% 1) exaggerates lowering of mean biomass with increasing stray rates
   %%% 2) increases the likelihood of alternative stable sites & increases the differences in alternative stable state values with increasing stray rates
   %%% 3) decreases the PE (!!)
-{\bf The role of habitat heterogeneity} Increased differences in optimal trait values between sites ($\Delta\theta = \left|\theta_i - \theta_j\right|$) corresponds to greater between-site differences in conditions that favor alternative physiologies, interpreted here as increased habitat heterogeneity.
+
+\noindent{\bf (c) The role of habitat heterogeneity on the portfolio effect}\\ 
+\noindent Increased differences in optimal trait values between sites ($\Delta\theta = \left|\theta_i - \theta_j\right|$) corresponds to greater between-site differences in conditions that favor alternative traits, interpreted here as increased habitat heterogeneity.
 At one end of the spectrum, if both populations are isolated, natural selection would direct the mean trait values of both populations towards their respective optima, such that $\mu_i(t) \rightarrow \theta_i$ as $t\rightarrow\infty$.
 %difference in optimal trait values between the local and remote populations, which we call .
 However when straying exists, we find that increasingly divergent trait optima generally lowers $N_T$ and exaggerates $\Delta N$, such that one population has the majority of the biomass (Appendix Fig. \ref{fig:thetadiff1},\ref{thetadiff2}).
+Which population becomes large or small depends on the initial conditions, which are randomized. 
 The impact of habitat heterogeneity on the portfolio effect is more complex, serving to emphasize the nonlinear relationship between the stray rate and the PE, regardless of heritability.
 %The rate of straying that gives rise to a large PE at the fold bifurcation is conditioned on the difference in optimal trait values between the local and remote populations, which we call $\Delta\theta = \sqrt{(\theta_i - \theta_j)^2}$.
 The extent of the nonlinearity between $m$ and the PE depends very much on $\Delta\theta$, particularly when trait heritability is low ($h^2<0.5$).
-As habitat heterogeneity increases, the fold bifurcation and associated spike in PE generally occurs for lower values of stray rates, meaning that a lower amount of straying can give rise to alternative stable states (Fig. \ref{fig:thetaPE}).
+As habitat heterogeneity increases, the fold bifurcation and associated spike in PE generally occurs for lower values of straying rate $m$, meaning that a lower amount of straying can give rise to alternative stable states (Fig. \ref{fig:thetaPE}).
 In the region where alternative stable states are feasible (Fig. \ref{fig:thetaPE}), additional straying increases the portfolio effect to a local maximum before its negative effects serve to lower PE as $m\rightarrow 0.5$, and this effect is exaggerated with increasing habitat heterogeneity.
+\\
 
-
-
-\begin{figure}
-\centering
-\includegraphics[width=0.4\textwidth]{figs/fig_diffddm.pdf}
-\caption{
-Difference in PE for simulations with a constant stray rate $m$ and PE for simulations with a density dependent stray rate $m(t)$. The differences are minimal (mean difference in PE = -0.05) and result in no discernible qualitative difference in dynamics, though density dependent stray rates generally amplify PE.
-} \label{fig:diffddm}
-\end{figure}
+% 
+% \begin{figure}
+%   \captionsetup{justification=raggedright,
+% singlelinecheck=false
+% }
+% \centering
+% \includegraphics[width=0.4\textwidth]{figs/fig_diffddm.pdf}
+% \caption{
+% Difference in PE for simulations with a constant stray rate $m$ and PE for simulations with a density dependent stray rate $m(t)$. The differences are minimal (mean difference in PE = -0.05) and result in no discernible qualitative difference in dynamics, though density dependent stray rates generally amplify PE.
+% } \label{fig:diffddm}
+% \end{figure}
 
 \begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
   \centering
   \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_mtheta.pdf}
   \caption{
@@ -344,30 +395,40 @@ Difference in PE for simulations with a constant stray rate $m$ and PE for simul
 
 
 
-{\bf Linking stray rate and habitat heterogeneity} We have so far treated $\Delta\theta$ and $m$ as independent parameters, however we may also assume that if environmental heterogeneity increases with distance, the rate of straying may be expected to decline given that individuals are less likely to stray into distant habitats. %-- in particular North-South difference if trait optimality is largely temperature-dependent --
+\noindent{\bf (d) Linking stray rate and habitat heterogeneity}\\ 
+\noindent We have so far treated $\Delta\theta$ and $m$ as independent parameters, however we may also assume that if environmental heterogeneity increases with distance, the rate of straying may be expected to decline given that individuals are less likely to stray into distant habitats. %-- in particular North-South difference if trait optimality is largely temperature-dependent --
 If we incorporate this interdependence of $m$ and $\Delta\theta$, low rates of straying would correspond to mixing dissimilar (distant) populations, and high rates of straying would correspond to mixing similar (nearby) populations.
 
-Here we find that alternative stable states now appear for low stray rates and over any value of trait heritability $h^2<1$.
-As stray rates increase, a single stable state emerges with a correspondingly high $N_T$.
-As before, there is a spike in the PE at the fold bifurcation separating the alternative stable state regime from the single stable state regime, and a sharp decline in the PE as stray rates become very low.
-This is in accordance with intuition as increasing stray rates mean that two very similar populations are mixing, resulting in little negative effect of trait dissimilarity.
+Here we find that alternative stable states now appear for low straying rates ($m<0.15$) and over any value of trait heritability $h^2<1$.
+As the straying rate increases, a single stable state emerges with a correspondingly high $N_T$.
+As before, there is a spike in the PE at the fold bifurcation separating the alternative stable state regime from the single stable state regime, and a sharp decline in the PE as the straying rate becomes very low.
+This is in accordance with intuition as increasing straying rates mean that two very similar populations are mixing, such that the rate of recruitment is less influenced by gene flow.
 
 That alternative stable states appear and that PE becomes severely depressed for very low rates of straying is surprising: this means that even a small amount of mixing of populations from distant or dissimilar populations can qualitatively alter the dynamics of the metapopulation, regardless of trait heritability.
 %(for the discussion: an example of this situation may be the salmon populations during the last glacial maximum, where any mixing would be from geographically distant populations)
 
 
-\section*{Discussion}
+\section{Discussion}
 
-We have shown that the natural selection of mixed populations adapted to different environments can result in large effects on population dynamics and the degree to which the metapopulation is buffered against extinction, which we quantify as the portfolio effect.
-The inclusion of individuals with trait values far from the local optimum generally lowers the combined steady state biomass $N_T$ and increases the likelihood that the system gives way to alternative steady states, pushing one of the populations close to extinction.
-Although the emergence of alternative steady states can result in very large portfolio effects near the bifurcation, alternative steady state regimes tend to result in very low portfolio effects, indicating that the metapopulation is less likely to persist.
+We have shown that the natural selection of mixed populations adapted to different environments can result in large effects on population dynamics and the degree to which the metapopulation is buffered against extinction, quantified here as the portfolio effect.
+The immigration of dispersing strays with trait values far from the local optimum generally lowers the combined steady state biomass $N_T$ and increases the likelihood that the system gives way to alternative steady states, pushing one of the populations close to extinction.
+Although the emergence of alternative steady states can result in very large portfolio effects near the bifurcation, alternative steady state regimes tend to result in very low portfolio effects, indicating that the metapopulation is less likely to persist in the long run.
 
 The degree to which the PE is lowered depends to a large extent on \emph{i}) trait heritability $h^2$ and \emph{ii}) habitat heterogeneity $\Delta \theta$.
-Increased heritability means that the effects of natural selection on the metapopulation are larger, increasing the coupling between evolutionary and ecological dynamics. 
-Our minimal model of straying between two populations shows that greater $h^2$ buffers the metapopulation against the emergence of alternative stable states for lower stray rates, but magnifies the negative effects of alternative stable states (captured by increased $\Delta N$ and decreased PE; Fig. \ref{fig:PE}B,C) once this regime is encountered at higher stray rates.
-Although the rate of straying has been shown to be density dependent (REFS), the qualitative results of our model are relatively insensitive to this dynamic and we limit discussion to the simplified case of a constant stray rate $m$ with the understanding that our findings also apply to the case density dependent stray rates $m(t)$.
+Increased heritability results in greater response to natural selection on the metapopulation, increasing the coupling between evolutionary and ecological dynamics. 
+Our minimal model of straying between two populations shows that greater $h^2$ buffers the metapopulation against the emergence of alternative stable states, but magnifies the negative effects of alternative stable states (captured by increased $\Delta N$ and decreased PE; Fig. \ref{fig:PE}B,C) once this regime is encountered at higher straying rates.
+We note that although the rate of straying has been shown to be density dependent (REFS), the qualitative results of our model are relatively insensitive to this dynamic (Fig. \ref{fig:diffddm}) and we limit discussion to the simplified case of a constant stray rate $m$ with the understanding that our findings also apply to the case density dependent stray rates $m(t)$.
+
+Trait heritability determines the coupling between ecological and evolutionary dynamics, effectively setting the strength of natural selection.
+Among salmon species, recruitment among local populations is highly sensitive to local climatic conditions, with temperature thought to play a central role (REFS).
+Populations distributed across a temperature gradient are assumed to be locally adapted to different temperature regimes, such that migration between them should take into account differential environmental effects on the recruitment of mixed populations.
+\citeauthor{Carlson:2008hl} showed heritability 0.1-0.3.
+Our results show that trait heritability has large effects on both metapopulation persistance as well as phenotypic diversity, particularly in the regime of low-to-moderate straying rates.
+
+
 
 %Our results in the context of Turing bifurcation
+[JP - could use some help here]
 The onset of alternative stable states in a spatial context describes the emergence of spatial pattern formation (REFS), which is more generally defined as a Turing instability (REFS).
 The mathematical conditions that lead to Turing instabilities are well-known in both continuous (REFS) and discrete spatial contexts (REFS)
 
@@ -375,12 +436,17 @@ The mathematical conditions that lead to Turing instabilities are well-known in 
 %North-South vs East-West
 
 
-\clearpage
+\bibliography{aa_kevin}
+
+%\newpage
 \setcounter{figure}{0}
 \section*{Appendix}
 
 
-\begin{figure*}[h!]
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
 \centering
 \begin{subfigure}[t]{0.55\textwidth}
 \centering
@@ -397,7 +463,10 @@ The mathematical conditions that lead to Turing instabilities are well-known in 
 \end{figure*}
 
 
-\begin{figure*}[h!]
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
 \centering
 \includegraphics[width=0.8\textwidth]{figs/fig_MDPE_hm_ddm.pdf}
 \caption{
