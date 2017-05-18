@@ -12,7 +12,8 @@ function KevinEvolveExtinct(
   m,
   perror,
   extpop,
-  t_ext
+  t_ext,
+  refuge
   )
   
   
@@ -44,20 +45,25 @@ function KevinEvolveExtinct(
     
     #Initiate extinction
     if t==t_ext
-      #n1 is larger: compares the mean n1 to mean n2 (over some value range)
-      vrange = 10;
-      if mean(n1[maximum([1,t-vrange]):t]) > mean(n2[maximum([1,t-vrange]):t])
-        if extpop == "large"
-          n1[t] = 0.0;
-        else
-          n2[t] = 0.0;
-        end
-      #n1 is smaller  
+      if extpop == "both"
+        n1[t] = n1[t-1]*refuge;
+        n2[t] = n2[t-1]*refuge;
       else
-        if extpop == "large"
-          n2[t] = 0.0;
+        #n1 is larger: compares the mean n1 to mean n2 (over some value range)
+        vrange = 10;
+        if mean(n1[maximum([1,t-vrange]):t]) > mean(n2[maximum([1,t-vrange]):t])
+          if extpop == "large"
+            n1[t] = 0.0;
+          else
+            n2[t] = 0.0;
+          end
+        #n1 is smaller  
         else
-          n1[t] = 0.0;
+          if extpop == "large"
+            n2[t] = 0.0;
+          else
+            n1[t] = 0.0;
+          end
         end
       end
     end
