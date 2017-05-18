@@ -277,20 +277,20 @@ dev.off()
 @everywhere using HDF5
 @everywhere using JLD
 
-@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_ddm.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
 
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.45);
 hvec = collect(0.0:0.01:1.0);
 
 
-n1mean=SharedArray(Float64,length(hvec),length(mvec));
-n2mean=SharedArray(Float64,length(hvec),length(mvec));
-x1mean=SharedArray(Float64,length(hvec),length(mvec));
-x2mean=SharedArray(Float64,length(hvec),length(mvec));
-pe=SharedArray(Float64,length(hvec),length(mvec));
+n1mean=SharedArray(Float64,length(hvec),length(indmvec));
+n2mean=SharedArray(Float64,length(hvec),length(indmvec));
+x1mean=SharedArray(Float64,length(hvec),length(indmvec));
+x2mean=SharedArray(Float64,length(hvec),length(indmvec));
+pe=SharedArray(Float64,length(hvec),length(indmvec));
 
 tmax=10000;
 z=0.5;
@@ -360,17 +360,17 @@ library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
-image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
-image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
-image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
+image(x=$indmvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+image(x=$indmvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
 dev.off()
 """
 
 #Average pe over m
-medpe = Array{Float64}(length(mvec));
+medpe = Array{Float64}(length(indmvec));
 pena = pe;
 pena[find(x->x==true,isnan(pe))] = 1;
-for i=1:length(mvec)
+for i=1:length(indmvec)
   medpe[i] = median(pena[:,i])
 end
 
@@ -379,12 +379,12 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
 pdf($namespace,height=4,width=5)
-plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu)),xlab='m')
-lines($mvec,$(traitdiff[51,:]),type='l')
-lines($mvec,$(traitdiff[76,:]),type='l')
-lines($mvec,$(traitdiff[101,:]),type='l')
+plot($indmvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu)),xlab='m0')
+lines($indmvec,$(traitdiff[51,:]),type='l')
+lines($indmvec,$(traitdiff[76,:]),type='l')
+lines($indmvec,$(traitdiff[101,:]),type='l')
 text(rep(0.49,4),$(traitdiff[[26 51 76 101],451]),c('0.25','0.50','0.75','1.00'),cex=0.8)
-text(0.48,2.1,expression(paste(h^2)),cex=0.8)
+text(0.48,2.5,expression(paste(h^2)),cex=0.8)
 dev.off()
 """
 
@@ -403,15 +403,15 @@ dev.off()
 
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.45);
 hvec = collect(0.0:0.01:1.0);
 
 
-n1mean=SharedArray(Float64,length(hvec),length(mvec));
-n2mean=SharedArray(Float64,length(hvec),length(mvec));
-x1mean=SharedArray(Float64,length(hvec),length(mvec));
-x2mean=SharedArray(Float64,length(hvec),length(mvec));
-pe=SharedArray(Float64,length(hvec),length(mvec));
+n1mean=SharedArray(Float64,length(hvec),length(indmvec));
+n2mean=SharedArray(Float64,length(hvec),length(indmvec));
+x1mean=SharedArray(Float64,length(hvec),length(indmvec));
+x2mean=SharedArray(Float64,length(hvec),length(indmvec));
+pe=SharedArray(Float64,length(hvec),length(indmvec));
 
 
 tmax=100000;
@@ -467,7 +467,7 @@ end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data2_sig_h_m_theta8_ddm.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data2_sig_h_m_theta8_ddm.jld"));
 #This loads the dictionary
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
@@ -483,17 +483,17 @@ library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
-image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
-image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
-image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
+image(x=$indmvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+image(x=$indmvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
 dev.off()
 """
 
 #Average pe over m
-medpe = Array{Float64}(length(mvec));
+medpe = Array{Float64}(length(indmvec));
 pena = pe;
 pena[find(x->x==true,isnan(pe))] = 1;
-for i=1:length(mvec)
+for i=1:length(indmvec)
   medpe[i] = median(pena[:,i])
 end
 
@@ -502,7 +502,7 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
 pdf($namespace,height=4,width=5)
-plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu)),xlab='m')
+plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu)),xlab='m0')
 lines($mvec,$(traitdiff[51,:]),type='l')
 lines($mvec,$(traitdiff[76,:]),type='l')
 lines($mvec,$(traitdiff[101,:]),type='l')
@@ -515,15 +515,15 @@ dev.off()
 #THETADIFF = 3
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.45);
 hvec = collect(0.0:0.01:1.0);
 
 
-n1mean=SharedArray(Float64,length(hvec),length(mvec));
-n2mean=SharedArray(Float64,length(hvec),length(mvec));
-x1mean=SharedArray(Float64,length(hvec),length(mvec));
-x2mean=SharedArray(Float64,length(hvec),length(mvec));
-pe=SharedArray(Float64,length(hvec),length(mvec));
+n1mean=SharedArray(Float64,length(hvec),length(indmvec));
+n2mean=SharedArray(Float64,length(hvec),length(indmvec));
+x1mean=SharedArray(Float64,length(hvec),length(indmvec));
+x2mean=SharedArray(Float64,length(hvec),length(indmvec));
+pe=SharedArray(Float64,length(hvec),length(indmvec));
 
 
 tmax=10000;
@@ -595,9 +595,9 @@ library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
-image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
-image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
-image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
+image(x=$indmvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+image(x=$indmvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
 dev.off()
 """
 
@@ -610,7 +610,7 @@ for i=1:length(mvec)
 end
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_traitdiff_theta3_ddm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_traitdiff_theta3_ddm.pdf");
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
 pdf($namespace,height=4,width=5)

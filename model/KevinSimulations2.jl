@@ -596,7 +596,7 @@ for i=1:length(mvec)
 end
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs/fig_traitdiff_theta3.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_traitdiff_theta3.pdf");
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
 pdf($namespace,height=4,width=5)
