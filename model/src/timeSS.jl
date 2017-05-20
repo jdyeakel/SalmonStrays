@@ -3,12 +3,14 @@ function timeSS(n1,n2,tstart)
   #Who went extinct? Calculate time to steady state for this one.
   
   if (n1[tstart] > 0) && (n2[tstart] > 0)
-    n = n1 + n2;
+    n = n1 + n2; # when does the aggregate return to ss?
   else
     if n1[tstart] == 0;
-      n = n1;
+      # n = n1;
+      n = n1 + n2; # when does the aggregate return to ss?
     else
-      n = n2;
+      # n = n2;
+      n = n1 + n2; # when does the aggregate return to ss?
     end
   end
   

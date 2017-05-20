@@ -262,48 +262,57 @@ Thus, we can integrate these two variables by setting $m,m_0 = (2 + \epsilon (\t
 \noindent{\bf (a) Nonlinear effects of straying on the Portfolio Effect} \\
 \noindent Straying generally lowers steady state densities for both recipient and donor populations by \emph{i}) losing locally-adapted individuals due to straying and \emph{ii}) introducing maladapted individuals from the donor population. %, regardless of trait heritability and variance or habitat heterogeneity
 The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state across both sites becomes two alternative steady states: one at high biomass density, and one at low biomass density (Fig. \ref{fig:traj}a,b).
-This bifurcation occurs at lower values of the stray rate $m$ for lower trait heritability $h^2$ (Fig \ref{fig:PE}a,b), indicating that lower coupling between ecological and evolutionary dynamics in addition to greater rates of straying guarantees the existence of alternative stable states.
+This bifurcation occurs at lower values of the stray rate $m$ for lower trait heritability $h^2$ (Fig \ref{fig:PE}a,b), indicating that lower coupling between ecological and evolutionary dynamics in addition to higher rates of straying guarantees the existence of alternative stable states.
 
-Trait heritability has a large impact on the sensitivity of both the total steady state density ($N^*_T=N^*_1+N^*_2$) as well as the difference between steady state densities ($\Delta N=\sqrt{(N^*_1-N^*_2)^2}$).
+Trait heritability has a large impact on the sensitivity of both the aggregate population steady state density ($N^*_T=N^*_1+N^*_2$) as well as the difference between steady state densities ($\Delta N=|N^*_1-N^*_2|$).
 Greater trait heritability results in a larger decline in $N_T^*$ for increasing stray rates $m$, though results in only moderate changes to $\Delta N$ (Figs. \ref{fig:PE}A,B).
-Conversely, if the trait is less heritable, an increase in the stray rate has little impact on the total biomass density and contrastingly large effects on the difference in population densities between sites (Fig. \ref{fig:PE}A,B).
+Conversely, if the trait is less heritable, an increase in the stray rate has little impact on the total biomass density and contrastingly large effects on the difference in population densities between sites (Fig. \ref{fig:PE}a,b).
 
 
 
-Together these changes in steady state population densities in terms of $N_T$ and $\Delta N$ as a function of trait heritability and the rate of straying between populations give rise to highly nonlinear portfolio effects, quantified here as
+Together these changes in steady state population densities in terms of $N_T$ and $\Delta N$ as a function of trait heritability and the rate of straying between populations give rise to highly nonlinear portfolio effects, which we quantify here as
 
 \begin{equation}
-  {\rm PE} = \frac{\overline{{\rm CV}}_{i,j}}{{\rm CV}_T}.
-  \label{eq:pe}
+\langle{\rm PE}\rangle =\frac{1}{X}\sum_{i=1}^{X} \frac{\sqrt{{\rm VAR}(N_i)}}{{\rm E}(N_i)}\cdot \frac{{\rm E}(N_T)}{\sqrt{{\rm VAR}(N_T)}},
+\label{eq:pe}
 \end{equation}
 
-\noindent We define $\overline{{\rm CV}}_{i,j}$ as the average coefficient of variation across the local population $i$ and the remote population $j$ at steady state densities, and ${\rm CV}_T$ as the coefficient of variation of the total or aggregated population at steady state densities.
-The minimum portfolio effect is by definition ${\rm PE_{\rm min}}=1$, whereas portfolio effects greater than unity corresponds low synchronization \cite{Loreau:2008ju,Anderson:2014cx,Yeakel:2013vz} and a greater potential for demographic rescue among populations, thus buffering the system as a whole against extinction. 
+\noindent where in our minimal model the number of populations is $X=2$ and the expectations $\rm E(\cdot)$ and variances $\rm VAR(\cdot)$ are evaluated at the steady state.
+The PE is equivalently the average CV of the subpopulations divided by the CV of the aggregate.
+Accordingly, as the CV of the aggregate decreases relative to that of the subpopulations, the stability of the aggregate increases, and $\langle{\rm PE}\rangle > 1$.
+A similar measure of metapopulation persistence can be evaluated by measuring the synchronization $\phi$ between populations, where 
+\begin{equation}
+\label{eq_sync}
+\phi = \frac{{\rm VAR}(N_T)}{\left(\sum_{i=1}^N\sqrt{{\rm VAR}(N_i)}\right)^2}.
+\end{equation}
+By rearranging and substituting eq. (\ref{eq_sync}) into eq. (\ref{eq_PE}), we can observe that $\langle{\rm PE}\rangle \propto \sqrt{\phi}^{-1}$.
+Thus, the dynamical diversity of an aggregate offers a mirror to the stability conferred by aggregation, where perfect synchrony ($\phi = 1$) reflects the absence of a portfolio effect, or $\langle{\rm PE}\rangle = 1$.
+%Moreover, if and only if $\phi \neq 1$, it is expected that as the diversity of the aggregate increases, so should the portfolio effect, and this central thesis is thought to underlie the stability of populations, species, communities and even financial markets.
+Portfolio effects greater than unity corresponds to less synchronization ($\phi < 1$) \cite{Loreau:2008ju,Anderson:2014cx,Yeakel:2013vz} and thus a greater potential for demographic rescue among populations, thus buffering the system as a whole against extinction. 
 
 
-In the region where there is a single steady state among both populations, we find a correspondingly high portfolio effect, primarily due to the elevated mean values of $N_T$.
-As the fold bifurcation is approached with greater rates of straying, the portfolio effect spikes due to a large increase in the standard deviation of both populations.
-This explosion in variance is due to critical slowing down that leads to a change in variance near fold bifurcations, and this marked change in dynamic behavior has been suggested to serve as an early warning signal of an approaching phase transition \cite{Scheffer:2009gg,Anonymous:2013br,Dakos:2014br}.
-The detectibility of such changes in dynamical behavior among salmonids appears to be idosynchratic across species, and the difficulty in measuring critical slowing down may - ironically - be masked by large portfolio effects \cite{Krkosek:2014ch} [this might be more appropriate for the discussion].
-For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}C), where there is a high and low steady state density among the sites, if heritability is low the portfolio effect becomes minimized, is elevated and then declines as $m\rightarrow 0.5$.
-If heritability is high, the portfolio effect declines steadily after the explosion in variance associated with the development of alternative stable states.
+
+In the region where there is a single steady state among both populations, we find a portfolio effect ca. ${\rm PE}=1.4$, primarily due to the elevated mean values of $N_T$.
+As the fold bifurcation is approached with greater rates of straying, the portfolio effect spikes due to a large increase in ${\rm VAR}(N_{i,j})$.
+This increase in variance is due to critical slowing down that promotes an increase in variance near fold bifurcations, and this marked change in dynamic behavior has been suggested to serve as an early warning signal of an approaching phase transition \cite{Scheffer:2009gg,Anonymous:2013br,Dakos:2014br}.
+The detectability of such changes in dynamical behavior among salmonids appears to be idiosyncratic across species, and the difficulty in measuring critical slowing down may - ironically - be masked by large portfolio effects \cite{Krkosek:2014ch} [this might be more appropriate for the discussion].
+For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}), where there is a high and low steady state density among the sites, the portfolio effect declines steadily after the explosion in variance associated with the development of alternative stable states.
+This decline is more gradual as the straying rate increases if trait heritability is low, and steeper if trait heritability is high.
+%if heritability is low the portfolio effect becomes minimized, is elevated and then declines as $m\rightarrow 0.5$.
 % As the stray rate increases to the right of the bifurcation, increased trait heritability results in a steady decrease in the portfolio effect.
 % If trait heritability is low, the portfolio effect is nonlinear over increasing stray rates: after the spike associated with the fold bifurcation, {\rm PE} first increases at intermediate stray rates and then declines as $m\rightarrow0.5$. 
+
 
 \begin{figure}
   \captionsetup{justification=raggedright,
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.4\textwidth]{figs2/fig_thetaPEmvm.pdf}
+\includegraphics[width=0.5\textwidth]{figs2/fig_traitdiff.pdf}
 \caption{
-(a) Median portfolio effect as a function of stray rate $m$ for lower trait heritability ($h^2 < 0.5$).
-Vertical dashed lines represent the fold bifurcation, which occurs at lower stray rates with increased habitat heterogeneity $\Delta \theta$.
-(b) Within the box shown in (a), PE as a function of the constant straying rate is shown as the solid line. Paired open circles show PE as a function of a density dependent straying rate. Straying rates are paired because the recipient and donor populations exist in alternative steady states. The lower straying rate of a pair is for the larger population; the higher straying rate is for the smaller population.
-The different steady state regimes that give rise to the range of straying rates were obtained by varying the individual straying probability $m_0$ (where $m_0$ and $m^*$ are linearly related).
-} \label{fig:thetaPE}
+Phenotypic diversity ($\Delta \mu$) evaluated at the steady state as a function of straying rate $m$ and trait heritability $h^2$. The descrete jump occurs as the system crosses the fold bifurcation; lower phenoytic diversity emerges with higher straying rates and in the alternative steady state regime. 
+} \label{fig:traitdiff}
 \end{figure}
-
 
 
 %Lowering Phenotypic diversity with increasing straying rate
@@ -335,11 +344,15 @@ This effect remains but is somewhat diminished as habitats become increasingly h
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.4\textwidth]{figs2/fig_traitdiff.pdf}
+\includegraphics[width=0.4\textwidth]{figs2/fig_thetaPEmvm.pdf}
 \caption{
-Phenotypic diversity ($\Delta \mu$) evaluated at the steady state as a function of straying rate $m$ and trait heritability $h^2$. The descrete jump occurs as the system crosses the fold bifurcation; lower phenoytic diversity emerges with higher straying rates and in the alternative steady state regime. 
-} \label{fig:traitdiff}
+(a) Median portfolio effect as a function of stray rate $m$ for lower trait heritability ($h^2 < 0.5$).
+Vertical dashed lines represent the fold bifurcation, which occurs at lower stray rates with increased habitat heterogeneity $\Delta \theta$.
+(b) Within the box shown in (a), PE as a function of the constant straying rate is shown as the solid line. Paired open circles show PE as a function of a density dependent straying rate. Straying rates are paired because the recipient and donor populations exist in alternative steady states. The lower straying rate of a pair is for the larger population; the higher straying rate is for the smaller population.
+The different steady state regimes that give rise to the range of straying rates were obtained by varying the individual straying probability $m_0$ (where $m_0$ and $m^*$ are linearly related).
+} \label{fig:thetaPE}
 \end{figure}
+
 
 
 \noindent{\bf (c) Rates of recovery following catastrophic collapse}\\ 

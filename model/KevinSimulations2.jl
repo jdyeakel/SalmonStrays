@@ -83,7 +83,7 @@ beta=0.001;
 theta1=5.0;
 thetadiff=5;
 tau=1.0;
-h=0.8;
+h=0.5;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -188,8 +188,36 @@ R"""
 plot($mvec,$pe)
 """
 
+R"""
+plot($n1mean[1:500],($n1sd[1:500])^2,log='xy')
+points($n2mean[1:500],($n2sd[1:500])^2)
+"""
 
 
+#Portfolio effect plot
+R"""
+plot($mvec,$n1sd/$n1mean)
+points($mvec,$n2sd/$n2mean,col='blue')
+points($mvec,$aggsd/$aggmean,pch=16)
+"""
+n1trim = n1mean[200:500];
+n1sdtrim = n1sd[200:500];
+lmean = n1trim[find(x->x<3.1,n1sdtrim)];
+lsd = n1sdtrim[find(x->x<3.1,n1sdtrim)];
+umean = n1trim[find(x->x>3.1,n1sdtrim)];
+usd = n1sdtrim[find(x->x>3.1,n1sdtrim)];
+
+R"""
+plot(log($(lmean)),($lsd))
+m1 = lm($lsd ~ log($lmean));
+summary(m1)
+"""
+
+R"""
+plot(log($(umean)),($usd))
+m1 = lm($usd ~ log($umean));
+summary(m1)
+"""
 
 R"""
 par(mfrow=c(2,1))
@@ -198,7 +226,7 @@ points($mvec,$n1mean,col='blue')
 points($mvec,$n2mean)
 """
 R"""
-plot($mvec,$n1sd)
+plot($mvec,$n1sd,ylim=c(0,7))
 points($mvec,$n2sd,col='blue')
 points($mvec,$aggsd,pch=16)
 """
@@ -455,7 +483,7 @@ end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data/data2_sig_h_m_theta8.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8.jld"));
 #This loads the dictionary
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
