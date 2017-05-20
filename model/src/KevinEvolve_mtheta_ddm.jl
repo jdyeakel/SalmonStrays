@@ -84,6 +84,8 @@ function KevinEvolve_mtheta_ddm(
   x2,
   w1,
   w2,
+  m1,
+  m2,
   thetadiff
   )
   
