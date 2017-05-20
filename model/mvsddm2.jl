@@ -239,63 +239,35 @@ library(RColorBrewer)
 pal = brewer.pal(3,'Set1')
 pdf($namespace,height=8,width=5)
 par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
-plot($(ma_mvec[mlist]),$(ma_medpe3[mlist]),col=pal[1],pch=16,ylim=c(1,3),xlab='m',ylab='PE',cex=0.5)
-points($(ma_mvec[mlist]),$(ma_medpe5[mlist]),col=pal[2],pch=16,cex=0.5)
-points($(ma_mvec[mlist]),$(ma_medpe8[mlist]),col=pal[3],pch=16,cex=0.5)
-
-lines(cbind(rep($bif5,2),c($(medpe5[bifsite5-1]),$(medpe5[bifsite5+1]))),col=pal[2],lty=2,lwd=2)
-lines(cbind(rep($bif8,2),c($(medpe8[bifsite8-1]),$(medpe8[bifsite8+1]))),col=pal[3],lty=2,lwd=2)
-
-legend(x=0.42,y=3,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal,cex=0.8, bty="n",title=expression(paste(Delta,theta)))
-xleft<-0.0;xright<-0.45;ybottom<-1;ytop<-3;
-#rect(xleft, ybottom, xright, ytop)
-
-
-###
-#[bifsite5[1]+1:length(ma_medpe5smooth)[1]]
-#[bifsite5[1]+1:length(ma_medpe5smooth)[1]]
-#[bifsite8[1]+1:length(ma_medpe8smooth)[1]]
-#[bifsite8[1]+1:length(ma_medpe8smooth)[1]]
-
-plot($(ma_mvecsmooth),$(ma_medpe5smooth),col=pal[2],type='l',xlim=c(xleft,xright),ylim=c(ybottom,ytop),xlab='m, m*',ylab='PE',lwd=3)
+plot($(ma_mvecsmooth),$(ma_medpe5smooth),col=pal[2],type='l',ylim=c(1,max($([ma_medpe3[mlist] ma_medpe5[mlist] ma_medpe8[mlist]]))),xlab='m',ylab='PE',lwd=3)
 lines($(ma_mvecsmooth),$(ma_medpe8smooth),col=pal[3],lwd=3)
 lines($(ma_mvecsmooth),$(ma_medpe3smooth),col=pal[1],lwd=3)
+legend(x=0.41,y=2.6,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal,cex=0.8, bty="n",title=expression(paste(Delta,theta)))
+xleft<-0.0;xright<-0.45;ybottom<-1;ytop<-3;
 
-#points($(medindm5),$medpe5_ddm,col=paste(pal[2],65,sep=''),pch=1,cex=0.5)
-#points($(medindm5max[mlist]),$(medpe5_ddm[mlist]),col=pal[2],pch=1,lwd=2)
-#points($(medindm5min[mlist]),$(medpe5_ddm[mlist]),col=pal[2],pch=1,lwd=2)
-
-#points($(medindm8),$medpe8_ddm,col=paste(pal[3],65,sep=''),pch=1,cex=0.5)
-#points($(medindm8max[mlist]),$(medpe8_ddm[mlist]),col=pal[3],pch=1,lwd=2)
-#points($(medindm8min[mlist]),$(medpe8_ddm[mlist]),col=pal[3],pch=1,lwd=2)
-
+plot($(ma_mvecsmooth),$(ma_medpe5smooth),col=pal[2],type='l',ylim=c(1,max($([ma_medpe3[mlist] ma_medpe5[mlist] ma_medpe8[mlist]]))),xlab='m, m*',ylab='PE',lwd=3)
+lines($(ma_mvecsmooth),$(ma_medpe8smooth),col=pal[3],lwd=3)
+lines($(ma_mvecsmooth),$(ma_medpe3smooth),col=pal[1],lwd=3)
 #Or moving average
-
-#points($(medindm3),$medpe3_ddm,col=paste(pal[2],65,sep=''),pch=1,cex=0.5)
 points($(ma_medindm3max[mddmlist]),$(ma_medpe3_ddm[mddmlist]),col=pal[1],pch=1,lwd=2)
 points($(ma_medindm3min[mddmlist]),$(ma_medpe3_ddm[mddmlist]),col=pal[1],pch=1,lwd=2)
-
-#points($(medindm5),$medpe5_ddm,col=paste(pal[2],65,sep=''),pch=1,cex=0.5)
 points($(ma_medindm5max[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=1,lwd=2)
 points($(ma_medindm5min[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=1,lwd=2)
-
-#points($(medindm8),$medpe8_ddm,col=paste(pal[3],65,sep=''),pch=1,cex=0.5)
 points($(ma_medindm8max[mddmlist]),$(ma_medpe8_ddm[mddmlist]),col=pal[3],pch=1,lwd=2)
 points($(ma_medindm8min[mddmlist]),$(ma_medpe8_ddm[mddmlist]),col=pal[3],pch=1,lwd=2)
-
 l = length($(ma_medindm5max[mddmlist]))
 for (i in 1:l) {
   segments($(ma_medindm3max[mddmlist])[i],$(ma_medpe3_ddm[mddmlist])[i],$(ma_medindm3min[mddmlist])[i],$(ma_medpe3_ddm[mddmlist])[i],col=paste(pal[2],'60',sep=''))
   segments($(ma_medindm5max[mddmlist])[i],$(ma_medpe5_ddm[mddmlist])[i],$(ma_medindm5min[mddmlist])[i],$(ma_medpe5_ddm[mddmlist])[i],col=paste(pal[2],'60',sep=''))
   segments($(ma_medindm8max[mddmlist])[i],$(ma_medpe8_ddm[mddmlist])[i],$(ma_medindm8min[mddmlist])[i],$(ma_medpe8_ddm[mddmlist])[i],col=paste(pal[3],'60',sep=''))
 }
-
 dev.off()
 """
 
 
 
-
+#lines(cbind(rep($bif5,2),c($(medpe5[bifsite5-1]),$(medpe5[bifsite5+1]))),col=pal[2],lty=2,lwd=2)
+#lines(cbind(rep($bif8,2),c($(medpe8[bifsite8-1]),$(medpe8[bifsite8+1]))),col=pal[3],lty=2,lwd=2)
 
 R"""
 plot($(n1mean_ddm[1:51,:]),$(mstar1[1:51,:]),pch='.')
