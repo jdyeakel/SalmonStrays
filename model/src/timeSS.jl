@@ -24,7 +24,7 @@ function timeSS(n1,n2,tstart)
   t = tstart+vrange;
   
   sscount = 1;
-  while ss == false
+  while ss == false && t < tmax
     #Steady state reached when n[t] is within the sd range of the final ss.
     if abs(diff([n[t],finalmean])[1]) <= finalsd
       sscount += 1;

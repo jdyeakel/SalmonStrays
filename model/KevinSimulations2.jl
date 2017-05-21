@@ -188,6 +188,36 @@ R"""
 plot($mvec,$pe)
 """
 
+#Portfolio effect plot in pieces
+R"""
+par(mfrow=c(2,1))
+plot($mvec,$n1sd/$aggsd)
+points($mvec,$n2sd/$aggsd)
+plot($mvec,$aggmean/mean($n1mean))
+points($mvec,$aggmean/mean($n2mean))
+"""
+
+#Portfolio effect plot
+R"""
+plot($mvec,$n1sd/$n1mean)
+points($mvec,$n2sd/$n2mean,col='blue')
+points($mvec,$aggsd/$aggmean,pch=16)
+"""
+
+
+R"""
+par(mfrow=c(2,1))
+plot($mvec,$aggmean,pch=16)
+points($mvec,$n1mean,col='blue')
+points($mvec,$n2mean)
+plot($mvec,$n1sd,ylim=c(0,7))
+points($mvec,$n2sd,col='blue')
+points($mvec,$aggsd,pch=16)
+"""
+
+
+
+
 R"""
 plot($n1mean[1:500],($n1sd[1:500])^2,log='xy')
 points($n2mean[1:500],($n2sd[1:500])^2)
@@ -636,5 +666,3 @@ text(rep(0.49,4),$(traitdiff[[26 51 76 101],451]),c('0.25','0.50','0.75','1.00')
 text(0.48,2.1,expression(paste(h^2)),cex=0.8)
 dev.off()
 """
-
-

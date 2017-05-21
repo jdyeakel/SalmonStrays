@@ -5,6 +5,7 @@
 
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveExtinct.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/timeSS.jl")
 
 
 #Analysis over m & theta divergence
@@ -82,14 +83,14 @@ end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"rt",rt);
 
 
-# d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m.jld"));
-# #This loads the dictionary
-# n1mean = d["n1mean"];
-# n2mean = d["n2mean"];
-# x1mean = d["x1mean"];
-# x2mean = d["x2mean"];
-# pe = d["pe"];
-# rt = d["rt"];
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m.jld"));
+#This loads the dictionary
+n1mean = d["n1mean"];
+n2mean = d["n2mean"];
+x1mean = d["x1mean"];
+x2mean = d["x2mean"];
+pe = d["pe"];
+rt = d["rt"];
 
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_ExtMDPE_hm.pdf");
@@ -101,11 +102,18 @@ par(mfrow=c(1,4))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
-image(x=$mvec,y=$hvec,z=t($(rt[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='Return time')
+image(x=$mvec,y=$hvec,z=log(t($(rt[:,:]))),zlim=c(log(15),log(100)),col=pal,xlab='m',ylab='h',main='Return time')
 dev.off()
 """
 
-
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/figs2/fig_rtvspe.pdf");
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=4,width=5)
+plot($(pe[1:50,:]),$(rt[1:50,:]),log='y',xlim=c(1,4),ylim=c(18,200),pch='.',xlab='PE',ylab='Return time')
+dev.off()
+"""
 
 #THETADIFF = 8
 
@@ -176,15 +184,15 @@ perror=0.01;
 end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m_theta8.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"rt",rt);
 
-# 
-# d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data2_sig_h_m_theta8.jld"));
-# #This loads the dictionary
-# n1mean = d["n1mean"];
-# n2mean = d["n2mean"];
-# x1mean = d["x1mean"];
-# x2mean = d["x2mean"];
-# pe = d["pe"];
-# rt = d["rt"];
+
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data2_sig_h_m_theta8.jld"));
+#This loads the dictionary
+n1mean = d["n1mean"];
+n2mean = d["n2mean"];
+x1mean = d["x1mean"];
+x2mean = d["x2mean"];
+pe = d["pe"];
+rt = d["rt"];
 
 
 
@@ -193,14 +201,13 @@ R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=12)
-par(mfrow=c(1,3))
+par(mfrow=c(1,4))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
-image(x=$mvec,y=$hvec,z=t($(rt[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='Return time')
+image(x=$mvec,y=$hvec,z=log(t($(rt[:,:]))),zlim=c(log(15),log(100)),col=pal,xlab='m',ylab='h',main='Return time')
 dev.off()
 """
-
 
 #THETADIFF = 3
 
@@ -272,26 +279,26 @@ perror=0.01;
 end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m_theta3.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"rt",rt);
 
-# 
-# d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m_theta3.jld"));
-# #This loads the dictionary
-# n1mean = d["n1mean"];
-# n2mean = d["n2mean"];
-# x1mean = d["x1mean"];
-# x2mean = d["x2mean"];
-# pe = d["pe"];
-# rt = d["rt"];
+
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m_theta3.jld"));
+#This loads the dictionary
+n1mean = d["n1mean"];
+n2mean = d["n2mean"];
+x1mean = d["x1mean"];
+x2mean = d["x2mean"];
+pe = d["pe"];
+rt = d["rt"];
 
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_ExtMDPE_hm_theta3.pdf");
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
-pdf($namespace,height=3,width=8)
-par(mfrow=c(1,3))
+pdf($namespace,height=3,width=12)
+par(mfrow=c(1,4))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
-image(x=$mvec,y=$hvec,z=t($(rt[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='Return time')
+image(x=$mvec,y=$hvec,z=log(t($(rt[:,:]))),zlim=c(log(15),log(100)),col=pal,xlab='m',ylab='h',main='Return time')
 dev.off()
 """
