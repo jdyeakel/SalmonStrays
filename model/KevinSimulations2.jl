@@ -329,6 +329,7 @@ dev.off()
 
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
 
 
 #Analysis over m & theta divergence
@@ -402,6 +403,14 @@ x1mean = d["x1mean"];
 x2mean = d["x2mean"];
 pe = d["pe"];
 
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
+bifvalue = bifdet(
+n1mean,
+n2mean,
+mvec,
+hvec
+);
+
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm.pdf");
 R"""
@@ -410,10 +419,30 @@ pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
+points($(bifvalue),type='l',cex=1)
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
+points($(bifvalue),type='l',cex=1)
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
+points($(bifvalue),type='l',cex=1)
 dev.off()
 """
+
+R"""
+x<- 1:10
+  y<- 1:15
+  z<- outer( x,y,"+") 
+  image.plot(x,y,z) 
+
+# or 
+  obj<- list( x=x,y=y,z=z)
+  image.plot(obj, legend.lab="Sverdrups")
+
+# add some points on diagonal using standard plot function
+#(with some clipping beyond 10 anticipated)
+  points( 5:12, 5:12, pch="X", cex=3)
+  """
+
+
 
 #Average pe over m
 medpe = Array{Float64}(length(mvec));
@@ -522,6 +551,12 @@ x2mean = d["x2mean"];
 pe = d["pe"];
 
 
+bifvalue = bifdet(
+n1mean,
+n2mean,
+mvec,
+hvec
+);
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm_theta8.pdf");
 R"""
@@ -530,8 +565,11 @@ pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
+points($bifvalue,type='l')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
+points($bifvalue,type='l')
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
+points($bifvalue,type='l')
 dev.off()
 """
 
@@ -633,6 +671,13 @@ pe = d["pe"];
 
 
 
+bifvalue = bifdet(
+n1mean,
+n2mean,
+mvec,
+hvec
+);
+
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm_theta3.pdf");
 R"""
 library(RColorBrewer)
@@ -640,8 +685,11 @@ pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
+points($(bifvalue[1:23,:]),type='l')
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
+points($(bifvalue[1:23,:]),type='l')
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
+points($(bifvalue[1:23,:]),type='l')
 dev.off()
 """
 

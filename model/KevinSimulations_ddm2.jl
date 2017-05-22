@@ -354,6 +354,12 @@ x2mean = d["x2mean"];
 pe = d["pe"];
 
 
+bifvalue = bifdet(
+n1mean,
+n2mean,
+indmvec,
+hvec
+);
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm_ddm.pdf");
 R"""
 library(RColorBrewer)
@@ -361,8 +367,11 @@ pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
 image(x=$indmvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+points($bifvalue,type='l')
 image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+points($bifvalue,type='l')
 image(x=$indmvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
+points($bifvalue,type='l')
 dev.off()
 """
 
@@ -467,7 +476,7 @@ end
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data2_sig_h_m_theta8_ddm.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8_ddm.jld"));
 #This loads the dictionary
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
@@ -477,6 +486,12 @@ pe = d["pe"];
 
 
 
+bifvalue = bifdet(
+n1mean,
+n2mean,
+indmvec,
+hvec
+);
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm_theta8_ddm.pdf");
 R"""
 library(RColorBrewer)
@@ -484,8 +499,11 @@ pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
 image(x=$indmvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+lines($bifvalue)
 image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+lines($bifvalue)
 image(x=$indmvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
+lines($bifvalue)
 dev.off()
 """
 
@@ -588,6 +606,12 @@ x2mean = d["x2mean"];
 pe = d["pe"];
 
 
+bifvalue = bifdet(
+n1mean,
+n2mean,
+indmvec,
+hvec
+);
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm_theta3_ddm.pdf");
 R"""
@@ -596,8 +620,11 @@ pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=8)
 par(mfrow=c(1,3))
 image(x=$indmvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m0',ylab='h',main='Total biomass')
+lines($bifvalue)
 image(x=$indmvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m0',ylab='h',main='Biomass difference')
+lines($bifvalue)
 image(x=$indmvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m0',ylab='h',main='PE')
+lines($bifvalue)
 dev.off()
 """
 
@@ -622,5 +649,3 @@ text(rep(0.49,4),$(traitdiff[[26 51 76 101],451]),c('0.25','0.50','0.75','1.00')
 text(0.48,2.1,expression(paste(h^2)),cex=0.8)
 dev.off()
 """
-
-
