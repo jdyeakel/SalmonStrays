@@ -194,7 +194,9 @@ singlelinecheck=false
 \centering
 \includegraphics[width=0.8\textwidth]{figs2/fig_MDPE_hm.pdf}
 \caption{
-Total means $N_t$, difference in means $\Delta N$, and the portfolio effect PE as a function of heritability $h^2$ and a constant stray rate $m$. Light colors = high values.
+(a) Total means $N_t$, (b) difference in means $\Delta N$, and (c) the portfolio effect PE as a function of heritability $h^2$ and a constant stray rate $m$. Light colors = high values.
+The black line shows the fold bifurcation separating a single steady state (left) from alternative steady states (right).
+(d) The relationship between the time to recovery following a disturbance and the portfolio effect.
 } \label{fig:PE}
 \end{figure*}
 
@@ -214,7 +216,7 @@ The mean trait value thus changes through time according to the difference equat
 
 \begin{align}
   \mu_i(t+1) &= w_i\mu_i(t) + (1-w_i)\mu_j(t) \\ \nonumber
-  &+ h^2\sigma\frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i(t)|\theta_i] + (1-w_i)R_i[\mu_j(t)|\theta_i]  \right),
+  &+ h^2\sigma^2\frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i(t)|\theta_i] + (1-w_i)R_i[\mu_j(t)|\theta_i]  \right),
   \label{eq:mu}
 \end{align}
 
@@ -223,9 +225,9 @@ This mixed normal is weighted by the proportion of the population that is local 
 The partial derivative in the Eq. \ref{eq:mu} determines how the mean trait changes through time due to natural selection (REF), which is proportional to the change in mean fitness with respect to $\mu_i$.
 \\
 
-\noindent {\bf (c) Measuring of metapopulation persistence}
+\noindent {\bf (c) Measuring metapopulation persistence}
 \noindent We evaluated metapopulation persistence by measuring the average-CV portfolio effect (PE) (REF: Anderson,others) as well as the time required for the system to return to a steady state following an induced disturbance to one or both of the populations.
-The average-CV portfolio effect is the average CV across each population divided by the CV of the aggregate, such that
+The average-CV portfolio effect is, as the name implies, the average CV across each population divided by the CV of the aggregate, such that
 
 
 \begin{equation}
@@ -243,26 +245,26 @@ A similar measure of metapopulation persistence can be evaluated by measuring th
 By rearranging and substituting eq. (\ref{eq_sync}) into eq. (\ref{eq_PE}), we can observe that $\langle{\rm PE}\rangle \propto \sqrt{\phi}^{-1}$.
 Thus, the dynamical diversity of the metapopulation offers a mirror to the portfolio effect, where perfect synchrony ($\phi = 1$) also means $\langle{\rm PE}\rangle = 1$.
 %Moreover, if and only if $\phi \neq 1$, it is expected that as the diversity of the aggregate increases, so should the portfolio effect, and this central thesis is thought to underlie the stability of populations, species, communities and even financial markets.
-Portfolio effects greater than unity corresponds to less synchronization ($\phi < 1$) \cite{Loreau:2008ju,Anderson:2014cx,Yeakel:2013vz} and thus a greater potential for demographic rescue among populations, thus buffering the system as a whole against extinction. 
+Portfolio effects greater than unity corresponds to less synchronization ($\phi < 1$) \cite{Loreau:2008ju,Anderson:2014cx,Yeakel:2013vz} and thus a greater potential for demographic rescue among populations, buffering the system as a whole against extinction. 
 
 %Although there are more robust ways to measure the portfolio effect (in particular for comparing the PE across species with different mean-variance relationships; REF: Anderson), its only utlity here is to provide a simple statistical measure of metapopulation persistence.
-A more direct way to measure the likelihood that a system will persist is to measure the time it takes to recover following an induced disturbance: systems that recover quickly (lower recovery times) are more robust than those that recover more slowly (higher recovery times).
-Measuring the time it takes for a perturbed system to relax to a steady state also permits a more detailed examination of the potential fragility of the metapopulation.
-For example, if populations settle into alternative steady states (alternative steady states in our model requiring one population to be high-density and one low-density), comparing recovery times after a disturbance applied to the high, low, and/or both populations permits an understanding of which component of the metapopulation has a stronger influence on persistence.
+A more direct way to measure system persistence is to measure the time that it takes it to relax back to its steady state following an induced disturbance: systems that recover quickly (shorter recovery times) are more robust than those that recover more slowly (longer recovery times).
+Measuring the time that it takes for a perturbed system to relax also permits a more detailed perspective of the potential fragility of the metapopulation.
+For example, if populations settle to alternative steady states (alternative steady states in our model requiring one population to be high-density and one low-density), comparing recovery times after a disturbance applied to the high, low, and/or both populations allows for an assessment of which component of the metapopulation has a longer-lasting influence on the system's recovery.
 \\
 
-\noindent {\bf (d) Density dependent straying rates and the effects of distance}
+\noindent {\bf (d) The effects of density and distance on the rate of straying}
 %Density dependent m
-\noindent We have so far assumed that the proportion of strays leaving and entering a population is constant, however there is good evidence that at least in some species the stray rate is density dependent.
-Specifically, the rate at which individuals stray has been linked directly to a collective decision-making phenomenon, where greater numbers of individuals tends to decrease the rate at which individuals stray, thus reducing the overall proportion of a population that strays.
-According to \citeauthor{Berdahl:2016dx}, given the probability that an individual strays $m_0$, the proportion of the local population $N_i(t)$ that strays is
+\noindent We have so far assumed that the proportion of strays leaving and entering a population is constant, however there is good evidence that at least in some species the straying rate is density dependent (REFS).
+Specifically, the rate at which individuals stray has been linked directly to a collective decision-making phenomenon, where greater numbers of individuals tend to decrease the rate at which individuals err, reducing the overall proportion of a population that strays.
+According to Berdahl et al. \cite{Berdahl:2016dx}, given the probability that an individual strays is $m_0$, the proportion of the local population $N_i(t)$ that strays is
 
 \begin{equation}
   m(t) = m_0\left(1- \frac{N_i(t)}{C+N_i(t)}\right),
   \label{eq:ddm}
 \end{equation}
 
-\noindent where $C$ is the half-saturation value of $N_i$ where the density-dependent stray rate decreases sharply.
+\noindent where $C$ is a half-saturation constant.
 We note that at the limit $C\rightarrow \infty$, the density dependent stray rate becomes constant such that $m(t) \rightarrow m_0$, and this corresponds to the original formulation where $m=m_0$.
 A similar observation shows that when the population density is very high, $m(t) \rightarrow 0$, and when it is close to extinction, $m(t) \rightarrow m_0$.
 Thus, for realistic population densities, $m(t) < m_0$.
@@ -271,45 +273,9 @@ Thus, for realistic population densities, $m(t) < m_0$.
 %Linking m/m0 and thetadiff
 The straying rate is intrinsically linked to the distance between the donor and recipient population.
 The greater the distance between two populations, the lower the expected rate of straying (REF).
-We can account for this interdependence in our model by assuming that $m$ (if the stray rate is constant) or $m_0$ (if the stray rate is density dependent) is a function of $\theta_i-\theta_j$, which can be assumed to be large if the remote site $j$ is a great distance away from the local site $i$.
-If sites $i$ and $j$ are very close, the stray rate is assumed to maximized at $m,m_0 = 0.5$, assuming both sites are equally attractive to the respective populations.
+We can account for this interdependence in our model by assuming that $m$ (if the stray rate is constant) or $m_0$ (if the stray rate is density dependent) is a function of the difference between optimal trait values between sites $\theta_i-\theta_j$, which can be assumed to be large if the remote site $j$ is a great distance away from the local site $i$.
+If sites $i$ and $j$ are very close, the stray rate is maximized at $m,m_0 = 0.5$, assuming both sites are equally attractive to the respective populations.
 Thus, we can integrate these two variables by setting $m,m_0 = (2 + \epsilon (\theta_i-\theta_j))^{-1}$, where $\epsilon$ sets the sensitivity of a declining $m$ to increasing distance (greater values of $\theta_i-\theta_j$).
-
-
-
-\section{Results}
-
-%The effects of trait evolution :: trait heritability, trait variance, and habitat heterogeneity
-%% Bifurcation to alternative stable state occurs at higher stray rates with increased trait heritability
-%% There is a peak in the portfolio effect directly before this bifurcation is crossed (early warning signal), and then a decline in PE with high m
-%% When trait heritability is high, there is a greater sensitivity of total biomass to increasing stray rates, though a LOWER sensitivity of the difference between alternative steady state values for increasing stray rates (and vice versa)
-%% For low heritability (h = 0.01 - 0.2 or so), moderate and insensitive changes in total biomass, but large differences between the values of alternative steady states leads to a local maximum for PE at low-moderate stray rates
-
-
-
-%Alternative stable states
-
-\noindent{\bf (a) Nonlinear effects of straying on the portfolio effect and return time} \\
-\noindent Straying generally lowers steady state densities for both recipient and donor populations by \emph{i}) losing locally-adapted individuals due to straying and \emph{ii}) introducing maladapted individuals from the donor population. %, regardless of trait heritability and variance or habitat heterogeneity
-The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state across both sites bifurcates into two alternative steady states: one at high biomass density, and one at low biomass density (Fig. \ref{fig:traj}a,b).
-This bifurcation occurs at lower values of the straying rate $m$ at lower values of trait heritability $h^2$ (Fig \ref{fig:PE}a,b), indicating that weaker coupling between ecological and evolutionary dynamics in addition to higher rates of straying promotes the existence of alternative stable states.
-
-Trait heritability has a large impact on the sensitivity of the straying rate on both the aggregate population steady state density ($N^*_T=N^*_1+N^*_2$) as well as the difference between steady state densities (the distance between alternative stable states: $\Delta N=|N^*_1-N^*_2|$).
-Greater trait heritability results in a larger decline in $N_T^*$ for increasing straying rates $m$, though results in only moderate changes to $\Delta N$ (Figs. \ref{fig:PE}A,B).
-Conversely, if the trait is has a lower heritability, an increase in the straying rate has little impact on the total biomass density and contrastingly large effects on $\Delta N$ (Fig. \ref{fig:PE}a,b).
-
-
-
-
-%Together these changes in steady state population densities in terms of $N_T$ and $\Delta N$ as a function of trait heritability and the rate of straying between populations give rise to highly nonlinear portfolio effects, which we quantify here as
-
-% Nonlinear PE(!!!)
-
-In the region where there is a single steady state among both populations, we find an low-intermediate portfolio effect ca. ${\rm PE}=1.4$, primarily due to the elevated mean values of $N_T$.
-As the fold bifurcation is reached with greater rates of straying, the portfolio effect explodes due to a large increase in the variance of both donor and recipient populations ${\rm VAR}(N_{i,j})$.
-This increase in variance is the product of a dynamical process known as critical slowing down that occurs near fold bifurcations (among others) \cite{Scheffer:2009gg}, and has been suggested to serve as an early warning signal of an approaching phase transition \cite{Scheffer:2009gg,Anonymous:2013br,Dakos:2014br}.
-For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}), where there alternative steady states among the recipient and donor sites, the portfolio effect declines steadily after the explosion in variance associated with onset of the fold bifurcation.
-This decline is more gradual as the straying rate increases if trait heritability is low, and steeper if trait heritability is high.
 
 \begin{figure*}
   \captionsetup{justification=raggedright,
@@ -325,16 +291,59 @@ Bottom row (c, d)
 
 
 
+\section{Results}
+
+%The effects of trait evolution :: trait heritability, trait variance, and habitat heterogeneity
+%% Bifurcation to alternative stable state occurs at higher stray rates with increased trait heritability
+%% There is a peak in the portfolio effect directly before this bifurcation is crossed (early warning signal), and then a decline in PE with high m
+%% When trait heritability is high, there is a greater sensitivity of total biomass to increasing stray rates, though a LOWER sensitivity of the difference between alternative steady state values for increasing stray rates (and vice versa)
+%% For low heritability (h = 0.01 - 0.2 or so), moderate and insensitive changes in total biomass, but large differences between the values of alternative steady states leads to a local maximum for PE at low-moderate stray rates
+
+
+
+%Alternative stable states
+
+\noindent{\bf (a) Nonlinear effects of straying on the portfolio effect and recovery time} \\
+\noindent Straying generally lowers steady state densities for both recipient and donor populations by \emph{i}) losing locally-adapted individuals to the non-local population and \emph{ii}) gaining maladapted individuals from that same population. %, regardless of trait heritability and variance or habitat heterogeneity
+The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state across both sites bifurcates into two alternative steady states: one at high biomass density, and one at low biomass density (Fig. \ref{fig:traj}a,b).
+This bifurcation  (shown by the black line in Fig\ref{fig:PE}(a-c)) occurs at lower values of the straying rate $m$ at lower values of trait heritability $h^2$ (Fig \ref{fig:PE}a,b), indicating that weaker coupling between ecological and evolutionary dynamics in addition to higher rates of straying promotes the appearance of alternative stable states.
+
+Trait heritability has a large impact on the sensitivity of the straying rate to both the aggregate population steady state density ($N^*_T=N^*_1+N^*_2$; Fig. \ref{fig:PE}a) as well as the difference between steady state densities (the distance between alternative stable states: $\Delta N=|N^*_1-N^*_2|$; Fig. \ref{fig:PE}b).
+Greater trait heritability results in a larger decline in $N_T^*$ for increasing straying rates $m$, but leads to only moderate changes to $\Delta N$.
+Conversely, if the trait is less heritable, an increase in the straying rate has little impact on the total biomass density but contrastingly large effects on $\Delta N$.
+
+
+
+
+%Together these changes in steady state population densities in terms of $N_T$ and $\Delta N$ as a function of trait heritability and the rate of straying between populations give rise to highly nonlinear portfolio effects, which we quantify here as
+
+% Nonlinear PE(!!!)
+
+%In the region where there is a single steady state among both populations, we find an low-intermediate portfolio effect ca. ${\rm PE}=1.4$, primarily due to the elevated mean values of $N_T$.
+As the fold bifurcation is reached with greater rates of straying, the portfolio effect increases sharply due to an explosion in variance of both donor and recipient populations ${\rm VAR}(N_{i,j})$.
+This increase in variance is the product of a dynamical process known as critical slowing down that occurs near fold bifurcations \cite{Scheffer:2009gg}, and may serve as an early warning signal of an approaching phase transition \cite{Scheffer:2009gg,Anonymous:2013br,Dakos:2014br}.
+For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}(a-c)), where alternative steady states occur, the portfolio effect declines steadily as the CV of $N_T$ increases.
+The decline over $m$ is more gradual if trait heritability is low, and steeper if trait heritability is high.
+
+
+
 % \noindent{\bf (c) Rates of recovery following catastrophic collapse}\\ 
 % Return time as a measure of system persistence and relation to PE
-We measured the rate of recovery to a steady state as a function of the rate of straying $m$ following three types of induced disturbance: (\emph{i}) extinction of the low-density population, (\emph{ii}) extinction of the high-density population; (\emph{iii}) near-collapse of both populations where just 1.0\% of both populations survive.
-At low rates of straying both populations are subject to the same steady state, such that extinction of either population results in the same recovery time, which is generally less than that required after a near-collapse of both populations.
-For values of $m$ that give rise to alternative steady states, the recovery times associated with each disturbance type depends strongly on trait heritability.
-If both straying rate and heritability are low (Fig. \ref{fig:relax}a), extinction of the small population results in a lower recovery time, whereas as the rate of straying increases, the extinction of the larger population results is lower recovery times.
+We measured the time required for the system as measured by $N_T$ to relax to its steady state as a function of straying rate following three types of induced disturbance: (\emph{i}) extinction of the low-density population; (\emph{ii}) extinction of the high-density population (scenarios \emph{i} and \emph{ii} amount to the same in the single steady state regime); (\emph{iii}) near-collapse of both populations where just 1.0\% of both populations survive.
+In general, the average-CV portfolio effect is negatively correlated with recovery time (Fig. \ref{fig:PE}d), suggesting that for our system both measures are valuable indicators of metapopulation persistence.
+Because we can assess the time to recovery in response to the various disturbance types described above, it allows us to gain an in-depth perspective on the fragility of the metapopulation as a function of straying rate.
+
+At low rates of straying both populations are subject to the same steady state, such that extinction of either population results in the same recovery time.
+At low rates of straying and low trait heritability, the time required to recover following the extinction of either population is generally less than or equal to the recovery time required after the near-collapse of both populations (Fig. \ref{fig:relax}a).
+In the alternative stable state regime, extinction of the smaller population results in the shortest recovery time, whereas as $m$ increases, extinction of the larger population results in the shortest recovery time.
+Increased trait heritability flips this picture around (Fig. \ref{fig:relax}b).
+
+
+If both straying rate and heritability are low, extinction of the small population results in shorter recovery times, whereas for higher straying rates, the extinction of the larger population results in shorter recovery times.
 This switch is in part due to a large burst in biomass of the surviving (large) population when the smaller of the two becomes extinct at high straying rates, which extends the time required for the smaller population to recover.
 Conversely, with increased trait heritability (Fig. \ref{fig:relax}b) and low straying rates in the single steady state regime, near collapse of both populations (rather than the extinction of either) results in the lowest recovery time.
 Near the onset of the fold bifurcations, recovery times increase drastically, regardless of disturbance.
-For straying rates in the alternative steady state regime, extinction of the smaller population consistently provides the least time to recovery.
+For straying rates in the alternative steady state regime, extinction of the smaller population consistently results in the shortest time to recovery.
 
 
 \begin{figure}

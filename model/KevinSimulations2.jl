@@ -402,6 +402,9 @@ n2mean = d["n2mean"];
 x1mean = d["x1mean"];
 x2mean = d["x2mean"];
 pe = d["pe"];
+dExt = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2Ext/data_sig_h_m.jld"));
+pe_ext = dExt["pe"];
+rt_ext = dExt["rt"];
 
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
 bifvalue = bifdet(
@@ -416,14 +419,15 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
-pdf($namespace,height=3,width=8)
-par(mfrow=c(1,3))
+pdf($namespace,height=3,width=10)
+par(mfrow=c(1,4))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab='h',main='Total biomass')
 points($(bifvalue),type='l',cex=1)
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab='h',main='Biomass difference')
 points($(bifvalue),type='l',cex=1)
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main='PE')
 points($(bifvalue),type='l',cex=1)
+plot($(rt_ext[1:50,:]),$(pe_ext[1:50,:]),log='x',ylim=c(1,3),xlim=c(18,300),pch='.',xlab='Recovery time',ylab='PE')
 dev.off()
 """
 

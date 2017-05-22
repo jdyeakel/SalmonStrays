@@ -208,6 +208,13 @@ end
 
 save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_relax.jld"),"rt",rt,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean);
 
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_relax.jld"));
+#This loads the dictionary
+rt = d["rt"];
+rt_ddm = d["rt_ddm"];
+m1mean = d["m1mean"];
+m2mean = d["m2mean"];
+
 
 # save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_relax.jld"),"n1v",n1v,"n2v",n2v,"x1v",n1v,"x2v",n2v,"rt",rt);
 # 
@@ -314,39 +321,53 @@ library(RColorBrewer)
 pdf($namespace,height=8,width=10)
 pal = brewer.pal(9,'Greys')
 palsub = pal[c(4,6,8)];
-par(mfrow=c(2,2),mai = c(0.8, 0.8, 0.1, 0.1))
-plot($mvec,$(ma_rth2[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Return time',ylim=c(min($rt),max($(ma_rth2))))
+par(mfrow=c(2,2),mai = c(0.8, 0.9, 0.2, 0.1))
+plot($mvec,$(ma_rth2[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth2))))
 lines($mvec,$(ma_rth2[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth2[:,3]),col=palsub[3],cex=0.5,lwd=2)
-text(0.01,max($(ma_rth2)),expression(paste(h^2,'=0.2')))
+text(0.25,max($(ma_rth2))+23,expression(paste(h^2,'=0.2')), xpd=TRUE)
+text(-0.11, ## x position
+     41, ## position of the low axis
+     srt=90, ## angle
+     labels='Constant m', ##labels
+     xpd=TRUE, ## allows plotting outside the region 
+     pos=2)
 
 
-plot($mvec,$(ma_rth8[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Return time',ylim=c(min($rt),max($(ma_rth8))))
+plot($mvec,$(ma_rth8[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth8))))
 lines($mvec,$(ma_rth8[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth8[:,3]),col=palsub[3],cex=0.5,lwd=2)
-text(0.01,max($(ma_rth8)),expression(paste(h^2,'=0.8')))
-legend(x=0.44,y=4500,legend=$pvec,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+text(0.25,max($(ma_rth8))+1600,expression(paste(h^2,'=0.8')), xpd=TRUE)
+text(par('usr')[1]-0.1,max($(ma_rth2))+23,'(a)', xpd=TRUE)
+legend(x=0.43,y=3500,legend=$pvec,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
 
 
-plot($(ma1_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Return time',ylim=c(min($rt_ddm),max($(ma_rth2_ddm))))
+plot($(ma1_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth2_ddm))))
 points($(ma2_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],cex=0.5,pch=16)
 points($(ma1_m2_ddm[:,2]),$(ma_rth2_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma2_m2_ddm[:,2]),$(ma_rth2_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma1_m2_ddm[:,3]),$(ma_rth2_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
 points($(ma2_m2_ddm[:,3]),$(ma_rth2_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
-text(0.01,max($(ma_rth2_ddm)),expression(paste(h^2,'=0.2')))
+#text(0.01,max($(ma_rth2_ddm)),expression(paste(h^2,'=0.2')))
 for (i in 1:length($mvec)) {
   segments($(ma1_m2_ddm[:,1])[i],$(ma_rth2_ddm[:,1])[i],$(ma2_m2_ddm[:,1])[i],$(ma_rth2_ddm[:,1])[i],col=palsub[1])
   segments($(ma1_m2_ddm[:,2])[i],$(ma_rth2_ddm[:,2])[i],$(ma2_m2_ddm[:,2])[i],$(ma_rth2_ddm[:,2])[i],col=palsub[2])
   segments($(ma1_m2_ddm[:,3])[i],$(ma_rth2_ddm[:,3])[i],$(ma2_m2_ddm[:,3])[i],$(ma_rth2_ddm[:,3])[i],col=palsub[3])
 }
-plot($(ma1_m8_ddm[:,1]),$(ma_rth8_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Return time',ylim=c(min($rt_ddm),max($(ma_rth8_ddm))))
+text(-0.072, ## x position
+     55, ## position of the low axis
+     srt=90, ## angle
+     labels='Density dependent m', ##labels
+     xpd=TRUE, ## allows plotting outside the region 
+     pos=2)
+     
+plot($(ma1_m8_ddm[:,1]),$(ma_rth8_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth8_ddm))))
 points($(ma2_m8_ddm[:,1]),$(ma_rth8_ddm[:,1]),col=palsub[1],cex=0.5,pch=16)
 points($(ma1_m8_ddm[:,2]),$(ma_rth8_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma2_m8_ddm[:,2]),$(ma_rth8_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma1_m8_ddm[:,3]),$(ma_rth8_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
 points($(ma2_m8_ddm[:,3]),$(ma_rth8_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
-text(0.01,max($(ma_rth8_ddm)),expression(paste(h^2,'=0.8')))
+#text(0.01,max($(ma_rth8_ddm)),expression(paste(h^2,'=0.8')))
 for (i in 1:length($mvec)) {
   segments($(ma1_m8_ddm[:,1])[i],$(ma_rth8_ddm[:,1])[i],$(ma2_m8_ddm[:,1])[i],$(ma_rth8_ddm[:,1])[i],col=palsub[1])
   segments($(ma1_m8_ddm[:,2])[i],$(ma_rth8_ddm[:,2])[i],$(ma2_m8_ddm[:,2])[i],$(ma_rth8_ddm[:,2])[i],col=palsub[2])
@@ -354,4 +375,3 @@ for (i in 1:length($mvec)) {
 }
 dev.off()
 """
-
