@@ -461,7 +461,7 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
 pdf($namespace,height=4,width=5)
-plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu)),xlab='m')
+plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu,'*')),xlab='m')
 lines($mvec,$(traitdiff[51,:]),type='l')
 lines($mvec,$(traitdiff[76,:]),type='l')
 lines($mvec,$(traitdiff[101,:]),type='l')

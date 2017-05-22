@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAY 2017 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAY 2017 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -518,20 +518,20 @@ Package pdftex.def Info: figs2/fig_relax_comb.pdf used on input line 285.
 File: figs2/fig_traitdiff.pdf Graphic file (type pdf)
 
 <use figs2/fig_traitdiff.pdf>
-Package pdftex.def Info: figs2/fig_traitdiff.pdf used on input line 350.
+Package pdftex.def Info: figs2/fig_traitdiff.pdf used on input line 352.
 (pdftex.def)             Requested size: 255.0pt x 203.99991pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 350--353
+Overfull \hbox (9.0pt too wide) in paragraph at lines 352--355
  [][] 
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 357--362
-\T1/cmr/m/n/10 stray-ing rates, which oc-curs as the con-se-quence of
+Underfull \hbox (badness 1502) in paragraph at lines 359--364
+\T1/cmr/m/n/10 ho-mog-e-niza-tion to stray-ing is in-creased with lower
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--362
+Underfull \hbox (badness 10000) in paragraph at lines 359--364
 
  []
 
@@ -539,58 +539,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 357--362
 File: figs2/fig_thetaPEmvm.pdf Graphic file (type pdf)
 
 <use figs2/fig_thetaPEmvm.pdf>
-Package pdftex.def Info: figs2/fig_thetaPEmvm.pdf used on input line 368.
+Package pdftex.def Info: figs2/fig_thetaPEmvm.pdf used on input line 370.
 (pdftex.def)             Requested size: 203.99689pt x 326.39635pt.
 
 
-LaTeX Warning: Reference `fig:thetadiff1' on page 5 undefined on input line 386
+LaTeX Warning: Reference `fig:thetarelax' on page 5 undefined on input line 391
 .
 
 
-LaTeX Warning: Reference `thetadiff2' on page 5 undefined on input line 386.
+LaTeX Warning: Reference `fig:thetarelax' on page 5 undefined on input line 392
+.
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 382--394
-\T1/cmr/m/n/10 in-ter-preted here as in-creased habi-tat het-ero-gene-ity.
+Underfull \hbox (badness 1142) in paragraph at lines 384--396
+\T1/cmr/m/n/10 se-lec-tion will di-rect the mean trait val-ues of both
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 382--394
-\T1/cmr/m/n/10 val-ues of both pop-u-la-tions to-wards their re-spec-tive
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 382--394
+Underfull \hbox (badness 10000) in paragraph at lines 384--396
 
  []
 
-[5]
-
-LaTeX Warning: Reference `fig:ddm' on page 6 undefined on input line 405.
-
-[6 <./figs2/fig_relax_comb.pdf>]
+[5] [6 <./figs2/fig_relax_comb.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 414.
+ on input line 413.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
+Underfull \hbox (badness 1424) in paragraph at lines 414--432
+[]\T1/cmr/m/n/10 A metapop-u-la-tion in the al-ter-na-tive sta-ble state
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--432
 
  []
 
-<figs2/fig_MDPE_hm_mtheta.pdf, id=76, 578.16pt x 216.81pt>
+<figs2/fig_MDPE_hm_mtheta.pdf, id=77, 578.16pt x 216.81pt>
 File: figs2/fig_MDPE_hm_mtheta.pdf Graphic file (type pdf)
 
 <use figs2/fig_MDPE_hm_mtheta.pdf>
-Package pdftex.def Info: figs2/fig_MDPE_hm_mtheta.pdf used on input line 423.
+Package pdftex.def Info: figs2/fig_MDPE_hm_mtheta.pdf used on input line 438.
 (pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
  [7 <./figs2/fig_traitdiff.pdf> <./figs2/fig_thetaPEmvm.pdf>]
 
-LaTeX Warning: Reference `fig:diffddm' on page 8 undefined on input line 463.
+LaTeX Warning: Reference `fig:diffddm' on page 8 undefined on input line 478.
 
 
 Package natbib Warning: Author undefined for citation`Carlson:2008hl' 
-(natbib)                on page 8 on input line 468.
+(natbib)                on page 8 on input line 483.
 
 \openout3 = `bu.aux'.
 
@@ -615,34 +612,30 @@ Underfull \hbox (badness 1142) in paragraph at lines 139--142
 m. Nat.\T1/cmr/m/n/9 ,
  []
 
-) [9] <figs2/fig_rtvspe.pdf, id=108, 361.35pt x 289.08pt>
-File: figs2/fig_rtvspe.pdf Graphic file (type pdf)
+[9]) [10] <figs2/fig_relaxtheta.pdf, id=111, 361.35pt x 289.08pt>
+File: figs2/fig_relaxtheta.pdf Graphic file (type pdf)
 
-<use figs2/fig_rtvspe.pdf>
-Package pdftex.def Info: figs2/fig_rtvspe.pdf used on input line 495.
+<use figs2/fig_relaxtheta.pdf>
+Package pdftex.def Info: figs2/fig_relaxtheta.pdf used on input line 510.
 (pdftex.def)             Requested size: 255.0pt x 203.99991pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 495--498
+Overfull \hbox (9.0pt too wide) in paragraph at lines 510--513
  [][] 
  []
 
-[10 <./figs2/fig_rtvspe.pdf>] (./msv2.aux (./bu.aux))
+[11 <./figs2/fig_relaxtheta.pdf>] (./msv2.aux (./bu.aux))
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
- 6823 strings out of 493089
- 97110 string characters out of 6134842
+ 6818 strings out of 493089
+ 97083 string characters out of 6134842
  189648 words of memory out of 5000000
- 10153 multiletter control sequences out of 15000+600000
+ 10148 multiletter control sequences out of 15000+600000
  20056 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,41p,974b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,41p,900b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -665,10 +658,10 @@ t/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/public/cm-super/sfti1000.pfb>
-Output written on msv2.pdf (10 pages, 1822597 bytes).
+Output written on msv2.pdf (11 pages, 1759845 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

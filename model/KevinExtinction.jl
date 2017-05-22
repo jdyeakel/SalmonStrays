@@ -321,11 +321,12 @@ library(RColorBrewer)
 pdf($namespace,height=8,width=10)
 pal = brewer.pal(9,'Greys')
 palsub = pal[c(4,6,8)];
-par(mfrow=c(2,2),mai = c(0.8, 0.9, 0.2, 0.1))
+par(mfrow=c(2,2),mai = c(0.8, 0.9, 0.3, 0.1))
 plot($mvec,$(ma_rth2[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth2))))
 lines($mvec,$(ma_rth2[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth2[:,3]),col=palsub[3],cex=0.5,lwd=2)
 text(0.25,max($(ma_rth2))+23,expression(paste(h^2,'=0.2')), xpd=TRUE)
+text(par('usr')[1]-0.1,max($(ma_rth2))+23,'(a)', xpd=TRUE)
 text(-0.11, ## x position
      41, ## position of the low axis
      srt=90, ## angle
@@ -338,8 +339,9 @@ plot($mvec,$(ma_rth8[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m'
 lines($mvec,$(ma_rth8[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth8[:,3]),col=palsub[3],cex=0.5,lwd=2)
 text(0.25,max($(ma_rth8))+1600,expression(paste(h^2,'=0.8')), xpd=TRUE)
-text(par('usr')[1]-0.1,max($(ma_rth2))+23,'(a)', xpd=TRUE)
-legend(x=0.43,y=3500,legend=$pvec,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+text(par('usr')[1]-0.085,max($(ma_rth8))+1600,'(b)', xpd=TRUE)
+types = c('low-density extinction','high-density extinction','near-collapse')
+legend(x=0.26,y=3500,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
 
 
 plot($(ma1_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth2_ddm))))
@@ -354,6 +356,7 @@ for (i in 1:length($mvec)) {
   segments($(ma1_m2_ddm[:,2])[i],$(ma_rth2_ddm[:,2])[i],$(ma2_m2_ddm[:,2])[i],$(ma_rth2_ddm[:,2])[i],col=palsub[2])
   segments($(ma1_m2_ddm[:,3])[i],$(ma_rth2_ddm[:,3])[i],$(ma2_m2_ddm[:,3])[i],$(ma_rth2_ddm[:,3])[i],col=palsub[3])
 }
+text(-0.072,max($(ma_rth2_ddm))+23,'(c)', xpd=TRUE)
 text(-0.072, ## x position
      55, ## position of the low axis
      srt=90, ## angle
@@ -367,6 +370,7 @@ points($(ma1_m8_ddm[:,2]),$(ma_rth8_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma2_m8_ddm[:,2]),$(ma_rth8_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma1_m8_ddm[:,3]),$(ma_rth8_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
 points($(ma2_m8_ddm[:,3]),$(ma_rth8_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
+text(-0.072,max($(ma_rth8_ddm))+500,'(d)', xpd=TRUE)
 #text(0.01,max($(ma_rth8_ddm)),expression(paste(h^2,'=0.8')))
 for (i in 1:length($mvec)) {
   segments($(ma1_m8_ddm[:,1])[i],$(ma_rth8_ddm[:,1])[i],$(ma2_m8_ddm[:,1])[i],$(ma_rth8_ddm[:,1])[i],col=palsub[1])

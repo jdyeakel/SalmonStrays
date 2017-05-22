@@ -249,12 +249,12 @@ plot($(ma_mvecsmooth),$(ma_medpe5smooth),col=pal[2],type='l',ylim=c(1,max($([ma_
 lines($(ma_mvecsmooth),$(ma_medpe8smooth),col=pal[3],lwd=3)
 lines($(ma_mvecsmooth),$(ma_medpe3smooth),col=pal[1],lwd=3)
 #Or moving average
-points($(ma_medindm3max[mddmlist]),$(ma_medpe3_ddm[mddmlist]),col=pal[1],pch=1,lwd=2)
-points($(ma_medindm3min[mddmlist]),$(ma_medpe3_ddm[mddmlist]),col=pal[1],pch=1,lwd=2)
-points($(ma_medindm5max[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=1,lwd=2)
-points($(ma_medindm5min[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=1,lwd=2)
-points($(ma_medindm8max[mddmlist]),$(ma_medpe8_ddm[mddmlist]),col=pal[3],pch=1,lwd=2)
-points($(ma_medindm8min[mddmlist]),$(ma_medpe8_ddm[mddmlist]),col=pal[3],pch=1,lwd=2)
+points($(ma_medindm3max[mddmlist]),$(ma_medpe3_ddm[mddmlist]),col=pal[1],pch=16,cex=0.8)
+points($(ma_medindm3min[mddmlist]),$(ma_medpe3_ddm[mddmlist]),col=pal[1],pch=16,cex=0.8)
+points($(ma_medindm5max[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=16,cex=0.8)
+points($(ma_medindm5min[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=16,cex=0.8)
+points($(ma_medindm8max[mddmlist]),$(ma_medpe8_ddm[mddmlist]),col=pal[3],pch=16,cex=0.8)
+points($(ma_medindm8min[mddmlist]),$(ma_medpe8_ddm[mddmlist]),col=pal[3],pch=16,cex=0.8)
 l = length($(ma_medindm5max[mddmlist]))
 for (i in 1:l) {
   segments($(ma_medindm3max[mddmlist])[i],$(ma_medpe3_ddm[mddmlist])[i],$(ma_medindm3min[mddmlist])[i],$(ma_medpe3_ddm[mddmlist])[i],col=paste(pal[2],'60',sep=''))
