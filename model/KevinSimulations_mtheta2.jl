@@ -119,6 +119,7 @@ plot($mvec,$pe)
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveExtinct_ddm.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/timeSS.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/movingaverage.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
 
 
 
@@ -200,7 +201,7 @@ pe = d["pe"];
 bifvalue = bifdet(
 n1mean,
 n2mean,
-indmvec,
+mvec,
 hvec
 );
 
@@ -213,13 +214,13 @@ hvec
 #Analysis over m
 tmax=10000;
 
-mvec = collect(0.0001:0.001:0.5);
+mvec2 = collect(0.0001:0.001:0.5);
 pvec = ["small","large","both"];
 
-rt = SharedArray{Float64}(reps,length(mvec),length(pvec));
-rt_ddm = SharedArray{Float64}(reps,length(mvec),length(pvec));
-m1mean = SharedArray{Float64}(reps,length(mvec),length(pvec));
-m2mean = SharedArray{Float64}(reps,length(mvec),length(pvec));
+rt = SharedArray{Float64}(reps,length(mvec2),length(pvec));
+rt_ddm = SharedArray{Float64}(reps,length(mvec2),length(pvec));
+m1mean = SharedArray{Float64}(reps,length(mvec2),length(pvec));
+m2mean = SharedArray{Float64}(reps,length(mvec2),length(pvec));
 
 reps = 100;
 z=0.5;
@@ -242,7 +243,7 @@ t_ext = Int64(round(tmax/2));
     extpop = pvec[j]
     for i=1:length(mvec)
       
-      m = mvec[i];
+      m = mvec2[i];
       a0 = 1-m;
       
       thetadiff = (1-2*m)/(thetascale*m);
@@ -329,9 +330,9 @@ pal = brewer.pal(9,'Greys')
 palsub = pal[c(4,6,8)];
 pdf($namespace,height=4,width=10)
 par(mfrow=c(1,2),mai = c(0.8, 0.9, 0.3, 0.1))
-plot($mvec,$(ma_rth[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt),max($(ma_rth))))
-lines($mvec,$(ma_rth[:,2]),col=palsub[2],cex=0.5,lwd=2)
-lines($mvec,$(ma_rth[:,3]),col=palsub[3],cex=0.5,lwd=2)
+plot($mvec2,$(ma_rth[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt),max($(ma_rth))))
+lines($mvec2,$(ma_rth[:,2]),col=palsub[2],cex=0.5,lwd=2)
+lines($mvec2,$(ma_rth[:,3]),col=palsub[3],cex=0.5,lwd=2)
 
 plot($(ma1_m_ddm[:,1]),$(ma_rth_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt_ddm),100))
 points($(ma2_m_ddm[:,1]),$(ma_rth_ddm[:,1]),col=palsub[1],cex=0.5,pch=16)
@@ -349,6 +350,43 @@ dev.off()
 
 
 
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/figs2/fig_MDPE_hm_mtheta_rt.pdf");
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=3,width=8)
+par(mfrow=c(1,3), mai = c(1.2, 0.8, 0.1, 0.1))
+image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h')
+lines($bifvalue)
+
+pal = brewer.pal(9,'Greys')
+palsub = pal[c(4,6,8)];
+plot($mvec2,$(ma_rth[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt),max($(ma_rth))))
+lines($mvec2,$(ma_rth[:,2]),col=palsub[2],cex=0.5,lwd=2)
+lines($mvec2,$(ma_rth[:,3]),col=palsub[3],cex=0.5,lwd=2)
+types = c('low-density extinction','high-density extinction','near-collapse')
+legend(x=0.05,y=8000,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+
+plot($(ma1_m_ddm[:,1]),$(ma_rth_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt_ddm),500))
+points($(ma2_m_ddm[:,1]),$(ma_rth_ddm[:,1]),col=palsub[1],cex=0.5,pch=16)
+points($(ma1_m_ddm[:,2]),$(ma_rth_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
+points($(ma2_m_ddm[:,2]),$(ma_rth_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
+points($(ma1_m_ddm[:,3]),$(ma_rth_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
+points($(ma2_m_ddm[:,3]),$(ma_rth_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
+for (i in 1:length($mvec)) {
+ segments($(ma1_m_ddm[:,1])[i],$(ma_rth_ddm[:,1])[i],$(ma2_m_ddm[:,1])[i],$(ma_rth_ddm[:,1])[i],col=palsub[1])
+ segments($(ma1_m_ddm[:,2])[i],$(ma_rth_ddm[:,2])[i],$(ma2_m_ddm[:,2])[i],$(ma_rth_ddm[:,2])[i],col=palsub[2])
+ segments($(ma1_m_ddm[:,3])[i],$(ma_rth_ddm[:,3])[i],$(ma2_m_ddm[:,3])[i],$(ma_rth_ddm[:,3])[i],col=palsub[3])
+}
+
+dev.off()
+"""
+
+
+
+
+
+
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm_mtheta.pdf");
 R"""
 library(RColorBrewer)
@@ -363,9 +401,6 @@ image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab='h',main
 lines($bifvalue)
 dev.off()
 """
-
-
-
 
 
 
