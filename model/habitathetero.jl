@@ -125,7 +125,7 @@ plot($thetadiffarray,$aggarray,pch='.')
 #Analysis over m & theta divergence
 mvec = collect(0.0001:0.001:0.5);
 thetadiffvec = collect(0.0:0.1:10.0);
-hvec = collect(0.2:0.2:0.8);
+hvec = collect(0.1:0.1:0.9);
 
 thetadiffarray=SharedArray(Float64,length(thetadiffvec),length(hvec),length(mvec));
 
@@ -153,7 +153,6 @@ theta1=5.0;
 tau=1.0;
 sigmaE=0;
 sigmaG=1;
-h=0.2
 perror=0.01;
 refuge=0.01;
 extpop="both";
@@ -234,15 +233,15 @@ t_ext = Int64(round(tmax/2));
         t_ext,
         refuge
         )
-        n1trim = n1[Int64(floor(tmax*burnin)):tmax];
-        n2trim = n2[Int64(floor(tmax*burnin)):tmax];
-        x1trim = x1[Int64(floor(tmax*burnin)):tmax];
-        x2trim = x2[Int64(floor(tmax*burnin)):tmax];
+        n1trim_ddm = n1_ddm[Int64(floor(tmax*burnin)):tmax];
+        n2trim_ddm = n2_ddm[Int64(floor(tmax*burnin)):tmax];
+        x1trim_ddm = x1_ddm[Int64(floor(tmax*burnin)):tmax];
+        x2trim_ddm = x2_ddm[Int64(floor(tmax*burnin)):tmax];
         
-        n1mean_ddm[k,i,j] = mean(n1trim);
-        n2mean_ddm[k,i,j] = mean(n2trim);
-        x1mean_ddm[k,i,j] = theta1-mean(x1trim);
-        x2mean_ddm[k,i,j] = (theta1+thetadiff)-mean(x2trim);
+        n1mean_ddm[k,i,j] = mean(n1trim_ddm);
+        n2mean_ddm[k,i,j] = mean(n2trim_ddm);
+        x1mean_ddm[k,i,j] = theta1-mean(x1trim_ddm);
+        x2mean_ddm[k,i,j] = (theta1+thetadiff)-mean(x2trim_ddm);
         
         pe_ddm[k,i,j] = mean([(std(n1trim)/mean(n1trim)),(std(n2trim)/mean(n2trim))])*
         (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
@@ -284,6 +283,44 @@ m2mean = d["m2mean"];
 thetadiffarray = d["thetadiffarray"];
 
 
+
+mediandiff = zeros(Float64,length(hvec),length(thetadiffvec));
+for i=1:length(hvec)
+  for k=1:length(thetadiffvec)
+    absdiff=abs(n1mean[k,i,:] - n2mean[k,i,:])
+    mediandiff[i,k] = mean(absdiff[!isnan(absdiff)]);
+  end
+end
+
+mediandiff_ddm = zeros(Float64,length(hvec),length(thetadiffvec));
+for i=1:length(hvec)
+  for k=1:length(thetadiffvec)
+    absdiff=abs(n1mean_ddm[k,i,:] - n2mean_ddm[k,i,:])
+    mediandiff_ddm[i,k] = mean(absdiff[!isnan(absdiff)]);
+  end
+end
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_thetadiffN.pdf");
+R"""
+pdf($namespace,height=4,width=5)
+library(RColorBrewer)
+pal = brewer.pal(9,"Spectral")
+plot($(thetadiffvec),$(mediandiff[1,:]),type='l',xlab=expression(paste('Habitat heterogeneity ',Delta,theta)),ylab=expression(paste('Median difference ',Delta,'N')),col=pal[1],ylim=c(0,max($mediandiff_ddm)),lwd=2)
+lines($(thetadiffvec),$(mediandiff_ddm[1,:]),lty=2,col=pal[1],lwd=2)
+legend(x=0,y=1000,legend=$hvec,col=pal,pch=22,xpd=TRUE,pt.bg=pal,cex=0.6, bty="n",title=expression(paste(h^2)))
+"""
+for i=2:length(hvec)
+  R"""
+  lines($(thetadiffvec),$(mediandiff[i,:]),col=pal[$i],lwd=2)
+  lines($(thetadiffvec),$(mediandiff_ddm[i,:]),lty=2,col=pal[$i],lwd=2)
+  """
+end
+R"""
+dev.off()
+"""
+
+
+
 R"""
 plot($thetadiffarray,$rt,pch='.',log='y')
 """
@@ -291,9 +328,9 @@ plot($thetadiffarray,$rt,pch='.',log='y')
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/movingaverage.jl")
 window=20;
 ma_mvec = movingaverage(mvec,window);
-ma_rt3 = movingaverage(rt[31,:],window);
-ma_rt5 = movingaverage(rt[51,:],window);
-ma_rt8 = movingaverage(rt[81,:],window);
+ma_rt3 = movingaverage(mean([rt[31,i,:] for i=1:5]),window);
+ma_rt5 = movingaverage(mean([rt[51,i,:] for i=1:5]),window);
+ma_rt8 = movingaverage(mean([rt[81,i,:] for i=1:5]),window);
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_relaxtheta.pdf");
 R"""
@@ -303,19 +340,20 @@ pdf($namespace,height=8,width=5)
 par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.4, 0.1))
 plot($ma_mvec,$(ma_rt5),type='l',log='y',col=pal[2],ylim=c(20,100),xlab='m',ylab='Recovery time',lwd=2)
 lines($ma_mvec,$(ma_rt8),col=pal[3],lwd=2)
-points($(m1mean[51,:]),$(rt_ddm[51,:]),pch=16,cex=.4,col=pal[2])
-points($(m2mean[51,:]),$(rt_ddm[51,:]),pch=16,cex=.4,col=pal[2])
-for (i in 1:length($(m1mean[51,:]))) {
-segments($(m1mean[51,:])[i],$(rt_ddm[51,:])[i],$(m2mean[51,:])[i],$(rt_ddm[51,:])[i],col=pal[2])
+points($(mean([m1mean[51,i,:] for i=1:5])),$(mean([rt_ddm[51,i,:] for i=1:5])),pch=16,cex=.4,col=pal[2])
+points($(mean([m2mean[51,i,:] for i=1:5])),$(mean([rt_ddm[51,i,:] for i=1:5])),pch=16,cex=.4,col=pal[2])
+for (i in 1:length($(mean([m1mean[51,i,:] for i=1:5])))) {
+segments($(mean([m1mean[51,i,:] for i=1:5]))[i],$(mean([rt_ddm[51,i,:] for i=1:5]))[i],$(mean([m2mean[51,i,:] for i=1:5]))[i],$(mean([rt_ddm[51,i,:] for i=1:5]))[i],col=pal[2])
 }
 legend(x=0.45,y=35,legend=c(5,8),col=pal[2:3],pch=22,xpd=TRUE,pt.bg=pal[2:3],cex=0.8, bty="n",title=expression(paste(Delta,theta)))
 plot($ma_mvec,$(ma_rt5),type='l',log='y',col=pal[2],ylim=c(20,100),xlab='m',ylab='Recovery time',lwd=2)
 lines($ma_mvec,$(ma_rt8),col=pal[3],lwd=2)
-points($(m1mean[81,:]),$(rt_ddm[81,:]),pch=16,cex=.4,col=pal[3])
-points($(m2mean[81,:]),$(rt_ddm[81,:]),pch=16,cex=.4,col=pal[3])
-for (i in 1:length($(m1mean[51,:]))) {
-segments($(m1mean[81,:])[i],$(rt_ddm[81,:])[i],$(m2mean[81,:])[i],$(rt_ddm[81,:])[i],col=pal[3])
+points($(mean([m1mean[81,i,:] for i=1:5])),$(mean([rt_ddm[81,i,:] for i=1:5])),pch=16,cex=.4,col=pal[3])
+points($(mean([m2mean[81,i,:] for i=1:5])),$(mean([rt_ddm[81,i,:] for i=1:5])),pch=16,cex=.4,col=pal[3])
+for (i in 1:length($(mean([m1mean[51,i,:] for i=1:5])))) {
+segments($(mean([m1mean[81,i,:] for i=1:5]))[i],$(mean([rt_ddm[81,i,:] for i=1:5]))[i],$(mean([m2mean[81,i,:] for i=1:5]))[i],$(mean([rt_ddm[81,i,:] for i=1:5]))[i],col=pal[3])
 }
+legend(x=0.45,y=35,legend=c(5,8),col=pal[2:3],pch=22,xpd=TRUE,pt.bg=pal[2:3],cex=0.8, bty="n",title=expression(paste(Delta,theta)))
 dev.off()
 """
 
