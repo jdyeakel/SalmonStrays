@@ -216,13 +216,14 @@ tmax=10000;
 
 mvec2 = collect(0.0001:0.001:0.5);
 pvec = ["small","large","both"];
+reps = 100;
 
 rt = SharedArray{Float64}(reps,length(mvec2),length(pvec));
 rt_ddm = SharedArray{Float64}(reps,length(mvec2),length(pvec));
 m1mean = SharedArray{Float64}(reps,length(mvec2),length(pvec));
 m2mean = SharedArray{Float64}(reps,length(mvec2),length(pvec));
 
-reps = 100;
+
 z=0.5;
 rmax=2.0;
 beta=0.001;
@@ -323,7 +324,7 @@ ma_rth_ddm = mean([rt_ddm[i,:,:] for i=1:reps]);
 ma1_m_ddm = mean([m1mean[i,:,:] for i=1:reps]);
 ma2_m_ddm = mean([m2mean[i,:,:] for i=1:reps]);
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_relax_mtheta.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/figs2/fig_relax_mtheta.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(9,'Greys')
@@ -348,7 +349,7 @@ for (i in 1:length($mvec)) {
 dev.off()
 """
 
-
+ 
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/figs2/fig_MDPE_hm_mtheta_rt.pdf");
 R"""

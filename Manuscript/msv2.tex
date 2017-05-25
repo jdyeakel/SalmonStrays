@@ -53,12 +53,11 @@
 %\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
 %\title{Community assembly and dynamics by the deconstruction of species interactions}
 \title{Lost in space: the eco-evolutionary impacts of straying on metapopulation robustness}
-\author{Justin D. Yeakel${}^{1,2,*}$, Jean Phillipe Gibert${}^{1}$, Sean Anderson${}^{3}$, Peter Westley${}^{4}$, \& Jon W. Moore${}^{5}$ \\
+\author{Justin D. Yeakel${}^{1,2,*}$, Jean Philippe Gibert${}^{1}$, Peter Westley${}^{3}$, \& Jonathan W. Moore${}^{4}$ \\
 ${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
 ${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
-${}^3$Department of Biology, University of Washington, Seattle WA, USA \\
-${}^4$Institute for Arctic Biology, University of Alaska, Fairbanks, Fairbanks AK, USA \\
-${}^5$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
+${}^3$College of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\
+${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
 ${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
 }
 
@@ -260,7 +259,9 @@ Portfolio effects greater than unity corresponds to less synchronization ($\phi 
 
 %Although there are more robust ways to measure the portfolio effect (in particular for comparing the PE across species with different mean-variance relationships; REF: Anderson), its only utlity here is to provide a simple statistical measure of metapopulation persistence.
 A more direct way to measure system robustness is to measure the time that it takes the system (measured as the aggregate biomass $N_T$) to recover its steady state abundance following an induced disturbance: systems that recover quickly (shorter recovery times) are more robust than those that recover more slowly (longer recovery times).
-Measuring the time that it takes for a perturbed system to relax also permits a more detailed perspective of the potential fragility of the metapopulation.
+Although there is a direct eignvalue relationship between the rate of return following a small pulse perturbation (REF), because we aimed to 1) assess the effects of a large perturbation, and 2) estimate the time required for all transient effects to decay (including dampened oscillations), we used a simulation-based numerical procedure.
+
+Numerically estimating the time that it takes for a perturbed system to relax also permits a more detailed perspective of the potential fragility of the metapopulation.
 For example, if populations settle to alternative steady states (alternative steady states in our model requiring one population to be high-density and one low-density), comparing recovery times after a disturbance applied to the high, low, and/or both populations allows for an assessment of which component of the metapopulation has a longer-lasting influence on the system's recovery.
 Throughout, we will refer to an increase in the portfolio effects and/or reduction in recovery times as promoting metapopulation robustness, which is expected to have a positive effect on persistence.
 \\
@@ -457,7 +458,9 @@ singlelinecheck=false
   \centering
   \includegraphics[width=0.8\textwidth]{figs2/fig_MDPE_hm_mtheta_rt.pdf}
   \caption{
-  Assuming that the rate of straying is linked directly to habitat heterogeneity. A low stray rate corresponds to very different (or distant) habitats (high $\Delta\theta$), whereas a higher rate of straying corresponds to very similar (or nearby) habitats (low $\Delta\theta$). Light colors = high values.
+  Assuming that the rate of straying is linked directly to habitat heterogeneity. A low stray rate corresponds to very different (or distant) habitats (high $\Delta\theta$), whereas a higher rate of straying corresponds to very similar (or nearby) habitats (low $\Delta\theta$).
+  (a) Portfolio effect over constant straying rate $m$ and trait heritability $h^2$.
+  (b-c) Recovery times for three disturbance types for (b) constant $m$ and (c) density dependent straying rate at the steady state $m^*$.
   } \label{fig:mtheta}
 \end{figure*}
 
@@ -474,28 +477,72 @@ singlelinecheck=false
 \noindent We have so far treated $\Delta\theta$ and $m$ as independent parameters, however we may also assume that if environmental heterogeneity increases with distance, the rate of straying may be expected to decline given that individuals will stray less into distant habitats. %-- in particular North-South difference if trait optimality is largely temperature-dependent --
 If we incorporate this interdependence of $m$ and $\Delta\theta$, low rates of straying correspond to mixing dissimilar (distant) populations, and high rates of straying would correspond to mixing similar (nearby) populations.
 
-Here we find that alternative stable states now appear for low straying rates ($m<0.15$).
-As the straying rate increases, a single stable state emerges with a correspondingly high $N_T$.
-As before, there is a spike in the PE at the fold bifurcation separating the alternative stable state regime from the single stable state regime, and a sharp decline in the PE as the straying rate becomes very low.
-This is in accordance with intuition as increasing straying rates mean that two very similar populations are mixing, such that the rate of recruitment is less influenced by gene flow.
+We find that alternative stable states now appear at low straying rates, which corresponds to greater $\Delta\theta$.
+As the straying rate increases, a single stable state emerges.
+As before, the portfolio effect is higher in the alternative stable state regime, with a sharp decline in the PE as the straying rate becomes larger (figure \ref{fig:mtheta}a).
+This is in accordance with intuition as increasing straying rates mean that two very similar populations are mixing, such that the strength of selection on recruitment is lessened.
 
-That alternative stable states appear and that PE becomes severely depressed for very low rates of straying is surprising: this means that even a small amount of mixing of populations from distant or dissimilar populations can qualitatively alter the dynamics of the metapopulation, regardless of trait heritability.
+This dynamic is more complex when we observe the recovery times for systems with either a constant (figure \ref{fig:mtheta}b) or density dependent (figure \ref{fig:mtheta}c) straying rate.
+Although recovery times are lowest in the alternatice stable state regime ($m<0.1$), this is only true if the low-density population suffers extinction.
+Alternatively, at low rates of straying between dissimilar (distant) populations, recovery times become maximized if the high-density population suffers extinction.
+As rates of straying -- and the similarity of trait optima -- increase, extinction of either population requires less time for recovery than near-collapse of both.
+
+
+
+
+% That alternative stable states appear and that PE becomes severely depressed for very low rates of straying is surprising: this means that even a small amount of mixing of populations from distant or dissimilar populations can qualitatively alter the dynamics of the metapopulation, regardless of trait heritability.
 %(for the discussion: an example of this situation may be the salmon populations during the last glacial maximum, where any mixing would be from geographically distant populations)
 
 
 
 \section{Discussion}
 
-We have shown that the natural selection of mixed populations adapted to different environments can result in large effects on population dynamics and the degree to which the metapopulation is buffered against extinction, quantified here as the portfolio effect.
+We have shown that dispersal between populations, coupled with localized selection against donor phenotypes, has a large and nonlinear impact on dynamic properties that directly impacts metapopulation robustness, and by extension persistence.
+Although there are various ways to measure `robustness' (REF:TREE), we employ two measures: 
+1) the average-CV portfolio effect, a statistical metric commonly used to assess the fragility of salmon populations; 
+2) the recovery time, defined here as the time required for the aggregate metapopulation biomass $N_T$ to return to its steady state after different types of induced disturbances, which is mechanistically linked to the likelihood of persistence (REF).
+In our minimal model of dispersal and natural selection between two populations, we show that these phenomenological and mechanistic descriptors of metapopulation robustness are tightly coupled (figure \ref{fig:PE}d).
+
+%Alternative steady states & critical slowing
 The immigration of dispersing strays with trait values far from the local optimum generally lowers the combined steady state biomass $N_T$ and increases the likelihood that the system gives way to alternative steady states, pushing one of the populations close to extinction.
-Although the emergence of alternative steady states can result in very large portfolio effects near the bifurcation, alternative steady state regimes tend to result in very low portfolio effects, indicating that the metapopulation is less likely to persist in the long run.
+The formation of alternative stable states in our system is a relatively common example of spatial pattern formation, and occurs above a threshold straying rate.
+Pattern formation can occur as a consequence of myriad ecological processes, including habitat selection (REFS), aggregation of individuals (REFS), local environmental conditions (REFS), or interspecific interactions like competition (REFS). 
+It is also well known to occur with the onset of spatially or diffusion-induced instabilities (Turing instabilities, REFS). 
+Here, we describe an interesting alternative mechanism through which pattern formation in local densities can occur, when the onset of movement mediated maladaptation leads to local differences in reproductive rates that yield differences in densities that would, in the absence of straying, be the same. 
+This mechanism of pattern formation through the simultaneous interplay between ecological and evolutionary dynamics may open up new areas of research.
 
-The detectability of such changes in dynamical behavior among salmonids appears to be idiosyncratic across species, and the difficulty in measuring critical slowing down may - ironically - be masked by large portfolio effects \cite{Krkosek:2014ch} [this might be more appropriate for the discussion].
 
-The degree to which the PE is lowered depends to a large extent on \emph{i}) trait heritability $h^2$ and \emph{ii}) habitat heterogeneity $\Delta \theta$.
-Increased heritability results in greater response to natural selection on the metapopulation, increasing the coupling between evolutionary and ecological dynamics. 
-Our minimal model of straying between two populations shows that greater $h^2$ buffers the metapopulation against the emergence of alternative stable states, but magnifies the negative effects of alternative stable states (captured by increased $\Delta N$ and decreased PE; figure \ref{fig:PE}B,C) once this regime is encountered at higher straying rates.
-We note that although the rate of straying has been shown to be density dependent (REFS), the qualitative results of our model are relatively insensitive to this dynamic (figure \ref{fig:diffddm}) and we limit discussion to the simplified case of a constant stray rate $m$ with the understanding that our findings also apply to the case density dependent stray rates $m(t)$.
+To what extent the existence of alternative stable states promotes or diminishes the system as a whole is a matter of perspective.
+On the one hand, one population is pushed to a low-density state (figure \ref{fig:traj}) with a lower total biomass of the aggregate (figure ]ref{fig:PE}a), suggesting that the system is more fragile.
+On the other hand, the presence of \emph{just enough} straying to cause formation of alternative stable states both increases the portfolio effect (figure \ref{fig:PE}c) and reduces the rate of return -- particularly if straying is density dependent (figure \ref{fig:relax}c,d) as might be common in systems with collective navigation (REF).
+
+%The bifurcation and critical slowing down
+Although the portfolio effect is negatively correlated with recovery time, there is one exception: the point of transition from a single steady state to alternative steady states, which occurs at the fold bifurcation (REF).
+At this point, the portfolio effect is maximized, but so is the recovery time (figures \ref{fig:PE}, \ref{fig:relax}).
+This suggests that while the sharply increasing variance of the individual populations is dampened by aggregation, a large disturbance will have a much greater adverse effect due to exponentially longer recovery times.
+Whether the change in variance, also known as critical slowing down, as the alternative steady state regime is approached could be used as an early warning signal of an oncoming phase transition is a hotly debated topic (REFS).
+The detectability of such changes in dynamical behavior among salmonids appears to be idiosyncratic across species, though the difficulty in measuring critical slowing down may - ironically - be masked by large portfolio effects \cite{Krkosek:2014ch}.
+
+%Comparing recovery times
+Previous theoretical work has shown that the largest perturbations lead to the longest recovery times \cite{Ovaskainen:2002il}.
+In terms of relative biomass lost, the largest perturbation that we investigate is the near-collapse of both fisheries, where only 1\% of the preperturbation population densities survive, however whether this disturbance results in the longest recovery time depends largely on the rate of straying and trait heritability.
+For example, when straying and trait heritability are low (figure \ref{fig:relax}a,c) the extinction of the larger population maximizes return time, whereas if straying is high, near-collapse maximizes return time.
+The latter is always true in the alternative stable state regime is trait heritability is high (figure \ref{fig:relax}b,d)
+
+
+%Density dependent straying
+This issue is largely focused on the notion that straying in biological systems where movement is a function of collective navigation may be density dependent.
+Berdahl et al. (REF) provided a mechanistic theory for density dependent straying where the proportion of the population that strays is less than the probability that a single individual (as illustrated by \emph{Kevin}; figure \ref{fig:xkcd}) takes the wrong turn.
+Neither the transient nor asymptotic dynamics that we describe here qualitatively differ as a function of whether the rate of straying is constant or density dependent, however we observe important quantitative differences that suggest density dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
+
+First, density dependent straying reduces the time to recovery following an induced disturbance, and this is particularly true if (\emph{i}) trait heritability is low, and (\emph{ii}) in the case of near-collapse of both populations (figure \ref{fig:relax}c).
+This dynamic emerges because although both populations are near-collapse, the mean trait values of both are scewed towards those of the high-density population.
+As the low-density population has also collapsed, and the mean trait values of the system favor the high-density population, it grows more quickly, recovering faster (figure \ref{fig:relaxtraj_bothlh}).
+Second, density dependent straying increases the effective portfolio effects when the steady state straying rate is higher (for both low- and high-density populations).
+Third, while habitat heterogeneity is interpreted here in elevating the difference in trait optima between sites, it both increases the portfolio effect and lowers recovery time at low rates of straying, but has the opposite effect at higher rates of straying.
+Surprisingly, we find that density dependent straying both exaggerates the negative effects when $m^*$ is low (marginally lower portfolio effects, but subsatially longer return times; figures \ref{fig:thetaPE}b, \ref{fig:relaxtheta}a,b) and exaggerates the positive effects when $m^*$ is high (higher portfolio effects, abd shorter return times). 
+
+HAVENT EDITED FURTHER
 
 Trait heritability determines the coupling between ecological and evolutionary dynamics, effectively setting the strength of natural selection.
 Among salmon species, recruitment among local populations is highly sensitive to local climatic conditions, with temperature thought to play a central role (REFS).
@@ -503,18 +550,15 @@ Populations distributed across a temperature gradient are assumed to be locally 
 \citeauthor{Carlson:2008hl} showed heritability 0.1-0.3.
 Our results show that trait heritability has large effects on both metapopulation persistance as well as phenotypic diversity, particularly in the regime of low-to-moderate straying rates.
 
-Recovery times: largest perturbations lead to the longest recovery times \cite{Ovaskainen:2002il}.
-This is not true in our systems when (\emph{i}) heritability and (\emph{ii}) straying are low. Why?
-
-That recovery times and PE are similar for constant $m$ vs. density dependent $m$ suggests that both transient dynamics as well as asymptotic dynamics are not largely impacted.
-
-%Our results in the context of Turing bifurcation
-[JP - could use some help here]
-The onset of alternative stable states in a spatial context describes the emergence of spatial pattern formation (REFS), which is more generally defined as a Turing instability (REFS).
-The mathematical conditions that lead to Turing instabilities are well-known in both continuous (REFS) and discrete spatial contexts (REFS)
 
 
-%North-South vs East-West
+
+%Coupling distance: North-South vs East-West
+
+
+
+
+
 
 
 \bibliography{aa_kevin}
@@ -599,6 +643,19 @@ singlelinecheck=false
 \caption{
 Recovery time as a function of straying rate $m$ and habitat heterogeneity $\Delta\theta$.
 } \label{fig:relaxtheta}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{figs2/fig_relax_both_lowh.pdf}
+\caption{
+Near collapse of both populations with a low straying rate $m=0.1$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_bothlh}
 \end{figure}
 
 

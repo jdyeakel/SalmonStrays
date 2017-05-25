@@ -20,14 +20,14 @@ beta=0.001;
 theta1=5.0;
 thetadiff=5.0;
 tau=1.0;
-h=0.8;
+h=0.2;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
 refuge=0.01;
-m=0.4;
+m=0.1;
 
-extpop = "small";
+extpop = "both";
 t_ext = Int64(round(tmax/2));
 
 n1, n2, x1, x2, w1, w2 = 
@@ -63,7 +63,7 @@ lines($x2,col=pal[2])
 lines(c($t_ss,$t_ss),c(0,10000))
 """
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_relax_small_highh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/figs2/fig_relax_both_lowh.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,'Set1')
