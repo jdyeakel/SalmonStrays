@@ -80,7 +80,9 @@ function KevinEvolve_ddm(
   x1,
   x2,
   w1,
-  w2
+  w2,
+  m1,
+  m2
   )
   
 end

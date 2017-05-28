@@ -351,38 +351,33 @@ If $m$ is density dependent, in the alternative steady state regime there are tw
 %Alternative stable states
 
 \noindent{\bf (a) Nonlinear effects of straying on the portfolio effect and recovery time} \\
-\noindent Regardless of density dependence, straying lowers steady state densities for both populations by \emph{i}) the donor population losing locally-adapted individuals to the recipient population and \emph{ii}) the introduction of maladapted individuals to the recipient population from the donor population (Fig. \ref{fig:traj}).
+\noindent Regardless of density dependence, straying lowers steady state densities for both populations by (\emph{i}) the donor population losing locally-adapted individuals to the recipient population and (\emph{ii}) the introduction of maladapted individuals to the recipient population from the donor population (Fig. \ref{fig:traj}).
 This prediction is in accordance with observations from natural populations \cite{Bett:2017ha}. %, regardless of trait heritability and variance or habitat heterogeneity
 The decline in steady state densities is not gradual: as straying increases, the system crosses a fold bifurcation whereby the single steady state for the metapopulation bifurcates into two alternative steady states: one at high biomass, and one at low biomass density (figure \ref{fig:traj}a, \ref{fig:PE}a).
 Mean trait values for both populations bifurcate similarly (figure \ref{fig:traj}b), depending on which population attains a low- vs. high-density. 
-At high stray levels, there are two eco-evolutionary states: a population will either have a higher degree of local adaptation (low trait offset) and higher density or be more maladapted and have lower density. 
-Whether the population goes to one state or the other in our model is random, which is due to a small amount of introduced variance in the initial conditions.
-Thus, we predict that high levels of straying in metapopulations will produce alternative eco-evolutionary states.
+Above the threshold straying rate defined by the fold bifurcation, there are two alternative eco-evolutionary states: the \emph{dominant state} population will have a higher a higher density and higher degree of local adaptation (lower trait offset from the local optimum), while the \emph{subordinate state} population will have lower density with maladapted trait values (higher trait offset from the local optimum). 
+Whether a specific population goes to one state or the other in our model is random, which is due to a small amount of introduced variance in the initial conditions.
+% Thus, we predict that high levels of straying in metapopulations will produce alternative eco-evolutionary states.
 
-Trait heritability has a large impact on the sensitivity of the straying rate to both the aggregate population steady state density ($N^*_T=N^*_1+N^*_2$; figure \ref{fig:PE}a) as well as the difference between steady state densities (the distance between alternative stable states: $\Delta N=|N^*_1-N^*_2|$; figure \ref{fig:PE}b).
+Trait heritability has a large impact on the degree to which straying rate affects both the aggregate population steady state density ($N^*_T=N^*_1+N^*_2$; figure \ref{fig:PE}a) as well as the difference between steady state densities (the distance between alternative stable states: $\Delta N=|N^*_1-N^*_2|$; figure \ref{fig:PE}b).
 Greater trait heritability results in a faster decline in $N_T^*$ with increasing straying rates $m$, but leads to only moderate changes to $\Delta N$.
 Conversely, in the context of lower trait heritability, an increase in the straying rate has little impact on the total biomass density but contrastingly large effects on $\Delta N$.
 The fold bifurcation (the black line in Figs. \ref{fig:PE}a-c) occurs at lower values of the straying rate $m$ with decreased trait heritability $h^2$ (Fig \ref{fig:PE}a,b), indicating that weaker coupling between ecological and evolutionary dynamics in addition to higher rates of straying promotes the appearance of alternative stable states.
-Although trait heritability among salmonids is variable, most life history traits show $h^2 <0.5$ \cite{Carlson:2008hl}, and we largely focus additional analyses on that range.
+Although trait heritability among salmonids is variable, most life history traits have an $h^2 <0.5$ \cite{Carlson:2008hl}, and we largely focus additional analyses on that range.
 
-
-%Together these changes in steady state population densities in terms of $N_T$ and $\Delta N$ as a function of trait heritability and the rate of straying between populations give rise to highly nonlinear portfolio effects, which we quantify here as
-
-% Nonlinear PE(!!!)
-
-%In the region where there is a single steady state among both populations, we find an low-intermediate portfolio effect ca. ${\rm PE}=1.4$, primarily due to the elevated mean values of $N_T$.
+%Critical slowing down
 As the fold bifurcation is approached with increasing $m$, the portfolio effect increases sharply due to an amplification in variance within both donor and recipient populations ${\rm VAR}(N_{i,j})$.
-This variance increase is the product of a dynamical process known as critical slowing down that occurs near fold bifurcations \cite{Scheffer:2009gg}, a phenomenon that some have suggested may serve as an early warning indicator for approaching phase transitions \cite{Scheffer:2009gg,Lade:2012eu,Anonymous:2013br,Dakos:2014br}.
+This variance increase is the product of a dynamical process known as \emph{critical slowing down} that occurs near fold bifurcations \cite{Scheffer:2009gg}, a phenomenon that some have suggested may serve as an early warning indicator for approaching phase transitions \cite{Scheffer:2009gg,Lade:2012eu,Anonymous:2013br,Dakos:2014br}.
 For larger values of $m$ (to the right of the fold bifurcation in Fig \ref{fig:PE}a-c), where alternative steady states occur, the portfolio effect declines steadily as the CV of $N_T$ increases.
 The decline over $m$ is more gradual if trait heritability is low, and steeper if trait heritability is high (figure \ref{fig:PE}c).
 
 %Density dependent straying
-As with recovery time, we find that the portfolio effects generated in systems with density dependent straying are qualitatively similar to systems with constant straying, however there are some important quantitative differences.
+In the alternative stable state regime, because the two populations exist in a dominant and subordinate state, there are also two alternative straying rates $(m_i^*,m_j^*)$: the higher of which associated with the subordinate, low-density population, and the lower of which is associated with the dominant, high-density population.
+We assessed metapopulation robustness across a range of $(m_i^*,m_j^*)$ values by varying the probability that an individual strays $m_0$, which is positively and linearly related to $(m_i^*,m_j^*)$.
+We find that the portfolio effects generated in systems with density dependent straying are qualitatively similar to systems with constant straying, however there are some important quantitative differences.
 First, the PE associated with the high-density (low $m^*$) population is the same as that for a system with a constant $m$ (figure \ref{fig:thetaPE}b).
-As such, the difference in $m^*$ among low- and high-density populations appears to matter less than the straying generated by the high-density population.
-However, as $m^*$ increases, we observe a higher PE than that generated by systems with constant $m$.
-This higher PE at increased $m^*$ is mirrors recovery times that are also lower than those observed for systems with constant $m$ (figure \ref{fig:relax}).
-Together this suggests that although density-dependent straying does not appear to change the `dynamic landscape' in our minimal model, we do find evidence that it can promote robustness, particularly when populations are low and straying is correspondingly high.
+% As such, the difference in $m^*$ between subordinate and dominant populations appears to matter less than the lower straying rate generated by the dominant population.
+As $m^*$ increases, we observe a higher PE than systems with constant $m$.
 
 
 
@@ -399,7 +394,7 @@ Yet, as straying decreases, recovery time for the disturbed dominant state popul
 In contrast, when the subordinate state population (maladapted and low density) is wiped out, recovery rates are fastest at low to intermediate levels of straying.
 When the subordinate state population collapses under high rates of straying, selection against the flood of maladapted individuals that stray into it extends the length of time required for it to return to its steady state (figure \ref{fig:relaxtraj_ldlh}).
 %At low rates of straying, 
-Near the onset of the fold bifurcation, recovery times increase explosively regardless of straying rate, heritability, or disturbance type.
+Near the onset of the fold bifurcation, recovery time increases explosively regardless of straying rate, heritability, or disturbance type, and as the name implies, this is characteristic of \emph{slowing down} dynamics near critical transitions \cite{Kuehn:2010p2591}.
 
 Density-dependent straying modifies these recovery times (figure \ref{fig:relax}b). 
 First, in comparison with constant stray rates, density-dependent straying made recovery more rapid at elevated stray rates when both populations collapsed and when the subordinate population was extirpated.
@@ -408,6 +403,9 @@ First, in comparison with constant stray rates, density-dependent straying made 
 When the straying rate and trait heritability were low, near-collapse of both populations result in longer than expected recovery times, whereas in the alternative stable state regime (higher $m^*$), the recovery times for different disturbance types are very similar to systems with a constant $m$ (figure \ref{fig:relax}b; note difference in x-axis scales).
 As trait heritability increases, the metapopulation always recovers more quickly if the small population is lost (figure \ref{fig:relax_highh}).
 % There was greater similarity in the recovery times for constant and density dependent $m$ systems when trait heritability was high (figure \ref{fig:relax_highh}).
+The lower recovery time for systems with increased $m^*$ mirrors an elevated PE with higher density dependent straying rates (figure \ref{fig:PEtheta}).
+% This higher PE at increased $m^*$ mirrors recovery times that are also lower than those observed for systems with constant $m$ (figure \ref{fig:relax}).
+Together this suggests that although density-dependent straying does not appear to change the `dynamic landscape' in our minimal model, we do find evidence that it can promote robustness, particularly when the aggregate biomass is low and straying is correspondingly high.
 
 
 
