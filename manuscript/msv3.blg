@@ -4,44 +4,44 @@ The top-level auxiliary file: msv3.aux
 A level-1 auxiliary file: bu.aux
 The style file: ieeetr.bst
 Database file #1: aa_kevin.bib
-You've used 62 entries,
+You've used 63 entries,
             1876 wiz_defined-function locations,
-            896 strings with 15291 characters,
-and the built_in function-call counts, 20134 in all, are:
-= -- 2135
-> -- 738
+            903 strings with 15467 characters,
+and the built_in function-call counts, 20486 in all, are:
+= -- 2177
+> -- 742
 < -- 0
-+ -- 269
-- -- 207
-* -- 1501
-:= -- 2732
-add.period$ -- 70
-call.type$ -- 62
-change.case$ -- 54
++ -- 271
+- -- 208
+* -- 1524
+:= -- 2775
+add.period$ -- 71
+call.type$ -- 63
+change.case$ -- 55
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 978
-empty$ -- 1711
-format.name$ -- 207
-if$ -- 4900
+cite$ -- 63
+duplicate$ -- 997
+empty$ -- 1744
+format.name$ -- 208
+if$ -- 4989
 int.to.chr$ -- 0
-int.to.str$ -- 62
-missing$ -- 70
-newline$ -- 197
-num.names$ -- 64
-pop$ -- 109
+int.to.str$ -- 63
+missing$ -- 71
+newline$ -- 200
+num.names$ -- 65
+pop$ -- 110
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 857
+skip$ -- 874
 stack$ -- 0
-substring$ -- 1727
-swap$ -- 520
+substring$ -- 1767
+swap$ -- 531
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 213
-width$ -- 64
-write$ -- 624
+while$ -- 217
+width$ -- 65
+write$ -- 635

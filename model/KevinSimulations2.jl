@@ -162,8 +162,12 @@ pdf($namespace,height=8,width=5)
 par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
 plot($mvec,$n1mean,pch='.',col=cols[4],xlab="Straying rate m",ylab="Steady state biomass",cex=0.5,ylim=c(0,max($n1mean)))
 points($mvec,$n2mean,pch='.',col=cols[4],cex=0.5)
+arrows($(mvec[indmax(pe)]),1200,$(mvec[indmax(pe)]),1100,length=0.05,angle=40,lwd=3)
+text($(mvec[indmax(pe)]),1275,'FB')
 plot($mvec,$x1mean,pch=".",col=cols[1],ylim=c(-5,5),xlab="Straying rate m",ylab="Trait offset")
 points($mvec,$x2mean,pch=".",col=cols[2])
+arrows($(mvec[indmax(pe)]),3.4,$(mvec[indmax(pe)]),2.5,length=0.05,angle=40,lwd=3)
+text($(mvec[indmax(pe)]),4,'FB')
 dev.off()
 """
 

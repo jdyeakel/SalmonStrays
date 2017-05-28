@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAY 2017 08:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 MAY 2017 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -493,8 +493,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--270
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 271--274
-\T1/cmr/bx/n/10 (c) Mea-sur-ing metapop-u-la-tion ro-bust-ness \T1/cmr/m/n/10 W
+Underfull \hbox (badness 1308) in paragraph at lines 271--274
+\T1/cmr/bx/n/10 (b) Mea-sur-ing metapop-u-la-tion ro-bust-ness \T1/cmr/m/n/10 W
 e
  []
 
@@ -504,62 +504,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--302
  []
 
 [4 <./figs2/fig_MDPE_hm.pdf>]
-<figs2/fig_relax_lowh.pdf, id=49, 722.7pt x 289.08pt>
+<figs2/fig_thetaPEmvm.pdf, id=49, 361.35pt x 578.16pt>
+File: figs2/fig_thetaPEmvm.pdf Graphic file (type pdf)
+
+<use figs2/fig_thetaPEmvm.pdf>
+Package pdftex.def Info: figs2/fig_thetaPEmvm.pdf used on input line 342.
+(pdftex.def)             Requested size: 203.99689pt x 326.39635pt.
+
+<figs2/fig_relax_lowh.pdf, id=50, 722.7pt x 289.08pt>
 File: figs2/fig_relax_lowh.pdf Graphic file (type pdf)
 
 <use figs2/fig_relax_lowh.pdf>
-Package pdftex.def Info: figs2/fig_relax_lowh.pdf used on input line 332.
+Package pdftex.def Info: figs2/fig_relax_lowh.pdf used on input line 368.
 (pdftex.def)             Requested size: 458.99689pt x 183.59904pt.
- [5]
-<figs2/fig_traitdiff.pdf, id=53, 361.35pt x 289.08pt>
+ [5 <./figs2/fig_thetaPEmvm.pdf>]
+
+LaTeX Warning: Reference `fig:PEtheta' on page 6 undefined on input line 428.
+
+[6 <./figs2/fig_relax_lowh.pdf>]
+<figs2/fig_traitdiff.pdf, id=74, 361.35pt x 289.08pt>
 File: figs2/fig_traitdiff.pdf Graphic file (type pdf)
 
 <use figs2/fig_traitdiff.pdf>
-Package pdftex.def Info: figs2/fig_traitdiff.pdf used on input line 432.
+Package pdftex.def Info: figs2/fig_traitdiff.pdf used on input line 452.
 (pdftex.def)             Requested size: 255.0pt x 203.99991pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 432--435
+Overfull \hbox (9.0pt too wide) in paragraph at lines 452--455
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--444
-
- []
-
-[6 <./figs2/fig_relax_lowh.pdf> <./figs2/fig_traitdiff.pdf>]
-<figs2/fig_thetaPEmvm.pdf, id=70, 361.35pt x 578.16pt>
-File: figs2/fig_thetaPEmvm.pdf Graphic file (type pdf)
-
-<use figs2/fig_thetaPEmvm.pdf>
-Package pdftex.def Info: figs2/fig_thetaPEmvm.pdf used on input line 450.
-(pdftex.def)             Requested size: 203.99689pt x 326.39635pt.
-
-Underfull \hbox (badness 1142) in paragraph at lines 464--476
-\T1/cmr/m/n/10 se-lec-tion will di-rect the mean trait val-ues of both
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 464--476
+Underfull \hbox (badness 10000) in paragraph at lines 459--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
+Underfull \hbox (badness 10000) in paragraph at lines 472--484
 
  []
 
-<figs2/fig_MDPE_hm_mtheta_rt.pdf, id=71, 578.16pt x 216.81pt>
-File: figs2/fig_MDPE_hm_mtheta_rt.pdf Graphic file (type pdf)
+[7 <./figs2/fig_traitdiff.pdf>]
+<figs2/fig_mtheta_rt.pdf, id=85, 361.35pt x 289.08pt>
+File: figs2/fig_mtheta_rt.pdf Graphic file (type pdf)
 
-<use figs2/fig_MDPE_hm_mtheta_rt.pdf>
-Package pdftex.def Info: figs2/fig_MDPE_hm_mtheta_rt.pdf used on input line 511
-.
-(pdftex.def)             Requested size: 408.00156pt x 152.99994pt.
- [7 <./figs2/fig_thetaPEmvm.pdf>] [8 <./figs2/fig_MDPE_hm_mtheta_rt.pdf>]
+<use figs2/fig_mtheta_rt.pdf>
+Package pdftex.def Info: figs2/fig_mtheta_rt.pdf used on input line 525.
+(pdftex.def)             Requested size: 255.0pt x 203.99991pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 525--528
+ [][] 
+ []
+
+[8 <./figs2/fig_mtheta_rt.pdf>]
 
 Package natbib Warning: Author undefined for citation`Carlson:2008hl' 
-(natbib)                on page 9 on input line 608.
+(natbib)                on page 9 on input line 596.
 
 \openout3 = `bu.aux'.
 
@@ -594,85 +593,112 @@ Underfull \hbox (badness 1142) in paragraph at lines 269--272
 m. Nat.\T1/cmr/m/n/9 ,
  []
 
-) [11] <figs2/fig_relax_small.pdf, id=102, 433.62pt x 578.16pt>
+) [11] <figs2/fig_relax_small.pdf, id=103, 433.62pt x 578.16pt>
 File: figs2/fig_relax_small.pdf Graphic file (type pdf)
 
 <use figs2/fig_relax_small.pdf>
-Package pdftex.def Info: figs2/fig_relax_small.pdf used on input line 633.
+Package pdftex.def Info: figs2/fig_relax_small.pdf used on input line 621.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
 
-<figs2/fig_relax_large.pdf, id=103, 433.62pt x 578.16pt>
+<figs2/fig_relax_large.pdf, id=104, 433.62pt x 578.16pt>
 File: figs2/fig_relax_large.pdf Graphic file (type pdf)
 
 <use figs2/fig_relax_large.pdf>
-Package pdftex.def Info: figs2/fig_relax_large.pdf used on input line 646.
+Package pdftex.def Info: figs2/fig_relax_large.pdf used on input line 634.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
 
-<figs2/fig_relax_highh.pdf, id=104, 722.7pt x 289.08pt>
+<figs2/fig_relax_highh.pdf, id=105, 722.7pt x 289.08pt>
 File: figs2/fig_relax_highh.pdf Graphic file (type pdf)
 
 <use figs2/fig_relax_highh.pdf>
-Package pdftex.def Info: figs2/fig_relax_highh.pdf used on input line 685.
+Package pdftex.def Info: figs2/fig_relax_highh.pdf used on input line 673.
 (pdftex.def)             Requested size: 458.99689pt x 183.59904pt.
 
-<figs2/fig_thetadiffN.pdf, id=105, 361.35pt x 289.08pt>
+<figs2/fig_thetadiffN.pdf, id=106, 361.35pt x 289.08pt>
 File: figs2/fig_thetadiffN.pdf Graphic file (type pdf)
 
 <use figs2/fig_thetadiffN.pdf>
-Package pdftex.def Info: figs2/fig_thetadiffN.pdf used on input line 699.
+Package pdftex.def Info: figs2/fig_thetadiffN.pdf used on input line 687.
 (pdftex.def)             Requested size: 178.50311pt x 142.8017pt.
 
-<figs2/fig_relaxtheta.pdf, id=106, 361.35pt x 578.16pt>
+<figs2/fig_relaxtheta.pdf, id=107, 361.35pt x 578.16pt>
 File: figs2/fig_relaxtheta.pdf Graphic file (type pdf)
 
 <use figs2/fig_relaxtheta.pdf>
-Package pdftex.def Info: figs2/fig_relaxtheta.pdf used on input line 712.
+Package pdftex.def Info: figs2/fig_relaxtheta.pdf used on input line 700.
 (pdftex.def)             Requested size: 178.50311pt x 285.60342pt.
 
-<figs2/fig_relax_both_lowh.pdf, id=107, 433.62pt x 578.16pt>
+<figs2/fig_MDPE_hm_mtheta_rt.pdf, id=108, 289.08pt x 289.08pt>
+File: figs2/fig_MDPE_hm_mtheta_rt.pdf Graphic file (type pdf)
+
+<use figs2/fig_MDPE_hm_mtheta_rt.pdf>
+Package pdftex.def Info: figs2/fig_MDPE_hm_mtheta_rt.pdf used on input line 712
+.
+(pdftex.def)             Requested size: 178.50311pt x 178.49992pt.
+
+<figs2/fig_relax_inertia.pdf, id=109, 433.62pt x 578.16pt>
+File: figs2/fig_relax_inertia.pdf Graphic file (type pdf)
+
+<use figs2/fig_relax_inertia.pdf>
+Package pdftex.def Info: figs2/fig_relax_inertia.pdf used on input line 723.
+(pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
+
+<figs2/fig_relax_mtheta.pdf, id=110, 722.7pt x 289.08pt>
+File: figs2/fig_relax_mtheta.pdf Graphic file (type pdf)
+
+<use figs2/fig_relax_mtheta.pdf>
+Package pdftex.def Info: figs2/fig_relax_mtheta.pdf used on input line 736.
+(pdftex.def)             Requested size: 408.00156pt x 163.20258pt.
+
+<figs2/fig_relax_both_lowh.pdf, id=111, 433.62pt x 578.16pt>
 File: figs2/fig_relax_both_lowh.pdf Graphic file (type pdf)
 
 <use figs2/fig_relax_both_lowh.pdf>
-Package pdftex.def Info: figs2/fig_relax_both_lowh.pdf used on input line 723.
+Package pdftex.def Info: figs2/fig_relax_both_lowh.pdf used on input line 751.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
  [12 <./figs2/fig_relax_small.pdf>] [13 <./figs2/fig_relax_large.pdf> <./figs2/
 fig_relax_highh.pdf>] [14 <./figs2/fig_thetadiffN.pdf> <./figs2/fig_relaxtheta.
-pdf>] [15 <./figs2/fig_relax_both_lowh.pdf>] (./msv3.aux (./bu.aux)) ) 
+pdf>] [15 <./figs2/fig_MDPE_hm_mtheta_rt.pdf> <./figs2/fig_relax_inertia.pdf>] 
+[16 <./figs2/fig_relax_mtheta.pdf> <./figs2/fig_relax_both_lowh.pdf>] (./msv3.a
+ux (./bu.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6964 strings out of 493014
- 100264 string characters out of 6133351
- 197165 words of memory out of 5000000
- 10346 multiletter control sequences out of 15000+600000
+ 6987 strings out of 493014
+ 100820 string characters out of 6133351
+ 196215 words of memory out of 5000000
+ 10366 multiletter control sequences out of 15000+600000
  20056 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,43p,900b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/loc
-al/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fon
-ts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/cm-super/sfti0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
-lic/cm-super/sfti1000.pfb>
-Output written on msv3.pdf (15 pages, 1982561 bytes).
+ 38i,10n,43p,821b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/cm-super/sfti1000.pfb>
+Output written on msv3.pdf (16 pages, 2007922 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 250 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
