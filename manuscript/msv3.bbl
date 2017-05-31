@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{Brown:1977gk}
+J.~H. Brown and A.~Kodric-Brown, ``{Turnover Rates in Insular Biogeography:
+  Effect of Immigration on Extinction},'' {\em Ecology}, vol.~58, pp.~445--449,
+  Mar. 1977.
+
 \bibitem{Earn:2000fm}
 D.~J.~D. Earn, S.~A. Levin, and P.~Rohani, ``{Coherence and conservation},''
   {\em Science}, vol.~290, pp.~1360--1364, Jan. 2000.
@@ -24,11 +29,26 @@ E.~J. Milner-Gulland, J.~M. Fryxell, and A.~R.~E. Sinclair, {\em {Animal
   Migration}}.
 \newblock A Synthesis, Oxford University Press, Jan. 2011.
 
+\bibitem{Bell:2011ki}
+G.~Bell and A.~Gonzalez, ``{Adaptation and Evolutionary Rescue in
+  Metapopulations Experiencing Environmental Deterioration},'' {\em Science},
+  vol.~332, pp.~1327--1330, June 2011.
+
+\bibitem{Carlson:2014is}
+S.~M. Carlson, C.~J. Cunningham, and P.~A.~H. Westley, ``{Evolutionary rescue
+  in a changing world},'' {\em Trends Ecol. Evol.}, vol.~29, pp.~521--530,
+  Sept. 2014.
+
 \bibitem{Muhlfeld:2014hs}
 C.~C. Muhlfeld, R.~P. Kovach, L.~A. Jones, R.~Al-Chokhachy, M.~C. Boyer, R.~F.
   Leary, W.~H. Lowe, G.~Luikart, and F.~W. Allendorf, ``{Invasive hybridization
   in a threatened species is accelerated by climate change},'' {\em Nature
   Climate Change}, vol.~4, pp.~620--624, July 2014.
+
+\bibitem{Lowe:2015ft}
+W.~H. Lowe, C.~C. Muhlfeld, and F.~W. Allendorf, ``{Spatial sorting promotes
+  the spread of maladaptive hybridization},'' {\em Trends Ecol. Evol.},
+  vol.~30, pp.~456--462, Aug. 2015.
 
 \bibitem{H:2013fs}
 P.~A.~H. Westley and T.~P. Quinn, ``{Rates of straying by hatchery-produced
@@ -45,6 +65,10 @@ M.~L. Keefer and C.~C. Caudill, ``{Homing and straying by anadromous salmonids:
 N.~N. Bett, S.~G. Hinch, N.~J. Burnett, M.~R. Donaldson, and S.~M. Naman,
   ``{Causes and Consequences of Straying into Small Populations of Pacific
   Salmon},'' {\em Fisheries}, vol.~42, pp.~220--230, Mar. 2017.
+
+\bibitem{Simons:2004jo}
+A.~M. Simons, ``{Many wrongs: the advantage of group navigation},'' {\em Trends
+  Ecol. Evol.}, vol.~19, pp.~453--455, Sept. 2004.
 
 \bibitem{Berdahl:2015kv}
 A.~Berdahl, C.~J. Torney, E.~Schertzer, and S.~A. Levin, ``{On the evolutionary
@@ -74,107 +98,6 @@ A.~H. Fullerton, S.~T. Lindley, G.~R. Pess, B.~E. Feist, E.~A. Steel, and
   Pacific Salmon Metapopulations},'' {\em Conservation Biology}, vol.~25,
   pp.~932--944, July 2011.
 
-\bibitem{Nuismer:1999ko}
-S.~L. Nuismer, J.~N. Thompson, and R.~Gomulkiewicz, ``{Gene flow and
-  geographically structured coevolution},'' {\em Proc Biol Sci}, vol.~266,
-  pp.~605--609, Mar. 1999.
-
-\bibitem{Thompson:2015hq}
-J.~N. Thompson, ``{Specific Hypotheses on the Geographic Mosaic of
-  Coevolution.},'' {\em Am. Nat.}, vol.~153, no.~S5, pp.~S1--S14, 1999.
-
-\bibitem{Nuismer:2000bb}
-S.~L. Nuismer, J.~N. Thompson, and R.~Gomulkiewicz, ``{Coevolutionary clines
-  across selection mosaics.},'' {\em Evolution}, vol.~54, pp.~1102--1115, Aug.
-  2000.
-
-\bibitem{Thompson:2005wf}
-J.~N. Thompson, {\em {The Geographic Mosaic of Coevolution}}.
-\newblock University of Chicago Press, June 2005.
-
-\bibitem{Endler:1986tz}
-J.~A. Endler, {\em {Natural Selection in the Wild}}.
-\newblock Princeton University Press, 1986.
-
-\bibitem{Gomulkiewicz:2000bz}
-R.~Gomulkiewicz, J.~N. Thompson, R.~D. Holt, S.~L. Nuismer, and M.~E. Hochberg,
-  ``{Hot Spots, Cold Spots, and the Geographic Mosaic Theory of
-  Coevolution.},'' {\em Am. Nat.}, vol.~156, no.~2, pp.~156--174, 2000.
-
-\bibitem{Thompson:2002hr}
-J.~N. Thompson and B.~M. Cunningham, ``{Geographic structure and dynamics of
-  coevolutionary selection},'' {\em Nature}, vol.~417, pp.~735--738, June 2002.
-
-\bibitem{Nuismer:2003eh}
-S.~L. Nuismer, R.~Gomulkiewicz, and M.~T. Morgan, ``{Coevolution in Temporally
-  Variable Environments.},'' {\em Am. Nat.}, vol.~162, no.~2, pp.~195--204,
-  2003.
-
-\bibitem{Nuismer:2006be}
-S.~L. Nuismer and J.~N. Thompson, ``{Coevolutionary alternation in antagonistic
-  interactions.},'' {\em Evolution}, vol.~60, pp.~2207--2217, Nov. 2006.
-
-\bibitem{Forde:2008kc}
-S.~E. Forde, J.~N. Thompson, R.~D. Holt, and B.~J.~M. Bohannan, ``{COEVOLUTION
-  DRIVES TEMPORAL CHANGES IN FITNESS AND DIVERSITY ACROSS ENVIRONMENTS IN A
-  BACTERIA{\textendash}BACTERIOPHAGE INTERACTION},'' {\em Evolution}, vol.~62,
-  pp.~1830--1839, Aug. 2008.
-
-\bibitem{Guimaraes:2011hu}
-P.~R. Guimar{\~a}es~Jr, P.~Jordano, and J.~N. Thompson, ``{Evolution and
-  coevolution in mutualistic networks.},'' {\em Ecol. Lett.}, vol.~14,
-  pp.~877--885, Sept. 2011.
-
-\bibitem{Gibert:2013hp}
-J.~P. Gibert, M.~M. Pires, J.~N. Thompson, and P.~R. Guimar{\~a}es~Jr, ``{The
-  spatial structure of antagonistic species affects coevolution in predictable
-  ways.},'' {\em Am. Nat.}, vol.~182, pp.~578--591, Nov. 2013.
-
-\bibitem{Hendry:2016un}
-A.~P. Hendry, {\em {Eco-evolutionary Dynamics}}.
-\newblock Princeton University Press, Nov. 2016.
-
-\bibitem{Schtickzelle:2007wb}
-N.~Schtickzelle and T.~P. Quinn, ``{A metapopulation perspective for salmon and
-  other anadromous fish},'' {\em Fish Fish.}, vol.~8, no.~4, pp.~297--314,
-  2007.
-
-\bibitem{Anderson:2014cx}
-S.~C. Anderson, J.~W. Moore, M.~M. McClure, N.~K. Dulvy, and A.~B. Cooper,
-  ``{Portfolio conservation of metapopulations under climate change},'' {\em
-  Ecol. Appl.}, vol.~25, no.~2, pp.~559--572, 2015.
-
-\bibitem{Schindler:2010he}
-D.~E. Schindler, R.~Hilborn, B.~Chasco, C.~P. Boatright, T.~P. Quinn, L.~A.
-  Rogers, and M.~S. Webster, ``{Population diversity and the portfolio effect
-  in an exploited species},'' {\em Nature}, vol.~465, pp.~609--612, Mar. 2010.
-
-\bibitem{Anonymous:2016jc}
-H.~K. Nesbitt and J.~W. Moore, ``{Species and population diversity in Pacific
-  salmon fisheries underpin indigenous food security},'' {\em J. Appl. Ecol.},
-  July 2016.
-
-\bibitem{Braun:2016ib}
-D.~C. Braun, J.~W. Moore, J.~Candy, and R.~E. Bailey, ``{Population diversity
-  in salmon: linkages among response, genetic and life history diversity},''
-  {\em Ecography}, vol.~39, pp.~317--328, Mar. 2016.
-
-\bibitem{Carlson:2008hl}
-S.~M. Carlson and T.~R. Seamons, ``{SYNTHESIS: A review of quantitative genetic
-  components of fitness in salmonids: implications for adaptation to future
-  change},'' {\em Evolutionary Applications}, vol.~1, pp.~222--238, Apr. 2008.
-
-\bibitem{Moore:2010gs}
-J.~W. Moore, M.~McClure, L.~A. Rogers, and D.~E. Schindler, ``{Synchronization
-  and portfolio performance of threatened salmon},'' {\em Conserv. Lett.},
-  vol.~3, pp.~340--348, Apr. 2010.
-
-\bibitem{Anonymous:2014ku}
-J.~R. Griffiths, D.~E. Schindler, J.~B. Armstrong, M.~D. Scheuerell, D.~C.
-  Whited, R.~A. Clark, R.~Hilborn, C.~A. Holt, S.~T. Lindley, J.~A. Stanford,
-  and E.~C. Volk, ``{Performance of salmon fishery portfolios across western
-  North America},'' {\em J. Appl. Ecol.}, vol.~51, no.~6, pp.~n/a--n/a, 2014.
-
 \bibitem{Quinn:2011tf}
 T.~P. Quinn, {\em {The Behavior and Ecology of Pacific Salmon and Trout}}.
 \newblock UBC Press, Nov. 2011.
@@ -193,6 +116,16 @@ A.~P. Hendry, T.~Bohlin, B.~Jonsson, and O.~K. Berg, ``{The evolution of
   philopatry and dispersal: homing versus straying in salmonids},'' in {\em
   Evolution Illuminated} (A.~P. Hendry and S.~C. Stearns, eds.), Oxford
   University Press on Demand, 2004.
+
+\bibitem{Schtickzelle:2007wb}
+N.~Schtickzelle and T.~P. Quinn, ``{A metapopulation perspective for salmon and
+  other anadromous fish},'' {\em Fish Fish.}, vol.~8, no.~4, pp.~297--314,
+  2007.
+
+\bibitem{Anderson:2014cx}
+S.~C. Anderson, J.~W. Moore, M.~M. McClure, N.~K. Dulvy, and A.~B. Cooper,
+  ``{Portfolio conservation of metapopulations under climate change},'' {\em
+  Ecol. Appl.}, vol.~25, no.~2, pp.~559--572, 2015.
 
 \bibitem{Keefer:2008bs}
 M.~L. Keefer, C.~C. Caudill, C.~A. Peery, and S.~R. Lee, ``{Transporting
@@ -217,16 +150,20 @@ D.~A. Peterson, R.~Hilborn, and L.~Hauser, ``{Local adaptation limits lifetime
   reproductive success of dispersers in a wild salmon metapopulation},'' {\em
   Nature Communications}, vol.~5, p.~3696, Apr. 2014.
 
+\bibitem{Moore:2010gs}
+J.~W. Moore, M.~McClure, L.~A. Rogers, and D.~E. Schindler, ``{Synchronization
+  and portfolio performance of threatened salmon},'' {\em Conserv. Lett.},
+  vol.~3, pp.~340--348, Apr. 2010.
+
 \bibitem{Carlson:2011ce}
 S.~M. Carlson, W.~H. Satterthwaite, and I.~A. Fleming, ``{Weakened portfolio
   effect in a collapsed salmon population complex},'' {\em Can. J. Fish. Aquat.
   Sci.}, vol.~68, pp.~1579--1589, Sept. 2011.
 
-\bibitem{Satterthwaite:2015ge}
-W.~H. Satterthwaite, S.~M. Carlson, and I.~Bradbury, ``{Weakening portfolio
-  effect strength in a hatchery-supplemented Chinook salmon population
-  complex},'' {\em Can. J. Fish. Aquat. Sci.}, vol.~72, pp.~1860--1875, Dec.
-  2015.
+\bibitem{Braun:2016ib}
+D.~C. Braun, J.~W. Moore, J.~Candy, and R.~E. Bailey, ``{Population diversity
+  in salmon: linkages among response, genetic and life history diversity},''
+  {\em Ecography}, vol.~39, pp.~317--328, Mar. 2016.
 
 \bibitem{simpson1953major}
 G.~G. Simpson, {\em {The major features of evolution}}.
@@ -240,6 +177,13 @@ R.~Lande, ``{Natural Selection and Random Genetic Drift in Phenotypic
 A.~O. Shelton and M.~Mangel, ``{Fluctuations of fish populations and the
   magnifying effects of fishing.},'' {\em Proc. Natl. Acad. Sci. USA},
   vol.~108, pp.~7075--7080, Apr. 2011.
+
+\bibitem{Jasper:2013cc}
+J.~R. Jasper, C.~Habicht, S.~Moffitt, R.~Brenner, J.~Marsh, B.~Lewis, E.~C.
+  Fox, Z.~Grauvogel, S.~D.~R. Olive, and W.~S. Grant, ``{Source-Sink Estimates
+  of Genetic Introgression Show Influence of Hatchery Strays on Wild Chum
+  Salmon Populations in Prince William Sound, Alaska},'' {\em PLoS ONE},
+  vol.~8, p.~e81916, Dec. 2013.
 
 \bibitem{Schreiber:2011wx}
 S.~J. Schreiber, R.~B{\"u}rger, and D.~I. Bolnick, ``{The community effects of
@@ -285,6 +229,11 @@ A.~Berdahl, P.~A.~H. Westley, S.~A. Levin, I.~D. Couzin, and T.~P. Quinn, ``{A
   collective navigation hypothesis for homeward migration in anadromous
   salmonids},'' {\em Fish Fish.}, vol.~17, pp.~525--542, June 2014.
 
+\bibitem{Carlson:2008hl}
+S.~M. Carlson and T.~R. Seamons, ``{SYNTHESIS: A review of quantitative genetic
+  components of fitness in salmonids: implications for adaptation to future
+  change},'' {\em Evolutionary Applications}, vol.~1, pp.~222--238, Apr. 2008.
+
 \bibitem{Scheffer:2009gg}
 M.~Scheffer, J.~Bascompte, W.~A. Brock, V.~Brovkin, S.~R. Carpenter, V.~Dakos,
   H.~Held, E.~H. van Nes, M.~Rietkerk, and G.~Sugihara, ``{Early-warning
@@ -311,9 +260,21 @@ C.~Kuehn, ``{A mathematical framework for critical transitions: Bifurcations,
   fast-slow systems and stochastic dynamics},'' {\em Physica D}, vol.~240,
   no.~12, pp.~1020--1035, 2011.
 
+\bibitem{Donohue:2013iu}
+I.~Donohue, O.~L. Petchey, J.~M. Montoya, A.~L. Jackson, L.~McNally, M.~Viana,
+  K.~Healy, M.~Lurgi, N.~E. O'Connor, and M.~C. Emmerson, ``{On the
+  dimensionality of ecological stability.},'' {\em Ecol. Lett.}, vol.~16,
+  pp.~421--429, Apr. 2013.
+
 \bibitem{Krkosek:2014ch}
 M.~Krko{\v s}ek and J.~M. Drake, ``{On signals of phase transitions in salmon
   population dynamics},'' {\em Proc. Roy. Soc. B}, vol.~281,
   pp.~20133221--20133221, Apr. 2014.
+
+\bibitem{Secor:2009ena}
+D.~H. Secor, L.~A. Kerr, and S.~X. Cadrin, ``{Connectivity effects on
+  productivity, stability, and persistence in a herring metapopulation
+  model},'' {\em ICES Journal of Marine Science}, vol.~66, pp.~1726--1732,
+  Sept. 2009.
 
 \end{thebibliography}
