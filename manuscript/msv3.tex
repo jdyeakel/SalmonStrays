@@ -406,7 +406,7 @@ First, in comparison with constant stray rates, density-dependent straying made 
 At low straying rates, near-collapse of both populations resulted in longer than expected recovery times, whereas in the alternative stable state regime (higher $m^*$), the recovery times for different disturbance types were very similar to systems with a constant $m$ (figure \ref{fig:relax}b; note difference in x-axis scales).
 As trait heritability increased, the metapopulation always recovered more quickly if the small population was lost (figure \ref{fig:relax_highh}).
 % There was greater similarity in the recovery times for constant and density-dependent $m$ systems when trait heritability was high (figure \ref{fig:relax_highh}).
-The lower recovery time for systems with increased $m^*$ mirrors an elevated PE with higher density-dependent straying rates (figure \ref{fig:PEtheta}).
+The lower recovery time for systems with increased $m^*$ mirrors an elevated PE with higher density-dependent straying rates (figure \ref{fig:thetaPE}).
 % This higher PE at increased $m^*$ mirrors recovery times that are also lower than those observed for systems with constant $m$ (figure \ref{fig:relax}).
 In tandem, analysis of both PE and recovery time suggests that although density-dependent straying does not appear to change the `dynamic landscape' in our minimal model, it does appear to promote robustness, particularly when the aggregate biomass is low and straying is correspondingly high.
 
@@ -517,7 +517,7 @@ While metapopulation approaches have widely recognized the importance of source 
 % 
 % To what extent the existence of alternative stable states promotes or diminishes the system as a whole is a matter of perspective, though with clear conservation implications.
 % At face value, the subordinate population is pushed closer to extinction (figure \ref{fig:traj}), suggesting that the system may be more fragile.
-% On the other hand, the presence of \emph{just enough} straying to cause formation of alternative stable states both increases the portfolio effect (figure \ref{fig:PE}c) and reduces the rate of return -- particularly if straying is density-dependent (figures \ref{PEtheta}a, \ref{fig:relax}b).
+% On the other hand, the presence of \emph{just enough} straying to cause formation of alternative stable states both increases the portfolio effect (figure \ref{fig:PE}c) and reduces the rate of return -- particularly if straying is density-dependent (figures \ref{thetaPE}a, \ref{fig:relax}b).
 % This asymmetry in population densities also leads an asymmetry in the mean trait values, skewed towards the local optimum of the dominant population, one, and this has important -- and often non-intuitive -- ramifications for metapopulation robustness. %, as measured by both the portfolio effect as well as recovery time.
 
 There is a `sweet spot' for straying that maximizes metapopulation robustness. 
@@ -533,15 +533,13 @@ When there is just enough straying to cause alternative stable states, recovery 
 % Neither the transient nor asymptotic dynamics that we describe here qualitatively differ as a function of whether the rate of straying is constant or density-dependent, however we observe important quantitative differences that suggest density-dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
 
 This themed issue formalizes the role of collective movement in the ecology of natural systems and illuminates a signature of collective navigation in animal populations on the move.
-We observed two salient results that contribute to our understanding of collective movement that combine to suggest that density dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
-
-
-First, compared to systems with constant dispersal, density-dependent straying appears to increase the portfolio effect across a range of stray rates (figure \ref{fig:PEtheta}a). 
+We observed three salient results that contribute to our understanding of collective movement that combine to suggest that density-dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
+First, the inclusion of density-dependent straying does not qualitatively alter either (\emph{i}) steady state or (\emph{ii}) transient dynamics of our minimal eco-evolutionary model, but effectively rescales measures of robustness to the straying rates the emerge from the coupled dynamics.
+Second, compared to systems with constant dispersal, density-dependent straying appears to increase the portfolio effect across a range of straying rates (figure \ref{fig:thetaPE}a). 
 % and that at low to intermediate levels of straying, PE is high.
-Second, density-dependent straying reduces the time to recovery following disturbances, and this is particularly true in the case of near-collapse of both populations (figure \ref{fig:relax}b).
-In this case, although both populations are near-collapse, the mean trait values of both are skewed towards the optimum for the dominant population.
-
- the straying rates are also higher because of the low-densities after collapse, and this permits faster recovery (figure \ref{fig:relaxtraj_bothlh}).
+Third, density-dependent straying reduces the time to recovery following disturbance, and this is particularly true in the case of near-collapse of the metapopulation (figure \ref{fig:relax}b).
+In the case of near-collapse, although both populations inherit low population densities, the mean trait values of both are skewed towards the optimum of the dominant population.
+Due to density-dependent straying, low population densities evince greater dispersal, and while this increased connectivity primarily facilities the growth of the dominant population (because the trait means are closer to the dominant optimum), because the dominant population is the bulk of the aggregate biomass, the overall recovery time is significantly lessened (figures \ref{fig:relax}b, \ref{fig:relaxtraj_bothlh}).
 % Third, in habitats with greater heterogeneity between sites (measured by an increase in $\Delta\theta$), density-dependent straying diminished robustness at low rates of straying (marginally lower portfolio effects and substantially longer return times; figures \ref{fig:thetaPE}b, \ref{fig:relaxtheta}a,b).
 % Conversely, for increased straying rates, greater and exaggerates the positive effects when $m^*$ is high (higher portfolio effects, and shorter return times). 
 
@@ -557,24 +555,26 @@ In this case, although both populations are near-collapse, the mean trait values
 Salmon are distributed and stray across a diverse range of habitats, and the rates of straying between geographically diverse sites can be plastic and idiosyncratic \cite{Westley:2015to}.
 Our surrogate measure for habitat heterogeneity is the difference in trait optima between sites $\Delta\theta$.
 In general, our findings indicate that increased habitat heterogeneity promotes robustness (higher PE, shorter time to recovery) when straying rates are low, but may erode robustness when straying rates are high (figure \ref{fig:thetaPE}b, solid lines).
-This may be particularly consequential for populations that are spatially adjacent but separated by  sharp environmental boundary, such that trait optima are divergent yet dispersal is relatively high (is this a thing?)...
+This may be particularly consequential for populations that are spatially adjacent but separated by sharp environmental boundaries, such that trait optima are divergent yet dispersal is relatively high.
+Such a scenario plays out repeatedly in the context of adjacent wild and hatchery-produce salmon. Although wild and hatchery populations may occur close on the landscape, and indeed often are sympatric within the same river network, the selective environments to which they are locally adapted differ dramatically \cite{Christie:2012bj}. 
+Straying of domesticated hatchery-produced fish from release sites and spawning in the wild drastically reduces the productivity of wild populations through competition and outbreeding depression \cite{Chilcote:2003bb,Araki:2007cm}.
 
 %mtheta
-However, habitats that are closer in space generally have greater similarity in environmental conditions than habitats that are geographically distant (REF).
-From a purely statistical standpoint, it is reasonable to expect a larger number of straying individuals between sites that are closer together.
-Alternatively, salmon that cue to specific environmental conditions are more likely to stray into sites that have structurally and physiognamically similar habitats (REFS).
+All else being equal, habitats that are closer in space generally have greater similarity in environmental conditions than habitats that are geographically distant, and correspondingly phenotypes of more proximately located populations should be more similar to those that are distant \cite{Westley:2012ui}.
+Correspondingly, it is reasonable to expect a larger number of straying individuals between sites that are geographically proximate and indeed evidence corroborates this prediction \cite{Candy:2000hu,JPE:JPE1383}.
+Alternatively, salmon that cue to specific environmental conditions may be more likely to stray into sites that have structurally and physiognamically similar habitats \cite{Peterson:2014gy} even if other potential sites are closer.
 These considerations justify imposing a direct relationship between the rate of straying $m$ and habitat heterogeneity: as site dissimilarity increases, so too should the straying rate decrease.
 As site dissimilarity increases, so to should the optima in trait values for the resident populations.
 
 
-When habitat heterogeneity and the rate of straying are linked, we show that small amounts of either constant or density-dependent straying result in longer recovery times for the dominant population because there is enough isolation to allow the surviving subordinant population locally adapt towards its own optimum.
+When habitat heterogeneity and the rate of straying are linked, we show that small amounts of either constant or density-dependent straying result in longer recovery times for the dominant population because there is enough isolation to allow the surviving subordinate population to slowly adapt towards its own optimum and therefore strays from that population will be maladaptive in the dominant site.
 As selection pushes the subordinate population away from the dominant trait optimum, the recovery of the extinct population is slowed (figure \ref{fig:mtheta}).
-This may have particular conservation implications...
-Moreover, local temperature regimes are known to play a central role in dictating local adapation of salmon populations (REFS).
+This may have particular conservation implications for considerations of aiding dispersal following disturbances or reconnections of lost habitats \cite{Anderson:2013bf,Pess:2014isa}.
+Moreover, local temperature regimes are known to play a central role in dictating local adaptation of salmon populations (REFS).
 If temperature is the primary determinant of $\Delta\theta$ in terms of our model, this would suggest that populations spanning North-South gradients are more predisposed to distance dependent dynamics.
-In constrast, the relationship between the rate of straying and habitat heterogeneity may be less clear-cut for populations spanning an East-West gradient, where distant habitats may equally fitting for straying populations.
-(Bristal Bay vs. California???)
+In contrast, the relationship between the rate of straying and habitat heterogeneity may be less clear-cut for populations spanning an East-West gradient, where distant habitats may equally fitting for straying populations.
 
+%I'm here
 
 %Concluding
 The importance of selection and its influence on the dynamics of populations is increasingly recognized as vital for assessing species' fragility.

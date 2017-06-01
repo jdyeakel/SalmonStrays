@@ -190,10 +190,20 @@ S.~J. Schreiber, R.~B{\"u}rger, and D.~I. Bolnick, ``{The community effects of
   phenotypic and genetic variation within a predator population.},'' {\em
   Ecology}, vol.~92, pp.~1582--1593, Aug. 2011.
 
-\bibitem{Gibert:tz}
-J.~P. Gibert, A.~I. Dell, J.~P. DeLong, and S.~Pawar, ``{Scaling-up trait
-  variation from individuals to ecosystems },'' {\em Advances in Ecological
-  Research}, vol.~52, pp.~1--17, 2015.
+\bibitem{Gilbert:2014ee}
+J.~P. Gibert and C.~E. Brassil, ``{Individual phenotypic variation reduces
+  interaction strengths in a consumer{\textendash}resource system},'' {\em Ecol
+  Evol}, vol.~4, no.~18, pp.~3703--3713, 2014.
+
+\bibitem{Gibert:2015kc}
+J.~P. Gibert and J.~P. DeLong, ``{Individual variation decreases interference
+  competition but increases species persistence},'' {\em Advances in Ecological
+  Research}, vol.~52, pp.~45--64, 2015.
+
+\bibitem{Berdahl:2014bl}
+A.~Berdahl, P.~A.~H. Westley, S.~A. Levin, I.~D. Couzin, and T.~P. Quinn, ``{A
+  collective navigation hypothesis for homeward migration in anadromous
+  salmonids},'' {\em Fish Fish.}, vol.~17, pp.~525--542, June 2014.
 
 \bibitem{Schindler:2015gf}
 D.~E. Schindler, J.~B. Armstrong, and T.~E. Reed, ``{The portfolio concept in
@@ -223,11 +233,6 @@ J.~D. Yeakel, J.~W. Moore, P.~R. Guimar{\~a}es~Jr, and M.~A.~M. de~Aguiar,
 J.~Guckenheimer and P.~Holmes, {\em {Nonlinear Oscillations, Dynamical Systems,
   and Bifurcations of Vector Fields}}.
 \newblock New York: Springer, 1983.
-
-\bibitem{Berdahl:2014bl}
-A.~Berdahl, P.~A.~H. Westley, S.~A. Levin, I.~D. Couzin, and T.~P. Quinn, ``{A
-  collective navigation hypothesis for homeward migration in anadromous
-  salmonids},'' {\em Fish Fish.}, vol.~17, pp.~525--542, June 2014.
 
 \bibitem{Carlson:2008hl}
 S.~M. Carlson and T.~R. Seamons, ``{SYNTHESIS: A review of quantitative genetic
@@ -266,15 +271,73 @@ I.~Donohue, O.~L. Petchey, J.~M. Montoya, A.~L. Jackson, L.~McNally, M.~Viana,
   dimensionality of ecological stability.},'' {\em Ecol. Lett.}, vol.~16,
   pp.~421--429, Apr. 2013.
 
-\bibitem{Krkosek:2014ch}
-M.~Krko{\v s}ek and J.~M. Drake, ``{On signals of phase transitions in salmon
-  population dynamics},'' {\em Proc. Roy. Soc. B}, vol.~281,
-  pp.~20133221--20133221, Apr. 2014.
+\bibitem{Levin:1992p1472}
+S.~A. Levin, ``{The Problem of Pattern and Scale in Ecology: The Robert H.
+  MacArthur Award Lecture},'' {\em Ecology}, vol.~73, pp.~1943--1967, Dec.
+  1992.
+
+\bibitem{Meinhardt:2012hw}
+H.~Meinhardt, ``{Turing's theory of morphogenesis of 1952 and the subsequent
+  discovery of the crucial role of local self-enhancement and long-range
+  inhibition},'' {\em Interface Focus}, vol.~2, no.~4, pp.~407--416, 2012.
+
+\bibitem{Hanski:1999vu}
+I.~Hanski, {\em {Metapopulation Ecology}}.
+\newblock Oxford University Press, Mar. 1999.
+
+\bibitem{Boughton:1999fa}
+D.~A. Boughton, ``{EMPIRICAL EVIDENCE FOR COMPLEX SOURCE{\textendash}SINK
+  DYNAMICS WITH ALTERNATIVE STATES IN A BUTTERFLY METAPOPULATION},'' {\em
+  Ecology}, vol.~80, pp.~2727--2739, Dec. 1999.
 
 \bibitem{Secor:2009ena}
 D.~H. Secor, L.~A. Kerr, and S.~X. Cadrin, ``{Connectivity effects on
   productivity, stability, and persistence in a herring metapopulation
   model},'' {\em ICES Journal of Marine Science}, vol.~66, pp.~1726--1732,
   Sept. 2009.
+
+\bibitem{Christie:2012bj}
+M.~R. Christie, M.~L. Marine, R.~A. French, and M.~S. Blouin, ``{Genetic
+  adaptation to captivity can occur in a single generation.},'' {\em PNAS},
+  vol.~109, pp.~238--242, Jan. 2012.
+
+\bibitem{Chilcote:2003bb}
+M.~W. Chilcote, ``{Relationship between natural productivity and the frequency
+  of wild fish in mixed spawning populations of wild and hatchery steelhead (
+  Oncorhynchus mykiss)},'' {\em Can. J. Fish. Aquat. Sci.}, vol.~60,
+  pp.~1057--1067, Sept. 2003.
+
+\bibitem{Araki:2007cm}
+H.~Araki, B.~Cooper, and M.~S. Blouin, ``{Genetic Effects of Captive Breeding
+  Cause a Rapid, Cumulative Fitness Decline in the Wild},'' {\em Science},
+  vol.~318, pp.~100--103, Oct. 2007.
+
+\bibitem{Westley:2012ui}
+P.~A.~H. Westley, { Corinne M. Conway}, and I.~A. Fleming, ``{Phenotypic
+  divergence of exotic fish populations is shaped by spatial proximity and
+  habitat differences across an invaded landscape},'' {\em Evol. Ecol. Res.},
+  vol.~14, no.~2, pp.~147--167, 2012.
+
+\bibitem{Candy:2000hu}
+J.~R. Candy and T.~D. Beacham, ``{Patterns of homing and straying in southern
+  British Columbia coded-wire tagged chinook salmon (Oncorhynchus tshawytscha)
+  populations},'' {\em Fisheries Research}, vol.~47, pp.~41--56, June 2000.
+
+\bibitem{JPE:JPE1383}
+R.~S. Schick and S.~T. Lindley, ``{Directed connectivity among fish populations
+  in a riverine network},'' {\em J. Appl. Ecol.}, vol.~44, no.~6,
+  pp.~1116--1126, 2007.
+
+\bibitem{Anderson:2013bf}
+J.~H. Anderson, P.~L. Faulds, W.~I. Atlas, and T.~P. Quinn, ``{Reproductive
+  success of captively bred and naturally spawned Chinook salmon colonizing
+  newly accessible habitat},'' {\em Evolutionary Applications}, vol.~6,
+  pp.~165--179, Feb. 2013.
+
+\bibitem{Pess:2014isa}
+G.~R. Pess, T.~P. Quinn, S.~R. Gephard, and R.~Saunders, ``{Re-colonization of
+  Atlantic and Pacific rivers by anadromous fishes: linkages between life
+  history and the benefits of barrier removal},'' {\em Reviews in Fish Biology
+  and Fisheries}, vol.~24, pp.~881--900, Jan. 2014.
 
 \end{thebibliography}
