@@ -1,0 +1,256 @@
+\RequirePackage{lineno}
+\documentclass{revtex4}
+%\usepackage[pdftex]{graphicx}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{anyfontsize}
+
+\usepackage[font={small}]{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{xr}
+\externaldocument[extfig-]{msv4}
+%\usepackage{epstopdf}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{multirow}
+\usepackage{color}
+%\usepackage{multibox}
+%\usepackage{rotating}
+% \usepackage{lineno}
+
+%\usepackage[left]{lineno}
+%\usepackage[comma,sort&compress]{natbib}
+%\usepackage{authblk}
+%\usepackage{multicol}
+
+\linespread{1.5}
+
+\usepackage{natbib}
+\bibpunct{(}{)}{,}{a}{}{;}
+
+\bibliographystyle{prsb}
+
+% \usepackage{bibunits}
+
+\newcommand{\beginsupplement}{%
+        \clearpage
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+% \pagewiselinenumbers
+\linenumbers
+% \setlength\linenumbersep{3pt}
+
+\begin{document}
+
+% \Blindtext
+%\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
+%\title{Community assembly and dynamics by the deconstruction of species interactions}
+\title{Supplementary Figures: Eco-evolutionary dynamics and collective straying: implications for salmon metapopulation robustness}
+\author{
+Justin D. Yeakel${}^{1,2,*}$, Jean P. Gibert${}^{1}$, Peter A. H. Westley${}^{3}$, \& Jonathan W. Moore${}^{4}$ \\
+${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
+${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
+${}^3$College of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\
+${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
+${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
+}
+
+\maketitle
+
+\beginsupplement
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{figs2/fig_relax_small.pdf}
+\caption{
+Extinction of low-density population with a high constant straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{extfig-fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_ldlh}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{figs2/fig_relax_large.pdf}
+\caption{
+Extinction of high-density population with a high straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{extfig-fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_hdlh}
+\end{figure}
+% 
+% \begin{figure}
+%   \captionsetup{justification=raggedright,
+% singlelinecheck=false
+% }
+% \centering
+% \includegraphics[width=0.35\textwidth]{figs2/fig_relax_small_highh.pdf}
+% \caption{
+% Extinction of low-density population with a high constant straying rate $m=0.4$ and high trait heritability $h^2=0.8$ (see figure \ref{fig:relax}a).
+% Black line marks the calculated point of recovery post-perturbation.
+% Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+% } \label{fig:relaxtraj_ldhh}
+% \end{figure}
+% 
+% \begin{figure}
+%   \captionsetup{justification=raggedright,
+% singlelinecheck=false
+% }
+% \centering
+% \includegraphics[width=0.35\textwidth]{figs2/fig_relax_large_highh.pdf}
+% \caption{
+% Extinction of high-density population with a high straying rate $m=0.4$ and high trait heritability $h^2=0.8$ (see figure \ref{fig:relax}a).
+% Black line marks the calculated point of recovery post-perturbation.
+% Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+% } \label{fig:relaxtraj_hdhh}
+% \end{figure}
+
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.9\textwidth]{figs2/fig_relax_highh.pdf}
+\caption{
+Recovery time of $N_T$ following the extinction of either the low-density (light gray) or high-density (gray) population, or the near-collapse of both (dark gray) assuming (a) constant straying rates $m$ and (b) density-dependent straying rates (evaluated at the steady state $m^*$) with trait heritability $h^2=0.8$.
+If $m$ is density-dependent, in the alternative stable state regime there are two straying rates observed: one each for the low- and high-density populations, respectively, which are linked by a horizontal line.
+} \label{fig:relax_highh}
+\end{figure*}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.4\textwidth]{figs2/fig_thetadiffN.pdf}
+\caption{
+Median difference in population densities taken over the straying rate as a function of habitat heterogeneity $\Delta\theta$.
+Solid lines are for constant $m$; dashed lines are for density-dependent $m$} \label{fig:thetadiffN}
+\end{figure}
+
+
+
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.8\textwidth]{figs2/fig_relaxtheta2.pdf}
+\caption{
+(a) Recovery time after near collapse of both populations as a function of straying rate $m$ and habitat heterogeneity $\Delta\theta$.
+(b) The same as (a) but including recovery times when straying is density-dependent, shown by linked pairs of points.
+Recovery times for systems with density-dependent straying are longer at low straying rates and shorter at higher straying rates, mirroring the change in portfolio effects shown in figure \ref{extfig-fig:thetaPE}.
+} \label{fig:relaxtheta}
+\end{figure*}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+  \centering
+  \includegraphics[width=0.35\textwidth]{figs2/fig_MDPE_hm_mtheta_rt.pdf}
+  \caption{
+  Distance dependent portfolio effects as a function of straying rate $m$ and trait heritability $h^2$. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases.
+  } \label{fig:mthetaPE}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{figs2/fig_relax_inertia.pdf}
+\caption{
+Distance dependent straying, where increased differences in trait optima between sites $\Delta\theta$ corresponds to lower rates of straying $m$.
+At low rates of straying $m=0.02$ ($\Delta\theta=24$), extinction of the dominant population leads to slower-than-expected recovery times because the subordinate population is isolated enough to evolve towards its own trait optimum. %until growth of the dominant population overwhelms this local selection.
+In this case, $m$ is less than $m=0.034$ (denoted by the asterisk in figure \ref{extfig-fig:mtheta}), such that isolation allows the subdominant population to `run away' from the influence of the dominant population, leading to a switch in states.
+If $m$ is low but greater than $0.034$, isolation permits the subdominant population to `run away' from the influence of the dominant population, until it is overwhelmed by the recovering dominant population, and reverts back to its previous trait mean prior to the disturbance.
+} \label{fig:inertia}
+\end{figure}
+
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs2/fig_relax_mtheta.pdf}
+  \caption{
+  Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases for constant (a) and density-dependent (b) staying rates.
+  The fold bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
+  Despite this difference, the general trends shown in (a) are also present in (b).
+  } \label{fig:mthetamvm}
+\end{figure*}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{figs2/fig_relax_both_lowh.pdf}
+\caption{
+Near collapse of both populations with a low straying rate $m=0.1$ and low trait heritability $h^2=0.2$ (see figure \ref{extfig-fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_bothlh}
+\end{figure}
+
+
+% \begin{figure*}[h!]
+%   \captionsetup{justification=raggedright,
+% singlelinecheck=false
+% }
+% \centering
+% \begin{subfigure}[t]{0.55\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{figs2/fig_MDPE_hm_theta3.pdf} 
+% \caption{Low habitat heterogeneity ($\Delta\theta=3$)} \label{fig:thetadiff1}
+% \end{subfigure}
+% \begin{subfigure}[t]{0.55\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{figs2/fig_MDPE_hm_theta8.pdf} 
+% \caption{High habitat heterogeneity ($\Delta\theta=8$)} \label{fig:thetadiff2}
+% \end{subfigure}
+% \caption{Total means $N_t$, difference in means $\Delta N$, and the portfolio effect PE for different habitat heterogeneities $\Delta\theta$. Light colors = high values.
+% }
+% \end{figure*}
+
+
+% \begin{figure*}[h!]
+%   \captionsetup{justification=raggedright,
+% singlelinecheck=false
+% }
+% \centering
+% \includegraphics[width=0.8\textwidth]{figs2/fig_MDPE_hm_ddm.pdf}
+% \caption{
+% The same simulations as presented in Figure \ref{fig:PE}, except with density-dependent straying, where $m(t) = m_0\left(1-N(t)/(C+N(t)\right)$. Light colors = high values.
+% } \label{fig:ddm}
+% \end{figure*}
+
+
+\end{document}

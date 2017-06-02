@@ -1,47 +1,510 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: msv3.aux
 A level-1 auxiliary file: bu.aux
-The style file: ieeetr.bst
-Database file #1: aa_kevin.bib
-You've used 66 entries,
-            1876 wiz_defined-function locations,
-            918 strings with 16348 characters,
-and the built_in function-call counts, 21810 in all, are:
-= -- 2343
-> -- 755
+The style file: prsb.bst
+"<" can't start a style-file command---line 7 of file prsb.bst
+ : 
+ : <!DOCTYPE html>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 14 of file prsb.bst
+ :   
+ :   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-d48d0c441ed0ab66aa7d582c5aaf762f4a1eef9a915871a36ddb07e71b01ffb2.css" integrity="sha256-1I0MRB7Qq2aqfVgsWq92L0oe75qRWHGjbdsH5xsB/7I=" media="all" rel="stylesheet" />
+(Error may have been on previous line)
+"<" can't start a style-file command---line 21 of file prsb.bst
+ :   
+ :   <meta name="viewport" content="width=device-width">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 23 of file prsb.bst
+ :   
+ :   <title>bst/prsb.bst at master · seananderson/bst</title>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 29 of file prsb.bst
+ :     
+ :     <meta content="https://avatars1.githubusercontent.com/u/19349?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="seananderson/bst" property="og:title" /><meta content="https://github.com/seananderson/bst" property="og:url" /><meta content="bst - BibTeX style files for ecology journals" property="og:description" />
+(Error may have been on previous line)
+"<" can't start a style-file command---line 31 of file prsb.bst
+ :   
+ :   <link rel="assets" href="https://assets-cdn.github.com/">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 38 of file prsb.bst
+ :   
+ :   <meta name="selected-link" value="repo_source" data-pjax-transient>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 40 of file prsb.bst
+ :   
+ :   <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 44 of file prsb.bst
+ : 
+ : <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="EBC3:246F9:3BEECFF:5CAD965:5930B094" name="octolytics-dimension-request_id" /><meta content="sea" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" /><meta content="5982848" name="octolytics-actor-id" /><meta content="jdyeakel" name="octolytics-actor-login" /><meta content="ff5f7e1ceee5d5b22af5af29488fa340ba2b35a8a1a89401b07136e7ec7f035d" name="octolytics-actor-hash" />
+(Error may have been on previous line)
+"<" can't start a style-file command---line 50 of file prsb.bst
+ :   
+ :   <meta class="js-ga-set" name="dimension1" content="Logged In">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 55 of file prsb.bst
+ :       
+ :       <meta name="hostname" content="github.com">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 58 of file prsb.bst
+ :       
+ :       <meta name="expected-hostname" content="github.com">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 62 of file prsb.bst
+ :   
+ :   <meta name="html-safe-nonce" content="f9b5e6254e4b711e2934f2f6cf96b69fc763eeec">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 64 of file prsb.bst
+ :   
+ :   <meta http-equiv="x-pjax-version" content="490d0d3b7ecdcae2f3fe5a65d4ffeffd">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 68 of file prsb.bst
+ :   
+ :   <meta name="description" content="bst - BibTeX style files for ecology journals">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 71 of file prsb.bst
+ :   
+ :   <meta content="19349" name="octolytics-dimension-user_id" /><meta content="seananderson" name="octolytics-dimension-user_login" /><meta content="6014963" name="octolytics-dimension-repository_id" /><meta content="seananderson/bst" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="6014963" name="octolytics-dimension-repository_network_root_id" /><meta content="seananderson/bst" name="octolytics-dimension-repository_network_root_nwo" /><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
+(Error may have been on previous line)
+"<" can't start a style-file command---line 75 of file prsb.bst
+ :     
+ :     <link rel="canonical" href="https://github.com/seananderson/bst/blob/master/prsb.bst" data-pjax-transient>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 78 of file prsb.bst
+ :   
+ :   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 80 of file prsb.bst
+ :   
+ :   <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 82 of file prsb.bst
+ :   
+ :   <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 85 of file prsb.bst
+ : 
+ : <meta name="theme-color" content="#1e2327">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 88 of file prsb.bst
+ :   
+ :   <meta name="u2f-support" content="true">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 90 of file prsb.bst
+ :   
+ :   </head>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 92 of file prsb.bst
+ :   
+ :   <body class="logged-in env-production emoji-size-boost page-blob">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 97 of file prsb.bst
+ :   
+ :   <div class="position-relative js-header-wrapper ">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 108 of file prsb.bst
+ : 
+ : <div class="header" role="banner">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 115 of file prsb.bst
+ :         
+ :         <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 134 of file prsb.bst
+ :       
+ :       <ul class="header-nav float-left" role="navigation">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 153 of file prsb.bst
+ : 
+ : <ul class="header-nav user-nav float-right" id="user-links">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 156 of file prsb.bst
+ :     
+ :     <a href="/notifications" aria-label="You have no unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s js-socket-channel js-notification-indicator " data-channel="notification-changed:5982848" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 162 of file prsb.bst
+ :   
+ :   <li class="header-nav-item dropdown js-menu-container">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 170 of file prsb.bst
+ :     
+ :     <div class="dropdown-menu-content js-menu-content">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 173 of file prsb.bst
+ : 
+ : <a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 177 of file prsb.bst
+ :   
+ :   <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 181 of file prsb.bst
+ : 
+ : <a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 185 of file prsb.bst
+ :   
+ :   <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 191 of file prsb.bst
+ :   
+ :   <div class="dropdown-divider"></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 199 of file prsb.bst
+ :       
+ :       </ul>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 203 of file prsb.bst
+ :   
+ :   <li class="header-nav-item dropdown js-menu-container">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 211 of file prsb.bst
+ :     
+ :     <div class="dropdown-menu-content js-menu-content">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 217 of file prsb.bst
+ :         
+ :         <div class="dropdown-divider"></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 219 of file prsb.bst
+ :         
+ :         <a class="dropdown-item" href="/jdyeakel" data-ga-click="Header, go to profile, text:your profile">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 232 of file prsb.bst
+ :         
+ :         <div class="dropdown-divider"></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 234 of file prsb.bst
+ :         
+ :         <a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 238 of file prsb.bst
+ :         
+ :         <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="kbU7mExmyQIjtYZjiDVZEN0hhMnPtBBEyYPm2SieHGNqENGksIdg4UT4yEfK+0hToyEz9kq7dFaGwionTGV2ww==" /></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 248 of file prsb.bst
+ :     
+ :     <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="z9YTO2y6bWQyyijJWRUPSopt10xfV6fYGQ/131KNyIs0c/kHkFvEh1WHZu0b2x4J9G1gc9pYw8pWTjkhNnaiKw==" /></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 258 of file prsb.bst
+ :   
+ :   </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 260 of file prsb.bst
+ :   
+ :   <div id="start-of-content" class="accessibility-aid"></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 262 of file prsb.bst
+ :     
+ :     <div id="js-flash-container">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 267 of file prsb.bst
+ :   
+ :   <div role="main">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 274 of file prsb.bst
+ :     
+ :     <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 277 of file prsb.bst
+ :         
+ :         <ul class="pagehead-actions">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 281 of file prsb.bst
+ :         
+ :         <div class="select-menu js-menu-container js-select-menu">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 296 of file prsb.bst
+ :         
+ :         <div class="select-menu-modal-holder">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 303 of file prsb.bst
+ :               
+ :               <div class="select-menu-list js-navigation-container" role="menu">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 305 of file prsb.bst
+ :                 
+ :                 <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 318 of file prsb.bst
+ :                 
+ :                 <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 331 of file prsb.bst
+ :                 
+ :                 <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 344 of file prsb.bst
+ :               
+ :               </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 346 of file prsb.bst
+ :             
+ :             </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 352 of file prsb.bst
+ :   
+ :   <li>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 383 of file prsb.bst
+ :   
+ :   </li>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 385 of file prsb.bst
+ :   
+ :   <li>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 395 of file prsb.bst
+ :           
+ :           <div id="fork-destination-box" style="display: none;">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 404 of file prsb.bst
+ :     
+ :     <a href="/seananderson/bst/network" class="social-count"
+(Error may have been on previous line)
+"<" can't start a style-file command---line 411 of file prsb.bst
+ :         
+ :         <h1 class="public ">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 417 of file prsb.bst
+ : 
+ : </h1>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 419 of file prsb.bst
+ :       
+ :       </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 422 of file prsb.bst
+ : 
+ : <nav class="reponav js-repo-nav js-sidenav-container-pjax"
+(Error may have been on previous line)
+"<" can't start a style-file command---line 428 of file prsb.bst
+ :   
+ :   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 435 of file prsb.bst
+ :     
+ :     <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 443 of file prsb.bst
+ :   
+ :   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 451 of file prsb.bst
+ :     
+ :     <a href="/seananderson/bst/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /seananderson/bst/projects">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 461 of file prsb.bst
+ :     
+ :     <div class="reponav-dropdown js-menu-container">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 481 of file prsb.bst
+ :       
+ :       </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 484 of file prsb.bst
+ : 
+ : <div class="container new-discussion-timeline experiment-repo-nav">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 490 of file prsb.bst
+ : 
+ : <a href="/seananderson/bst/blob/16c2cbaf6af224fe097342452892149a3babdd98/prsb.bst" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 492 of file prsb.bst
+ : 
+ : <!-- blob contrib key: blob_contributors:v21:9f969b48e9e90ed871c666f553e4bccb -->
+(Error may have been on previous line)
+"<" can't start a style-file command---line 494 of file prsb.bst
+ : 
+ : <div class="file-navigation js-zeroclipboard-container">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 496 of file prsb.bst
+ : 
+ : <div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+(Error may have been on previous line)
+type is an illegal style-file command---line 499 of file prsb.bst
+ :     type
+ :         ="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+"<" can't start a style-file command---line 504 of file prsb.bst
+ :   
+ :   <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 506 of file prsb.bst
+ :     
+ :     <div class="select-menu-modal">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 512 of file prsb.bst
+ :       
+ :       <div class="select-menu-filters">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 528 of file prsb.bst
+ :       
+ :       <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 530 of file prsb.bst
+ :         
+ :         <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 533 of file prsb.bst
+ :             
+ :             <a class="select-menu-item js-navigation-item js-navigation-open selected"
+(Error may have been on previous line)
+"<" can't start a style-file command---line 545 of file prsb.bst
+ :           
+ :           <div class="select-menu-no-results">Nothing to show</div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 548 of file prsb.bst
+ :       
+ :       <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 552 of file prsb.bst
+ :         
+ :         </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 554 of file prsb.bst
+ :         
+ :         <div class="select-menu-no-results">Nothing to show</div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 557 of file prsb.bst
+ :     
+ :     </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 561 of file prsb.bst
+ :   
+ :   <div class="BtnGroup float-right">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 577 of file prsb.bst
+ :   
+ :   <div class="commit-tease">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 590 of file prsb.bst
+ :     
+ :     <div class="commit-tease-contributors">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 596 of file prsb.bst
+ :     
+ :     </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 598 of file prsb.bst
+ :     
+ :     <div id="blob_contributors_box" style="display:none">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 609 of file prsb.bst
+ : 
+ : <div class="file">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 613 of file prsb.bst
+ :     
+ :     <div class="BtnGroup">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 619 of file prsb.bst
+ :         
+ :         <a class="btn-octicon tooltipped tooltipped-nw"
+(Error may have been on previous line)
+"<" can't start a style-file command---line 626 of file prsb.bst
+ :         
+ :         <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/seananderson/bst/edit/master/prsb.bst" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="MGjlVWS/3S01dbrRANc1WYlSOrHZy0gkHYOvSM7K3mIDjx16shnAlTR7lkaUnaQ7AFp7cVSJ8WZv+XhoI8hDxA==" /></div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 638 of file prsb.bst
+ :   
+ :   <div class="file-info">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 647 of file prsb.bst
+ :   
+ :   <div itemprop="text" class="blob-wrapper data type-text">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5893 of file prsb.bst
+ :   
+ :   </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5895 of file prsb.bst
+ : 
+ : </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5897 of file prsb.bst
+ : 
+ : <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5905 of file prsb.bst
+ :   
+ :   </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5909 of file prsb.bst
+ :     
+ :     </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5912 of file prsb.bst
+ :   
+ :   </div>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5915 of file prsb.bst
+ : 
+ : <div class="container site-footer-container">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5925 of file prsb.bst
+ :     
+ :     </ul>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5927 of file prsb.bst
+ :     
+ :     <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5943 of file prsb.bst
+ :   
+ :   <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5953 of file prsb.bst
+ :     
+ :     <script crossorigin="anonymous" integrity="sha256-YR5yZsGniaV+fJRYGk0cFCrPKjyIlL/sjg73oPdyeIc=" src="https://assets-cdn.github.com/assets/frameworks-611e7266c1a789a57e7c94581a4d1c142acf2a3c8894bfec8e0ef7a0f7727887.js"></script>
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5959 of file prsb.bst
+ :   
+ :   <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+(Error may have been on previous line)
+"<" can't start a style-file command---line 5975 of file prsb.bst
+ :   
+ :   </body>
+(Error may have been on previous line)
+You've used 69 entries,
+            0 wiz_defined-function locations,
+            223 strings with 2366 characters,
+and the built_in function-call counts, 0 in all, are:
+= -- 0
+> -- 0
 < -- 0
-+ -- 277
-- -- 211
-* -- 1616
-:= -- 2933
-add.period$ -- 72
-call.type$ -- 66
-change.case$ -- 60
++ -- 0
+- -- 0
+* -- 0
+:= -- 0
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 1069
-empty$ -- 1846
-format.name$ -- 211
-if$ -- 5323
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 0
+format.name$ -- 0
+if$ -- 0
 int.to.chr$ -- 0
-int.to.str$ -- 66
-missing$ -- 72
-newline$ -- 207
-num.names$ -- 68
-pop$ -- 102
-preamble$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 0
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 0
 purify$ -- 0
 quote$ -- 0
-skip$ -- 964
+skip$ -- 0
 stack$ -- 0
-substring$ -- 1925
-swap$ -- 584
+substring$ -- 0
+swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 236
-width$ -- 68
-write$ -- 669
+while$ -- 0
+width$ -- 0
+write$ -- 0
+(There were 116 error messages)

@@ -481,7 +481,7 @@ library(shape)
 pal = brewer.pal(9,'Greys')
 pdf($namespace,height=4,width=5)
 palsub = pal[c(4,6,8)];
-plot($mvec2,$(ma_rth[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt),max($(ma_rth))))
+plot($mvec2,$(ma_rth[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',xlim=c(0,0.25),ylim=c(min($rt),max($(ma_rth))),las=1)
 lines($mvec2,$(ma_rth[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec2,$(ma_rth[:,3]),col=palsub[3],cex=0.5,lwd=2)
 #Arrows(0.122,5000,0.122,3000,code=2,arr.type ='circle')
