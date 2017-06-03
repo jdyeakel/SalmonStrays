@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 JUN 2017 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 JUN 2017 09:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,21 +334,18 @@ Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 Package: xr 1994/05/28 v5.02 eXternal References (DPC)
 )
 Package xr Info: IMPORTING LABELS FROM supp.aux on input line 22.
- (./msv4.aux
-
-! Package natbib Error: Bibliography not compatible with author-year citations.
-
-(natbib)                Press <return> to continue in numerical citation style.
 
 
-See the natbib package documentation for explanation.
+! LaTeX Error: Option clash for package natbib.
+
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 ...and\NAT@force@numbers{}\NAT@force@numbers
-                                                  
+l.41 
+     
 ? 
-)
+(./msv4.aux)
 \openout1 = `msv4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -366,7 +363,8 @@ LaTeX Font Info:    ... okay on input line 61.
 Class revtex4 Info: Patching LaTeX tabular. on input line 61.
 Class revtex4 Info: cite was not loaded (OK!) on input line 61.
 Class revtex4 Info: multicol was not loaded (OK!) on input line 61.
- (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
 \scratchdimen=\dimen135
@@ -448,9 +446,9 @@ $, Jean P. Gibert${}^{1}$, Peter A. H. Westley${}^{3}$, \& Jonathan W. Moore${}
 ^{4}$ \\ ${}^1$School of Natural Sciences, University of California, Merced, Me
 rced CA, USA \\ ${}^2$The Santa Fe Institute, Santa Fe NM, USA \\ ${}^3$College
  of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK
-, USA \\ ${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Vanco
-uver BC, Canada \\ ${}^*$To whom correspondence should be addressed: jdyeakel@g
-mail.com .
+, USA \\ ${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Burna
+by BC, Canada \\ ${}^*$To whom correspondence should be addressed: jdyeakel@gma
+il.com .
 
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 91.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmss.fd
@@ -515,43 +513,43 @@ Package pdftex.def Info: figs2/fig_traj.pdf used on input line 577.
 File: figs2/fig_MDPE_hm.pdf Graphic file (type pdf)
  <use figs2/fig_MDPE_hm.pdf>
 Package pdftex.def Info: figs2/fig_MDPE_hm.pdf used on input line 590.
-(pdftex.def)             Requested size: 458.99689pt x 137.69928pt.
+(pdftex.def)             Requested size: 510.0pt x 152.99994pt.
 
 <figs2/fig_thetaPEmvm.pdf, id=62, 361.35pt x 578.16pt>
 File: figs2/fig_thetaPEmvm.pdf Graphic file (type pdf)
 
 <use figs2/fig_thetaPEmvm.pdf>
-Package pdftex.def Info: figs2/fig_thetaPEmvm.pdf used on input line 605.
+Package pdftex.def Info: figs2/fig_thetaPEmvm.pdf used on input line 607.
 (pdftex.def)             Requested size: 203.99689pt x 326.39635pt.
 
 <figs2/fig_relax_lowh.pdf, id=63, 722.7pt x 289.08pt>
 File: figs2/fig_relax_lowh.pdf Graphic file (type pdf)
 
 <use figs2/fig_relax_lowh.pdf>
-Package pdftex.def Info: figs2/fig_relax_lowh.pdf used on input line 619.
+Package pdftex.def Info: figs2/fig_relax_lowh.pdf used on input line 622.
 (pdftex.def)             Requested size: 458.99689pt x 183.59904pt.
 
 <figs2/fig_traitdiff.pdf, id=64, 361.35pt x 289.08pt>
 File: figs2/fig_traitdiff.pdf Graphic file (type pdf)
 
 <use figs2/fig_traitdiff.pdf>
-Package pdftex.def Info: figs2/fig_traitdiff.pdf used on input line 632.
+Package pdftex.def Info: figs2/fig_traitdiff.pdf used on input line 635.
 (pdftex.def)             Requested size: 255.0pt x 203.99991pt.
 
 <figs2/fig_mtheta_rt.pdf, id=65, 361.35pt x 289.08pt>
 File: figs2/fig_mtheta_rt.pdf Graphic file (type pdf)
 
 <use figs2/fig_mtheta_rt.pdf>
-Package pdftex.def Info: figs2/fig_mtheta_rt.pdf used on input line 643.
+Package pdftex.def Info: figs2/fig_mtheta_rt.pdf used on input line 646.
 (pdftex.def)             Requested size: 255.0pt x 203.99991pt.
  [14] [15 <./figs2/fig_traj.pdf> <./figs2/fig_MDPE_hm.pdf>] [16 <./figs2/fig_th
 etaPEmvm.pdf>] [17 <./figs2/fig_relax_lowh.pdf> <./figs2/fig_traitdiff.pdf>] [1
 8 <./figs2/fig_mtheta_rt.pdf>] (./msv4.aux) ) 
 Here is how much of TeX's memory you used:
- 7115 strings out of 493014
- 102607 string characters out of 6133351
- 192243 words of memory out of 5000000
- 10503 multiletter control sequences out of 15000+600000
+ 7112 strings out of 493014
+ 102572 string characters out of 6133351
+ 191243 words of memory out of 5000000
+ 10500 multiletter control sequences out of 15000+600000
  21597 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,38p,1043b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -578,7 +576,7 @@ bx1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx
 .pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0500.p
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on msv4.pdf (18 pages, 1669153 bytes).
+Output written on msv4.pdf (18 pages, 1668489 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  139 compressed objects within 2 object streams

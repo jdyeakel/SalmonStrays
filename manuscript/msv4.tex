@@ -36,8 +36,8 @@
 
 \linespread{1.5}
 
-\usepackage{natbib}
-\bibpunct{(}{)}{,}{a}{}{;}
+\usepackage[comma,sort&compress]{natbib}
+% \bibpunct{[}{]}{,}{a}{}{;}
 
 \renewcommand{\thesection}{\arabic{section}}
 
@@ -63,13 +63,13 @@
 % \Blindtext
 %\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
 %\title{Community assembly and dynamics by the deconstruction of species interactions}
-\title{Eco-evolutionary dynamics and collective straying: implications for salmon metapopulation robustness}
+\title{Eco-evolutionary dynamics and collective migration: implications for salmon metapopulation robustness}
 \author{
 Justin D. Yeakel${}^{1,2,*}$, Jean P. Gibert${}^{1}$, Peter A. H. Westley${}^{3}$, \& Jonathan W. Moore${}^{4}$ \\
 ${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
 ${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
 ${}^3$College of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\
-${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
+${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Burnaby BC, Canada \\
 ${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
 }
 
@@ -81,7 +81,7 @@ The spatial dispersal of individuals is known to play an important role in the d
 At the same time, local adaptation to different environmental conditions creates a geographic mosaic of evolutionary forces, where the combined drivers of selection and gene flow interact.
 Although the dispersal of individuals from donor to recipient populations provides connections within the metapopulation, potentially promoting demographic and evolutionary rescue, it may also introduce maladapted individuals into habitats that are host to different environmental conditions, potentially lowering the mean fitness of the recipient population.
 Here we explore a minimal model of the eco-evolutionary dynamics between two populations connected by dispersal, where the productivity of each is defined by a trait complex that is subject to local selection.
-Although general in nature, our model is inspired by salmon metapopulations, where dispersal between populations is defined in terms of the \emph{straying rate}, which has been shown to be density dependent, possibly emerging as a consequence of collective migration. 
+Although general in nature, our model is inspired by salmon metapopulations, where dispersal between populations is defined in terms of the \emph{straying rate}, which has been shown to be density dependent, and recently proposed to be shaped by social interactions consistent with collective movement. %possibly emerging as a consequence of collective migration. 
 The results of our model reveal that increased straying between evolving populations leads to alternative stable states, which has large and nonlinear effects on two measures of metapopulation robustness: the portfolio effect and the time to recovery following an induced disturbance.
 We show that intermediate levels of straying result in large gains in robustness, and that increased differences between sites (increased habitat heterogeneity) promotes robustness when straying rates are low, and erodes robustness when straying rates are high.
 Finally, we show that density-dependent straying promotes robustness, particularly when the aggregate biomass is low and straying is correspondingly high, and this has important ramifications for the conservation of salmon metapopulations facing both natural and anthropogenic disturbances.
@@ -93,7 +93,7 @@ Finally, we show that density-dependent straying promotes robustness, particular
 \section{Introduction}
 
 Intraspecific diversity can increase the resilience and stability of species or metapopulations. 
-This diversity-stability linkage can occur when there are asynchronous population dynamics, where the changes in population size varies across the metapopulation. 
+This diversity-stability linkage can occur when there are asynchronous population dynamics, where the changes in population size varies temporally across the metapopulation. 
 This asynchrony will increase the potential for demographic rescue \citep{Brown:1977gk,Earn:2000fm} and also decrease the variability of processes that integrate across the metapopulation \citep{Anonymous:2015gf}. 
 For example, different responses to climate variability within populations of a rare plant reduced fluctuations in abundance \citep{Abbott:2017hl}. 
 This statistical buffer has traditionally been quantified as the Portfolio Effect (PE), which is the ratio of the population CV to the CV of the aggregated metapopulation \citep{Thibaut:2012km}. 
@@ -119,7 +119,7 @@ Thus, straying can influence the resilience and robustness of metapopulations th
 % Migratory populations that return to a breeding ground or natal stream to reproduce are linked to each other by some proportion of the population that permanently disperse, or stray into the `wrong' site. %; we might say that there is at least one \emph{Kevin} in every school or flock (figure \ref{fig:xkcd}).
 There is growing appreciation that a combination of abiotic, biotic, and anthropogenic factors can control the rate of dispersal among populations \citep{H:2013fs,Keefer:2014gg,Bett:2017ha}.
 Migratory populations that return to breeding sites for reproduction are linked to each other by some proportion of the population that permanently disperses into the `wrong' site. 
-Recently, the role of social interactions and collective navigation has been hypothesized [This issue].
+Recently, the role of social interactions and collective navigation has been hypothesized \citep[][This issue]{Berdahl:2015kv,Berdahl:2016dx}.
 The rate at which individuals stray, $m$, may be linked to errors made at an individual-level that are themselves diminished by migrating in groups and pooling individual choices \citep{Simons:2004jo,Berdahl:2015kv,Berdahl:2016dx}.
 The potential influence of collective dispersal on the dynamics of individual populations and the metapopulation as a whole is a topic of considerable interest that has tangible conservation implications \citep{Brenner:2012gl,Johnson:2012fe,Fullerton:2011ii}.
 % Whether and to what extent the ecological consequences of straying depend on the evolutionary dynamics that emerge from populations distributed across a selective gradient is unclear.
@@ -456,7 +456,7 @@ Taken as a whole, our results point to an important role of density-dependent st
 % 
 
 %alternative stable states & critical slowing
-A salient finding from our results was that straying can lead to the emergence of alternative stable states, pushing one of the populations to high density (the \emph{dominant state}), and one to low density (the \emph{subordinate population}).
+A salient finding from our results was that straying can lead to the emergence of alternative stable states, pushing one of the populations to high density (the \emph{dominant state}), and one to low density (the \emph{subordinate state}).
 This asymmetry in population densities also leads to an asymmetry in the mean trait values, both of which are skewed towards the local optimum of the dominant population. 
 The formation of alternative stable states in our system is a relatively common example of spatial pattern formation. %, only occurring above a threshold straying rate that largely depends on trait heritability and the difference in trait optima between sites.
 Pattern formation can occur as a consequence of myriad ecological processes, including habitat selection, aggregation, local environmental conditions, and/or interspecific interactions such as competition or predation, and is inexorably linked to scale \citep{Levin:1992p1472}. 
@@ -472,7 +472,7 @@ The appearance of these alternative states is largely dependent on the dispersal
 % On the other hand, the presence of \emph{just enough} straying to cause formation of alternative stable states both increases the portfolio effect (figure \ref{fig:PE}c) and reduces the rate of return -- particularly if straying is density-dependent (figures \ref{thetaPE}a, \ref{fig:relax}b).
 % This asymmetry in population densities also leads an asymmetry in the mean trait values, skewed towards the local optimum of the dominant population, one, and this has important -- and often non-intuitive -- ramifications for metapopulation robustness. %, as measured by both the portfolio effect as well as recovery time.
 
-There is a `sweet spot' for straying that maximizes metapopulation robustness. 
+An intermediate straying rate maximizes metapopulation robustness. 
 Results from our model reveal that the presence of just enough straying to cause formation of alternative stable states increases the portfolio effect (figure \ref{fig:PE}a). 
 Previous theoretical work has shown that increased connectivity may erode portfolio effects in herring metapopulations, where straying is also thought to be density-dependent \citep{Secor:2009ena}.
 Although high levels of dispersal in our system generally supports this finding, the interplay between dispersal and PE is more subtle when selection for local adaptations is considered, such that low to intermediate levels of density-dependent straying result in an elevated PE, thus increasing the buffering capacity of the metapopulation.
@@ -491,7 +491,7 @@ Second, compared to systems with constant dispersal, density-dependent straying 
 % and that at low to intermediate levels of straying, PE is high.
 Third, density-dependent straying reduces the time to recovery following disturbance, and this is particularly true in the case of near-collapse of the metapopulation (figure \ref{fig:relax}b).
 In the case of near-collapse, although both populations inherit low population densities, the mean trait values of both are skewed towards the optimum of the dominant population.
-Due to density-dependent straying, low population densities evince greater dispersal, and while this increased connectivity primarily facilities the growth of the dominant population (because the trait means are closer to the dominant optimum), because the dominant population contains the bulk of the aggregate biomass, the overall recovery time is lessened significantly (figures \ref{fig:relax}b, \ref{extfig-fig:relaxtraj_bothlh}).
+Due to density-dependent straying, low population densities lead to greater dispersal, and while this increased connectivity primarily facilities the growth of the dominant population (because the trait means are closer to the dominant optimum), because the dominant population contains the bulk of the aggregate biomass, the overall recovery time is lessened significantly (figures \ref{fig:relax}b, \ref{extfig-fig:relaxtraj_bothlh}).
 % Third, in habitats with greater heterogeneity between sites (measured by an increase in $\Delta\theta$), density-dependent straying diminished robustness at low rates of straying (marginally lower portfolio effects and substantially longer return times; figures \ref{fig:thetaPE}b, \ref{fig:relaxtheta}a,b).
 % Conversely, for increased straying rates, greater and exaggerates the positive effects when $m^*$ is high (higher portfolio effects, and shorter return times). 
 
@@ -587,11 +587,13 @@ FB marks the fold bifurcation.
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.9\textwidth]{figs2/fig_MDPE_hm.pdf}
+\includegraphics[width=1\textwidth]{figs2/fig_MDPE_hm.pdf}
 \caption{
-(a) Total means $N_t$, (b) difference in means $\Delta N$, and (c) the portfolio effect PE as a function of heritability $h^2$ and a constant stray rate $m$. Light colors = high values.
+(a) Total means $N_t$, 
+(b) difference in means $\Delta N$, and 
+(c) the portfolio effect PE as a function of heritability $h^2$ and a constant stray rate $m$. Light colors = high values.
 The black line shows the fold bifurcation separating a single steady state (left) from alternative stable states (right).
-(d) The relationship between the time to recovery following a disturbance and the portfolio effect.
+(d) The relationship between the time to recovery following a disturbance and the portfolio effect. Portfolio effects greater than unity corresponds to less synchronization.
 The black line denotes the fold bifurcation.
 } \label{fig:PE}
 \end{figure*}
@@ -607,6 +609,7 @@ singlelinecheck=false
 (a) Median portfolio effect as a function of a constant stray rate $m$ (solid line) and density-dependent stray rate (point pairs) given heritability is $h^2 < 0.5$ and $\Delta\theta=5$.
 Point pairs connected by a horizontal line represent the PE as a function of density-dependent straying rates, evaluated for both low- and high-density populations at equilibrium. The lower straying rate of a pair is for the larger population; the higher straying rate is for the smaller population.
 (b) Median portfolio effects for habitats with increasing heterogeneity as measured by the difference in regional trait optima $\Delta \theta$ for both constant and density-dependent stray rates as shown in (a).
+Portfolio effects greater than unity corresponds to less synchronization.
 FB marks the fold bifurcation.
 } \label{fig:thetaPE}
 \end{figure}
