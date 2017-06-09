@@ -20,6 +20,7 @@ email: mbuoro@st-pee.inra.fr
 phone:
 
 Andrew Hendry
+andrew.hendry@mcgill.ca
 Redpath Museum & Dept. of Biology
 McGill University
 859 Sherbrooke St. W.
@@ -73,3 +74,24 @@ Department of Ecology and Evolutionary Biology
 P.O. Box 208106
 New Haven, CT
 06520 USA
+
+
+
+\begin{acknowledgments}
+  We thank Sean Anderson for helpful discussions and comments on the manuscript.  J.D.Y. was supported by startup funds at the University of California, Merced, and an Omidyar Postdoctoral Fellowship at the Santa Fe Institute. J.P.G. was supported by a James S. McDonnell Foundation Postdoctoral Fellowship at the University of California, Merced.  P.A.H.W. was supported by... J.W.M. was supported by Simon Fraser University, the Liber Ero Foundation and the Natural Sciences and Engineering Research Council of Canada.
+\end{acknowledgments}
+
+
+
+
+
+
+
+The spatial dispersal of individuals is known to play an important role in the dynamics of populations, and is central to metapopulation theory.
+At the same time, local adaptation to environmental conditions creates a geographic mosaic of evolutionary forces, where the combined drivers of selection and gene flow interact.
+Although the dispersal of individuals from donor to recipient populations provides connections within the metapopulation, promoting demographic and evolutionary rescue, it may also introduce maladapted individuals into habitats host to different environmental conditions, potentially lowering the fitness of the recipient population.
+Here we explore a minimal model of the eco-evolutionary dynamics between two populations connected by dispersal, where the productivity of each is defined by a trait complex that is subject to local selection.
+Although general in nature, our model is inspired by salmon metapopulations, where dispersal between populations is defined in terms of the \emph{straying rate}, which has been shown to be density dependent, and recently proposed to be shaped by social interactions consistent with collective movement. %possibly emerging as a consequence of collective migration. 
+The results of our model reveal that increased straying between evolving populations leads to alternative stable states, which has large and nonlinear effects on two measures of metapopulation robustness: the portfolio effect and the time to recovery following an induced disturbance.
+We show that intermediate levels of straying result in large gains in robustness, and that increased habitat heterogeneity promotes robustness when straying rates are low, and erodes robustness when straying rates are high.
+Finally, we show that density-dependent straying promotes robustness, particularly when the aggregate biomass is low and straying is correspondingly high, and this has important ramifications for the conservation of salmon metapopulations facing both natural and anthropogenic disturbances.

@@ -18,8 +18,8 @@
 \usepackage[font={small}]{caption}
 \usepackage{subcaption}
 \captionsetup{compatibility=false}
-\usepackage{xr}
-\externaldocument[extfig-]{supp}
+% \usepackage{xr}
+% \externaldocument[extfig-]{supp}
 %\usepackage{epstopdf}
 %\usepackage{array}
 %\usepackage{tabularx}
@@ -42,7 +42,7 @@
 \renewcommand{\thesection}{\arabic{section}}
 
 
-\bibliographystyle{prsb}
+% \bibliographystyle{prsb}
 
 % \usepackage{bibunits}
 
@@ -91,6 +91,8 @@ Finally, we show that density-dependent straying promotes robustness, particular
 \maketitle
 
 \centerline{Salmon metapopulations, Straying, Dispersal, Eco-evolutionary dynamics, Alternative stable states}
+\vspace{2mm}
+\noindent {\bf Media Summary} The rate at which individuals move within a metapopulation has large impacts on extinction risk. Among migratory species such as salmon, the rate of dispersal, or straying, may be density dependent due to collective decision-making. We explore an eco-evolutionary model of two populations connected by dispersal, where the productivity of each is defined by a trait complex subject to local selection. We show that intermediate straying rates result in large gains in robustness, and that density-dependent straying promotes robustness. These results have important ramifications for the conservation of salmon metapopulations facing both natural and anthropogenic disturbances.\\
 
 
 \section{Introduction}
@@ -358,10 +360,10 @@ Because we can assess the time to recovery in response to the various disturbanc
 
 
 Straying had non-linear impacts on the recovery time of populations. 
-When the dominant state (well adapted and high density) is wiped out, high levels of straying allow it to recover quickly (figure \ref{fig:relax}a) because the surviving population has a mean trait value skewed towards the optimum of the recovering population (figure \ref{extfig-fig:relaxtraj_hdlh}).
+When the dominant state (well adapted and high density) is wiped out, high levels of straying allow it to recover quickly (figure \ref{fig:relax}a) because the surviving population has a mean trait value skewed towards the optimum of the recovering population (figure \ref{fig:relaxtraj_hdlh}).
 Yet, as straying decreases, recovery time for the disturbed dominant state population increases, in part because there is enough time for the trait distribution to move back towards the trait optimum of the subordinate state population.
 In contrast, when the subordinate state population (maladapted and low density) is wiped out, recovery rates are fastest at low to intermediate levels of straying.
-Because the mean trait values of both populations are skewed towards those of the dominant population, when the subordinate population collapses under high rates of straying, selection against the flood of maladapted individuals that stray into the recovering population extends the length of time required for it to return to its steady state (figure \ref{extfig-fig:relaxtraj_ldlh}).
+Because the mean trait values of both populations are skewed towards those of the dominant population, when the subordinate population collapses under high rates of straying, selection against the flood of maladapted individuals that stray into the recovering population extends the length of time required for it to return to its steady state (figure \ref{fig:relaxtraj_ldlh}).
 When both populations are both dramatically reduced, recovery time is generally fastest at lower levels of straying, while near the onset of the fold bifurcation, recovery time increases explosively and this is -- as the name implies -- characteristic of \emph{slowing} dynamics that occur near critical transitions \citep{Scheffer:2009gg,Kuehn:2010p2591}.\\
 
 
@@ -384,7 +386,7 @@ First, in comparison with constant stray rates, density-dependent straying made 
 %Recovery times
 %The recovery times for systems with constant and density-dependent straying both show similar trends for a given $m$ and $m^*$ (figure \ref{fig:relax}c,d), however there are some distinct quantitative differences.
 At low straying rates, near-collapse of both populations resulted in longer than expected recovery times, whereas in the alternative stable state regime (higher $m^*$), the recovery times for different disturbance types were very similar to systems with a constant $m$ (figure \ref{fig:relax}b; note difference in x-axis scales).
-As trait heritability increased, the metapopulation always recovered more quickly if the small population was lost (figure \ref{extfig-fig:relax_highh}).
+As trait heritability increased, the metapopulation always recovered more quickly if the small population was lost (figure \ref{fig:relax_highh}).
 % There was greater similarity in the recovery times for constant and density-dependent $m$ systems when trait heritability was high (figure \ref{fig:relax_highh}).
 The lower recovery time for systems with increased $m^*$ mirrors an elevated PE with higher density-dependent straying rates (figure \ref{fig:thetaPE}).
 % This higher PE at increased $m^*$ mirrors recovery times that are also lower than those observed for systems with constant $m$ (figure \ref{fig:relax}).
@@ -405,11 +407,11 @@ Although the development of alternative stable states elevates the portfolio eff
 
 
 \noindent{\bf (c) The role of habitat heterogeneity and changing selective landscapes}\\ 
-\noindent With the onset of straying, we find that increasingly divergent trait optima generally lower $N_T^*$ and exaggerate $\Delta N^*$ (figure \ref{extfig-fig:thetadiffN}), such that the biomass distribution becomes increasingly uneven. %I've checked this - it's a theshold type (logistic) response Supp fig?
+\noindent With the onset of straying, we find that increasingly divergent trait optima generally lower $N_T^*$ and exaggerate $\Delta N^*$ (figure \ref{fig:thetadiffN}), such that the biomass distribution becomes increasingly uneven. %I've checked this - it's a theshold type (logistic) response Supp fig?
 The impact of habitat heterogeneity on the portfolio effect and recovery time is more complex, serving to emphasize the nonlinear relationship between rates of straying and metapopulation robustness. %regardless of heritability.
 %The rate of straying that gives rise to a large PE at the fold bifurcation is conditioned on the difference in optimal trait values between the local and remote populations, which we call $\Delta\theta = \sqrt{(\theta_i - \theta_j)^2}$.
-As habitat heterogeneity increases, alternative stable states appear at lower straying rates -- with the crossing of the fold bifurcation, accompanied by a peak in the PE -- whereas the magnitude of increase in the PE also increases (figure \ref{fig:thetaPE}b), reducing recovery time (figure \ref{extfig-fig:relaxtheta}).
-For increased rates of straying, greater habitat heterogeneity erodes the PE (figure \ref{fig:thetaPE}b) and increases the recovery time (figure \ref{extfig-fig:relaxtheta}).
+As habitat heterogeneity increases, alternative stable states appear at lower straying rates -- with the crossing of the fold bifurcation, accompanied by a peak in the PE -- whereas the magnitude of increase in the PE also increases (figure \ref{fig:thetaPE}b), reducing recovery time (figure \ref{fig:relaxtheta}).
+For increased rates of straying, greater habitat heterogeneity erodes the PE (figure \ref{fig:thetaPE}b) and increases the recovery time (figure \ref{fig:relaxtheta}).
 These results together suggest that habitat heterogeneity, as measured as the differences in trait optima between two habitats $\Delta\theta$, promotes robustness when straying rates are low, and erodes robustness when straying rates are high.
 %This means that alternative stable states can emerge with relatively little dispersal between sites (figure \ref{fig:thetaPE}), however the increased PE (and shorter recovery times).
 
@@ -420,8 +422,8 @@ We find that under these conditions alternative stable states now appear for ver
 As the straying rate increases and $\Delta\theta$ decreases, a single stable state emerges as the fold bifurcation is crossed, which is opposite the pattern observed when these parameters are independent.
 There are two notable dynamics that emerge following extinction of the dominant population at low rates of straying between dissimilar (high $\Delta\theta$) sites:
 (\emph{i}) above a threshold $m$ value, the dominant population recovers quickly enough that the evolving subordinate phenotype is overwhelmed by incoming strays, and it shifts back to its pre-disturbance (subordinate) state;
-(\emph{ii}) below a threshold $m$ value, there is an \emph{inversion} between subordinate and dominant states: because there is enough time and isolation for the subordinate trait mean to shift towards its local optimum, and away from that of the recovering dominant population, the dominant population becomes subordinate, and the subordinate population becomes dominant (figure \ref{extfig-fig:inertia}).
-This threshold value of $m$, below which the inversion dynamic behavior occurs, is marked by the asterisk in figure \ref{fig:mtheta}, and holds for both constant and density-dependent straying (figure \ref{extfig-fig:mthetamvm}).
+(\emph{ii}) below a threshold $m$ value, there is an \emph{inversion} between subordinate and dominant states: because there is enough time and isolation for the subordinate trait mean to shift towards its local optimum, and away from that of the recovering dominant population, the dominant population becomes subordinate, and the subordinate population becomes dominant (figure \ref{fig:inertia}).
+This threshold value of $m$, below which the inversion dynamic behavior occurs, is marked by the asterisk in figure \ref{fig:mtheta}, and holds for both constant and density-dependent straying (figure \ref{fig:mthetamvm}).
 
 % At low rates of straying, there is little mixing between dissimilar populations, and this leads to the formation of alternative stable states.
 % Here we find that if the subordinate population is wiped out, the time to recovery is minimized, whereas if the dominant population is wiped out, the time to recovery is maximized; near-collapse of both results in intermediate recovery times.
@@ -495,7 +497,7 @@ Second, compared to systems with constant dispersal, density-dependent straying 
 % and that at low to intermediate levels of straying, PE is high.
 Third, density-dependent straying reduces the time to recovery following disturbance, and this is particularly true in the case of near-collapse of the metapopulation (figure \ref{fig:relax}b).
 In the case of near-collapse, although both populations inherit low population densities, the mean trait values of both are skewed towards the optimum of the dominant population.
-Due to density-dependent straying, low population densities lead to greater dispersal, and while this increased connectivity primarily facilities the growth of the dominant population (because the trait means are closer to the dominant optimum), because the dominant population contains the bulk of the aggregate biomass, the overall recovery time is lessened significantly (figures \ref{fig:relax}b, \ref{extfig-fig:relaxtraj_bothlh}).
+Due to density-dependent straying, low population densities lead to greater dispersal, and while this increased connectivity primarily facilities the growth of the dominant population (because the trait means are closer to the dominant optimum), because the dominant population contains the bulk of the aggregate biomass, the overall recovery time is lessened significantly (figures \ref{fig:relax}b, \ref{fig:relaxtraj_bothlh}).
 % Third, in habitats with greater heterogeneity between sites (measured by an increase in $\Delta\theta$), density-dependent straying diminished robustness at low rates of straying (marginally lower portfolio effects and substantially longer return times; figures \ref{fig:thetaPE}b, \ref{fig:relaxtheta}a,b).
 % Conversely, for increased straying rates, greater and exaggerates the positive effects when $m^*$ is high (higher portfolio effects, and shorter return times). 
 
@@ -571,11 +573,11 @@ We suggest that understanding the spatial complexity of metapopulations dispersi
 
 \noindent {\bf Competing interests:} The authors declare no competing interests
 \\
-\noindent {\bf Author contributions:} JDY and JWM conceived of the initial project design. JDY and JPG designed models and conducted analyses. JDY, JPG, PAHW, and JWM interpreted the results, and drafted and wrote the manuscript.
+\noindent {\bf Author contributions:} JDY and JWM conceived of the initial project design. JDY and JPG designed the modeling framework and conducted the analyses. JDY, JPG, PAHW, and JWM interpreted the results, and drafted and wrote the manuscript.
 \\
 \noindent {\bf Data Accessibility:} Code is made available at https://github.com/jdyeakel/SalmonStrays
 \\
-\noindent {\bf Acknowledgements:} We thank Sean Anderson for helpful discussions and comments on the manuscript. J.D.Y. was supported by startup funds at the University of California, Merced, and an Omidyar Postdoctoral Fellowship at the Santa Fe Institute. J.P.G. was supported by a James S. McDonnell Foundation Postdoctoral Fellowship at the University of California, Merced.  P.A.H.W. was supported by... J.W.M. was supported by Simon Fraser University, the Liber Ero Foundation and the Natural Sciences and Engineering Research Council of Canada.
+\noindent {\bf Acknowledgements:} We thank Sean Anderson for helpful discussions and comments on the manuscript. We also thank the guest editors Andrew Berdahl, Dora Biro, and Colin Torney, for inviting us to contribute to this themed issue. J.D.Y. was supported by startup funds at the University of California, Merced, and an Omidyar Postdoctoral Fellowship at the Santa Fe Institute. J.P.G. was supported by a James S. McDonnell Foundation Postdoctoral Fellowship in Complex Systems at the University of California, Merced. P.A.H.W. was supported by the UA Foundation at the University of Alaska Fairbanks. J.W.M. was supported by the Liber Ero Research Chair in Coastal Science and Management at Simon Fraser University.
 
 % \bibliography{aa_kevin}
 
@@ -954,7 +956,7 @@ Liermann M, PESS G, McHenry M, McMillan J, Elofson M, Bennett T, Moses R, 2017
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.4\textwidth]{figs2/fig_traj.pdf}
+\includegraphics[width=0.4\textwidth]{fig_traj.pdf}
 \caption{
 (a) The steady state densities of $N_1$ and $N_2$ as a function of a constant stray rate $m$. Which population attains the low- or high-density state is random due to small applied fluctuations in the initial conditions.
 (b) The steady state trait values measured as $\theta_i - x_i$, as a function of a constant stray rate $m$. 
@@ -967,7 +969,7 @@ FB marks the fold bifurcation.
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=1\textwidth]{figs2/fig_MDPE_hm.pdf}
+\includegraphics[width=1\textwidth]{fig_MDPE_hm.pdf}
 \caption{
 (a) Total means $N_t^*$, 
 (b) difference in means $\Delta N^*$, and 
@@ -984,7 +986,7 @@ The black line denotes the fold bifurcation.
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.4\textwidth]{figs2/fig_thetaPEmvm.pdf}
+\includegraphics[width=0.4\textwidth]{fig_thetaPEmvm.pdf}
 \caption{
 (a) Median portfolio effect as a function of a constant stray rate $m$ (solid line) and density-dependent stray rate (point pairs) given heritability is $h^2 < 0.5$ and $\Delta\theta=5$.
 Point pairs connected by a horizontal line represent the PE as a function of density-dependent straying rates, evaluated for both low- and high-density populations at equilibrium. The lower straying rate of a pair is for the larger population; the higher straying rate is for the smaller population.
@@ -999,7 +1001,7 @@ FB marks the fold bifurcation.
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.9\textwidth]{figs2/fig_relax_lowh.pdf}
+\includegraphics[width=0.9\textwidth]{fig_relax_lowh.pdf}
 \caption{
 Recovery time of $N_T^*$ following the extinction of either the low-density (light gray) or high-density (gray) population, or the near-collapse of both (dark gray) assuming (a) constant straying rates $m$ and (b) density-dependent straying rates (evaluated at the steady state $m^*$) with trait heritability $h^2=0.2$.
 If $m$ is density-dependent, in the alternative stable state regime there are two straying rates observed: one each for the low- and high-density populations, respectively, which are linked by a horizontal line.
@@ -1012,7 +1014,7 @@ FB marks the fold bifurcation.
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.5\textwidth]{figs2/fig_traitdiff.pdf}
+\includegraphics[width=0.5\textwidth]{fig_traitdiff.pdf}
 \caption{
 Phenotypic diversity ($\Delta \mu^*$) evaluated at the steady state as a function of straying rate $m$ and trait heritability $h^2$. The descrete jump occurs as the system crosses the fold bifurcation; lower phenoytic diversity emerges with higher straying rates and in the alternative stable state regime. 
 } \label{fig:traitdiff}
@@ -1023,7 +1025,7 @@ Phenotypic diversity ($\Delta \mu^*$) evaluated at the steady state as a functio
 singlelinecheck=false
 }
   \centering
-  \includegraphics[width=0.5\textwidth]{figs2/fig_mtheta_rt.pdf}
+  \includegraphics[width=0.5\textwidth]{fig_mtheta_rt.pdf}
   \caption{
   Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases.
   The `$*$' marks the value of $(m,\Delta\theta)$ below which there is a switch in subordinate/dominant states following extinction of the dominant population.
@@ -1037,133 +1039,127 @@ singlelinecheck=false
 
 
 
+\beginsupplement
 
-% 
-% 
-% \beginsupplement
-% 
-% 
-% \begin{figure}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.35\textwidth]{figs2/fig_relax_small.pdf}
-% \caption{
-% Extinction of low-density population with a high constant straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
-% Black line marks the calculated point of recovery post-perturbation.
-% Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
-% } \label{fig:relaxtraj_ldlh}
-% \end{figure}
-% 
-% \begin{figure}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.35\textwidth]{figs2/fig_relax_large.pdf}
-% \caption{
-% Extinction of high-density population with a high straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
-% Black line marks the calculated point of recovery post-perturbation.
-% Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
-% } \label{fig:relaxtraj_hdlh}
-% \end{figure}
-% 
-% 
-% \begin{figure*}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.9\textwidth]{figs2/fig_relax_highh.pdf}
-% \caption{
-% Recovery time of $N_T$ following the extinction of either the low-density (light gray) or high-density (gray) population, or the near-collapse of both (dark gray) assuming (a) constant straying rates $m$ and (b) density-dependent straying rates (evaluated at the steady state $m^*$) with trait heritability $h^2=0.8$.
-% If $m$ is density-dependent, in the alternative stable state regime there are two straying rates observed: one each for the low- and high-density populations, respectively, which are linked by a horizontal line.
-% } \label{fig:relax_highh}
-% \end{figure*}
-% 
-% 
-% 
-% \begin{figure}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.4\textwidth]{figs2/fig_thetadiffN.pdf}
-% \caption{
-% Median difference in population densities taken over the straying rate as a function of habitat heterogeneity $\Delta\theta$.
-% Solid lines are for constant $m$; dashed lines are for density-dependent $m$} \label{fig:thetadiffN}
-% \end{figure}
-% 
-% 
-% 
-% \begin{figure*}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.8\textwidth]{figs2/fig_relaxtheta2.pdf}
-% \caption{
-% (a) Recovery time after near collapse of both populations as a function of straying rate $m$ and habitat heterogeneity $\Delta\theta$.
-% (b) The same as (a) but including recovery times when straying is density-dependent, shown by linked pairs of points.
-% Recovery times for systems with density-dependent straying are longer at low straying rates and shorter at higher straying rates, mirroring the change in portfolio effects shown in figure \ref{fig:thetaPE}.
-% } \label{fig:relaxtheta}
-% \end{figure*}
-% 
-% 
-% \begin{figure}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-%   \centering
-%   \includegraphics[width=0.35\textwidth]{figs2/fig_MDPE_hm_mtheta_rt.pdf}
-%   \caption{
-%   Distance dependent portfolio effects as a function of straying rate $m$ and trait heritability $h^2$. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases.
-%   } \label{fig:mthetaPE}
-% \end{figure}
-% 
-% \begin{figure}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.35\textwidth]{figs2/fig_relax_inertia.pdf}
-% \caption{
-% Distance dependent straying, where increased differences in trait optima between sites $\Delta\theta$ corresponds to lower rates of straying $m$.
-% At low rates of straying $m=0.02$ ($\Delta\theta=24$), extinction of the dominant population leads to slower-than-expected recovery times because the subordinate population is isolated enough to evolve towards its own trait optimum. %until growth of the dominant population overwhelms this local selection.
-% In this case, $m$ is less than $m=0.034$ (denoted by the asterisk in figure \ref{fig:mtheta}), such that isolation allows the subdominant population to `run away' from the influence of the dominant population, leading to a switch in states.
-% If $m$ is low but greater than $0.034$, isolation permits the subdominant population to `run away' from the influence of the dominant population, until it is overwhelmed by the recovering dominant population, and reverts back to its previous trait mean prior to the disturbance.
-% } \label{fig:inertia}
-% \end{figure}
-% 
-% \begin{figure*}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{figs2/fig_relax_mtheta.pdf}
-%   \caption{
-%   Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases for constant (a) and density-dependent (b) staying rates.
-%   The fold bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
-%   Despite this difference, the general trends shown in (a) are also present in (b).
-%   } \label{fig:mthetamvm}
-% \end{figure*}
-% 
-% 
-% 
-% \begin{figure}
-%   \captionsetup{justification=raggedright,
-% singlelinecheck=false
-% }
-% \centering
-% \includegraphics[width=0.35\textwidth]{figs2/fig_relax_both_lowh.pdf}
-% \caption{
-% Near collapse of both populations with a low straying rate $m=0.1$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
-% Black line marks the calculated point of recovery post-perturbation.
-% Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
-% } \label{fig:relaxtraj_bothlh}
-% \end{figure}
-% 
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.35\textwidth]{fig_relax_small.pdf}
+\caption{
+Extinction of low-density population with a high constant straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_ldlh}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.35\textwidth]{fig_relax_large.pdf}
+\caption{
+Extinction of high-density population with a high straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_hdlh}
+\end{figure}
+
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.9\textwidth]{fig_relax_highh.pdf}
+\caption{
+Recovery time of $N_T$ following the extinction of either the low-density (light gray) or high-density (gray) population, or the near-collapse of both (dark gray) assuming (a) constant straying rates $m$ and (b) density-dependent straying rates (evaluated at the steady state $m^*$) with trait heritability $h^2=0.8$.
+If $m$ is density-dependent, in the alternative stable state regime there are two straying rates observed: one each for the low- and high-density populations, respectively, which are linked by a horizontal line.
+} \label{fig:relax_highh}
+\end{figure*}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.4\textwidth]{fig_thetadiffN.pdf}
+\caption{
+Median difference in population densities taken over the straying rate as a function of habitat heterogeneity $\Delta\theta$.
+Solid lines are for constant $m$; dashed lines are for density-dependent $m$} \label{fig:thetadiffN}
+\end{figure}
+
+
+
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.8\textwidth]{fig_relaxtheta2.pdf}
+\caption{
+(a) Recovery time after near collapse of both populations as a function of straying rate $m$ and habitat heterogeneity $\Delta\theta$.
+(b) The same as (a) but including recovery times when straying is density-dependent, shown by linked pairs of points.
+Recovery times for systems with density-dependent straying are longer at low straying rates and shorter at higher straying rates, mirroring the change in portfolio effects shown in figure \ref{fig:thetaPE}.
+} \label{fig:relaxtheta}
+\end{figure*}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+  \centering
+  % \includegraphics[width=0.35\textwidth]{fig_MDPE_hm_mtheta_rt.pdf}
+  \caption{
+  Distance dependent portfolio effects as a function of straying rate $m$ and trait heritability $h^2$. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases.
+  } \label{fig:mthetaPE}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.35\textwidth]{fig_relax_inertia.pdf}
+\caption{
+Distance dependent straying, where increased differences in trait optima between sites $\Delta\theta$ corresponds to lower rates of straying $m$.
+At low rates of straying $m=0.02$ ($\Delta\theta=24$), extinction of the dominant population leads to slower-than-expected recovery times because the subordinate population is isolated enough to evolve towards its own trait optimum. %until growth of the dominant population overwhelms this local selection.
+In this case, $m$ is less than $m=0.034$ (denoted by the asterisk in figure \ref{fig:mtheta}), such that isolation allows the subdominant population to `run away' from the influence of the dominant population, leading to a switch in states.
+If $m$ is low but greater than $0.034$, isolation permits the subdominant population to `run away' from the influence of the dominant population, until it is overwhelmed by the recovering dominant population, and reverts back to its previous trait mean prior to the disturbance.
+} \label{fig:inertia}
+\end{figure}
+
+\begin{figure*}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+  \centering
+  % \includegraphics[width=0.8\textwidth]{fig_relax_mtheta.pdf}
+  \caption{
+  Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases for constant (a) and density-dependent (b) staying rates.
+  The fold bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
+  Despite this difference, the general trends shown in (a) are also present in (b).
+  } \label{fig:mthetamvm}
+\end{figure*}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.35\textwidth]{fig_relax_both_lowh.pdf}
+\caption{
+Near collapse of both populations with a low straying rate $m=0.1$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_bothlh}
+\end{figure}
 
 
 \end{document}
