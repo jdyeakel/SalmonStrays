@@ -61,7 +61,7 @@ eigvals(Jac)
 
 #Analysis over m
 tmax=10000;
-mvec = collect(0.0:0.00001:0.5);
+mvec = collect(0.0:0.001:0.5);
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
