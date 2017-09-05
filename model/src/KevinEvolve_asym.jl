@@ -13,14 +13,19 @@ function KevinEvolve_asym(
   perror,
   asym #Ranges from 0 to 0.5 (at which point rmax will be 100% part)
   )
-  sgn = [-1,1];
-  sr = rand(sgn);
-  rmax1 = rmax*(1+sr*asym);
-  rmax2 = rmax1*(1-sr*asym);
+  # sgn = [-1,1];
+  rv1 = 0.0;
+  rv2 = 0.0;
+  if asym > 0.0
+      rv1 = rand(Normal(0,asym));
+      rv2 = rand(Normal(0,asym));
+  end
+  rmax1 = rmax*(1+rv1);
+  rmax2 = rmax1*(1+rv2);
   
-  sb = rand(sgn);
-  beta1 = beta*(1+sb*asym);
-  beta2 = beta*(1-sb*asym);
+  # sb = rand(sgn);
+  beta1 = beta*(1+rv1);
+  beta2 = beta*(1+rv2);
   
   #Initialize variables
   n1 = zeros(Float64,tmax); n1[1]=2;

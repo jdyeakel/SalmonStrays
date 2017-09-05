@@ -47,9 +47,11 @@
 
 \section*{Reviewer I}
 \subsection*{Major comments:}
-\textcolor{cyan}{Equation (4), which describes the change in the population mean trait under dispersal and selection, is incorrect. In the second line of Eq (4), the immigrant term $(1-w_i) R_i\[\mu_j\]$ is independent of $\mu_i$, so that the derivative of this term is zero. This is as if selection did not change the allele frequencies/mean trait value of the immigrant subpopulation, which is obviously untrue (there is strong selection on the locally maladapted immigrants, favouring those who happen to be closer to the local optimum). One cannot apply Lande's equation without adapting it to the immigration model.}
+\noindent \textcolor{cyan}{
+{\bf Comment 1} Equation (4), which describes the change in the population mean trait under dispersal and selection, is incorrect. In the second line of Eq (4), the immigrant term $(1-w_i) R_i [\mu_j]$ is independent of $\mu_i$, so that the derivative of this term is zero. This is as if selection did not change the allele frequencies/mean trait value of the immigrant subpopulation, which is obviously untrue (there is strong selection on the locally maladapted immigrants, favouring those who happen to be closer to the local optimum). One cannot apply Lande's equation without adapting it to the immigration model.
+}
 
-We appreciate the Reviewer's concern, however note that equation 4) is written as
+\noindent {\bf Response 1} We appreciate the Reviewer's concern, however note that equation 4) is written as
 \begin{align}
   \label{eq:mu}
   \mu_i(t+1) &= w_i\mu_i(t) + (1-w_i)\mu_j(t) \\ \nonumber
@@ -58,66 +60,94 @@ We appreciate the Reviewer's concern, however note that equation 4) is written a
 and because the third term on the right is the derivative of the log of the sum (as it must be for the discrete time version of the Lande equation; Lande \emph{Evolution}, 1976), the derivative of the second term within the logarithm is not zero, and both phenotypic means contribute to the strength and direction of selection.
 
 
-\textcolor{cyan}{
-The model with constant dispersal ($m$) is very much the same as the model of Ronce and Kirkpatrick (2001, Evolution), with the difference that the latter is fully deterministic and set in continuous time; but as long as the system attains an equilibrium rather than population cycles or chaos, continuous time should not make a difference. Ronce and Kirkpatrick focused on equilibria (such as the dominant vs subordinate state here ) and on local adaptation, not metapopulation resilience/stability, but did study the consequence of disturbances for switching between alternative equilibria (see the next point).
+\noindent \textcolor{cyan}{
+{\bf Comment 2} The model with constant dispersal ($m$) is very much the same as the model of Ronce and Kirkpatrick (2001, Evolution), with the difference that the latter is fully deterministic and set in continuous time; but as long as the system attains an equilibrium rather than population cycles or chaos, continuous time should not make a difference. Ronce and Kirkpatrick focused on equilibria (such as the dominant vs subordinate state here ) and on local adaptation, not metapopulation resilience/stability, but did study the consequence of disturbances for switching between alternative equilibria (see the next point).
 }
 
-ff
+\noindent {\bf Response 2} We are thankful for the Reviewer in pointing out this reference, which we are embarrassed to admit to having overlooked. The model indeed has many similarities to our own, and we now acknowledge its importance and priority within the manuscript. The similarities in the resulting dynamics suggest that what we are observing in the two-population salmon system, as well as the implications that we derive for metapopulation robustness and recovery, may be generally relevant and illustrative of a general phenomenon outside of the constraints introduced in the specific formulation of our model.
 
-\textcolor{cyan}{
-The bifurcation the authors call a fold bifurcation is not a fold bifurcation. Figure 1 suggests a pitchfork bifurcation (which is degenerate but will appear in symmetric models). An alternative possibility is that there exists an asymmetric equilibrium with a "dominant state" and a "subordinate state" also at low m, next to the symmetric equilibrium shown at low m in figure 1, so that the system has two stable equilibria; here the "FB" point in figure 1 would be the point where the symmetric equilibrium is destabilized (this is the pattern found by Ronce and Kirkpatrick). This second alternative seems likely to me because the abrupt changes seen in figure 1 and also in figure 5 may well indicate an attractor switch. The nature of the bifurcation should be properly investigated (one can find Jacobians etc with numerical analysis for the deterministic system).
+
+\noindent \textcolor{cyan}{
+{\bf Comment 3} The bifurcation the authors call a fold bifurcation is not a fold bifurcation. Figure 1 suggests a pitchfork bifurcation (which is degenerate but will appear in symmetric models). An alternative possibility is that there exists an asymmetric equilibrium with a "dominant state" and a "subordinate state" also at low m, next to the symmetric equilibrium shown at low m in figure 1, so that the system has two stable equilibria; here the "FB" point in figure 1 would be the point where the symmetric equilibrium is destabilized (this is the pattern found by Ronce and Kirkpatrick). This second alternative seems likely to me because the abrupt changes seen in figure 1 and also in figure 5 may well indicate an attractor switch. The nature of the bifurcation should be properly investigated (one can find Jacobians etc with numerical analysis for the deterministic system).
 }
 
-ff
+\noindent {\bf Response 3} We agree with the Reviewer that the bifurcation is indeed a Pitchfork bifurcation and thank the Reviewer for pointing to this error. We provide an analysis?
 
-\textcolor{cyan}{
-The ms does not describe how recovery time was measured. The deterministic system returns to an equilibrium asymptotically, i.e., in infinite time. For practice, one defines a return ``close enough" for recovery. The details of this should be given, otherwise the results are not reproducible. Moreover, I think that near the bifurcation point total population size will equilibrate fast, but the distribution of individuals over the two habitats takes a longer time to equilibrate (the system is on the edge between a symmetric and an asymmetric equilibrium). If time to recovery includes the time that $N_1$ and $N_2$ individually reach their steady states, then this can explain the peak of recovery time at the bifurcation; but this does not mean that the total population size takes long to recover. If total population size was monitored, but recovery was interpreted as "return to original" whereas the system attains a different equilibrium (symmetric vs asymmetric, see above), then obviously recovery time will be infinite, but again this does not mean that the population does not recover from near extinction.
+\noindent \textcolor{cyan}{
+{\bf Comment 4} The ms does not describe how recovery time was measured. The deterministic system returns to an equilibrium asymptotically, i.e., in infinite time. For practice, one defines a return ``close enough" for recovery. The details of this should be given, otherwise the results are not reproducible. Moreover, I think that near the bifurcation point total population size will equilibrate fast, but the distribution of individuals over the two habitats takes a longer time to equilibrate (the system is on the edge between a symmetric and an asymmetric equilibrium). If time to recovery includes the time that $N_1$ and $N_2$ individually reach their steady states, then this can explain the peak of recovery time at the bifurcation; but this does not mean that the total population size takes long to recover. If total population size was monitored, but recovery was interpreted as "return to original" whereas the system attains a different equilibrium (symmetric vs asymmetric, see above), then obviously recovery time will be infinite, but again this does not mean that the population does not recover from near extinction.
 }
 
-ff
+\noindent {\bf Response 4} We thank the Reviewer and apologize for our lack of clarity. We emphasize that our measure of recovery time is a numerical measurement, as eigenvalue-based (asymptotic) measures are not appropriate for the scale of disturbance that we introduce (extinction in some cases - far from the non-trivial fixed point(s) of the system). The procedure is now described in more detail within the text, and illustrated graphically in an additional supplemental figure (Fig. SXX). In short, we track the recovering aggregate population $N_T=N_1+N_2$ until it is within a small band of variation around the \emph{new} fixed point (thus accounting for fixed points that are altered by the disturbance). If it stays within this narrow range, it is counted as recovered. Accordingly, trajectories that cycle around the fixed point are not counted as recovered until the cycles decay. To ensure reproducibility, all code is provided online in the Github repository: https://github.com/jdyeakel/SalmonStrays.
 
-\textcolor{cyan}{
-A strong "portfolio effect" as measured by PE in equation 6 indicates resilience against metapopulation extinction if PE is high due to a low CV of total population size. But PE is also high if the local populations have high CV. As I argued above, near the bifurcation N_1 and N_2 may be much less stable than $N_T=N_1+N_2$, i.e., the peak of PE may have little to do with the resilience of total population size.
+\noindent \textcolor{cyan}{
+{\bf Comment 5} A strong "portfolio effect" as measured by PE in equation 6 indicates resilience against metapopulation extinction if PE is high due to a low CV of total population size. But PE is also high if the local populations have high CV. As I argued above, near the bifurcation $N_1$ and $N_2$ may be much less stable than $N_T=N_1+N_2$, i.e., the peak of PE may have little to do with the resilience of total population size.
 }
 
-hehehe
+\noindent {\bf Response 5} As measured here, PE is tracking the potential for the aggregate to buffer variance observed in the constituent populations. Near the bifurcation, if $N_1$ and $N_2$ are more variable relative to $N_T$, then PE should be high, and this is what we are trying to measure. However we agree that PE can bounce around in response to changes to any of the four attributes from which it is composed, so it is sometimes hard to evaluate its relationship to more descriptive measures of resilience such as recovery time. This was one of the primary motivations for incorporating both measures in our analysis.
+
+% While we agree with the Reviewer that the spike in PE at the bifurcation is not necessarily descriptive of a resilient population, the attributes that lead to an increase in the PE to the right of the bifurcation (higher $m$) also results in shorter recovery times, and is measuring the potential for the aggregate to buffer variance. We do not put much weight in the PE spike at the bifurcation as an indicator of metapopulation health
 
 \subsection*{Minor comments:}
-\textcolor{cyan}{``straying" is not defined in the Introduction/main text. Since the model is not specific to salmon, the more general term "dispersal" could be used throughout.}
+\noindent \textcolor{cyan}{
+{\bf Minor Comment 1} ``straying" is not defined in the Introduction/main text. Since the model is not specific to salmon, the more general term "dispersal" could be used throughout.}
 
-\textcolor{cyan}{The figure legends should specify the parameter values used, figure 2 should give a key translating colours to values, figure 3 should have numbers on the axes. Generally, the authors should pay attention to reproducibility.}
+\noindent {\bf Minor Response 1} We now equate straying with dispersal early in the text (and note that it is also defined in the abstract).
 
+\noindent \textcolor{cyan}{
+{\bf Minor Comment 2} The figure legends should specify the parameter values used, figure 2 should give a key translating colours to values, figure 3 should have numbers on the axes. Generally, the authors should pay attention to reproducibility.}
 
+\noindent {\bf Minor Response 2} Parameter values that we used are now provided, though some issues with the figures appear to have been caused by an issue with the upload. Moreover, to ensure reproducibility, all code that was used is provided in an online, publicly available, Github repository https://github.com/jdyeakel/SalmonStrays.
 
 
 
 
 \section*{Reviewer II}
 \subsection*{Major comments}
-My major criticism on this paper is that in the analysis presented, the bifurcation point is incorrectly identified and the claims based on this misidentification are most likely unsupported. What is presented as a Fold bifurcation is in reality a Pitchfork bifurcation. Pitchfork bifurcations are dependent on perfect symmetry in systems, something that is also true in the current case: The model as presented and analyzed is formulated in an entirely symmetrical way, which means that a Pitchfork bifurcation is de facto built into it.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} My major criticism on this paper is that in the analysis presented, the bifurcation point is incorrectly identified and the claims based on this misidentification are most likely unsupported. What is presented as a Fold bifurcation is in reality a Pitchfork bifurcation. Pitchfork bifurcations are dependent on perfect symmetry in systems, something that is also true in the current case: The model as presented and analyzed is formulated in an entirely symmetrical way, which means that a Pitchfork bifurcation is de facto built into it.
+}
 
-As it is, the occurrence of the bifurcation point as well as the ecological implications derived from it, are mostly a mathematical construction, brought about by the complete symmetry in the system. It is absolutely necessary to investigate the robustness of the results under scenarios where the symmetry is broken. The eco-evolutionary aspects of the model have currently no role in the observed dynamics, because they hinge on the symmetrical formulation.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} As it is, the occurrence of the bifurcation point as well as the ecological implications derived from it, are mostly a mathematical construction, brought about by the complete symmetry in the system. It is absolutely necessary to investigate the robustness of the results under scenarios where the symmetry is broken. The eco-evolutionary aspects of the model have currently no role in the observed dynamics, because they hinge on the symmetrical formulation.
+}
 
-I would be very curious to see this analysis extended under asymmetrical assumptions, for example in the productivity of the different locations or the intraspecific competition between populations. Another potentially highly interesting element that has not been studied here is the potential for alternative stable states based on the density-dependent straying rate (subsection b in the Model formulation). The study currently addresses a scenario where the potential for population collapse due to collective navigation is ignored. I see that as the interesting angle; how do the dynamics caused by density-dependent straying interact with the dynamics caused by selective forces as imposed by the different environments on recruitment?
+\noindent \textcolor{cyan}{
+{\bf Comment 1} I would be very curious to see this analysis extended under asymmetrical assumptions, for example in the productivity of the different locations or the intraspecific competition between populations. Another potentially highly interesting element that has not been studied here is the potential for alternative stable states based on the density-dependent straying rate (subsection b in the Model formulation). The study currently addresses a scenario where the potential for population collapse due to collective navigation is ignored. I see that as the interesting angle; how do the dynamics caused by density-dependent straying interact with the dynamics caused by selective forces as imposed by the different environments on recruitment?
+}
 
-This manuscript can be improved by correcting the bifurcation analysis and by extending beyond perfect symmetry. The authors take a reasonable approach, using numerical analysis, which is fine, and I like the idea to focus on population robustness.  I understand that recruitment and population growth are not explicitly linked to environmental resources for reasons of mathematical simplicity. At the same time, I would prefer to see resources as an explicit variable in this model. This suggestion could directly be used to introduce asymmetries between two different locations and may be a feasible way to address the issues I raised above.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} This manuscript can be improved by correcting the bifurcation analysis and by extending beyond perfect symmetry. The authors take a reasonable approach, using numerical analysis, which is fine, and I like the idea to focus on population robustness.  I understand that recruitment and population growth are not explicitly linked to environmental resources for reasons of mathematical simplicity. At the same time, I would prefer to see resources as an explicit variable in this model. This suggestion could directly be used to introduce asymmetries between two different locations and may be a feasible way to address the issues I raised above.
+}
 
-I would be looking forward to see a revised version of this manuscript that addresses my points.
 
 
-It would be good to include more technical details about how the bifurcation analysis was carried out (or is this present in the missing SI text?). As it is, I have no idea about the numerical techniques that were used or even whether the authors have studied both increasing and decreasing parameter values, as necessary to enable detection of alternative stable states and discontinuities.
 
-Please include a table with the definitions and values of model parameters (including their units) and definitions of model variables.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} It would be good to include more technical details about how the bifurcation analysis was carried out (or is this present in the missing SI text?). As it is, I have no idea about the numerical techniques that were used or even whether the authors have studied both increasing and decreasing parameter values, as necessary to enable detection of alternative stable states and discontinuities.
+}
 
-I could not understand section c, Habitat heterogeneity in the Model formulation. In particular the paragraph on lines 139-144 should be explained and justified better, where the authors should make sure to explain the ‘integrate the two variables’ part more formally and explicitly.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} Please include a table with the definitions and values of model parameters (including their units) and definitions of model variables.
+}
 
-As I write above, I appreciate the focus on robustness and through numerical analysis. At the same time this model would lend itself to some analysis too, even making some simplifying assumptions or investigating some boundary conditions. That would strengthen the insights from the results and the conclusions based on them. This would also possibly facilitate very straightforward validation of the kind of bifurcation point that is encountered (although the figures clearly show it cannot be a Fold bifurcation).
+\noindent \textcolor{cyan}{
+{\bf Comment 1} I could not understand section c, Habitat heterogeneity in the Model formulation. In particular the paragraph on lines 139-144 should be explained and justified better, where the authors should make sure to explain the ‘integrate the two variables’ part more formally and explicitly.
+}
 
-Please present formal definitions (for example in a table as mentioned above) of all model variables and parameters. Right now I never found an explicit definition of NT, for example.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} As I write above, I appreciate the focus on robustness and through numerical analysis. At the same time this model would lend itself to some analysis too, even making some simplifying assumptions or investigating some boundary conditions. That would strengthen the insights from the results and the conclusions based on them. This would also possibly facilitate very straightforward validation of the kind of bifurcation point that is encountered (although the figures clearly show it cannot be a Fold bifurcation).
+}
+
+Point to Jacobian analysis.
+
+\noindent \textcolor{cyan}{
+{\bf Comment 1} Please present formal definitions (for example in a table as mentioned above) of all model variables and parameters. Right now I never found an explicit definition of $N_T$, for example.
+}
 
 
 \subsection*{Minor comments}
-I encountered some sloppiness in various parts of the manuscript, for example figure 3 is missing axes labels and has inconsistencies with the main text and caption. I did not find the SI figures or text, only the figure captions. Figure 4 was referenced before figure 3, as was the case with figures S2 and S1. Please see below for a list of textual errors that should be addressed (preferable before review, through using a spell checker). Note that these are the ones I could quickly jot down, but there are more.
+\noindent \textcolor{cyan}{
+{\bf Comment 1} I encountered some sloppiness in various parts of the manuscript, for example figure 3 is missing axes labels and has inconsistencies with the main text and caption. I did not find the SI figures or text, only the figure captions. Figure 4 was referenced before figure 3, as was the case with figures S2 and S1. Please see below for a list of textual errors that should be addressed (preferable before review, through using a spell checker). Note that these are the ones I could quickly jot down, but there are more.
 Typos/errors on lines:
 \begin{itemize}
 \item 67:   ‘This model’ does not link back to anything about a model
@@ -129,7 +159,9 @@ Typos/errors on lines:
 \item 139: differnce
 \item 153:  inconsistency in number between noun and verb
 \end{itemize}
+}
 
+We thank the Reviewer for being so meticulous and pointing out these errors. Although the noted issues with the figures (missing axes, labels) and missing supplemental materials appears to have been a problem with the upload, we acknowledge that the other issues were due to a lack of thoroughness on our part and have been corrected.
 
 \vspace{5mm}
 

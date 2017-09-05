@@ -340,7 +340,7 @@ dev.off()
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
 
 
-asymvec = collect(0.0:0.001:0.05);
+asymvec = collect(0.0:0.001:0.1);
 
 #Analysis over m
 tmax=10000;
@@ -435,14 +435,14 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 R"""
 library(RColorBrewer)
 pdf($namespace,height=5,width=6)
-cols = brewer.pal(3,'Set1')
-plot($mvec,$(n1mean[1,:]),pch='.',col='black',xlab="Stray rate",ylab="Steady state",cex=0.5)
-points($mvec,$(n2mean[1,:]),pch='.',col='black',cex=0.5)
+cols = rev(colorRampPalette(brewer.pal(11, "Spectral"))(length($asymvec)))
+plot($mvec,$(n1mean[length(asymvec),:]),pch=16,col=cols[1],xlab="Stray rate",ylab="Steady state",cex=0.5)
+points($mvec,$(n2mean[length(asymvec),:]),pch=16,col=cols[1],cex=0.5)
 """
-for a=2:length(asymvec)
+for a=length(asymvec)-1:-1:1
     R"""
-    points($mvec,$(n1mean[a,:]),pch='.',col='black',cex=0.5)
-    points($mvec,$(n2mean[a,:]),pch='.',col='black',cex=0.5)
+    points($mvec,$(n1mean[a,:]),pch=16,col=cols[$a],cex=0.5)
+    points($mvec,$(n2mean[a,:]),pch=16,col=cols[$a],cex=0.5)
     """
 end
 R"dev.off()"
