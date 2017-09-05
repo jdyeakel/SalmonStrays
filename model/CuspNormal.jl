@@ -47,7 +47,7 @@ include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.
 
 #Analysis over m
 tmax=10000;
-mvec = [collect(0.0:0.001:0.25);collect(0.25:-0.001:0.0)];
+mvec = [collect(0.0:0.001:0.1);collect(0.1:-0.001:0.001)];
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
@@ -138,10 +138,17 @@ burnin=0.80
   (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   
 end
-
+midpoint = Int64(floor(length(n1mean)/2));
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_hysteresis.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
-plot($n1mean,pch='.',col=cols[1],xlab="Stray rate",ylab="Steady state",cex=0.5)
-points($n2mean,pch='.',col=cols[2],cex=0.5)
+pdf($namespace,height=5,width=6)
+plot($(mvec[1:midpoint]),$(n1mean[1:midpoint]),col=cols[1],xlab="Stray rate",ylab="Steady state",ylim=c(1,1000),type='l')
+lines($(mvec[1:midpoint]),$(n2mean[1:midpoint]),col=cols[2])
+lines($(mvec[midpoint+1:length(mvec)]),$(n1mean[midpoint+1:length(n1mean)]),col=cols[1],lty=2)
+lines($(mvec[midpoint+1:length(mvec)]),$(n2mean[midpoint+1:length(n2mean)]),col=cols[2],lty=2)
+dev.off()
 """
+
+

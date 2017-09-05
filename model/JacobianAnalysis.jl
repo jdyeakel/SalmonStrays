@@ -1,7 +1,7 @@
 using Distributions
 using RCall
 
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_asym.jl")
+include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
 include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
 
 
@@ -117,23 +117,23 @@ for i=2:length(mvec)
     """
 end
 
-
+reigs = Array{Float64}(length(mvec),4);
+for i=1:length(mvec)
+    reigs[i,1] = real(eigs[i][1]);
+    reigs[i,2] = real(eigs[i][2]);
+    reigs[i,3] = real(eigs[i][3]);
+    reigs[i,4] = real(eigs[i][4]);
+end
 #Plot Jacobian Eigenvalues
 R"""
 library(RColorBrewer)
-cols = brewer.pal(11,'Spectral')
-plot($(mvec[1]),$(real(eigs[1])[1]),type='l',ylim=c(0,1),xlim=c(0,0.5),col=cols[2])
-points($(mvec[1]),$(real(eigs[1])[2]),col=cols[10])
-points($(mvec[1]),$(real(eigs[1])[3]),col=cols[10])
-points($(mvec[1]),$(real(eigs[1])[4]),col=cols[10])
+cols = brewer.pal(3,'Set1')
+par(mfrow=c(2,1))
+plot($mvec,$n1mean,pch='.',col=cols[1],xlab="Stray rate",ylab="Steady state",cex=0.5)
+points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
+
+plot($(mvec),$(reigs[:,1]),ylim=c(0,1),xlim=c(0,0.5),col='black',pch=16,cex=0.5)
+points($(mvec),$(reigs[:,2]),col='black',pch=16,cex=0.5)
+points($(mvec),$(reigs[:,3]),col='black',pch=16,cex=0.5)
+points($(mvec),$(reigs[:,4]),col='black',pch=16,cex=0.5)
 """
-for i=2:length(mvec)
-    R"""
-    library(RColorBrewer)
-    cols = brewer.pal(11,'Spectral')
-    points($(mvec[i]),$(real(eigs[i])[1]),col=cols[10])
-    points($(mvec[i]),$(real(eigs[i])[2]),col=cols[10])
-    points($(mvec[i]),$(real(eigs[i])[3]),col=cols[10])
-    points($(mvec[i]),$(real(eigs[i])[4]),col=cols[10])
-    """
-end
