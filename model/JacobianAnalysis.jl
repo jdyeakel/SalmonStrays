@@ -8,7 +8,7 @@ include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.
 
 #Analysis over m
 tmax=10000;
-mvec = collect(0.0:0.001:0.5);
+mvec = collect(0.0:0.001:1);
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
@@ -103,20 +103,6 @@ plot($mvec,$n1mean,pch='.',col=cols[1],xlab="Stray rate",ylab="Steady state",cex
 points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
 """
 
-#Plot Jacobian Eigenvalues
-r_e = real(eigs[1]);
-i_e = imag(eigs[1]);
-R"""
-plot($r_e,$i_e,ylim=c(-0.01,0.01),xlim=c(-2,2),pch='.')
-"""
-for i=2:length(mvec)
-    r_e = real(eigs[i]);
-    i_e = imag(eigs[i]);
-    R"""
-    points($r_e,$i_e,pch='.')
-    """
-end
-
 reigs = Array{Float64}(length(mvec),4);
 for i=1:length(mvec)
     reigs[i,1] = real(eigs[i][1]);
@@ -125,15 +111,18 @@ for i=1:length(mvec)
     reigs[i,4] = real(eigs[i][4]);
 end
 #Plot Jacobian Eigenvalues
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_eigs.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
-par(mfrow=c(2,1))
-plot($mvec,$n1mean,pch='.',col=cols[1],xlab="Stray rate",ylab="Steady state",cex=0.5)
-points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
+pdf($namespace,height=8,width=5)
+par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
+plot($mvec,$n1mean,pch='.',col='black',cex=0.5,xlab='Straying rate m',ylab='Steady state biomass')
+points($mvec,$n2mean,pch='.',col='black',cex=0.5)
 
-plot($(mvec),$(reigs[:,1]),ylim=c(0,1),xlim=c(0,0.5),col='black',pch=16,cex=0.5)
+plot($(mvec),$(reigs[:,1]),ylim=c(0,1),col='black',pch=16,cex=0.5,xlab='Straying rate m',ylab='Re[Jacobian eigenvalue]')
 points($(mvec),$(reigs[:,2]),col='black',pch=16,cex=0.5)
 points($(mvec),$(reigs[:,3]),col='black',pch=16,cex=0.5)
 points($(mvec),$(reigs[:,4]),col='black',pch=16,cex=0.5)
+dev.off()
 """
