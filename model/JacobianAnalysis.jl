@@ -8,7 +8,7 @@ include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.
 
 #Analysis over m
 tmax=10000;
-mvec = collect(0.0:0.001:1);
+mvec = collect(0.0:0.0001:1);
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
@@ -120,9 +120,10 @@ par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
 plot($mvec,$n1mean,pch='.',col='black',cex=0.5,xlab='Straying rate m',ylab='Steady state biomass')
 points($mvec,$n2mean,pch='.',col='black',cex=0.5)
 
-plot($(mvec),$(reigs[:,1]),ylim=c(0,1),col='black',pch=16,cex=0.5,xlab='Straying rate m',ylab='Re[Jacobian eigenvalue]')
-points($(mvec),$(reigs[:,2]),col='black',pch=16,cex=0.5)
-points($(mvec),$(reigs[:,3]),col='black',pch=16,cex=0.5)
-points($(mvec),$(reigs[:,4]),col='black',pch=16,cex=0.5)
+plot($(mvec),$(reigs[:,1]),ylim=c(0,1),col='black',pch='.',cex=0.5,xlab='Straying rate m',ylab='Re[Jacobian eigenvalue]')
+points($(mvec),$(reigs[:,2]),col='black',pch='.',cex=0.5)
+points($(mvec),$(reigs[:,3]),col='black',pch='.',cex=0.5)
+points($(mvec),$(reigs[:,4]),col='black',pch='.',cex=0.5)
+lines(seq(-1,1,0.1),rep(1,21))
 dev.off()
 """

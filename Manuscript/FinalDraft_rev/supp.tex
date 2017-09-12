@@ -19,7 +19,7 @@
 \usepackage{subcaption}
 \captionsetup{compatibility=false}
 \usepackage{xr}
-\externaldocument[extfig-]{msv5}
+\externaldocument[extfig-]{msv6}
 %\usepackage{epstopdf}
 %\usepackage{array}
 %\usepackage{tabularx}
@@ -73,6 +73,55 @@ ${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
 \maketitle
 
 \beginsupplement
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_recovery.pdf}
+\caption{
+Example of the numerical procedure used to estimate recovery time. After a disturbance is introduced, the recovery time is calculated by measuring the point in time where $N_T$ (in black), which is the aggregate of both populations (blue, red) settles to within one standard deviation of the new equilibrium $N_T^*$. 
+} \label{fig:recovery}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_mthetarelation.pdf}
+\caption{
+In some cases, habitat heterogeneity may be assumed to determine the rate of straying, if for example:
+1) sites may be distributed over greater spatial distances, where habitat differences are assumed to be greater between more distant sites, or 2) individuals have behaviors promoting dispersal between habitats that are more similar. To examine such cases, we use the relationship $m= 0.5(1 + \Delta\theta)^{-1}$ where maximum straying is assumed to occur at $m=0.5$ (perfect mixing).
+} \label{fig:mthetarelation}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_eigs.pdf}
+\caption{
+The real parts of the four eigenvalues for the Jacobian matrix of the 4-dimensional system.
+The pitchfork bifurcation occurs when the dominant eigenvalue crosses the unit circle at $+1$. 
+} \label{fig:eigs}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_hysteresis.pdf}
+\caption{
+Increasing the straying rate results in the transition from a single steady state for both populations to a dominant and subordinate states. If the straying rate is subsequently lowered, the single steady state is not easily obtained, which is the hallmark of hysteresis.
+} \label{fig:hysteresis}
+\end{figure}
+
+
+
 
 \begin{figure}
   \captionsetup{justification=raggedright,
@@ -200,10 +249,25 @@ singlelinecheck=false
   \includegraphics[width=0.8\textwidth]{fig_relax_mtheta.pdf}
   \caption{
   Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases for constant (a) and density-dependent (b) staying rates.
-  The fold bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
+  The pitchfork bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
   Despite this difference, the general trends shown in (a) are also present in (b).
   } \label{fig:mthetamvm}
 \end{figure*}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_asymdensity.pdf}
+\caption{
+Steady state densities of both populations as a function of $m$, where a pitchfork bifurcation indicates the emergence of alternative steady states: one in a dominant state and one in a subordinate state.
+Steady states for populations with symmetrical values ($\alpha=0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown with cool tones.
+As the asymmetry among populations between sites increases ($\alpha>0$), their vital rates diverge, such that the maximal growth at sites 1 and 2 is now $r_{\rm max,1}=r_{\rm max}(1+\tilde{rv}_1)$ and $r_{\rm max,2}=r_{\rm max}(1+\tilde{rv}_2)$ where $rv_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $r_{\rm max}=2$. 
+Similarly the strength of density dependence is calculated at sites 1 and 2 as $\beta_1=\beta(1+\tilde{rv}_1)$ and $\beta_2=\beta(1+\tilde{rv}_2)$ where $\tilde{rv}_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $\beta=0.001$.
+Steady states for populations with increasingly asymmetric values ($\alpha>0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown in warm tones.
+} \label{fig:symmetry}
+\end{figure}
 
 
 

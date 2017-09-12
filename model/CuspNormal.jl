@@ -25,7 +25,7 @@ end
 
 b1 = 0.12;
 rb1 = find(x->x==b1,b1vec)[1];
-b2 = 0.1;
+b2 = 0.0;
 r = find(x->x==b2,b2vec)[1];
 R"""
 par(mfrow=c(3,1))
@@ -45,4 +45,3 @@ plot($b2vec,$(lambda[r,:]),type='l',ylim=c(-1,2))
 lines(seq(-50,50),rep(1,101))
 plot($b2vec,$(xss[r,:]),pch=16,cex=0.5)
 """
-
