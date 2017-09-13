@@ -388,7 +388,7 @@ dev.off()
 """
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_relax_lowh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft_rev/fig_relax_lowh.pdf");
 R"""
 library(RColorBrewer)
 pdf($namespace,height=4,width=10)
@@ -400,7 +400,7 @@ lines($mvec,$(ma_rth2[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth2[:,3]),col=palsub[3],cex=0.5,lwd=2)
 text(par('usr')[1]-0.09,max($(ma_rth2)),'(a)', xpd=TRUE)
 arrows($(mvec[indmax(ma_rth2[1:100,1])]),10,$(mvec[indmax(ma_rth2[1:100,1])]),12,length=0.05,angle=40,lwd=3)
-text($(mvec[indmax(ma_rth2[1:100,1])]),9,'FB')
+text($(mvec[indmax(ma_rth2[1:100,1])]),9,'PFB')
 
 
 plot($(ma1_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth2_ddm))),las=1)
@@ -419,7 +419,7 @@ text(-0.072,max($(ma_rth2_ddm)),'(b)', xpd=TRUE)
 types = c('subordinate extinct','dominant extinct','near-collapse')
 legend(x=0.18,y=130,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
 arrows($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),10,$(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),12,length=0.05,angle=40,lwd=3)
-text($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),9,'FB')
+text($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),9,'PFB')
 
 
 dev.off()

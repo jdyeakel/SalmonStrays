@@ -474,7 +474,7 @@ dev.off()
 #  segments($(ma1_m_ddm[:,3])[i],$(ma_rth_ddm[:,3])[i],$(ma2_m_ddm[:,3])[i],$(ma_rth_ddm[:,3])[i],col=palsub[3])
 # }
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/figs2/fig_mtheta_rt.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/FinalDraft_rev/fig_mtheta_rt.pdf");
 R"""
 library(RColorBrewer)
 library(shape)
@@ -488,7 +488,7 @@ lines($mvec2,$(ma_rth[:,3]),col=palsub[3],cex=0.5,lwd=2)
 arrows(0.122,2800,0.122,1800,length=0.05,angle=40,lwd=3)
 types = c('subordinate extinct','dominant extinct','near-collapse')
 legend(x=0.14,y=8000,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=0.9, bty="n") #,title=expression(paste(Delta,theta))
-text(0.122,4000,'FB')
+text(0.122,4000,'PFB')
 text(0.034,90,'*',cex=2)
 dev.off()
 """

@@ -114,12 +114,12 @@ Movement of individuals among local populations (i.e. dispersal) can have a larg
 Dispersal facilitates evolutionary rescue, whereby immigration of individuals with heritable adapative traits can rescue small populations from local extinction in the context of maladaptive environmental change \citep{Bell:2011ki,Carlson:2014is}.
 % First, some level of straying is necessary to enable the rescue effect, whereby dispersal among populations can rescue small populations from local extinction (REFS). 
 On the other hand, high rates of dispersal may synchronize populations and actually increase the risk of extinction of the entire metapopulation \citep{Earn:2000fm}. 
-Third, straying will influence the evolutionary dynamics of the metapopulation.
+Third, dispersal will influence the evolutionary dynamics of the metapopulation.
 % though how the interplay between selection and population dynamics might impact persistence is less well understood. 
 Although the dispersal of individuals into sites hosting other populations provides connections within the larger metapopulation, potentially promoting demographic and evolutionary rescue, it may also introduce maladapted individuals into habitats that are host to different environmental conditions, possibly lowering the mean fitness of the recipient population \citep{Muhlfeld:2014hs}. 
 More broadly, dispersal can provide a mechanism by which phenotypes are sorted in space rather than time and facilitates the spread of maladaptive genes \citep{Lowe:2015ft}.
-Further, this straying may lead to genetic homogenization that erodes the asynchrony that underpins portfolio effects and metapopulation persistence. 
-Thus, straying can influence the resilience and robustness of metapopulations through both ecological and evolutionary processes.
+Dispersal in this case may lead to genetic homogenization that erodes the asynchrony that underpins portfolio effects and metapopulation persistence. 
+% Thus, straying can influence the resilience and robustness of metapopulations through both ecological and evolutionary processes.
 % Thus, the dual nature of straying as both promoter of connections among metapopulation demes and potential eroder of locally adapted gene complexes highlights the interplay between ecological dynamics of connected populations and the evolutionary dynamics of mixed trait distributions that respond to heterogeneous local conditions.
 
 
@@ -279,7 +279,7 @@ According to Berdahl et al. \citep{Berdahl:2014bl,Berdahl:2016dx}, given the pro
   \label{eq:ddm}
 \end{equation}
 
-\noindent where $C$ is a half-saturation constant.
+\noindent where $C$ is a half-saturation constant and is set to $C=1000$ throughout.
 We note that at the limit $C\rightarrow \infty$, the density-dependent straying rate becomes constant such that $m(t) \rightarrow m_0$, and this corresponds to the original formulation where $m=m_0$.
 A similar observation shows that when the population density is very high, $m(t) \rightarrow 0$, and when it is small, individuals operate without regard to collective behavior, meaning $m(t) \rightarrow m_0$.
 Thus, for realistic population densities, $m(t) < m_0$.\\
@@ -979,20 +979,20 @@ We suggest that understanding the spatial complexity of metapopulations dispersi
 \hline
 Parameter & Definition \\
 \hline
-$N_i,N_T$ & Individual, aggregate population density\\
-$\mu_i$ & Mean trait value of population $i$\\
-$m$ & Straying rate\\
+$N_i(t)$, $N_T(t)$ & Individual, aggregate population over time\\
+$\mu_i(t)$ & Mean trait value of population $i$ over time\\
+$m$, $m(t)$ & Constant, density dependent straying rate\\
 $m_0$ & Straying rate of an individual\\
-$R_i[\mu]$ & Recruitment rate of population $i$\\
+$R_i[\mu(t)]$ & Recruitment rate of population $i$\\
 $r_{\rm max}$ & Maximum recruitment rate\\
 ${\rm e}^{-Z}$ & Survival rate\\
 $\beta$ & Strength of density dependence\\
-$\theta_i$ & Optimal trait value at habitat $i$\\
-$\Delta\theta$ & Difference in habitat optima\\
+$\theta_i$ & Optimal trait value for habitat $i$\\
+$\Delta\theta$ & Habitat heterogeneity\\
 $\tau$ & Strength of selection\\
-$\sigma^2$ & Genetic variance $i$\\
+$\sigma^2$ & Genetic variance\\
 $h^2$ & Heritability\\
-$C$ & Half saturation constant for density dependent straying\\
+$C$ & Half saturation constant for $m(t)$\\
 ${\rm PE}$ & Portfolio Effect\\
 \hline
 \end{tabular}
@@ -1276,7 +1276,7 @@ Steady state densities of both populations as a function of $m$, where a pitchfo
 Steady states for populations with symmetrical values ($\alpha=0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown with cool tones.
 As the asymmetry among populations between sites increases ($\alpha>0$), their vital rates diverge, such that the maximal growth at sites 1 and 2 is now $r_{\rm max}(1)=r_{\rm max}(1+\tilde{rv}_1)$ and $r_{\rm max}(2)=r_{\rm max}(1+\tilde{rv}_2)$ where $rv_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $r_{\rm max}=2$. 
 Similarly the strength of density dependence is calculated at sites 1 and 2 as $\beta(1)=\beta(1+\tilde{rv}_1)$ and $\beta(2)=\beta(1+\tilde{rv}_2)$ where $\tilde{rv}_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $\beta=0.001$.
-Steady states for populations with increasingly asymmetric values ($\alpha>0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown in cool tones.
+Steady states for populations with increasingly asymmetric values ($\alpha\rightarrow 0.1$) for vital rates $r_{\rm max}$ and $\beta$ are shown in warmer tones.
 } \label{fig:symmetry}
 \end{figure}
 
