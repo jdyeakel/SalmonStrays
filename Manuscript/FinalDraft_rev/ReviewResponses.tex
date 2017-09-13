@@ -57,11 +57,14 @@
   \mu_i(t+1) &= w_i\mu_i(t) + (1-w_i)\mu_j(t) \\ \nonumber
   &+ h^2\sigma^2\frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i(t)] + (1-w_i)R_i[\mu_j(t)]  \right).
 \end{align}
-Because the third term on the right is the derivative of the log of the sum (as it must be for the discrete time version of the Lande equation; Lande \emph{Evolution}, 1976), the derivative of the second term within the logarithm is not zero, and both phenotypic means contribute to the strength and direction of selection, such that
+Because the third term on the right is the derivative of the log of the sum (as it must be for the discrete time version of the Lande equation; Lande \emph{Evolution}, 1976), the derivative of the second term within the logarithm is not zero, and both phenotypic means contribute to selection, such that
 \begin{equation}
   \frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i] + (1-w_i)R_i[\mu_j]  \right) = \frac{\theta_i-\mu_i}{\left(\sigma ^2+\tau ^2\right) \left(1+\left(\frac{1}{w_i}-1\right) {\rm exp}\left[\frac{(\mu_i-\mu_j) (-2 \theta_i+\mu_i+\mu_j)}{2 \left(\sigma ^2+\tau ^2\right)}\right]\right)}.
 \end{equation}
 
+\noindent We have made the following edits to the text:\\
+\noindent {\bf Line XXX:} \emph{The partial derivative in the Eq. 4 determines how the mean trait changes through time due to natural selection [ref], which is proportional to the change in mean fitness with respect to $\mu_i$.
+We note that the derivative is dependent on both $\mu_i$ and $\mu_j$ due to the influence of the logarithm on the sum.}
 
 \noindent \textcolor{cyan}{
 {\bf Comment 1.2} The model with constant dispersal ($m$) is very much the same as the model of Ronce and Kirkpatrick (2001, Evolution), with the difference that the latter is fully deterministic and set in continuous time; but as long as the system attains an equilibrium rather than population cycles or chaos, continuous time should not make a difference. Ronce and Kirkpatrick focused on equilibria (such as the dominant vs subordinate state here ) and on local adaptation, not metapopulation resilience/stability, but did study the consequence of disturbances for switching between alternative equilibria (see the next point).
