@@ -51,7 +51,7 @@
 {\bf Comment 1.1} Equation (4), which describes the change in the population mean trait under dispersal and selection, is incorrect. In the second line of Eq (4), the immigrant term $(1-w_i) R_i [\mu_j]$ is independent of $\mu_i$, so that the derivative of this term is zero. This is as if selection did not change the allele frequencies/mean trait value of the immigrant subpopulation, which is obviously untrue (there is strong selection on the locally maladapted immigrants, favouring those who happen to be closer to the local optimum). One cannot apply Lande's equation without adapting it to the immigration model.
 }
 
-\noindent {\bf Response 1.1} We appreciate the Reviewer's concern, however note that equation 4) is written as
+\noindent {\bf Response 1.1} We appreciate the Reviewer's concern, however note that equation 4 is written as
 \begin{align}
   \label{eq:mu}
   \mu_i(t+1) &= w_i\mu_i(t) + (1-w_i)\mu_j(t) \\ \nonumber
@@ -62,35 +62,35 @@ Because the third term on the right is the derivative of the log of the sum (as 
   \frac{\partial}{\partial \mu_i}\ln\left(w_i R_i[\mu_i] + (1-w_i)R_i[\mu_j]  \right) = \frac{\theta_i-\mu_i}{\left(\sigma ^2+\tau ^2\right) \left(1+\left(\frac{1}{w_i}-1\right) {\rm exp}\left[\frac{(\mu_i-\mu_j) (-2 \theta_i+\mu_i+\mu_j)}{2 \left(\sigma ^2+\tau ^2\right)}\right]\right)}.
 \end{equation}
 
-\noindent We have made the following edits to the text:\\
-\noindent {\bf Line XXX:} \emph{The partial derivative in the Eq. 4 determines how the mean trait changes through time due to natural selection [ref], which is proportional to the change in mean fitness with respect to $\mu_i$.
+\noindent To clarify, we have made the following edits to the text:\\
+\noindent {\bf Line 113:} \emph{The partial derivative in Eq. 4 determines how the mean trait changes through time due to natural selection [ref], which is proportional to the change in mean fitness with respect to $\mu_i$.
 We note that the derivative is dependent on both $\mu_i$ and $\mu_j$ due to the influence of the logarithm on the sum.}
 
 \noindent \textcolor{cyan}{
 {\bf Comment 1.2} The model with constant dispersal ($m$) is very much the same as the model of Ronce and Kirkpatrick (2001, Evolution), with the difference that the latter is fully deterministic and set in continuous time; but as long as the system attains an equilibrium rather than population cycles or chaos, continuous time should not make a difference. Ronce and Kirkpatrick focused on equilibria (such as the dominant vs subordinate state here ) and on local adaptation, not metapopulation resilience/stability, but did study the consequence of disturbances for switching between alternative equilibria (see the next point).
 }
 
-\noindent {\bf Response 1.2} We are thankful for the Reviewer in pointing out this reference, which we are embarrassed to admit to having overlooked. The model indeed has many similarities to our own, and we now acknowledge its importance and priority within the manuscript. The similarities in the resulting dynamics suggest that what we are observing in the two-population salmon system, as well as the implications that we derive for metapopulation robustness and recovery, may be generally relevant and illustrative of a general phenomenon outside of the constraints introduced in the specific formulation of our model. Though as Reviewer I notes, our model while complementary to Ronce and Kirkpatrick 2001, focuses instead on the metapopulation effects (portfolio effects, resilience, and overall robustness) of the observed dynamics rather than a detailed analytical treatment of the dynamics themselves. We highlight areas of complementarity and extension in the revised manuscript.
+\noindent {\bf Response 1.2} We are thankful for the Reviewer in pointing out this reference, which we are embarrassed to admit to having overlooked. The model indeed has many similarities to our own, and we now acknowledge its importance and priority within the manuscript. The similarities in the resulting dynamics suggest that what we are observing in the two-population salmon system, as well as the implications that we derive for metapopulation robustness and recovery, may be  relevant and illustrative of a general phenomenon outside of the constraints introduced in the specific formulation of our model. Though as Reviewer I notes, our model while complementary to Ronce and Kirkpatrick 2001, focuses instead on the metapopulation effects (portfolio effects, resilience, and overall robustness) of the observed dynamics rather than a detailed analytical treatment of the dynamics themselves. We highlight areas of complementarity and extension in the revised manuscript.
 
 \noindent We have made the following edits to the text:\\
-\noindent {\bf Line XXX:} \emph{This model formulation has parallels to that proposed by Ronce and Kirkpatrick [ref]), where habitat specialization evolves between two populations as a function of dispersal.
+\noindent {\bf Line 115:} \emph{This model formulation has parallels to that proposed by Ronce and Kirkpatrick [ref]), where habitat specialization evolves between two populations as a function of dispersal.
 The largest difference between these approaches is that our framework treats trait evolution mechanistically (at some cost to analytical tractability).
 Importantly, we show that the resulting dynamics are qualitatively similar, suggesting that the dynamical features present in both of these approaches have potentially widespread ramifications for the evolutionary dynamics of connected populations.}\\
-\noindent {\bf Line XXX} \emph{This dynamic is also observed in the Ronce and Kirkpatrick model, which they describe as a transition from symmetric to asymmetric states [ref].}
+\noindent {\bf Line 191} \emph{These dynamics are also observed in the Ronce and Kirkpatrick model, which they describe as a transition from symmetric to asymmetric states [ref].}
 
 
 \noindent \textcolor{cyan}{
 {\bf Comment 1.3} The bifurcation the authors call a fold bifurcation is not a fold bifurcation. Figure 1 suggests a pitchfork bifurcation (which is degenerate but will appear in symmetric models). An alternative possibility is that there exists an asymmetric equilibrium with a "dominant state" and a "subordinate state" also at low m, next to the symmetric equilibrium shown at low m in figure 1, so that the system has two stable equilibria; here the "FB" point in figure 1 would be the point where the symmetric equilibrium is destabilized (this is the pattern found by Ronce and Kirkpatrick). This second alternative seems likely to me because the abrupt changes seen in figure 1 and also in figure 5 may well indicate an attractor switch. The nature of the bifurcation should be properly investigated (one can find Jacobians etc with numerical analysis for the deterministic system).
 }
 
-\noindent {\bf Response 1.3} Both Reviewers indicated that our labeling of the Fold Bifurcation was incorrect, and that the identity of the transition of the system from symmetric to asymmetric states was in fact a Pitchfork bifurcation. We are happy to modify the identification of the bifurcation as the Reviewers suggest as the Pitchfork label will be more familiar to readers and is somewhat self-evident in terms of the bifurcation diagram that is displayed. At the same time, we would like to explain our reasoning, and maintain our position that the bifurcation is technically (and more generally) a fold bifurcation as well.
+\noindent {\bf Response 1.3} Both Reviewers indicated that our labeling of the Fold Bifurcation was incorrect, and that the identity of the transition of the system from symmetric to asymmetric states was in fact a Pitchfork bifurcation. To our knowledge, the Pitchfork Bifurcation applies only to continuous time systems, and not to discrete maps. However, there is a qualitative (visual) analogue to the Pitchfork in discrete maps, and we think that we can be more precise in our description.
 
-According to Kuznetsov (1998), there are two principle bifurcations in discrete maps, from which others are composed: the Fold and Flip (period-doubling).
+According to Kuznetsov (1998), there are three principle bifurcations in discrete maps, from which others are composed: the Fold, Flip (period-doubling), and Neimark-Sacker.
 The Fold bifurcation is generally defined by the dominant eigenvalue $\lambda$ intersecting the unit circle in Real-Imaginary space at ${\rm Re}[\lambda]=+1$.
-We now include a new figure S3 that shows this is indeed the case for our system, and was the basis on which we initially identified the bifurcation. Although we are not specialists in bifurcation theory, our understanding is that the fold bifurcation is a general attribute based on this eigenvalue behavior, but as the Reviewers indicate, it is not a particularly clear or complete description of what is going on. 
-A familiar, and more complicated bifurcation that occurs in systems with $\geq2$ parameters is the Cusp bifurcation, which occurs when two fold bifurcations interact at a cusp.
-A one-dimensional transect through the cusp results in what is commonly referred to as a Pitchfork Bifurcation (topological normal form: $x \mapsto x + \beta x - x^3$). At the cusp ($\beta=0$), the single fixed point crosses the combined fold bifurcations, and here it branches into 3 fixed points; two stable fixed points separated by an unstable fixed point.
-Identifying the bifurcation as a Pitchfork bifurcation increases clarity and specificity, and we have made the appropriate edits in an effort to do so.
+We now include a new figure S3 that shows that this is indeed the case for our system, and this was the basis on which we initially identified the bifurcation. Although we are not mathematicians, our understanding is that the fold bifurcation is a general attribute based on this eigenvalue condition, but as the Reviewers indicate, it is not a particularly clear or complete description of what is going on. 
+A familiar, and more complicated bifurcation that occurs in maps with $\geq2$ parameters is the Discrete Cusp Bifurcation, which occurs when two fold bifurcations intersect at a cusp.
+A one-dimensional transect through the cusp results in behavior similar to that observed for Pitchfork Bifurcations in vector fields (topological normal form for the discrete map: $x \mapsto x + \beta x - x^3$). At the cusp ($\beta=0$), the single fixed point crosses the intersecting fold bifurcations, and here it branches into 3 fixed points; two stable fixed points separated by an unstable fixed point.
+We now identify the bifurcation as a Discrete Cusp bifurcation and mention that it displays dynamics that are visually similar to Pitchfork bifurcations in continuous time systems, which we hope will increase clarity and specificity.
 
 % Interestingly, because the system passes through a Pitchfork, or the Cusp at the cusp point, rather than one fold bifurcation at a time (which would result in similar stable-unstable-stable fixed points), the dependence of whether the system will veer to both states
 
@@ -101,6 +101,13 @@ This perspective is reinforced by the fact that altering parameters between the 
 
 % we believe that our 4-dimensional discrete time system crosses a discrete cusp bifurcation at intermediate values of $m$. The discrete cusp bifurcation is characterized by the intersection of two branches of a fold bifurcation, of which the topological normal form is $x \mapsto f(x) = x + \beta_1 + \beta_2 x - x^3$. The eigenvalue evaluated at the steady state $\partial f(x)/\partial x|_{x=x^*}$ increases to unity on the unit circle at the cusp bifurcation $(\beta_1 = 0, \beta_2 = 0)$. 
 
+\noindent We have made the following edits to the text:\\
+\noindent {\bf Line 115:} \emph{The decline in steady state densities is not gradual: as straying increases, the system crosses a discrete cusp bifurcation (DCB) [ref] whereby the single steady state for the metapopulation bifurcates into two basins of attraction: one at high biomass, and one at low biomass density (figure 1a, 2a).
+Mean trait values for both populations bifurcate similarly (figure 1b). 
+In discrete systems, the cusp bifurcation is defined by two fold bifurcations intersecting at a cusp point [ref], and is observed when the real part of the dominant eigenvalue of the Jacobian matrix crosses the unit circle at +1 (figure S3).
+Visually, the dynamics are similar to those observed at a pitchfork bifurcation in continuous systems, where a single steady state gives rise to two steady states separated by an unstable fixed point.
+}
+
 
 \noindent \textcolor{cyan}{
 {\bf Comment 1.4} The ms does not describe how recovery time was measured. The deterministic system returns to an equilibrium asymptotically, i.e., in infinite time. For practice, one defines a return ``close enough" for recovery. The details of this should be given, otherwise the results are not reproducible. Moreover, I think that near the bifurcation point total population size will equilibrate fast, but the distribution of individuals over the two habitats takes a longer time to equilibrate (the system is on the edge between a symmetric and an asymmetric equilibrium). If time to recovery includes the time that $N_1$ and $N_2$ individually reach their steady states, then this can explain the peak of recovery time at the bifurcation; but this does not mean that the total population size takes long to recover. If total population size was monitored, but recovery was interpreted as "return to original" whereas the system attains a different equilibrium (symmetric vs asymmetric, see above), then obviously recovery time will be infinite, but again this does not mean that the population does not recover from near extinction.
@@ -109,8 +116,9 @@ This perspective is reinforced by the fact that altering parameters between the 
 \noindent {\bf Response 1.4} We thank the Reviewer and apologize for our lack of clarity. We emphasize that our measure of recovery time is a numerical measurement, as eigenvalue-based (asymptotic) measures are not appropriate for the scale of disturbance that we introduce (extinction in some cases - far from the non-trivial fixed point(s) of the system). The procedure is now described in more detail within the text, and illustrated graphically in an additional supplemental figure (figure S1). In short, we track the recovering aggregate population $N_T=N_1+N_2$ until it is within a standard deviation around the \emph{updated} fixed point (thus accounting for fixed points that are altered by the disturbance). Note that this recovery time is specifically for the aggregate population, such that if a single population takes a long time to recovery relative to the other, the aggregate takes longer to recover as well. If $N_T$ remains within a standard deviation of the final fixed point for some period of time, it is counted as recovered. Accordingly, trajectories that cycle around the fixed point are not counted as recovered until the cycles decay. To ensure reproducibility, all code is provided online in the Github repository: https://github.com/jdyeakel/SalmonStrays.
 
 \noindent We have made the following edits to the text:\\
-\noindent {\bf Line XXX:} \emph{Recovery time was calculated by initiating a disturbance at $t=t_d$, and monitoring $N_T(t_d+t)$ as $t\rightarrow T$, where $T$ is large. 
-The aggregate was deemed recovered at $t_r$, such that recovery time was calculated as $t_r-t_d$, and recovery at $t=t_r$ was measured as the initial $t$ where $N_T(t) < {\rm SD}\left( N_T^* \right)$ for $t\in(t_r,T)$, where $\rm{SD}(\cdot)$ is standard deviation (illustrated in figure [ref]).}\\
+\noindent {\bf Line 160:} \emph{Although there is a direct eigenvalue relationship between the rate of return following a small pulse perturbation [ref], because we aimed to 1) assess the effects of a large perturbation, and 2) estimate the time required for all transient effects to decay (including dampened oscillations), we used a simulation-based numerical procedure.
+Recovery time was calculated by initiating a disturbance at $t=t_d$, and monitoring $N_T(t_d+t)$ as $t\rightarrow T$, where $T$ is large. 
+The aggregate was deemed recovered at $t_r$, such that recovery time was calculated as $t_r-t_d$, and recovery at $t=t_r$ was measured as the initial $t$ where $N_T(t) < {\rm SD}\left( N_T^* \right)$ for $t\in(t_r,T)$, where $\rm{SD}(\cdot)$ is standard deviation (illustrated in figure S2)}\\
 
 \noindent \textcolor{cyan}{
 {\bf Comment 1.5} A strong "portfolio effect" as measured by PE in equation 6 indicates resilience against metapopulation extinction if PE is high due to a low CV of total population size. But PE is also high if the local populations have high CV. As I argued above, near the bifurcation $N_1$ and $N_2$ may be much less stable than $N_T=N_1+N_2$, i.e., the peak of PE may have little to do with the resilience of total population size.
@@ -125,15 +133,15 @@ However we agree that PE can change in response to changes to any of the four at
 \noindent \textcolor{cyan}{
 {\bf Minor Comment 1.1} ``straying" is not defined in the Introduction/main text. Since the model is not specific to salmon, the more general term "dispersal" could be used throughout.}
 
-\noindent {\bf Minor Response 1.1} We now equate straying with dispersal early in the text (and note that it is also defined in the abstract).
+\noindent {\bf Minor Response 1.1} We now equate straying with dispersal early in the text (it is now also defined in the abstract).
 
 \noindent We have made the following edits to the text:\\
-\noindent {\bf Line XXX:} \emph{The rate at which individuals stray, $m$, is in this case synonymous with dispersal and may be linked to errors made at an individual-level that are themselves diminished by migrating in groups and pooling individual choices [refs].}\\
+\noindent {\bf Line 42:} \emph{The rate at which individuals stray, $m$, is in this case synonymous with dispersal and may be linked to errors made at an individual-level that are themselves diminished by migrating in groups and pooling individual choices [refs].}\\
 
 \noindent \textcolor{cyan}{
 {\bf Minor Comment 1.2} The figure legends should specify the parameter values used, figure 2 should give a key translating colours to values, figure 3 should have numbers on the axes. Generally, the authors should pay attention to reproducibility.}
 
-\noindent {\bf Minor Response 1.2} We agree and thank the Reviewer for point this out. We have made the following edits to the text:\\
+\noindent {\bf Minor Response 1.2} We agree and thank the Reviewer for pointing this out. We have made the following edits to the text:\\
 \noindent {\bf Figure 1 caption} \emph{Unless otherwise indicated, the default parameter values used are: $r_{\rm max}=2$; $Z=0.5$; $\beta=0.001$; $\theta_1=5$; $\Delta\theta=5$; $\tau=1$; $\sigma=1$; $T=1\times10^5$.}\\
 
 
@@ -143,28 +151,35 @@ However we agree that PE can change in response to changes to any of the four at
 {\bf Comment 2.1} My major criticism on this paper is that in the analysis presented, the bifurcation point is incorrectly identified and the claims based on this misidentification are most likely unsupported. What is presented as a Fold bifurcation is in reality a Pitchfork bifurcation. Pitchfork bifurcations are dependent on perfect symmetry in systems, something that is also true in the current case: The model as presented and analyzed is formulated in an entirely symmetrical way, which means that a Pitchfork bifurcation is de facto built into it.
 }
 
-\noindent {\bf Response 2.1} We thank the Reviewer for their comment and have now clarified the manuscript. Please see Response 1.3.
+\noindent {\bf Response 2.1} We thank the Reviewer for their comments and have now clarified the manuscript. Please see Responses 1.3 and 2.2, which address these concerns.
 
 \noindent \textcolor{cyan}{
 {\bf Comment 2.2} As it is, the occurrence of the bifurcation point as well as the ecological implications derived from it, are mostly a mathematical construction, brought about by the complete symmetry in the system. It is absolutely necessary to investigate the robustness of the results under scenarios where the symmetry is broken. The eco-evolutionary aspects of the model have currently no role in the observed dynamics, because they hinge on the symmetrical formulation.
-I would be very curious to see this analysis extended under asymmetrical assumptions, for example in the productivity of the different locations or the intraspecific competition between populations. Another potentially highly interesting element that has not been studied here is the potential for alternative stable states based on the density-dependent straying rate (subsection b in the Model formulation). The study currently addresses a scenario where the potential for population collapse due to collective navigation is ignored. I see that as the interesting angle; how do the dynamics caused by density-dependent straying interact with the dynamics caused by selective forces as imposed by the different environments on recruitment?
+I would be very curious to see this analysis extended under asymmetrical assumptions, for example in the productivity of the different locations or the intraspecific competition between populations.
 \\
 This manuscript can be improved by correcting the bifurcation analysis and by extending beyond perfect symmetry. The authors take a reasonable approach, using numerical analysis, which is fine, and I like the idea to focus on population robustness.  I understand that recruitment and population growth are not explicitly linked to environmental resources for reasons of mathematical simplicity. At the same time, I would prefer to see resources as an explicit variable in this model. This suggestion could directly be used to introduce asymmetries between two different locations and may be a feasible way to address the issues I raised above.
 }
 
-\noindent {\bf Response 2} We thank the Reviewer for their perspective and comments, and agree that we need to understand to what extent our results are generalizable.
-From our perspective, there are two ways in which our model incorporates symmetry: 1) the architectural symmetry of the populations between sites and 2) the symmetry in parameter values between sites. Regarding the first, both populations have the same growth and mortality functions, and both populations have the same functional forms that control straying. This architectural symmetry lies at the heart of our question, as we are exploring the dynamics of two similar populations that have similar constraints. We cannot alter this type of symmetry without vastly changing the questions that we are addressing.
+\noindent {\bf Response 2.2} We thank the Reviewer for their perspective and comments, and agree that we need to understand to what extent our results are generalizable.
+% From our perspective, there are two ways in which our model incorporates symmetry: 1) the architectural symmetry of the populations between sites and 2) the symmetry in parameter values between sites. Regarding the first, both populations have the same growth and mortality functions, and both populations have the same functional forms that control straying. This architectural symmetry lies at the heart of our question, as we are exploring the dynamics of two similar populations that have similar constraints. We cannot alter this type of symmetry without vastly changing the questions that we are addressing.
+In general, although discrete cusp bifurcations with pitchfork-like behaviors are a consequence of symmetry (defined by a system where $N_1\rightarrow-N_1$, $N_2\rightarrow-N_2$, $x_1\rightarrow-x_1$, $x_2\rightarrow-x_2$ without altering the equations), the general features of the bifurcation need not be altered as symmetry is broken.
+Consider the topological normal form $\dot{x}=h + \beta x - x^3$, which is a continuous system with a perfect pitchfork bifurcation at $\beta = 0,~h=0$.
+It is symmetric in the sense that $x\rightarrow-x$ without altering anything if and only if $h=0$.
+If $h\neq0$, the system is asymmetric, however the pitchfork-like dynamic does not disappear but becomes an imperfect pitchfork where a saddle node bifurcation appears alongside a non-varying steady state.
+This creates a parameter region where alternative steady states exist, separated by an unstable steady state.
+As such, symmetry exists only in a perfect sense (and we describe below why we think our system already violates perfect symmetry), and the observed dynamics that we observe need not require perfect symmetry. 
+However, we agree with the Reviewer that this begs investigation.
 
-We assume that the Reviewer is referring to the second type of symmetry: that many of the parameters of the model controlling vital rates are symmetric between sites, primary examples being: $r_{\rm max}=2;~Z=0.5;~\beta=0.001$.
+Our model treats many of the parameters of the model controlling vital rates to be the same between sites, primary examples being: $r_{\rm max}=2;~Z=0.5;~\beta=0.001$.
 These parameters were held constant primarily to minimize the parameter space that we investigate (making an already long paper a bit shorter), but we acknowledge that this invites the question: are we investigating a mathematical knife-edge?
-
 We suggest that our analysis is not merely a mathematical construction (interpreted here to mean dynamic behaviors that only occur within a thin slice of parameter space, unlikely to be realized in biological systems) for 3 reasons:
 
 1) We already inject process error into the dynamics. This process error (independent for both sites) serves to push the system away from the symmetrical vital rates $(r_{\rm max}, Z, \beta)$, and if there is a knife-edge of parameter space that results in the dynamics we observe, the process error should knock the system away from it. Despite these independent sources of error, their means are the same, and this warrants additional investigation as the Reviewer suggests.
 
 2) We have included a modified analysis of the system to assess increasing asymmetry in the vital rates between sites. Asymmetry in parameter values is introduced as a parameter $\alpha$, where maximal growth at sites 1 and 2 are now  $r_{\rm max}(1)=r_{\rm max}(1+\tilde{rv}_1)$ and $r_{\rm max}(2)=r_{\rm max}(1+\tilde{rv}_2)$ where $rv_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $r_{\rm max}=2$. 
+% Increasing $\alpha$ results in more widely diverging vital rates between sites.
 Similarly the strength of density dependence is calculated at sites 1 and 2 as $\beta(1)=\beta(1+\tilde{rv}_1)$ and $\beta(2)=\beta(1+\tilde{rv}_2)$ where $\tilde{rv}_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $\beta=0.001$.
-Thus as asymmetry increases, so do the differences in vital rates between sites.
+Thus as asymmetry ($\alpha$) increases, so do the differences in vital rates between sites.
 
 To investigate the effects of increasing asymmetry on the main dynamical feature of our model, we assessed how increasing $\alpha$ altered the steady state portrait as a function of the straying rate $m$ shown in figure 1a, and this analysis is now included as a supplementary figure (figure S13). As can be seen, greater asymmetry (warm colors in the supplementary figure) does not alter the qualitative nature of the dynamics, and does not significantly change the position of the bifurcation. We take this as strong evidence that the qualitative nature of the system is not a mathematical construction relegated to a small slice of parameter space.
 
@@ -172,51 +187,57 @@ To investigate the effects of increasing asymmetry on the main dynamical feature
 
 Finally, although we like the idea of modeling changes in resource abundance in response to changes in populations and trait means, we feel that this is beyond the scope of the contribution outlined here, and suggest that it would be something very interesting to explore in a future work.
 
-
 \noindent \textcolor{cyan}{
-{\bf Comment 2.3} It would be good to include more technical details about how the bifurcation analysis was carried out (or is this present in the missing SI text?). As it is, I have no idea about the numerical techniques that were used or even whether the authors have studied both increasing and decreasing parameter values, as necessary to enable detection of alternative stable states and discontinuities.
+{\bf Comment 2.3} Another potentially highly interesting element that has not been studied here is the potential for alternative stable states based on the density-dependent straying rate (subsection b in the Model formulation). The study currently addresses a scenario where the potential for population collapse due to collective navigation is ignored. I see that as the interesting angle; how do the dynamics caused by density-dependent straying interact with the dynamics caused by selective forces as imposed by the different environments on recruitment?
 }
 
-\noindent {\bf Response 2.3} We thank the Reviewer, and now briefly describe our analysis of the bifurcation (also see Response 1.3). We include a plot of the Jacobian eigenvalues across $m$ (figure S3). Moreover, we note that hysteresis is observed at the bifurcation (evaluated by increasing and decreasing $m$), and this is shown in figure S4.
+\noindent {\bf Response 2.3} We agree that this is an interesting line of inquiry, but do investigate it in the manuscript. Specifically we analyze scenarios where a) individual populations that collectively stray collapse, and b) both populations that collectively stray suffer near-collapse. If this is in line with what the Reviewer is describing, we suggest that the uploading issues, which prevented delivery of the Supplemental information (and many of the pertinent figures) made the manuscript somewhat opaque with regard to these analyses. We examine the effects of density dependent straying on all aspects of the model, and strive to highlight those results in our revised version.
 
 \noindent \textcolor{cyan}{
-{\bf Comment 2.4} Please include a table with the definitions and values of model parameters (including their units) and definitions of model variables.
+{\bf Comment 2.4} It would be good to include more technical details about how the bifurcation analysis was carried out (or is this present in the missing SI text?). As it is, I have no idea about the numerical techniques that were used or even whether the authors have studied both increasing and decreasing parameter values, as necessary to enable detection of alternative stable states and discontinuities.
 }
 
-\noindent {\bf Response 2.4} A table is now included. 
+\noindent {\bf Response 2.4} We thank the Reviewer, and now briefly describe our analysis of the bifurcation (also see Response 1.3). We include a plot of the Jacobian eigenvalues across $m$ (figure S3). Moreover, we note that hysteresis is observed at the bifurcation (evaluated by increasing and decreasing $m$), and this is shown in figure S4.
 
 \noindent \textcolor{cyan}{
-{\bf Comment 2.5} I could not understand section c, Habitat heterogeneity in the Model formulation. In particular the paragraph on lines 139-144 should be explained and justified better, where the authors should make sure to explain the ‘integrate the two variables’ part more formally and explicitly.
+{\bf Comment 2.5} Please include a table with the definitions and values of model parameters (including their units) and definitions of model variables.
 }
 
-\noindent {\bf Response 2.5} We thank the Reviewer for their comment and apologize for our lack of clarity. We have moved the text and attempt to explain our reasonings and justifications more clearly. We have made a figure that illustrates the relationship between straying and $\Delta\theta$ if it is assumed that individuals are less likely to stray into sites with very different trait optima (greater habitat heterogeneity).
+\noindent {\bf Response 2.5} We thank the Reviewer for their suggestion. A table is now included. 
+
+\noindent \textcolor{cyan}{
+{\bf Comment 2.6} I could not understand section c, Habitat heterogeneity in the Model formulation. In particular the paragraph on lines 139-144 should be explained and justified better, where the authors should make sure to explain the ‘integrate the two variables’ part more formally and explicitly.
+}
+
+\noindent {\bf Response 2.6} We thank the Reviewer for their comment and apologize for our lack of clarity. We have moved the text and attempt to explain our reasonings and justifications more clearly. We have made a figure that illustrates the relationship between straying and $\Delta\theta$ if it is assumed that individuals are less likely to stray into sites with very different trait optima (greater habitat heterogeneity).
 
 \noindent We have made the following edits to the text:\\
-\noindent {\bf Line XXX:} \emph{Although we largely treat habitat heterogeneity and the rate of straying as independent parameters, we evaluate a case where we assume that increased habitat heterogeneity correlates with lower straying rates, and vice versa.
+\noindent {\bf Line 136:} \emph{Habitat heterogeneity and the rate of straying are treated both independently, and as parameters that covary.
+In the latter instance, we evaluate a case where it is assumed that increased habitat heterogeneity correlates with lower straying rates, and vice versa (illustrated in figure S1).
 Two scenarios may lead to this correlation: 
-(\emph{i}) sites may be distributed over greater spatial distances, where habitat differences are assumed to be exaggerated and the likelihood of straying over greater distances would be lower [ref];
+(\emph{i}) sites may be distributed over greater spatial distances, where habitat differences are assumed to be exaggerated and the likelihood of straying over greater distances is lower [ref];
 (\emph{ii}) individuals may have behaviors promoting dispersal between habitats with structural or physiognomic similarities [ref].
 In this case, the rate of straying would be greater between habitats with smaller differences in trait optima (lower $\Delta\theta$) and lesser between habitats with greater differences in trait optima (higher $\Delta\theta$).}
 
-\noindent {\bf Line XXX:} \emph{Sites that are farther apart are likely to be more heterogeneous, while simultaneously facilitating lower rates of straying between populations.
-% If we assume that environmental heterogeneity increases with distance between sites, or that individuals may have behaviors that minimize their chances of straying into very different habitats, the rate of straying will decline with habitat heterogeneity.
-% We can implement this dependence by allowing $\Delta\theta$ to decrease as $m$ increases, such that there are low rates of straying between dissimilar populations and high rates of straying between similar populations.
-We implemented this dependence as set $m,m_0 = 0.5(1 + \Delta\theta)^{-1}$ where maximum straying is assumed to occur at $m=0.5$ (perfect mixing; figure [ref]).
-This assumes that $m$ or $m_0$ increases in situations where $\Delta\theta$ is lower, such that there are low rates of straying between dissimilar sites and high straying rates between similar sites.
-We find that under these conditions alternative stable states now appear for very low rates of straying $0 < m \leq 0.43$.
-As the straying rate increases and $\Delta\theta$ decreases, a single stable state emerges as the pitchfork bifurcation is crossed, which is opposite the pattern observed when these parameters are independent.}
+\noindent {\bf Line 272:} \emph{Until now, we have treated the rate of straying and habitat heterogeneity as independent parameters, however they may also be assumed to covary.
+For instance, if sites are separated by greater distance, they may be assumed to have increased habitat heterogeneity as well as lower rates of straying.
+Alternatively, individuals may be genetically predisposed to stray into sites that are more similar, such that greater between-site heterogeneity will correspond to lower straying rates.
+We implemented this inverse relationship by setting $m = 0.5(1 + \Delta\theta)^{-1}$ where maximum straying is assumed to occur at $m=0.5$ (perfect mixing; figure S1).
+This assumes that $m$ is greater for lower $\Delta\theta$, such that there are low rates of straying between dissimilar (distant) sites and high straying rates between similar (close) sites.
+Under these conditions we find that alternative stable states appear for very low rates of straying (figure S10). % $0 < m \leq 0.43$.
+As the straying rate increases and $\Delta\theta$ decreases, a single stable state emerges as the cusp bifurcation is crossed, which is opposite the pattern observed when straying is independent of habitat heterogeneity.}
 
 \noindent \textcolor{cyan}{
-{\bf Comment 2.6} As I write above, I appreciate the focus on robustness and through numerical analysis. At the same time this model would lend itself to some analysis too, even making some simplifying assumptions or investigating some boundary conditions. That would strengthen the insights from the results and the conclusions based on them. This would also possibly facilitate very straightforward validation of the kind of bifurcation point that is encountered (although the figures clearly show it cannot be a Fold bifurcation).
+{\bf Comment 2.7} As I write above, I appreciate the focus on robustness and through numerical analysis. At the same time this model would lend itself to some analysis too, even making some simplifying assumptions or investigating some boundary conditions. That would strengthen the insights from the results and the conclusions based on them. This would also possibly facilitate very straightforward validation of the kind of bifurcation point that is encountered (although the figures clearly show it cannot be a Fold bifurcation).
 }
 
-\noindent {\bf Response 2.6} Please see Responses 1.3 and 2.3.
+\noindent {\bf Response 2.7} Please see Responses 1.3 and 2.3.
 
 \noindent \textcolor{cyan}{
-{\bf Comment 2.7} Please present formal definitions (for example in a table as mentioned above) of all model variables and parameters. Right now I never found an explicit definition of $N_T$, for example.
+{\bf Comment 2.8} Please present formal definitions (for example in a table as mentioned above) of all model variables and parameters. Right now I never found an explicit definition of $N_T$, for example.
 }
 
-\noindent {\bf Response 2.7} A table is now included.
+\noindent {\bf Response 2.8} A table is now included.
 
 
 \subsection*{Minor comments}

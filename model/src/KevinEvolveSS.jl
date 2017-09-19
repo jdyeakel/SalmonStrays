@@ -1,5 +1,6 @@
 function KevinEvolveSS(
   n0,
+  x0,
   tmax, 
   z, 
   rmax,
@@ -18,8 +19,10 @@ function KevinEvolveSS(
   n1 = zeros(Float64,tmax); n1[1]=n0[1];
   n2 = zeros(Float64,tmax); n2[1]=n0[2];
   
-  x1 = zeros(Float64,tmax); x1[1]=theta1 + rand(Normal(0,0.0001));
-  x2 = zeros(Float64,tmax); x2[1]=(theta1 + thetadiff)  + rand(Normal(0,0.0001));
+  # x1 = zeros(Float64,tmax); x1[1]=theta1 + rand(Normal(0,0.0001));
+  # x2 = zeros(Float64,tmax); x2[1]=(theta1 + thetadiff)  + rand(Normal(0,0.0001));
+  x1 = zeros(Float64,tmax); x1[1] = x0[1];
+  x2 = zeros(Float64,tmax); x2[1] = x0[1];
   
   w1 = zeros(Float64,tmax-1);
   w2 = zeros(Float64,tmax-1);

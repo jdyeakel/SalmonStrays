@@ -1,49 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: msv6.aux
-The style file: apsrev.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+The style file: prsb.bst
 Database file #1: aa_kevin.bib
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 71 entries,
-            3411 wiz_defined-function locations,
-            1615 strings with 23480 characters,
-and the built_in function-call counts, 50866 in all, are:
-= -- 2782
-> -- 1827
-< -- 257
-+ -- 1499
-- -- 446
-* -- 7051
-:= -- 5401
-add.period$ -- 71
-call.type$ -- 71
-change.case$ -- 284
-chr.to.int$ -- 69
-cite$ -- 71
-duplicate$ -- 4640
-empty$ -- 4272
-format.name$ -- 1120
-if$ -- 9556
-int.to.chr$ -- 3
-int.to.str$ -- 72
-missing$ -- 728
-newline$ -- 228
-num.names$ -- 214
-pop$ -- 1298
+You've used 67 entries,
+            2423 wiz_defined-function locations,
+            968 strings with 16840 characters,
+and the built_in function-call counts, 58928 in all, are:
+= -- 6528
+> -- 879
+< -- 0
++ -- 589
+- -- 220
+* -- 3855
+:= -- 5571
+add.period$ -- 68
+call.type$ -- 67
+change.case$ -- 63
+chr.to.int$ -- 0
+cite$ -- 67
+duplicate$ -- 7035
+empty$ -- 5125
+format.name$ -- 278
+if$ -- 12756
+int.to.chr$ -- 0
+int.to.str$ -- 67
+missing$ -- 622
+newline$ -- 274
+num.names$ -- 69
+pop$ -- 3275
 preamble$ -- 1
-purify$ -- 284
+purify$ -- 0
 quote$ -- 0
-skip$ -- 1823
+skip$ -- 358
 stack$ -- 0
-substring$ -- 1492
-swap$ -- 3749
-text.length$ -- 223
+substring$ -- 8539
+swap$ -- 1414
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 412
+type$ -- 0
 warning$ -- 0
-while$ -- 206
-width$ -- 0
-write$ -- 716
+while$ -- 470
+width$ -- 69
+write$ -- 669

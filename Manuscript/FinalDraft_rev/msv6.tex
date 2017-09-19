@@ -45,7 +45,7 @@
 \renewcommand{\thesection}{\arabic{section}}
 
 
-% \bibliographystyle{prsb}
+\bibliographystyle{prsb}
 
 % \usepackage{bibunits}
 
@@ -262,7 +262,7 @@ Following Lande \citep{Lande:1976ga}, the mean trait value thus changes through 
 \end{align}
 
 \noindent where the first two components determine the mixed normal average of the aggregated local and remote populations.
-The partial derivative in the Eq. \ref{eq:mu} determines how the mean trait changes through time due to natural selection \citep{Lande:1976ga}, which is proportional to the change in mean fitness with respect to $\mu_i$.
+The partial derivative in Eq. \ref{eq:mu} determines how the mean trait changes through time due to natural selection \citep{Lande:1976ga}, which is proportional to the change in mean fitness with respect to $\mu_i$.
 We note that the derivative is dependent on both $\mu_i$ and $\mu_j$ due to the influence of the logarithm on the sum.
 %Comparison to the Ronce and Kirkpatrick paper
 This model formulation has parallels to that proposed by Ronce and Kirkpatrick \citep{Ronce:2001dp}, where habitat specialization evolves between two populations as a function of dispersal.
@@ -328,9 +328,9 @@ The aggregate was deemed recovered at $t_r$, such that recovery time was calcula
 
 
 Numerically estimating the time that it takes for a perturbed system to recover also permits a more detailed perspective of metapopulation fragility.
-For example, if populations settle to alternative stable states, comparing recovery times after a disturbance applied to individual populations allows for an assessment of which component of the metapopulation has a longer-lasting influence on the system's recovery. % (alternative stable states in our model requiring one population to be high-density and one low-density)
+For example, if populations settle to alternative stable states (one at low- and one at high-density), comparing recovery times after a disturbance applied to individual populations allows for an assessment of which component of the metapopulation has a longer-lasting influence on the system's recovery. % (alternative stable states in our model requiring one population to be high-density and one low-density)
 We measured recovery time following three types of induced disturbance: (\emph{i}) extinction of the low-density population; (\emph{ii}) extinction of the high-density population (scenarios \emph{i} and \emph{ii} are equivalent if populations have the same density); (\emph{iii}) near-collapse of both populations where just 1.0\% of each survives.
-Throughout, we will refer to an increase in the portfolio effects and/or reduction in recovery times as promoting metapopulation robustness and by extension persistence.
+Throughout, we will refer to an increase in the portfolio effects and/or reduction in recovery times as promoting metapopulation robustness.
 \\
 
 
@@ -341,11 +341,13 @@ Throughout, we will refer to an increase in the portfolio effects and/or reducti
 \noindent{\bf (a) Nonlinear effects of straying on metapopulation robustness} \\
 \noindent Regardless of density dependence, straying lowers steady state densities for both populations by (\emph{i}) the donor population losing locally-adapted individuals to the recipient population and (\emph{ii}) the introduction of maladapted individuals to the recipient population from the donor population (Fig. \ref{fig:traj}).
 This prediction is in accordance with observations from natural populations \citep{Bett:2017ha}. %, regardless of trait heritability and variance or habitat heterogeneity
-The decline in steady state densities is not gradual: as straying increases, the system crosses a pitchfork bifurcation (PFB) \citep{AleksandrovichKuznetsov:1995p2580} whereby the single steady state for the metapopulation bifurcates into two basins of attraction: one at high biomass, and one at low biomass density (figure \ref{fig:traj}a, \ref{fig:PE}a).
-In discrete systems, a pitchfork bifurcation is a specific case of the cusp bifurcation (where two fold bifurcations intersect at a cusp) \citep{AleksandrovichKuznetsov:1995p2580}, and occurs when the real part of the dominant eigenvalue of the Jacobian matrix crosses the unit circle at +1 (figure \ref{fig:eigs}).
+The decline in steady state densities is not gradual: as straying increases, the system crosses a discrete cusp bifurcation (DCB) \citep{AleksandrovichKuznetsov:1995p2580} whereby the single steady state for the metapopulation bifurcates into two basins of attraction: one at high biomass, and one at low biomass density (figure \ref{fig:traj}a, \ref{fig:PE}a).
 Mean trait values for both populations bifurcate similarly (figure \ref{fig:traj}b). 
+In discrete systems, the cusp bifurcation is defined by two fold bifurcations intersecting at a cusp point \citep{AleksandrovichKuznetsov:1995p2580}, and is observed when the real part of the dominant eigenvalue of the Jacobian matrix crosses the unit circle at +1 (figure \ref{fig:eigs}).
+Visually, the dynamics are similar to those observed at a pitchfork bifurcation in continuous systems, where a single steady state gives rise to two steady states separated by an unstable fixed point.
 
-Above the threshold straying rate defined by the PFB, there are two alternative eco-evolutionary states: the \emph{dominant state} population will have a higher density and greater degree of local adaptation (smaller trait offset from the local optimum), while the \emph{subordinate state} population will have lower density with maladapted trait values (larger trait offset from the local optimum). 
+
+Above the threshold straying rate defined by the DCB, there are two alternative eco-evolutionary states: the \emph{dominant state} population will have a higher density and greater degree of local adaptation (smaller trait offset from the local optimum), while the \emph{subordinate state} population will have lower density with maladapted trait values (larger trait offset from the local optimum). 
 Hysteresis is observed to occur at this transition, such that the single steady state regime cannot easily be recovered by reducing straying after the system attains alternative steady states (figure \ref{fig:hysteresis}).
 These dynamics are also observed in the Ronce and Kirkpatrick model, where populations are described as transitioning between symmetric to asymmetric states \citep{Ronce:2001dp}.
 Whether a specific population goes to one state or the other in our model is random, due to a small amount of introduced variance in the initial conditions.
@@ -358,13 +360,13 @@ Whether a specific population goes to one state or the other in our model is ran
 Trait heritability $h^2$ has a large effect on the degree to which straying affects both the aggregate population steady state density ($N^*_T$; figure \ref{fig:PE}a) as well as the difference between steady state densities (the distance between alternative stable states: $\Delta N^*=|N^*_1-N^*_2|$; figure \ref{fig:PE}b).
 Greater trait heritability results in a steeper decline in $N_T^*$ with increasing straying rates $m$, but leads to only moderate changes to $\Delta N^*$.
 Lower trait heritability has little effect on the total biomass density but contrastingly large effects on $\Delta N^*$.
-The pitchfork bifurcation (the black line in Figs. \ref{fig:PE}a-c) occurs at lower values of the straying rate $m$ with lower heritability (Fig \ref{fig:PE}a,b), indicating that weaker coupling between ecological and evolutionary dynamics in addition to higher rates of straying promotes the appearance of alternative stable states.
+The cusp bifurcation (the black line in Figs. \ref{fig:PE}a-c) occurs at lower values of the straying rate $m$ with lower heritability (Fig \ref{fig:PE}a,b), indicating that weaker coupling between ecological and evolutionary dynamics in addition to higher rates of straying promotes the appearance of alternative stable states.
 Although trait heritability among salmonids is variable, most life history traits have an $h^2 <0.5$ \citep{Carlson:2008hl}, and we largely focus our efforts on that range.
 
 %Critical slowing down
-As the pitchfork bifurcation is approached with increasing $m$, the portfolio effect increases sharply due to an amplification in variance within both donor and recipient populations.
+As the cusp bifurcation is approached with increasing $m$, the portfolio effect increases sharply due to an amplification in variance within both donor and recipient populations.
 This amplification in variance is the product of a dynamical process known as \emph{critical slowing down} that can occur near bifurcations \citep{Scheffer:2009gg}, a phenomenon that some have suggested may serve as an early warning indicator for approaching phase transitions \citep{Scheffer:2009gg,Lade:2012eu,Anonymous:2013br,Dakos:2014br,Krkosek:2014ch}.
-For larger values of $m$ (to the right of the pitchfork bifurcation in Fig \ref{fig:PE}a-c), where alternative stable states occur, the portfolio effect declines steadily as the CV of $N_T^*$ increases.
+For larger values of $m$ (to the right of the cusp bifurcation in Fig \ref{fig:PE}a-c), where alternative stable states occur, the portfolio effect declines steadily as the CV of $N_T^*$ increases.
 The decline over $m$ is more gradual if trait heritability is low, and steeper if trait heritability is high (figure \ref{fig:PE}c).
 
 % \noindent{\bf (c) Rates of recovery following catastrophic collapse}\\ 
@@ -375,11 +377,22 @@ Because we can assess the time to recovery in response to the various disturbanc
 
 
 Straying had non-linear impacts on the recovery time of populations. 
-When the dominant state (well adapted and high density) is wiped out, high levels of straying allow it to recover quickly (figure \ref{fig:relax}a) because the surviving population has a mean trait value skewed towards the optimum of the recovering population (figure \ref{fig:relaxtraj_hdlh}).
-Yet, as straying decreases, recovery time for the disturbed dominant state population increases, in part because there is enough time for the trait distribution to move back towards the trait optimum of the subordinate state population.
+When the dominant state (well adapted and high density) is wiped out, high rates of straying allow it to recover quickly (figure \ref{fig:relax}a) because the surviving population has a mean trait value skewed towards the optimum of the recovering population (figure \ref{fig:relaxtraj_hdlh}).
+Yet, as straying decreases, recovery time for the disturbed dominant state population increases, in part because there is time for the trait distribution to move back towards the trait optimum of the subordinate state population.
 In contrast, when the subordinate state population (maladapted and low density) is wiped out, recovery rates are fastest at low to intermediate levels of straying.
 Because the mean trait values of both populations are skewed towards those of the dominant population, when the subordinate population collapses under high rates of straying, selection against the flood of maladapted individuals that stray into the recovering population extends the length of time required for it to return to its steady state (figure \ref{fig:relaxtraj_ldlh}).
-When both populations are both dramatically reduced, recovery time is generally fastest at lower levels of straying, while near the onset of the pitchfork bifurcation, recovery time increases explosively and this is -- as the name implies -- characteristic of \emph{slowing} dynamics that occur near critical transitions \citep{Scheffer:2009gg,Kuehn:2010p2591}.\\
+When both populations are both dramatically reduced, recovery time is generally fastest at lower levels of straying due to reduced mixing of maladaptive phenotypes.
+Near the onset of the cusp bifurcation, recovery time increases explosively, however this is -- as the name implies -- characteristic of \emph{slow} dynamics occurring near critical transitions \citep{Scheffer:2009gg,Kuehn:2010p2591}.
+
+
+
+%Lowering Phenotypic diversity with increasing straying rate
+Increased rates of straying lowers phenotypic diversity ($\Delta \mu^* = |\mu_i^*-\mu_j^*|$, evaluated at the steady state) because both local and remote populations are increasingly homogenized.
+The loss of phenotypic diversity with increased straying is greater if trait heritability is low because traits take longer to go back to their local optima than they do when heritability is high. 
+Hence straying counters the effect of diversifying local adaptation. 
+% The loss of phenotypic diversity with increased straying is greater if trait heritability is low because the selective forces acting against trait means far from the local optima are lessened. % with decreased $h^2$.
+Less intuitively, we observe a discrete jump towards low phenotypic diversity as the cusp bifurcation is crossed (figure \ref{fig:traitdiff}).
+Although the development of alternative stable states elevates the portfolio effect due to the variance-dampening effects of the aggregate, entering this dynamic regime also results in a substantial decline in phenotypic diversity, which may have less predictable adverse effects on the population.\\
 
 
 \noindent{\bf (b) The effects of collective migration and density dependent straying} \\
@@ -396,51 +409,43 @@ As $m^*$ increases, we observe an increase in the PE than for systems with const
 
 
 %Recovery times
-Density-dependent straying alters these recovery times (figure \ref{fig:relax}b). 
-First, in comparison with constant stray rates, density-dependent straying made recovery more rapid at elevated stray rates when both populations collapsed and when the subordinate population was extirpated.
+Density-dependent straying alters these recovery times (figure \ref{fig:relax}b; note difference in x-axis scale). 
+First, in comparison with constant stray rates, density-dependent straying lowered recovery times at elevated straying rates for near-collapse of both populations and extirpation of the subordinate population.
 %Recovery times
 %The recovery times for systems with constant and density-dependent straying both show similar trends for a given $m$ and $m^*$ (figure \ref{fig:relax}c,d), however there are some distinct quantitative differences.
-At low straying rates, near-collapse of both populations resulted in longer than expected recovery times, whereas in the alternative stable state regime (higher $m^*$), the recovery times for different disturbance types were very similar to systems with a constant $m$ (figure \ref{fig:relax}b; note difference in x-axis scales).
-As trait heritability increased, the metapopulation always recovered more quickly if the small population was lost (figure \ref{fig:relax_highh}).
+In contrast, at low straying rates, near-collapse of both populations required more time to recover. %whereas in the alternative stable state regime (higher $m^*$), the recovery times for different disturbance types were very similar to systems with a constant $m$ (figure \ref{fig:relax}b; note difference in x-axis scales).
+Trait heritability had a large effect on recovery times, with near-collapse requiring a more protracted time to recover in the alternative steady state regime (figure \ref{fig:relax_highh}).
+% As trait heritability increased, the metapopulation always recovered more quickly if the subordinate population was lost (figure \ref{fig:relax_highh}).
 % There was greater similarity in the recovery times for constant and density-dependent $m$ systems when trait heritability was high (figure \ref{fig:relax_highh}).
-The lower recovery time for systems with increased $m^*$ mirrors an elevated PE with higher density-dependent straying rates (figure \ref{fig:thetaPE}).
+In general, the lower recovery time for systems with increased $m^*$ mirrors an elevated PE with higher density-dependent straying rates (figure \ref{fig:thetaPE}a).
 % This higher PE at increased $m^*$ mirrors recovery times that are also lower than those observed for systems with constant $m$ (figure \ref{fig:relax}).
-In tandem, analysis of both PE and recovery time suggests that although density-dependent straying does not appear to change the `dynamic landscape' in our minimal model, it does appear to promote robustness, particularly when the aggregate biomass is low and straying is correspondingly high.
-
-
-
-
-
-%Lowering Phenotypic diversity with increasing straying rate
-Increased rates of straying lowers phenotypic diversity ($\Delta \mu^* = |\mu_i^*-\mu_j^*|$, evaluated at the steady state) because both local and remote populations are increasingly homogenized.
-The loss of phenotypic diversity with increased straying is greater if trait heritability is low because traits take longer to go back to their local optima than they do when heritability is large. 
-Hence straying counters the effect of diversifying local adaptation. 
-% The loss of phenotypic diversity with increased straying is greater if trait heritability is low because the selective forces acting against trait means far from the local optima are lessened. % with decreased $h^2$.
-Less intuitively, we observe a discrete jump towards low phenotypic diversity as the pitchfork bifurcation is crossed (figure \ref{fig:traitdiff}).
-Although the development of alternative stable states elevates the portfolio effect due to the variance-dampening effects of the aggregate, entering this dynamic regime also results in a substantial decline in phenotypic diversity, which may have less predictable adverse effects on the population. 
+Together, analysis of both PE and recovery time suggests that although density-dependent straying does not appear to change the `dynamic landscape' in our minimal model, it does appear to promote robustness, particularly in the case of near-collapse of both populations when straying is high.
 \\
 
 
 \noindent{\bf (c) The role of habitat heterogeneity and changing selective landscapes}\\ 
-\noindent With the onset of straying, we find that increasingly divergent trait optima generally lower $N_T^*$ and exaggerate $\Delta N^*$ (figure \ref{fig:thetadiffN}), such that the biomass distribution becomes increasingly uneven. %I've checked this - it's a theshold type (logistic) response Supp fig?
+\noindent With the onset of straying, we find that increasingly divergent trait optima generally lower $N_T^*$ and exaggerate $\Delta N^*$, and this is particularly pronounced for density dependent straying (figure \ref{fig:thetadiffN}). %, such that the biomass distribution becomes increasingly uneven. %I've checked this - it's a theshold type (logistic) response Supp fig?
 The impact of habitat heterogeneity on the portfolio effect and recovery time is more complex, serving to emphasize the nonlinear relationship between rates of straying and metapopulation robustness. %regardless of heritability.
-%The rate of straying that gives rise to a large PE at the pitchfork bifurcation is conditioned on the difference in optimal trait values between the local and remote populations, which we call $\Delta\theta = \sqrt{(\theta_i - \theta_j)^2}$.
-As habitat heterogeneity increases, alternative stable states appear at lower straying rates -- with the crossing of the pitchfork bifurcation, accompanied by a peak in the PE -- whereas the magnitude of increase in the PE also increases (figure \ref{fig:thetaPE}b), reducing recovery time (figure \ref{fig:relaxtheta}).
-For increased rates of straying, greater habitat heterogeneity erodes the PE (figure \ref{fig:thetaPE}b) and increases the recovery time (figure \ref{fig:relaxtheta}).
-These results together suggest that habitat heterogeneity, as measured as the differences in trait optima between two habitats $\Delta\theta$, promotes robustness when straying rates are low, and erodes robustness when straying rates are high.
+%The rate of straying that gives rise to a large PE at the cusp bifurcation is conditioned on the difference in optimal trait values between the local and remote populations, which we call $\Delta\theta = \sqrt{(\theta_i - \theta_j)^2}$.
+As habitat heterogeneity increases, alternative steady states appear at lower straying rates -- with the crossing of the cusp bifurcation, accompanied by a peak in the PE -- whereas the magnitude of increase in the PE also increases (figure \ref{fig:thetaPE}b), lowering recovery time (figure \ref{fig:relaxtheta}).
+For increased rates of straying, greater habitat heterogeneity erodes the PE (figure \ref{fig:thetaPE}b) and increases the recovery times (figure \ref{fig:relaxtheta}).
+In tandem, these results suggest that habitat heterogeneity promotes robustness when straying rates are low, and erodes robustness when straying rates are high.
 %This means that alternative stable states can emerge with relatively little dispersal between sites (figure \ref{fig:thetaPE}), however the increased PE (and shorter recovery times).
 
+Until now, we have treated the rate of straying and habitat heterogeneity as independent parameters, however they may also be assumed to covary.
+For instance, if sites are separated by greater distance, they may be assumed to have increased habitat heterogeneity as well as lower rates of straying.
+Alternatively, individuals may be genetically predisposed to stray into sites that are more similar, such that greater between-site heterogeneity will correspond to lower straying rates.
 % We next investigate the dynamics across different types of sites that host 
-Sites that are farther apart are likely to be more heterogeneous, while simultaneously facilitating lower rates of straying between populations.
+% Sites that are farther apart are likely to be more heterogeneous, while simultaneously facilitating lower rates of straying between populations.
 % If we assume that environmental heterogeneity increases with distance between sites, or that individuals may have behaviors that minimize their chances of straying into very different habitats, the rate of straying will decline with habitat heterogeneity.
 % We can implement this dependence by allowing $\Delta\theta$ to decrease as $m$ increases, such that there are low rates of straying between dissimilar populations and high rates of straying between similar populations.
-We implemented this dependence as set $m,m_0 = 0.5(1 + \Delta\theta)^{-1}$ where maximum straying is assumed to occur at $m=0.5$ (perfect mixing; figure \ref{fig:mthetarelation}).
-This assumes that $m$ or $m_0$ increases in situations where $\Delta\theta$ is lower, such that there are low rates of straying between dissimilar sites and high straying rates between similar sites.
-We find that under these conditions alternative stable states now appear for very low rates of straying $0 < m \leq 0.43$.
-As the straying rate increases and $\Delta\theta$ decreases, a single stable state emerges as the pitchfork bifurcation is crossed, which is opposite the pattern observed when these parameters are independent.
+We implemented this inverse relationship by setting $m = 0.5(1 + \Delta\theta)^{-1}$ where maximum straying is assumed to occur at $m=0.5$ (perfect mixing; figure \ref{fig:mthetarelation}).
+This assumes that $m$ is greater for lower $\Delta\theta$, such that there are low rates of straying between dissimilar (distant) sites and high straying rates between similar (close) sites.
+Under these conditions we find that alternative stable states appear for very low rates of straying (figure \ref{fig:mthetaPE}). % $0 < m \leq 0.43$.
+As the straying rate increases and $\Delta\theta$ decreases, a single stable state emerges as the cusp bifurcation is crossed, which is opposite the pattern observed when straying is independent of habitat heterogeneity.
 
-There are two notable dynamics that emerge following extinction of the dominant population at low rates of straying between dissimilar (high $\Delta\theta$) sites:
-(\emph{i}) above a threshold $m$ value, the dominant population recovers quickly enough that the evolving subordinate phenotype is overwhelmed by incoming strays, and it shifts back to its pre-disturbance (subordinate) state;
+There are two notable dynamics that emerge following extinction of the dominant population at low rates of straying between dissimilar (high $\Delta\theta$) sites (figure \ref{fig:mtheta}).
+(\emph{i}) Above a threshold $m$ value, the dominant population recovers quickly enough that the evolving subordinate phenotype is overwhelmed by incoming strays, and it shifts back to its pre-disturbance subordinate state;
 (\emph{ii}) below a threshold $m$ value, there is an \emph{inversion} between subordinate and dominant states: because there is enough time and isolation for the subordinate trait mean to shift towards its local optimum, and away from that of the recovering dominant population, the dominant population becomes subordinate, and the subordinate population becomes dominant (figure \ref{fig:inertia}).
 This threshold value of $m$, below which the inversion dynamic behavior occurs, is marked by the asterisk in figure \ref{fig:mtheta}, and holds for both constant and density-dependent straying (figure \ref{fig:mthetamvm}).
 
@@ -491,9 +496,9 @@ Taken as a whole, our results point to an important role of density-dependent st
 % The appearance of these alternative states is largely dependent on the dispersal, or rate of straying, between sites.
 
 A salient finding from our results is that straying can lead to the emergence of alternative stable states, pushing one of the populations to high density (the \emph{dominant state}), and one to low density (the \emph{subordinate state}).
-This pattern has been observed in other models of eco-evolutionary dynamics with explicit space \citep{Ronce:2001dp}, suggesting that it may be a general feature of spatially-linked traits that evolve toward local optima while being hindered by dispersal.
-An important quality of our framework is that there are similar forces that dictate interactions within and between sites, and this naturally results in a symmetry that could preclude the relevance of our finding for natural (and inherently less symmetric) systems.
-Although the emergence of alternative stable states via a pitchfork bifurcation is characteristic of symmetrical systems, we find that increasing the asymmetry in the vital rates of populations across sites does not alter the presence or position of the PFB (figure \ref{fig:symmetry}).
+This pattern has been observed in other models of eco-evolutionary dynamics with explicit space \citep{Ronce:2001dp}, suggesting that it may be a general feature of spatially-linked populations that evolve toward local optima while being hindered by dispersal.
+An important aspect of our framework is that there are similar forces that dictate interactions within and between sites, and this naturally results in a symmetry that could be perceived as limiting the relevance of our findings for natural (and inherently less symmetric) systems.
+Although the emergence of alternative stable states via a cusp bifurcation is characteristic of symmetrical systems, we find that increasing the asymmetry in the vital rates of populations across sites does not significantly alter the presence or position of the DCB (figure \ref{fig:symmetry}).
 That these patterns arise in alternative formulations and are insensitive to parameter asymmetry suggests that the emergence of dominant and subordinate states directly from eco-evolutionary dynamics may be a generally relevant phenomenon in ecological systems. %, though this requires additional investigation and scrutiny.
 
 
@@ -503,12 +508,15 @@ That these patterns arise in alternative formulations and are insensitive to par
 % On the other hand, the presence of \emph{just enough} straying to cause formation of alternative stable states both increases the portfolio effect (figure \ref{fig:PE}c) and reduces the rate of return -- particularly if straying is density-dependent (figures \ref{thetaPE}a, \ref{fig:relax}b).
 % This asymmetry in population densities also leads an asymmetry in the mean trait values, skewed towards the local optimum of the dominant population, one, and this has important -- and often non-intuitive -- ramifications for metapopulation robustness. %, as measured by both the portfolio effect as well as recovery time.
 
-An intermediate straying rate maximizes metapopulation robustness. 
+An intermediate straying rate increases metapopulation robustness. 
 Results from our model reveal that the presence of just enough straying to cause formation of alternative stable states increases the portfolio effect (figure \ref{fig:PE}a). 
+We note that we do not consider the extremely high PE at the DCB, matched by an extremely long recovery time, to be an indicator of robustness, as the dynamics exactly at or very close to a bifurcation are unlikely to be realized in nature.
 Previous theoretical work has shown that increased connectivity may erode portfolio effects in herring metapopulations, where straying is also thought to be density-dependent \citep{Secor:2009ena}.
-Although high levels of dispersal in our system generally supports this finding, the interplay between dispersal and PE is more subtle when selection for local adaptations is considered, such that low to intermediate levels of density-dependent straying result in an elevated PE, thus increasing the buffering capacity of the metapopulation.
+Although high levels of dispersal in our system generally supports this finding, the interplay between dispersal and PE is more subtle when selection for local adaptations is considered.
+Low to intermediate levels of density-dependent straying result in an elevated PE, increasing the buffering capacity of the metapopulation.
 Although PE is measured at the steady state, low to intermediate rates of straying also appear to have a beneficial effect on transient dynamics.
-When there is just enough straying to cause alternative stable states, the time to recovery following an induced disturbance declines, though -- as with the PE -- recovery time then grows if straying becomes very large (figure \ref{fig:relax}a).
+When there is just enough straying to cause alternative stable states, the time to recovery following an induced disturbance declines, though -- as with the PE -- it then grows if straying becomes large (figure \ref{fig:relax}a).
+
 
 % %Density dependent straying
 % This themed issue is largely concerned with the notion that straying in biological systems where movement is a function of collective navigation may be density-dependent.
@@ -516,7 +524,7 @@ When there is just enough straying to cause alternative stable states, the time 
 % Neither the transient nor asymptotic dynamics that we describe here qualitatively differ as a function of whether the rate of straying is constant or density-dependent, however we observe important quantitative differences that suggest density-dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
 
 This themed issue formalizes the role of collective movement in the ecology of natural systems and illuminates a signature of collective navigation in animal populations on the move.
-We observed three salient results that contribute to our understanding of collective movement that combine to suggest that density-dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
+We highlight three important findings that contribute to our understanding of collective movement suggesting that density-dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
 First, the inclusion of density-dependent straying does not qualitatively alter either (\emph{i}) steady state or (\emph{ii}) transient dynamics of our minimal eco-evolutionary model, but effectively rescales measures of robustness to the lower straying rates that emerge as a consequence of the coupled dynamics.
 Second, compared to systems with constant dispersal, density-dependent straying appears to increase the portfolio effect across a range of straying rates (figure \ref{fig:thetaPE}a). 
 % and that at low to intermediate levels of straying, PE is high.
@@ -539,19 +547,19 @@ Salmon are distributed and stray across a diverse range of habitats, and the rat
 Our surrogate measure for habitat heterogeneity is the difference in trait optima between sites $\Delta\theta$.
 In general, our findings indicate that increased habitat heterogeneity promotes robustness (higher PE, shorter time to recovery) when straying rates are low, but may erode robustness when straying rates are high (figure \ref{fig:thetaPE}b, solid lines).
 This may be particularly consequential for populations that are spatially adjacent but separated by sharp environmental boundaries, such that trait optima are divergent yet dispersal is relatively high.
-Such a scenario plays out repeatedly in the context of adjacent wild and hatchery-produced salmon. 
+Such a scenario plays out repeatedly in the context of wild and hatchery-produced salmon. 
 Although wild and hatchery populations may occur close on the landscape, and indeed often are sympatric within the same river network, the selective environments to which they are locally adapted differ dramatically \citep{Christie:2012bj}. 
 Straying of domesticated hatchery-produced fish from release sites and spawning in the wild drastically reduces the productivity of wild populations through competition and outbreeding depression \citep{Chilcote:2003bb,Araki:2007cm}.
 
 %mtheta
-All else being equal, habitats that are closer in space generally have greater similarity in environmental conditions than habitats that are geographically distant, and correspondingly phenotypes of more proximately located populations should be more similar to those that are distant \citep{Westley:2012ui}.
+In other cases, habitats that are closer in space can be assumed to have greater similarity in environmental conditions than those that are geographically distant, and phenotypes of more proximately located populations should be more similar \citep{Westley:2012ui}.
 It is thus reasonable to expect a larger number of straying individuals between sites that are geographically proximate and indeed evidence corroborates this prediction \citep{Candy:2000hu,JPE:JPE1383}.
-Alternatively, salmon that cue to specific environmental conditions may be more likely to stray into sites that have structurally and physiognamically similar habitats \citep{Peterson:2014gy} even if other potential sites are closer.
-These considerations justify imposing a direct relationship between the rate of straying $m$ and habitat heterogeneity: as site dissimilarity increases, so too should the straying rate decrease.
+Alternatively, salmon that cue to specific environmental conditions may be more likely to stray into sites that are structurally and physiognamically more similar \citep{Peterson:2014gy}.
+These considerations justify imposing a direct relationship between the rate of straying $m$ and habitat heterogeneity: as site dissimilarity increases, so too should the straying rate decrease (figure \ref{fig:mthetarelation}).
 % As site dissimilarity increases, so to should the optima in trait values for the resident populations.
 When habitat heterogeneity and the rate of straying are linked in this way, we show that very small amounts of either constant or density-dependent straying result in long recovery times for the dominant population because there is time for selection to push the subordinate trait mean away from the optimum of the dominant population (figure \ref{fig:mtheta}). %there is enough isolation to allow the surviving subordinate population to adapt towards its own optimum.
-If the straying rate is very low, there is an inversion in the alternative stable states following the disturbance, resulting in a state shift in dominance.
-This may have particular conservation implications for considerations of aiding dispersal following disturbances or reconnections of lost habitats \citep{Anderson:2013bf,Pess:2014isa}.
+Morever, there is an inversion in the alternative stable states following the disturbance, resulting in a state shift in dominance.
+This may have particular conservation implications when aiding dispersal following disturbances or reconnections of lost habitats \citep{Anderson:2013bf,Pess:2014isa}.
 % Moreover, local temperature regimes are known to play a central role in dictating local adaptation of salmon populations.
 % If temperature is the primary determinant of $\Delta\theta$ in terms of our model, this would suggest that populations spanning North-South gradients are more predisposed to distance dependent dynamics.
 % In contrast, the relationship between the rate of straying and habitat heterogeneity may be less clear-cut for populations spanning an East-West gradient, where distant habitats may equally fitting for straying populations.
@@ -602,376 +610,367 @@ We suggest that understanding the spatial complexity of metapopulations dispersi
 \\
 \noindent {\bf Data Accessibility:} Code is made available at https://github.com/jdyeakel/SalmonStrays
 \\
-\noindent {\bf Acknowledgements:} We thank Sean Anderson for helpful discussions and comments on the manuscript. We also thank the guest editors Andrew Berdahl, Dora Biro, and Colin Torney, for inviting us to contribute to this themed issue. J.D.Y. was supported by startup funds at the University of California, Merced, and an Omidyar Postdoctoral Fellowship at the Santa Fe Institute. J.P.G. was supported by a James S. McDonnell Foundation Postdoctoral Fellowship in Complex Systems at the University of California, Merced. P.A.H.W. was supported by the UA Foundation at the University of Alaska Fairbanks. J.W.M. was supported by the Liber Ero Research Chair in Coastal Science and Management at Simon Fraser University.
+\noindent {\bf Acknowledgements:} We thank Sean Anderson for helpful discussions and comments on the manuscript. We also thank the guest editors Andrew Berdahl, Dora Biro, and Colin Torney, for inviting us to contribute to this themed issue, and two anonymous reviewers for their insightful comments and critiques. J.D.Y. was supported by startup funds at the University of California, Merced and an Omidyar Postdoctoral Fellowship at the Santa Fe Institute. J.P.G. was supported by a James S. McDonnell Foundation Postdoctoral Fellowship in Complex Systems at the University of California, Merced. P.A.H.W. was supported by the UA Foundation at the University of Alaska Fairbanks. J.W.M. was supported by the Liber Ero Research Chair in Coastal Science and Management at Simon Fraser University.
 
-\bibliography{aa_kevin}
-% 
-% \begin{thebibliography}{10}
-% \expandafter\ifx\csname urlstyle\endcsname\relax
-%   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-%   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-%   \urlstyle{rm}\Url}\fi
-% 
-% \bibitem{Brown:1977gk}
-% Brown JH, Kodric-Brown A, 1977 {Turnover rates in insular biogeography: effect
-%   of immigration on extinction}.
-% \newblock \emph{Ecology} \textbf{58}, 445--449
-% 
-% \bibitem{Earn:2000fm}
-% Earn DJD, Levin SA, Rohani P, 2000 {Coherence and conservation}.
-% \newblock \emph{Science} \textbf{290}, 1360--1364
-% 
-% \bibitem{Anonymous:2015gf}
-% Schindler DE, Armstrong JB, Reed TE, 2015 {The portfolio concept in ecology and
-%   evolution}.
-% \newblock \emph{Front. Ecol. Environ.} \textbf{13}, 257--263
-% 
-% \bibitem{Abbott:2017hl}
-% Abbott RE, Doak DF, Peterson ML, 2017 {Portfolio effects, climate change, and
-%   the persistence of small populations: analyses on the rare plant Saussurea
-%   weberi.}
-% \newblock \emph{Ecology} \textbf{98}, 1071--1081
-% 
-% \bibitem{Thibaut:2012km}
-% Thibaut LM, Connolly SR, 2013 {Understanding diversity-stability relationships:
-%   towards a unified model of portfolio effects.}
-% \newblock \emph{Ecol. Lett.} \textbf{16}, 140--150
-% 
-% \bibitem{MilnerGulland:2011vm}
-% Milner-Gulland EJ, Fryxell JM, Sinclair ARE, 2011 \emph{{Animal Migration}}.
-% \newblock Oxford: Oxford University Press
-% 
-% \bibitem{Bell:2011ki}
-% Bell G, Gonzalez A, 2011 {Adaptation and evolutionary rescue in metapopulations
-%   experiencing environmental deterioration}.
-% \newblock \emph{Science} \textbf{332}, 1327--1330
-% 
-% \bibitem{Carlson:2014is}
-% Carlson SM, Cunningham CJ, Westley PAH, 2014 {Evolutionary rescue in a changing
-%   world}.
-% \newblock \emph{Trends Ecol. Evol.} \textbf{29}, 521--530
-% 
-% \bibitem{Muhlfeld:2014hs}
-% Muhlfeld CC, Kovach RP, Jones LA, Al-Chokhachy R, Boyer MC, Leary RF, Lowe WH,
-%   Luikart G, Allendorf FW, 2014 {Invasive hybridization in a threatened species
-%   is accelerated by climate change}.
-% \newblock \emph{Nature Climate Change} \textbf{4}, 620--624
-% 
-% \bibitem{Lowe:2015ft}
-% Lowe WH, Muhlfeld CC, Allendorf FW, 2015 {Spatial sorting promotes the spread
-%   of maladaptive hybridization}.
-% \newblock \emph{Trends Ecol. Evol.} \textbf{30}, 456--462
-% 
-% \bibitem{H:2013fs}
-% Westley PAH, Quinn TP, 2013 {Rates of straying by hatchery-produced Pacific
-%   salmon (\emph{Oncorhynchus} spp.) and steelhead (\emph{Oncorhynchus mykiss})
-%   differ among species, life history types, and populations}.
-% \newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{70}, 735--746
-% 
-% \bibitem{Keefer:2014gg}
-% Keefer ML, Caudill CC, 2014 {Homing and straying by anadromous salmonids: a
-%   review of mechanisms and rates}.
-% \newblock \emph{Rev Fish Biol Fisher} \textbf{24}, 333--368
-% 
-% \bibitem{Bett:2017ha}
-% Bett NN, Hinch SG, Burnett NJ, Donaldson MR, Naman SM, 2017 {Causes and
-%   consequences of straying into small populations of Pacific salmon}.
-% \newblock \emph{Fisheries} \textbf{42}, 220--230
-% 
-% \bibitem{Berdahl:2015kv}
-% Berdahl A, Torney CJ, Schertzer E, Levin SA, 2015 {On the evolutionary
-%   interplay between dispersal and local adaptation in heterogeneous
-%   environments}.
-% \newblock \emph{Evolution} \textbf{69}, 1390--1405
-% 
-% \bibitem{Berdahl:2016dx}
-% Berdahl A, 2016 {Collective behavior as a driver of critical transitions in
-%   migratory populations}.
-% \newblock \emph{Movement Ecology} \textbf{4}, 1--12
-% 
-% \bibitem{Simons:2004jo}
-% Simons AM, 2004 {Many wrongs: The advantage of group navigation}.
-% \newblock \emph{Trends Ecol. Evol.} \textbf{19}, 453--455
-% 
-% \bibitem{Brenner:2012gl}
-% Brenner RE, Moffitt SD, Grant WS, 2012 {Straying of hatchery salmon in Prince
-%   William Sound, Alaska}.
-% \newblock \emph{Environ Biol Fish} \textbf{94}, 179--195
-% 
-% \bibitem{Johnson:2012fe}
-% Johnson RC, Weber PK, Wikert JD, Workman ML, MacFarlane RB, Grove MJ, Schmitt
-%   AK, 2012 {Managed metapopulations: do salmon hatchery
-%   {\textquoteleft}sources{\textquoteright} lead to in-river
-%   {\textquoteleft}sinks{\textquoteright} in conservation?}
-% \newblock \emph{PLoS ONE} \textbf{7}, e28880--11
-% 
-% \bibitem{Fullerton:2011ii}
-% Fullerton AH, Lindley ST, Pess GR, Feist BE, Steel EA, Mcelhany P, 2011 {Human
-%   influence on the spatial structure of threatened Pacific salmon
-%   metapopulations}.
-% \newblock \emph{Conserv Biol} \textbf{25}, 932--944
-% 
-% \bibitem{Quinn:2011tf}
-% Quinn TP, 2011 \emph{{The Behavior and Ecology of Pacific Salmon and Trout}}.
-% \newblock Vancouver: UBC Press
-% 
-% \bibitem{Jonsson:2011kg}
-% Jonsson B, Jonsson N, 2011 \emph{{Ecology of Atlantic Salmon and Brown Trout}}.
-% \newblock Dordrecht: Springer Netherlands
-% 
-% \bibitem{Quinn:1993ge}
-% Quinn TP, 1993 {A review of homing and straying of wild and hatchery-produced
-%   salmon}.
-% \newblock \emph{Fish Res} \textbf{18}, 29--44
-% 
-% \bibitem{Hendry:2004wf}
-% Hendry AP, Bohlin T, Jonsson B, Berg OK, 2004 {The evolution of philopatry and
-%   dispersal: homing versus straying in salmonids}.
-% \newblock In AP~Hendry, SC~Stearns, eds., \emph{Evolution Illuminated}. Oxford:
-%   Oxford University Press on Demand
-% 
-% \bibitem{Schtickzelle:2007wb}
-% Schtickzelle N, Quinn TP, 2007 {A metapopulation perspective for salmon and
-%   other anadromous fish}.
-% \newblock \emph{Fish Fish.} \textbf{8}, 297--314
-% 
-% \bibitem{Anderson:2014cx}
-% Anderson SC, Moore JW, McClure MM, Dulvy NK, Cooper AB, 2015 {Portfolio
-%   conservation of metapopulations under climate change}.
-% \newblock \emph{Ecol. Appl.} \textbf{25}, 559--572
-% 
-% \bibitem{Keefer:2008bs}
-% Keefer ML, Caudill CC, Peery CA, Lee SR, 2008 {Transporting juvenile salmonids
-%   around dams impairs adult migration}.
-% \newblock \emph{Ecol. Appl.} \textbf{18}, 1888--1900
-% 
-% \bibitem{Westley:2015to}
-% Westley PAH, Dittman AH, Ward EJ, Quinn TP, 2015 {Signals of climate,
-%   conspecific density, and watershed features in patterns of homing and
-%   dispersal by Pacific salmon.}
-% \newblock \emph{Ecology} \textbf{96}, 2823--2833
-% 
-% \bibitem{Bond:2016dz}
-% Bond MH, Westley PAH, Dittman AH, Holecek D, Marsh T, Quinn TP, 2016 {Combined
-%   effects of barge transportation, river environment, and rearing location on
-%   straying and migration of adult snake river fall-run Chinook salmon}.
-% \newblock \emph{T Am Fish Soc} \textbf{146}, 60--73
-% 
-% \bibitem{Peterson:2014gy}
-% Peterson DA, Hilborn R, Hauser L, 2014 {Local adaptation limits lifetime
-%   reproductive success of dispersers in a wild salmon metapopulation}.
-% \newblock \emph{Nat Commun} \textbf{5}, 3696
-% 
-% \bibitem{Moore:2010gs}
-% Moore JW, McClure M, Rogers LA, Schindler DE, 2010 {Synchronization and
-%   portfolio performance of threatened salmon}.
-% \newblock \emph{Conserv. Lett.} \textbf{3}, 340--348
-% 
-% \bibitem{Carlson:2011ce}
-% Carlson SM, Satterthwaite WH, Fleming IA, 2011 {Weakened portfolio effect in a
-%   collapsed salmon population complex}.
-% \newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{68}, 1579--1589
-% 
-% \bibitem{Braun:2016ib}
-% Braun DC, Moore JW, Candy J, Bailey RE, 2016 {Population diversity in salmon:
-%   linkages among response, genetic and life history diversity}.
-% \newblock \emph{Ecography} \textbf{39}, 317--328
-% 
-% \bibitem{simpson1953major}
-% Simpson GG, 1953 \emph{{The Major Features of Evolution}}.
-% \newblock New York: Simon and Schuster
-% 
-% \bibitem{Lande:1976ga}
-% Lande R, 1976 {Natural selection and random genetic drift in phenotypic
-%   evolution}.
-% \newblock \emph{Evolution} \textbf{30}, 314--334
-% 
-% \bibitem{Shelton:2011eq}
-% Shelton AO, Mangel M, 2011 {Fluctuations of fish populations and the magnifying
-%   effects of fishing.}
-% \newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{108}, 7075--7080
-% 
-% \bibitem{Jasper:2013cc}
-% Jasper JR, Habicht C, Moffitt S, Brenner R, Marsh J, Lewis B, Fox EC, Grauvogel
-%   Z, Olive SDR, Grant WS, 2013 {Source-sink estimates of genetic introgression
-%   show influence of hatchery strays on wild chum salmon populations in Prince
-%   William Sound, Alaska}.
-% \newblock \emph{PLoS ONE} \textbf{8}, e81916
-% 
-% \bibitem{Schreiber:2011wx}
-% Schreiber SJ, B{\"u}rger R, Bolnick DI, 2011 {The community effects of
-%   phenotypic and genetic variation within a predator population.}
-% \newblock \emph{Ecology} \textbf{92}, 1582--1593
-% 
-% \bibitem{Gilbert:2014ee}
-% Gibert JP, Brassil CE, 2014 {Individual phenotypic variation reduces
-%   interaction strengths in a consumer{\textendash}resource system}.
-% \newblock \emph{Ecol Evol} \textbf{4}, 3703--3713
-% 
-% \bibitem{Gibert:2015kc}
-% Gibert JP, DeLong JP, 2015 {Individual variation decreases interference
-%   competition but increases species persistence}.
-% \newblock \emph{Adv Ecol Res} \textbf{52}, 45--64
-% 
-% \bibitem{Berdahl:2014bl}
-% Berdahl A, Westley PAH, Levin SA, Couzin ID, Quinn TP, 2014 {A collective
-%   navigation hypothesis for homeward migration in anadromous salmonids}.
-% \newblock \emph{Fish Fish.} \textbf{17}, 525--542
-% 
-% \bibitem{Candy:2000hu}
-% Candy JR, Beacham TD, 2000 {Patterns of homing and straying in southern British
-%   Columbia coded-wire tagged Chinook salmon (\emph{Oncorhynchus tshawytscha})
-%   populations}.
-% \newblock \emph{Fish Res} \textbf{47}, 41--56
-% 
-% \bibitem{JPE:JPE1383}
-% Schick RS, Lindley ST, 2007 {Directed connectivity among fish populations in a
-%   riverine network}.
-% \newblock \emph{J. Appl. Ecol.} \textbf{44}, 1116--1126
-% 
-% \bibitem{Schindler:2015gf}
-% Schindler DE, Armstrong JB, Reed TE, 2015 {The portfolio concept in ecology and
-%   evolution}.
-% \newblock \emph{Front. Ecol. Environ.} \textbf{13}, 257--263
-% 
-% \bibitem{Ovaskainen:2002il}
-% Ovaskainen O, Hanski I, 2002 {Transient dynamics in metapopulation response to
-%   perturbation}.
-% \newblock \emph{Theor Popul Biol} \textbf{61}, 285--295
-% 
-% \bibitem{Anderson:2013gb}
-% Anderson SC, Cooper AB, Dulvy NK, 2013 {Ecological prophets: quantifying
-%   metapopulation portfolio effects}.
-% \newblock \emph{Methods Ecol Evol} \textbf{4}, 971--981
-% 
-% \bibitem{Loreau:2008ju}
-% Loreau M, de~Mazancourt C, 2008 {Species synchrony and its drivers: neutral and
-%   nonneutral community dynamics in fluctuating environments}.
-% \newblock \emph{Am. Nat.} \textbf{172}, E48--E66
-% 
-% \bibitem{Yeakel:2013vz}
-% Yeakel JD, Moore JW, Guimar{\~a}es~Jr PR, de~Aguiar MAM, 2014 {Synchronisation
-%   and stability in river metapopulation networks}.
-% \newblock \emph{Ecol. Lett.} \textbf{17}, 273--283
-% 
-% \bibitem{GuckHolmes}
-% Guckenheimer J, Holmes P, 1983 \emph{{Nonlinear Oscillations, Dynamical
-%   Systems, and Bifurcations of Vector Fields}}.
-% \newblock New York: Springer
-% 
-% \bibitem{Carlson:2008hl}
-% Carlson SM, Seamons TR, 2008 {A review of quantitative genetic components of
-%   fitness in salmonids: implications for adaptation to future change}.
-% \newblock \emph{Evol Appl} \textbf{1}, 222--238
-% 
-% \bibitem{Scheffer:2009gg}
-% Scheffer M, Bascompte J, Brock WA, Brovkin V, Carpenter SR, Dakos V, Held H,
-%   van Nes EH, Rietkerk M, Sugihara G, 2009 {Early-warning signals for critical
-%   transitions}.
-% \newblock \emph{Nature} \textbf{461}, 53--59
-% 
-% \bibitem{Lade:2012eu}
-% Lade SJ, Gross T, 2012 {Early warning signals for critical transitions: A
-%   generalized modeling approach}.
-% \newblock \emph{PLoS Comp. Biol.} \textbf{8}, e1002360
-% 
-% \bibitem{Anonymous:2013br}
-% Boettiger C, Ross N, Hastings A, 2013 {Early warning signals: the charted and
-%   uncharted territories}.
-% \newblock \emph{Theor. Ecol.} \textbf{6}, 255--264
-% 
-% \bibitem{Dakos:2014br}
-% Dakos V, Bascompte J, 2014 {Critical slowing down as early warning for the
-%   onset of collapse in mutualistic communities}.
-% \newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{111}, 17546--17551
-% 
-% \bibitem{Krkosek:2014ch}
-% Krko{\v s}ek M, Drake JM, 2014 {On signals of phase transitions in salmon
-%   population dynamics}.
-% \newblock \emph{Proc. Roy. Soc. B} \textbf{281}, 20133221
-% 
-% \bibitem{Kuehn:2010p2591}
-% Kuehn C, 2011 {A mathematical framework for critical transitions: bifurcations,
-%   fast-slow systems and stochastic dynamics}.
-% \newblock \emph{Physica D} \textbf{240}, 1020--1035
-% 
-% \bibitem{Donohue:2013iu}
-% Donohue I, Petchey OL, Montoya JM, Jackson AL, McNally L, Viana M, Healy K,
-%   Lurgi M, O'Connor NE, Emmerson MC, 2013 {On the dimensionality of ecological
-%   stability.}
-% \newblock \emph{Ecol. Lett.} \textbf{16}, 421--429
-% 
-% \bibitem{Levin:1992p1472}
-% Levin SA, 1992 {The problem of pattern and scale in ecology}.
-% \newblock \emph{Ecology} \textbf{73}, 1943--1967
-% 
-% \bibitem{Meinhardt:2012hw}
-% Meinhardt H, 2012 {Turing's theory of morphogenesis of 1952 and the subsequent
-%   discovery of the crucial role of local self-enhancement and long-range
-%   inhibition}.
-% \newblock \emph{Interface Focus} \textbf{2}, 407--416
-% 
-% \bibitem{Hanski:1999vu}
-% Hanski I, 1999 \emph{{Metapopulation Ecology}}.
-% \newblock Oxford: Oxford University Press
-% 
-% \bibitem{Boughton:1999fa}
-% Boughton DA, 1999 {Empirical evidence for complex source{\textendash}sink
-%   dynamics with alternative states in a butterfly metapopulation}.
-% \newblock \emph{Ecology} \textbf{80}, 2727--2739
-% 
-% \bibitem{Secor:2009ena}
-% Secor DH, Kerr LA, Cadrin SX, 2009 {Connectivity effects on productivity,
-%   stability, and persistence in a herring metapopulation model}.
-% \newblock \emph{ICES J Mar Sci} \textbf{66}, 1726--1732
-% 
-% \bibitem{Christie:2012bj}
-% Christie MR, Marine ML, French RA, Blouin MS, 2012 {Genetic adaptation to
-%   captivity can occur in a single generation.}
-% \newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{109}, 238--242
-% 
-% \bibitem{Chilcote:2003bb}
-% Chilcote MW, 2003 {Relationship between natural productivity and the frequency
-%   of wild fish in mixed spawning populations of wild and hatchery steelhead
-%   (\emph{Oncorhynchus mykiss})}.
-% \newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{60}, 1057--1067
-% 
-% \bibitem{Araki:2007cm}
-% Araki H, Cooper B, Blouin MS, 2007 {Genetic effects of captive breeding cause a
-%   rapid, cumulative fitness decline in the wild}.
-% \newblock \emph{Science} \textbf{318}, 100--103
-% 
-% \bibitem{Westley:2012ui}
-% Westley PAH, { Corinne M Conway}, Fleming IA, 2012 {Phenotypic divergence of
-%   exotic fish populations is shaped by spatial proximity and habitat
-%   differences across an invaded landscape}.
-% \newblock \emph{Evol. Ecol. Res.} \textbf{14}, 147--167
-% 
-% \bibitem{Anderson:2013bf}
-% Anderson JH, Faulds PL, Atlas WI, Quinn TP, 2013 {Reproductive success of
-%   captively bred and naturally spawned Chinook salmon colonizing newly
-%   accessible habitat}.
-% \newblock \emph{Evol Appl} \textbf{6}, 165--179
-% 
-% \bibitem{Pess:2014isa}
-% Pess GR, Quinn TP, Gephard SR, Saunders R, 2014 {Re-colonization of Atlantic
-%   and Pacific rivers by anadromous fishes: linkages between life history and
-%   the benefits of barrier removal}.
-% \newblock \emph{Rev Fish Biol Fisher} \textbf{24}, 881--900
-% 
-% \bibitem{Ford:2002ip}
-% Ford MJ, 2002 {Selection in captivity during supportive breeding may reduce
-%   fitness in the wild}.
-% \newblock \emph{Conserv Biol} \textbf{16}, 815--825
-% 
-% \bibitem{Liermann:2017gj}
-% Liermann M, PESS G, McHenry M, McMillan J, Elofson M, Bennett T, Moses R, 2017
-%   {Relocation and recolonization of Coho salmon \emph{Oncorhynchus kisutch} in
-%   two tributaries to the elwha river: Implications for management and
-%   monitoring}.
-% \newblock \emph{T Am Fish Soc} \textbf{17}, 1--39
-% 
-% \end{thebibliography}
+% \bibliography{aa_kevin}
+% 
+\begin{thebibliography}{10}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Brown:1977gk}
+Brown JH, Kodric-Brown A, 1977 {Turnover rates in insular biogeography: effect
+  of immigration on extinction}.
+\newblock \emph{Ecology} \textbf{58}, 445--449
+
+\bibitem{Earn:2000fm}
+Earn DJD, Levin SA, Rohani P, 2000 {Coherence and conservation}.
+\newblock \emph{Science} \textbf{290}, 1360--1364
+
+\bibitem{Anonymous:2015gf}
+Schindler DE, Armstrong JB, Reed TE, 2015 {The portfolio concept in ecology and
+  evolution}.
+\newblock \emph{Front. Ecol. Environ.} \textbf{13}, 257--263
+
+\bibitem{Abbott:2017hl}
+Abbott RE, Doak DF, Peterson ML, 2017 {Portfolio effects, climate change, and
+  the persistence of small populations: analyses on the rare plant Saussurea
+  weberi.}
+\newblock \emph{Ecology} \textbf{98}, 1071--1081
+
+\bibitem{Thibaut:2012km}
+Thibaut LM, Connolly SR, 2013 {Understanding diversity-stability relationships:
+  towards a unified model of portfolio effects.}
+\newblock \emph{Ecol. Lett.} \textbf{16}, 140--150
+
+\bibitem{MilnerGulland:2011vm}
+Milner-Gulland EJ, Fryxell JM, Sinclair ARE, 2011 \emph{{Animal Migration}}.
+\newblock Oxford: Oxford University Press
+
+\bibitem{Bell:2011ki}
+Bell G, Gonzalez A, 2011 {Adaptation and evolutionary rescue in metapopulations
+  experiencing environmental deterioration}.
+\newblock \emph{Science} \textbf{332}, 1327--1330
+
+\bibitem{Carlson:2014is}
+Carlson SM, Cunningham CJ, Westley PAH, 2014 {Evolutionary rescue in a changing
+  world}.
+\newblock \emph{Trends Ecol. Evol.} \textbf{29}, 521--530
+
+\bibitem{Muhlfeld:2014hs}
+Muhlfeld CC, Kovach RP, Jones LA, Al-Chokhachy R, Boyer MC, Leary RF, Lowe WH,
+  Luikart G, Allendorf FW, 2014 {Invasive hybridization in a threatened species
+  is accelerated by climate change}.
+\newblock \emph{Nature Climate Change} \textbf{4}, 620--624
+
+\bibitem{Lowe:2015ft}
+Lowe WH, Muhlfeld CC, Allendorf FW, 2015 {Spatial sorting promotes the spread
+  of maladaptive hybridization}.
+\newblock \emph{Trends Ecol. Evol.} \textbf{30}, 456--462
+
+\bibitem{H:2013fs}
+Westley PAH, Quinn TP, 2013 {Rates of straying by hatchery-produced Pacific
+  salmon (\emph{Oncorhynchus} spp.) and steelhead (\emph{Oncorhynchus mykiss})
+  differ among species, life history types, and populations}.
+\newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{70}, 735--746
+
+\bibitem{Keefer:2014gg}
+Keefer ML, Caudill CC, 2014 {Homing and straying by anadromous salmonids: a
+  review of mechanisms and rates}.
+\newblock \emph{Rev Fish Biol Fisher} \textbf{24}, 333--368
+
+\bibitem{Bett:2017ha}
+Bett NN, Hinch SG, Burnett NJ, Donaldson MR, Naman SM, 2017 {Causes and
+  consequences of straying into small populations of Pacific salmon}.
+\newblock \emph{Fisheries} \textbf{42}, 220--230
+
+\bibitem{Berdahl:2015kv}
+Berdahl A, Torney CJ, Schertzer E, Levin SA, 2015 {On the evolutionary
+  interplay between dispersal and local adaptation in heterogeneous
+  environments}.
+\newblock \emph{Evolution} \textbf{69}, 1390--1405
+
+\bibitem{Berdahl:2016dx}
+Berdahl A, 2016 {Collective behavior as a driver of critical transitions in
+  migratory populations}.
+\newblock \emph{Movement Ecology} \textbf{4}, 1--12
+
+\bibitem{Simons:2004jo}
+Simons AM, 2004 {Many wrongs: The advantage of group navigation}.
+\newblock \emph{Trends Ecol. Evol.} \textbf{19}, 453--455
+
+\bibitem{Brenner:2012gl}
+Brenner RE, Moffitt SD, Grant WS, 2012 {Straying of hatchery salmon in Prince
+  William Sound, Alaska}.
+\newblock \emph{Environ Biol Fish} \textbf{94}, 179--195
+
+\bibitem{Johnson:2012fe}
+Johnson RC, Weber PK, Wikert JD, Workman ML, MacFarlane RB, Grove MJ, Schmitt
+  AK, 2012 {Managed metapopulations: do salmon hatchery
+  {\textquoteleft}sources{\textquoteright} lead to in-river
+  {\textquoteleft}sinks{\textquoteright} in conservation?}
+\newblock \emph{PLoS ONE} \textbf{7}, e28880--11
+
+\bibitem{Fullerton:2011ii}
+Fullerton AH, Lindley ST, Pess GR, Feist BE, Steel EA, Mcelhany P, 2011 {Human
+  influence on the spatial structure of threatened Pacific salmon
+  metapopulations}.
+\newblock \emph{Conserv Biol} \textbf{25}, 932--944
+
+\bibitem{Quinn:2011tf}
+Quinn TP, 2011 \emph{{The Behavior and Ecology of Pacific Salmon and Trout}}.
+\newblock Vancouver: UBC Press
+
+\bibitem{Jonsson:2011kg}
+Jonsson B, Jonsson N, 2011 \emph{{Ecology of Atlantic Salmon and Brown Trout}}.
+\newblock Dordrecht: Springer Netherlands
+
+\bibitem{Quinn:1993ge}
+Quinn TP, 1993 {A review of homing and straying of wild and hatchery-produced
+  salmon}.
+\newblock \emph{Fish Res} \textbf{18}, 29--44
+
+\bibitem{Hendry:2004wf}
+Hendry AP, Bohlin T, Jonsson B, Berg OK, 2004 {The evolution of philopatry and
+  dispersal: homing versus straying in salmonids}.
+\newblock In AP~Hendry, SC~Stearns, eds., \emph{Evolution Illuminated}. Oxford:
+  Oxford University Press on Demand
+
+\bibitem{Schtickzelle:2007wb}
+Schtickzelle N, Quinn TP, 2007 {A metapopulation perspective for salmon and
+  other anadromous fish}.
+\newblock \emph{Fish Fish.} \textbf{8}, 297--314
+
+\bibitem{Anderson:2014cx}
+Anderson SC, Moore JW, McClure MM, Dulvy NK, Cooper AB, 2015 {Portfolio
+  conservation of metapopulations under climate change}.
+\newblock \emph{Ecol. Appl.} \textbf{25}, 559--572
+
+\bibitem{Keefer:2008bs}
+Keefer ML, Caudill CC, Peery CA, Lee SR, 2008 {Transporting juvenile salmonids
+  around dams impairs adult migration}.
+\newblock \emph{Ecol. Appl.} \textbf{18}, 1888--1900
+
+\bibitem{Westley:2015to}
+Westley PAH, Dittman AH, Ward EJ, Quinn TP, 2015 {Signals of climate,
+  conspecific density, and watershed features in patterns of homing and
+  dispersal by Pacific salmon.}
+\newblock \emph{Ecology} \textbf{96}, 2823--2833
+
+\bibitem{Bond:2016dz}
+Bond MH, Westley PAH, Dittman AH, Holecek D, Marsh T, Quinn TP, 2016 {Combined
+  effects of barge transportation, river environment, and rearing location on
+  straying and migration of adult snake river fall-run Chinook salmon}.
+\newblock \emph{T Am Fish Soc} \textbf{146}, 60--73
+
+\bibitem{Peterson:2014gy}
+Peterson DA, Hilborn R, Hauser L, 2014 {Local adaptation limits lifetime
+  reproductive success of dispersers in a wild salmon metapopulation}.
+\newblock \emph{Nat Commun} \textbf{5}, 3696
+
+\bibitem{Moore:2010gs}
+Moore JW, McClure M, Rogers LA, Schindler DE, 2010 {Synchronization and
+  portfolio performance of threatened salmon}.
+\newblock \emph{Conserv. Lett.} \textbf{3}, 340--348
+
+\bibitem{Carlson:2011ce}
+Carlson SM, Satterthwaite WH, Fleming IA, 2011 {Weakened portfolio effect in a
+  collapsed salmon population complex}.
+\newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{68}, 1579--1589
+
+\bibitem{Braun:2016ib}
+Braun DC, Moore JW, Candy J, Bailey RE, 2016 {Population diversity in salmon:
+  linkages among response, genetic and life history diversity}.
+\newblock \emph{Ecography} \textbf{39}, 317--328
+
+\bibitem{simpson1953major}
+Simpson GG, 1953 \emph{{The Major Features of Evolution}}.
+\newblock New York: Simon and Schuster
+
+\bibitem{Lande:1976ga}
+Lande R, 1976 {Natural selection and random genetic drift in phenotypic
+  evolution}.
+\newblock \emph{Evolution} \textbf{30}, 314--334
+
+\bibitem{Shelton:2011eq}
+Shelton AO, Mangel M, 2011 {Fluctuations of fish populations and the magnifying
+  effects of fishing.}
+\newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{108}, 7075--7080
+
+\bibitem{Jasper:2013cc}
+Jasper JR, Habicht C, Moffitt S, Brenner R, Marsh J, Lewis B, Fox EC, Grauvogel
+  Z, Olive SDR, Grant WS, 2013 {Source-sink estimates of genetic introgression
+  show influence of hatchery strays on wild chum salmon populations in Prince
+  William Sound, Alaska}.
+\newblock \emph{PLoS ONE} \textbf{8}, e81916
+
+\bibitem{Schreiber:2011wx}
+Schreiber SJ, B{\"u}rger R, Bolnick DI, 2011 {The community effects of
+  phenotypic and genetic variation within a predator population.}
+\newblock \emph{Ecology} \textbf{92}, 1582--1593
+
+\bibitem{Gilbert:2014ee}
+Gibert JP, Brassil CE, 2014 {Individual phenotypic variation reduces
+  interaction strengths in a consumer{\textendash}resource system}.
+\newblock \emph{Ecol Evol} \textbf{4}, 3703--3713
+
+\bibitem{Gibert:2015kc}
+Gibert JP, DeLong JP, 2015 {Individual variation decreases interference
+  competition but increases species persistence}.
+\newblock \emph{Adv Ecol Res} \textbf{52}, 45--64
+
+\bibitem{Ronce:2001dp}
+Ronce O, Kirkpatrick M, 2001 {When sources become sinks: migrational meltdown
+  in heterogeneous habitats}.
+\newblock \emph{Evolution} \textbf{55}, 1520
+
+\bibitem{Berdahl:2014bl}
+Berdahl A, Westley PAH, Levin SA, Couzin ID, Quinn TP, 2014 {A collective
+  navigation hypothesis for homeward migration in anadromous salmonids}.
+\newblock \emph{Fish Fish.} \textbf{17}, 525--542
+
+\bibitem{Candy:2000hu}
+Candy JR, Beacham TD, 2000 {Patterns of homing and straying in southern British
+  Columbia coded-wire tagged Chinook salmon (\emph{Oncorhynchus tshawytscha})
+  populations}.
+\newblock \emph{Fish Res} \textbf{47}, 41--56
+
+\bibitem{JPE:JPE1383}
+Schick RS, Lindley ST, 2007 {Directed connectivity among fish populations in a
+  riverine network}.
+\newblock \emph{J. Appl. Ecol.} \textbf{44}, 1116--1126
+
+\bibitem{Schindler:2015gf}
+Schindler DE, Armstrong JB, Reed TE, 2015 {The portfolio concept in ecology and
+  evolution}.
+\newblock \emph{Front. Ecol. Environ.} \textbf{13}, 257--263
+
+\bibitem{Ovaskainen:2002il}
+Ovaskainen O, Hanski I, 2002 {Transient dynamics in metapopulation response to
+  perturbation}.
+\newblock \emph{Theor Popul Biol} \textbf{61}, 285--295
+
+\bibitem{Anderson:2013gb}
+Anderson SC, Cooper AB, Dulvy NK, 2013 {Ecological prophets: quantifying
+  metapopulation portfolio effects}.
+\newblock \emph{Methods Ecol Evol} \textbf{4}, 971--981
+
+\bibitem{Loreau:2008ju}
+Loreau M, de~Mazancourt C, 2008 {Species synchrony and its drivers: neutral and
+  nonneutral community dynamics in fluctuating environments}.
+\newblock \emph{Am. Nat.} \textbf{172}, E48--E66
+
+\bibitem{Yeakel:2013vz}
+Yeakel JD, Moore JW, Guimar{\~a}es~Jr PR, de~Aguiar MAM, 2014 {Synchronisation
+  and stability in river metapopulation networks}.
+\newblock \emph{Ecol. Lett.} \textbf{17}, 273--283
+
+\bibitem{GuckHolmes}
+Guckenheimer J, Holmes P, 1983 \emph{{Nonlinear Oscillations, Dynamical
+  Systems, and Bifurcations of Vector Fields}}.
+\newblock New York: Springer
+
+\bibitem{AleksandrovichKuznetsov:1995p2580}
+Kuznetsov Y, 1998 \emph{{Elements of Applied Bifurcation Theory}}.
+\newblock New York: Springer
+
+\bibitem{Carlson:2008hl}
+Carlson SM, Seamons TR, 2008 {A review of quantitative genetic components of
+  fitness in salmonids: implications for adaptation to future change}.
+\newblock \emph{Evol Appl} \textbf{1}, 222--238
+
+\bibitem{Scheffer:2009gg}
+Scheffer M, Bascompte J, Brock WA, Brovkin V, Carpenter SR, Dakos V, Held H,
+  van Nes EH, Rietkerk M, Sugihara G, 2009 {Early-warning signals for critical
+  transitions}.
+\newblock \emph{Nature} \textbf{461}, 53--59
+
+\bibitem{Lade:2012eu}
+Lade SJ, Gross T, 2012 {Early warning signals for critical transitions: A
+  generalized modeling approach}.
+\newblock \emph{PLoS Comp. Biol.} \textbf{8}, e1002360
+
+\bibitem{Anonymous:2013br}
+Boettiger C, Ross N, Hastings A, 2013 {Early warning signals: the charted and
+  uncharted territories}.
+\newblock \emph{Theor. Ecol.} \textbf{6}, 255--264
+
+\bibitem{Dakos:2014br}
+Dakos V, Bascompte J, 2014 {Critical slowing down as early warning for the
+  onset of collapse in mutualistic communities}.
+\newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{111}, 17546--17551
+
+\bibitem{Krkosek:2014ch}
+Krko{\v s}ek M, Drake JM, 2014 {On signals of phase transitions in salmon
+  population dynamics}.
+\newblock \emph{Proc. Roy. Soc. B} \textbf{281}, 20133221
+
+\bibitem{Kuehn:2010p2591}
+Kuehn C, 2011 {A mathematical framework for critical transitions: bifurcations,
+  fast-slow systems and stochastic dynamics}.
+\newblock \emph{Physica D} \textbf{240}, 1020--1035
+
+\bibitem{Donohue:2013iu}
+Donohue I, Petchey OL, Montoya JM, Jackson AL, McNally L, Viana M, Healy K,
+  Lurgi M, O'Connor NE, Emmerson MC, 2013 {On the dimensionality of ecological
+  stability.}
+\newblock \emph{Ecol. Lett.} \textbf{16}, 421--429
+
+\bibitem{Secor:2009ena}
+Secor DH, Kerr LA, Cadrin SX, 2009 {Connectivity effects on productivity,
+  stability, and persistence in a herring metapopulation model}.
+\newblock \emph{ICES J Mar Sci} \textbf{66}, 1726--1732
+
+\bibitem{Christie:2012bj}
+Christie MR, Marine ML, French RA, Blouin MS, 2012 {Genetic adaptation to
+  captivity can occur in a single generation.}
+\newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{109}, 238--242
+
+\bibitem{Chilcote:2003bb}
+Chilcote MW, 2003 {Relationship between natural productivity and the frequency
+  of wild fish in mixed spawning populations of wild and hatchery steelhead
+  (\emph{Oncorhynchus mykiss})}.
+\newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{60}, 1057--1067
+
+\bibitem{Araki:2007cm}
+Araki H, Cooper B, Blouin MS, 2007 {Genetic effects of captive breeding cause a
+  rapid, cumulative fitness decline in the wild}.
+\newblock \emph{Science} \textbf{318}, 100--103
+
+\bibitem{Westley:2012ui}
+Westley PAH, { Corinne M Conway}, Fleming IA, 2012 {Phenotypic divergence of
+  exotic fish populations is shaped by spatial proximity and habitat
+  differences across an invaded landscape}.
+\newblock \emph{Evol. Ecol. Res.} \textbf{14}, 147--167
+
+\bibitem{Anderson:2013bf}
+Anderson JH, Faulds PL, Atlas WI, Quinn TP, 2013 {Reproductive success of
+  captively bred and naturally spawned Chinook salmon colonizing newly
+  accessible habitat}.
+\newblock \emph{Evol Appl} \textbf{6}, 165--179
+
+\bibitem{Pess:2014isa}
+Pess GR, Quinn TP, Gephard SR, Saunders R, 2014 {Re-colonization of Atlantic
+  and Pacific rivers by anadromous fishes: linkages between life history and
+  the benefits of barrier removal}.
+\newblock \emph{Rev Fish Biol Fisher} \textbf{24}, 881--900
+
+\bibitem{Ford:2002ip}
+Ford MJ, 2002 {Selection in captivity during supportive breeding may reduce
+  fitness in the wild}.
+\newblock \emph{Conserv Biol} \textbf{16}, 815--825
+
+\bibitem{Liermann:2017gj}
+Liermann M, PESS G, McHenry M, McMillan J, Elofson M, Bennett T, Moses R, 2017
+  {Relocation and recolonization of Coho salmon \emph{Oncorhynchus kisutch} in
+  two tributaries to the elwha river: Implications for management and
+  monitoring}.
+\newblock \emph{T Am Fish Soc} \textbf{17}, 1--39
+
+\end{thebibliography}
+
 
 
 \clearpage
@@ -1016,7 +1015,7 @@ singlelinecheck=false
 \caption{
 (a) The steady state densities of $N_1$ and $N_2$ as a function of a constant stray rate $m$. Which population attains the low- or high-density state is random due to small applied fluctuations in the initial conditions.
 (b) The steady state trait values measured as $\theta_i - x_i$, as a function of a constant stray rate $m$. 
-PFB marks the pitchfork bifurcation.
+DCB marks the discrete cusp bifurcation.
 Unless otherwise indicated, the default parameter values used are: $r_{\rm max}=2$; $Z=0.5$; $\beta=0.001$; $\theta_1=5$; $\Delta\theta=5$; $\tau=1$; $\sigma=1$; $T=1\times10^5$.
 } \label{fig:traj}
 \end{figure}
@@ -1043,9 +1042,8 @@ singlelinecheck=false
 (a) Total means $N_t^*$, 
 (b) difference in means $\Delta N^*$, and 
 (c) the portfolio effect PE as a function of heritability $h^2$ and a constant stray rate $m$. Light colors = high values.
-The black line shows the pitchfork bifurcation separating a single steady state (left) from alternative stable states (right).
+The black line shows the cusp bifurcation separating a single steady state (left) from alternative stable states (right).
 (d) The relationship between the time to recovery following a disturbance and the portfolio effect. Portfolio effects greater than unity corresponds to less synchronization.
-The black line denotes the pitchfork bifurcation.
 } \label{fig:PE}
 \end{figure*}
 
@@ -1059,9 +1057,21 @@ singlelinecheck=false
 \caption{
 Recovery time of $N_T^*$ following the extinction of either the low-density (light gray) or high-density (gray) population, or the near-collapse of both (dark gray) assuming (a) constant straying rates $m$ and (b) density-dependent straying rates (evaluated at the steady state $m^*$) with trait heritability $h^2=0.2$.
 If $m$ is density-dependent, in the alternative stable state regime there are two straying rates observed: one each for the low- and high-density populations, respectively, which are linked by a horizontal line.
-PFB marks the pitchfork bifurcation.
+DCB marks the discrete cusp bifurcation.
 } \label{fig:relax}
 \end{figure*}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.5\textwidth]{fig_traitdiff.pdf}
+\caption{
+Phenotypic diversity ($\Delta \mu^*$) evaluated at the steady state as a function of straying rate $m$ and trait heritability $h^2$. The jump occurs as the system crosses the cusp bifurcation; lower phenoytic diversity emerges with higher straying rates and in the alternative stable state regime. 
+} \label{fig:traitdiff}
+\end{figure}
 
 
 \begin{figure}
@@ -1075,21 +1085,10 @@ singlelinecheck=false
 Point pairs connected by a horizontal line represent the PE as a function of density-dependent straying rates, evaluated for both low- and high-density populations at equilibrium. The lower straying rate of a pair is for the larger population; the higher straying rate is for the smaller population.
 (b) Median portfolio effects for habitats with increasing heterogeneity as measured by the difference in regional trait optima $\Delta \theta$ for both constant and density-dependent stray rates as shown in (a).
 Portfolio effects greater than unity corresponds to less synchronization.
-PFB marks the pitchfork bifurcation.
+DCB marks the discrete cusp bifurcation.
 } \label{fig:thetaPE}
 \end{figure}
 
-
-\begin{figure}
-  \captionsetup{justification=raggedright,
-singlelinecheck=false
-}
-\centering
-\includegraphics[width=0.5\textwidth]{fig_traitdiff.pdf}
-\caption{
-Phenotypic diversity ($\Delta \mu^*$) evaluated at the steady state as a function of straying rate $m$ and trait heritability $h^2$. The descrete jump occurs as the system crosses the pitchfork bifurcation; lower phenoytic diversity emerges with higher straying rates and in the alternative stable state regime. 
-} \label{fig:traitdiff}
-\end{figure}
 
 \begin{figure}
   \captionsetup{justification=raggedright,
@@ -1100,7 +1099,7 @@ singlelinecheck=false
   \caption{
   Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases.
   The `$*$' marks the value of $(m,\Delta\theta)$ below which there is a switch in subordinate/dominant states following extinction of the dominant population.
-  PFB marks the pitchfork bifurcation.
+  DCB marks the discrete cusp bifurcation.
   } \label{fig:mtheta}
 \end{figure}
 
@@ -1126,6 +1125,7 @@ In some cases, habitat heterogeneity may be assumed to determine the rate of str
 } \label{fig:mthetarelation}
 \end{figure}
 
+
 \begin{figure}
   \captionsetup{justification=raggedright,
 singlelinecheck=false
@@ -1137,29 +1137,46 @@ Example of the numerical procedure used to estimate recovery time. After a distu
 } \label{fig:recovery}
 \end{figure}
 
-\begin{figure}
-  \captionsetup{justification=raggedright,
-singlelinecheck=false
-}
-\centering
-% \includegraphics[width=0.35\textwidth]{fig_mthetarelation.pdf}
-\caption{
-The real parts of the four eigenvalues for the Jacobian matrix of the 4-dimensional system.
-The pitchfork bifurcation occurs when the dominant eigenvalue crosses the unit circle at $+1$. 
-} \label{fig:eigs}
-\end{figure}
 
 \begin{figure}
   \captionsetup{justification=raggedright,
 singlelinecheck=false
 }
 \centering
-% \includegraphics[width=0.35\textwidth]{fig_mthetarelation.pdf}
+% \includegraphics[width=0.35\textwidth]{fig_eigs.pdf}
+\caption{
+The real parts of the four eigenvalues for the Jacobian matrix of the 4-dimensional system.
+The cusp bifurcation occurs when the dominant eigenvalue crosses the unit circle at $+1$. 
+} \label{fig:eigs}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.35\textwidth]{fig_hysteresis.pdf}
 \caption{
 Increasing the straying rate results in the transition from a single steady state for both populations to a dominant and subordinate states. If the straying rate is subsequently lowered, the single steady state is not easily obtained, which is the hallmark of hysteresis.
 } \label{fig:hysteresis}
 \end{figure}
 
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+% \includegraphics[width=0.35\textwidth]{fig_relax_large.pdf}
+\caption{
+Extinction of high-density population with a high straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_hdlh}
+\end{figure}
 
 
 \begin{figure}
@@ -1175,18 +1192,7 @@ Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$
 } \label{fig:relaxtraj_ldlh}
 \end{figure}
 
-\begin{figure}
-  \captionsetup{justification=raggedright,
-singlelinecheck=false
-}
-\centering
-% \includegraphics[width=0.35\textwidth]{fig_relax_large.pdf}
-\caption{
-Extinction of high-density population with a high straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{fig:relax}a).
-Black line marks the calculated point of recovery post-perturbation.
-Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
-} \label{fig:relaxtraj_hdlh}
-\end{figure}
+
 
 \begin{figure}
   \captionsetup{justification=raggedright,
@@ -1211,7 +1217,7 @@ singlelinecheck=false
 % \includegraphics[width=0.4\textwidth]{fig_thetadiffN.pdf}
 \caption{
 Median difference in population densities taken over the straying rate as a function of habitat heterogeneity $\Delta\theta$.
-Solid lines are for constant $m$; dashed lines are for density-dependent $m$} \label{fig:thetadiffN}
+Solid lines are for constant $m$; dashed lines are for density-dependent $m$.} \label{fig:thetadiffN}
 \end{figure}
 
 
@@ -1223,8 +1229,8 @@ singlelinecheck=false
 % \includegraphics[width=0.8\textwidth]{fig_relaxtheta2.pdf}
 \caption{
 (a) Recovery time after near collapse of both populations as a function of straying rate $m$ and habitat heterogeneity $\Delta\theta$.
-(b) The same as (a) but including recovery times when straying is density-dependent, shown by linked pairs of points.
-Recovery times for systems with density-dependent straying are longer at low straying rates and shorter at higher straying rates, mirroring the change in portfolio effects shown in figure \ref{fig:thetaPE}.
+(b) The same as (a) but including recovery times when straying is density-dependent evaluated at $m^*$, shown by linked point pairs.
+Recovery times for systems with density-dependent straying are longer when straying is low and shorter when straying is high, mirroring the change in portfolio effects with respect to density dependent straying shown in figure \ref{fig:thetaPE}.
 } \label{fig:relaxtheta}
 \end{figure}
 
@@ -1237,7 +1243,7 @@ singlelinecheck=false
   \centering
   % \includegraphics[width=0.35\textwidth]{fig_MDPE_hm_mtheta_rt.pdf}
   \caption{
-  Distance dependent portfolio effects as a function of straying rate $m$ and trait heritability $h^2$. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases.
+  Portfolio effects as a function of straying rate $m$ and trait heritability $h^2$ when the rate of straying is $m = 0.5(1 + \Delta\theta)^{-1}$. Alternative steady states emerge for low values of $m$ (left of the cusp bifurcation, denoted by the black line), whereas a single steady state exists for high $m$.
   } \label{fig:mthetaPE}
 \end{figure}
 
@@ -1250,10 +1256,11 @@ singlelinecheck=false
 \centering
 % \includegraphics[width=0.35\textwidth]{fig_relax_inertia.pdf}
 \caption{
-Distance dependent straying, where increased differences in trait optima between sites $\Delta\theta$ corresponds to lower rates of straying $m$.
+Population inversion where increased differences in trait optima between sites $\Delta\theta$ corresponds to lower rates of straying $m$.
 At low rates of straying $m=0.02$ ($\Delta\theta=24$), extinction of the dominant population leads to slower-than-expected recovery times because the subordinate population is isolated enough to evolve towards its own trait optimum. %until growth of the dominant population overwhelms this local selection.
-In this case, $m$ is less than $m=0.034$ (denoted by the asterisk in figure \ref{fig:mtheta}), such that isolation allows the subdominant population to `run away' from the influence of the dominant population, leading to a switch in states.
-If $m$ is low but greater than $0.034$, isolation permits the subdominant population to `run away' from the influence of the dominant population, until it is overwhelmed by the recovering dominant population, and reverts back to its previous trait mean prior to the disturbance.
+In this case, $m$ is less than $m=0.034$ (denoted by the asterisk in figure \ref{fig:mtheta}), such that isolation allows the subordinate population to `run away' from the influence of the dominant population.
+This leads to a switch in subordinate/dominant states for the two populations.
+If $m$ is low but greater than $0.034$, isolation permits the subordinate population to `run away' from the influence of the dominant population, until it is overwhelmed by the recovering dominant population, and reverts back to its previous trait mean prior to disturbance.
 } \label{fig:inertia}
 \end{figure}
 
@@ -1265,9 +1272,9 @@ singlelinecheck=false
   \centering
   % \includegraphics[width=0.8\textwidth]{fig_relax_mtheta.pdf}
   \caption{
-  Distance dependent recovery times for three disturbance types. When straying is distance dependent, $m$ increases as $\Delta\theta$ decreases for constant (a) and density-dependent (b) staying rates.
-  The pitchfork bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
-  Despite this difference, the general trends shown in (a) are also present in (b).
+  Recovery times for three disturbance types when the straying rate covaries with habitat heterogeneity as $m = 0.5(1 + \Delta\theta)^{-1}$ for constant (a) and density-dependent (b) straying rates.
+  The cusp bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady state $m^*$.
+  Despite this difference, the general behavior shown in (a) are the same in (b).
   } \label{fig:mthetamvm}
 \end{figure}
 
@@ -1278,7 +1285,7 @@ singlelinecheck=false
 \centering
 % \includegraphics[width=0.35\textwidth]{fig_asymdensity.pdf}
 \caption{
-Steady state densities of both populations as a function of $m$, where a pitchfork bifurcation indicates the emergence of alternative steady states: one in a dominant state and one in a subordinate state.
+Steady state densities of both populations as a function of $m$, where a cusp bifurcation indicates the emergence of alternative steady states: one in a dominant state and one in a subordinate state.
 Steady states for populations with symmetrical values ($\alpha=0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown with cool tones.
 As the asymmetry among populations between sites increases ($\alpha>0$), their vital rates diverge, such that the maximal growth at sites 1 and 2 is now $r_{\rm max}(1)=r_{\rm max}(1+\tilde{rv}_1)$ and $r_{\rm max}(2)=r_{\rm max}(1+\tilde{rv}_2)$ where $rv_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $r_{\rm max}=2$. 
 Similarly the strength of density dependence is calculated at sites 1 and 2 as $\beta(1)=\beta(1+\tilde{rv}_1)$ and $\beta(2)=\beta(1+\tilde{rv}_2)$ where $\tilde{rv}_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $\beta=0.001$.

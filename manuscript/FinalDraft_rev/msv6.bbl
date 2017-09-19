@@ -1,576 +1,356 @@
-\begin{thebibliography}{71}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\expandafter\ifx\csname bibnamefont\endcsname\relax
-  \def\bibnamefont#1{#1}\fi
-\expandafter\ifx\csname bibfnamefont\endcsname\relax
-  \def\bibfnamefont#1{#1}\fi
-\expandafter\ifx\csname citenamefont\endcsname\relax
-  \def\citenamefont#1{#1}\fi
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\providecommand{\bibinfo}[2]{#2}
-\providecommand{\eprint}[2][]{\url{#2}}
-
-\bibitem[{\citenamefont{Brown and Kodric-Brown}(1977)}]{Brown:1977gk}
-\bibinfo{author}{\bibfnamefont{J.~H.} \bibnamefont{Brown}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Kodric-Brown}},
-  \bibinfo{journal}{Ecology} \textbf{\bibinfo{volume}{58}},
-  \bibinfo{pages}{445} (\bibinfo{year}{1977}).
-
-\bibitem[{\citenamefont{Earn et~al.}(2000)\citenamefont{Earn, Levin, and
-  Rohani}}]{Earn:2000fm}
-\bibinfo{author}{\bibfnamefont{D.~J.~D.} \bibnamefont{Earn}},
-  \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Levin}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Rohani}},
-  \bibinfo{journal}{Science} \textbf{\bibinfo{volume}{290}},
-  \bibinfo{pages}{1360} (\bibinfo{year}{2000}).
-
-\bibitem[{\citenamefont{Schindler
-  et~al.}(2015{\natexlab{a}})\citenamefont{Schindler, Armstrong, and
-  Reed}}]{Anonymous:2015gf}
-\bibinfo{author}{\bibfnamefont{D.~E.} \bibnamefont{Schindler}},
-  \bibinfo{author}{\bibfnamefont{J.~B.} \bibnamefont{Armstrong}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{T.~E.} \bibnamefont{Reed}},
-  \bibinfo{journal}{Front. Ecol. Environ.} \textbf{\bibinfo{volume}{13}},
-  \bibinfo{pages}{257} (\bibinfo{year}{2015}{\natexlab{a}}).
-
-\bibitem[{\citenamefont{Abbott et~al.}(2017)\citenamefont{Abbott, Doak, and
-  Peterson}}]{Abbott:2017hl}
-\bibinfo{author}{\bibfnamefont{R.~E.} \bibnamefont{Abbott}},
-  \bibinfo{author}{\bibfnamefont{D.~F.} \bibnamefont{Doak}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Peterson}},
-  \bibinfo{journal}{Ecology} \textbf{\bibinfo{volume}{98}},
-  \bibinfo{pages}{1071} (\bibinfo{year}{2017}).
-
-\bibitem[{\citenamefont{Thibaut and Connolly}(2013)}]{Thibaut:2012km}
-\bibinfo{author}{\bibfnamefont{L.~M.} \bibnamefont{Thibaut}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{Connolly}},
-  \bibinfo{journal}{Ecol. Lett.} \textbf{\bibinfo{volume}{16}},
-  \bibinfo{pages}{140} (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Milner-Gulland
-  et~al.}(2011)\citenamefont{Milner-Gulland, Fryxell, and
-  Sinclair}}]{MilnerGulland:2011vm}
-\bibinfo{author}{\bibfnamefont{E.~J.} \bibnamefont{Milner-Gulland}},
-  \bibinfo{author}{\bibfnamefont{J.~M.} \bibnamefont{Fryxell}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~R.~E.}
-  \bibnamefont{Sinclair}}, \emph{\bibinfo{title}{{Animal Migration}}}
-  (\bibinfo{publisher}{Oxford University Press}, \bibinfo{address}{Oxford},
-  \bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Bell and Gonzalez}(2011)}]{Bell:2011ki}
-\bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Bell}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Gonzalez}},
-  \bibinfo{journal}{Science} \textbf{\bibinfo{volume}{332}},
-  \bibinfo{pages}{1327} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Carlson et~al.}(2014)\citenamefont{Carlson, Cunningham,
-  and Westley}}]{Carlson:2014is}
-\bibinfo{author}{\bibfnamefont{S.~M.} \bibnamefont{Carlson}},
-  \bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Cunningham}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{P.~A.~H.}
-  \bibnamefont{Westley}}, \bibinfo{journal}{Trends Ecol. Evol.}
-  \textbf{\bibinfo{volume}{29}}, \bibinfo{pages}{521} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Muhlfeld et~al.}(2014)\citenamefont{Muhlfeld, Kovach,
-  Jones, Al-Chokhachy, Boyer, Leary, Lowe, Luikart, and
-  Allendorf}}]{Muhlfeld:2014hs}
-\bibinfo{author}{\bibfnamefont{C.~C.} \bibnamefont{Muhlfeld}},
-  \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Kovach}},
-  \bibinfo{author}{\bibfnamefont{L.~A.} \bibnamefont{Jones}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Al-Chokhachy}},
-  \bibinfo{author}{\bibfnamefont{M.~C.} \bibnamefont{Boyer}},
-  \bibinfo{author}{\bibfnamefont{R.~F.} \bibnamefont{Leary}},
-  \bibinfo{author}{\bibfnamefont{W.~H.} \bibnamefont{Lowe}},
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Luikart}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{F.~W.} \bibnamefont{Allendorf}},
-  \bibinfo{journal}{Nature Climate Change} \textbf{\bibinfo{volume}{4}},
-  \bibinfo{pages}{620} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Lowe et~al.}(2015)\citenamefont{Lowe, Muhlfeld, and
-  Allendorf}}]{Lowe:2015ft}
-\bibinfo{author}{\bibfnamefont{W.~H.} \bibnamefont{Lowe}},
-  \bibinfo{author}{\bibfnamefont{C.~C.} \bibnamefont{Muhlfeld}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{F.~W.}
-  \bibnamefont{Allendorf}}, \bibinfo{journal}{Trends Ecol. Evol.}
-  \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{456} (\bibinfo{year}{2015}).
-
-\bibitem[{\citenamefont{Westley and Quinn}(2013)}]{H:2013fs}
-\bibinfo{author}{\bibfnamefont{P.~A.~H.} \bibnamefont{Westley}}
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{Can. J. Fish. Aquat. Sci.} \textbf{\bibinfo{volume}{70}},
-  \bibinfo{pages}{735} (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Keefer and Caudill}(2014)}]{Keefer:2014gg}
-\bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Keefer}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{C.~C.} \bibnamefont{Caudill}},
-  \bibinfo{journal}{Rev Fish Biol Fisher} \textbf{\bibinfo{volume}{24}},
-  \bibinfo{pages}{333} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Bett et~al.}(2017)\citenamefont{Bett, Hinch, Burnett,
-  Donaldson, and Naman}}]{Bett:2017ha}
-\bibinfo{author}{\bibfnamefont{N.~N.} \bibnamefont{Bett}},
-  \bibinfo{author}{\bibfnamefont{S.~G.} \bibnamefont{Hinch}},
-  \bibinfo{author}{\bibfnamefont{N.~J.} \bibnamefont{Burnett}},
-  \bibinfo{author}{\bibfnamefont{M.~R.} \bibnamefont{Donaldson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{S.~M.} \bibnamefont{Naman}},
-  \bibinfo{journal}{Fisheries} \textbf{\bibinfo{volume}{42}},
-  \bibinfo{pages}{220} (\bibinfo{year}{2017}).
-
-\bibitem[{\citenamefont{Berdahl et~al.}(2015)\citenamefont{Berdahl, Torney,
-  Schertzer, and Levin}}]{Berdahl:2015kv}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Berdahl}},
-  \bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Torney}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Schertzer}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Levin}},
-  \bibinfo{journal}{Evolution} \textbf{\bibinfo{volume}{69}},
-  \bibinfo{pages}{1390} (\bibinfo{year}{2015}).
-
-\bibitem[{\citenamefont{Berdahl}(2016)}]{Berdahl:2016dx}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Berdahl}},
-  \bibinfo{journal}{Movement Ecology} \textbf{\bibinfo{volume}{4}},
-  \bibinfo{pages}{1} (\bibinfo{year}{2016}).
-
-\bibitem[{\citenamefont{Simons}(2004)}]{Simons:2004jo}
-\bibinfo{author}{\bibfnamefont{A.~M.} \bibnamefont{Simons}},
-  \bibinfo{journal}{Trends Ecol. Evol.} \textbf{\bibinfo{volume}{19}},
-  \bibinfo{pages}{453} (\bibinfo{year}{2004}).
-
-\bibitem[{\citenamefont{Brenner et~al.}(2012)\citenamefont{Brenner, Moffitt,
-  and Grant}}]{Brenner:2012gl}
-\bibinfo{author}{\bibfnamefont{R.~E.} \bibnamefont{Brenner}},
-  \bibinfo{author}{\bibfnamefont{S.~D.} \bibnamefont{Moffitt}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{W.~S.} \bibnamefont{Grant}},
-  \bibinfo{journal}{Environ Biol Fish} \textbf{\bibinfo{volume}{94}},
-  \bibinfo{pages}{179} (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Johnson et~al.}(2012)\citenamefont{Johnson, Weber,
-  Wikert, Workman, MacFarlane, Grove, and Schmitt}}]{Johnson:2012fe}
-\bibinfo{author}{\bibfnamefont{R.~C.} \bibnamefont{Johnson}},
-  \bibinfo{author}{\bibfnamefont{P.~K.} \bibnamefont{Weber}},
-  \bibinfo{author}{\bibfnamefont{J.~D.} \bibnamefont{Wikert}},
-  \bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Workman}},
-  \bibinfo{author}{\bibfnamefont{R.~B.} \bibnamefont{MacFarlane}},
-  \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Grove}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.~K.} \bibnamefont{Schmitt}},
-  \bibinfo{journal}{PLoS ONE} \textbf{\bibinfo{volume}{7}},
-  \bibinfo{pages}{e28880} (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Fullerton et~al.}(2011)\citenamefont{Fullerton,
-  Lindley, Pess, Feist, Steel, and Mcelhany}}]{Fullerton:2011ii}
-\bibinfo{author}{\bibfnamefont{A.~H.} \bibnamefont{Fullerton}},
-  \bibinfo{author}{\bibfnamefont{S.~T.} \bibnamefont{Lindley}},
-  \bibinfo{author}{\bibfnamefont{G.~R.} \bibnamefont{Pess}},
-  \bibinfo{author}{\bibfnamefont{B.~E.} \bibnamefont{Feist}},
-  \bibinfo{author}{\bibfnamefont{E.~A.} \bibnamefont{Steel}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Mcelhany}},
-  \bibinfo{journal}{Conserv Biol} \textbf{\bibinfo{volume}{25}},
-  \bibinfo{pages}{932} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Quinn}(2011)}]{Quinn:2011tf}
-\bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \emph{\bibinfo{title}{{The Behavior and Ecology of Pacific Salmon and
-  Trout}}} (\bibinfo{publisher}{UBC Press}, \bibinfo{address}{Vancouver},
-  \bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Jonsson and Jonsson}(2011)}]{Jonsson:2011kg}
-\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Jonsson}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Jonsson}},
-  \emph{\bibinfo{title}{{Ecology of Atlantic Salmon and Brown Trout}}}
-  (\bibinfo{publisher}{Springer Netherlands}, \bibinfo{address}{Dordrecht},
-  \bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Quinn}(1993)}]{Quinn:1993ge}
-\bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{Fish Res} \textbf{\bibinfo{volume}{18}},
-  \bibinfo{pages}{29} (\bibinfo{year}{1993}).
-
-\bibitem[{\citenamefont{Hendry et~al.}(2004)\citenamefont{Hendry, Bohlin,
-  Jonsson, and Berg}}]{Hendry:2004wf}
-\bibinfo{author}{\bibfnamefont{A.~P.} \bibnamefont{Hendry}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Bohlin}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Jonsson}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{O.~K.} \bibnamefont{Berg}}, in
-  \emph{\bibinfo{booktitle}{Evolution Illuminated}}, edited by
-  \bibinfo{editor}{\bibfnamefont{A.~P.} \bibnamefont{Hendry}} \bibnamefont{and}
-  \bibinfo{editor}{\bibfnamefont{S.~C.} \bibnamefont{Stearns}}
-  (\bibinfo{publisher}{Oxford University Press on Demand},
-  \bibinfo{address}{Oxford}, \bibinfo{year}{2004}).
-
-\bibitem[{\citenamefont{Schtickzelle and Quinn}(2007)}]{Schtickzelle:2007wb}
-\bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Schtickzelle}}
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{Fish Fish.} \textbf{\bibinfo{volume}{8}},
-  \bibinfo{pages}{297} (\bibinfo{year}{2007}).
-
-\bibitem[{\citenamefont{Anderson et~al.}(2015)\citenamefont{Anderson, Moore,
-  McClure, Dulvy, and Cooper}}]{Anderson:2014cx}
-\bibinfo{author}{\bibfnamefont{S.~C.} \bibnamefont{Anderson}},
-  \bibinfo{author}{\bibfnamefont{J.~W.} \bibnamefont{Moore}},
-  \bibinfo{author}{\bibfnamefont{M.~M.} \bibnamefont{McClure}},
-  \bibinfo{author}{\bibfnamefont{N.~K.} \bibnamefont{Dulvy}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.~B.} \bibnamefont{Cooper}},
-  \bibinfo{journal}{Ecol. Appl.} \textbf{\bibinfo{volume}{25}},
-  \bibinfo{pages}{559} (\bibinfo{year}{2015}).
-
-\bibitem[{\citenamefont{Keefer et~al.}(2008)\citenamefont{Keefer, Caudill,
-  Peery, and Lee}}]{Keefer:2008bs}
-\bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Keefer}},
-  \bibinfo{author}{\bibfnamefont{C.~C.} \bibnamefont{Caudill}},
-  \bibinfo{author}{\bibfnamefont{C.~A.} \bibnamefont{Peery}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{Lee}},
-  \bibinfo{journal}{Ecol. Appl.} \textbf{\bibinfo{volume}{18}},
-  \bibinfo{pages}{1888} (\bibinfo{year}{2008}).
-
-\bibitem[{\citenamefont{Westley et~al.}(2015)\citenamefont{Westley, Dittman,
-  Ward, and Quinn}}]{Westley:2015to}
-\bibinfo{author}{\bibfnamefont{P.~A.~H.} \bibnamefont{Westley}},
-  \bibinfo{author}{\bibfnamefont{A.~H.} \bibnamefont{Dittman}},
-  \bibinfo{author}{\bibfnamefont{E.~J.} \bibnamefont{Ward}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{Ecology} \textbf{\bibinfo{volume}{96}},
-  \bibinfo{pages}{2823} (\bibinfo{year}{2015}).
-
-\bibitem[{\citenamefont{Bond et~al.}(2016)\citenamefont{Bond, Westley, Dittman,
-  Holecek, Marsh, and Quinn}}]{Bond:2016dz}
-\bibinfo{author}{\bibfnamefont{M.~H.} \bibnamefont{Bond}},
-  \bibinfo{author}{\bibfnamefont{P.~A.~H.} \bibnamefont{Westley}},
-  \bibinfo{author}{\bibfnamefont{A.~H.} \bibnamefont{Dittman}},
-  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Holecek}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Marsh}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{T Am Fish Soc} \textbf{\bibinfo{volume}{146}},
-  \bibinfo{pages}{60} (\bibinfo{year}{2016}).
-
-\bibitem[{\citenamefont{Peterson et~al.}(2014)\citenamefont{Peterson, Hilborn,
-  and Hauser}}]{Peterson:2014gy}
-\bibinfo{author}{\bibfnamefont{D.~A.} \bibnamefont{Peterson}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Hilborn}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Hauser}},
-  \bibinfo{journal}{Nat Commun} \textbf{\bibinfo{volume}{5}},
-  \bibinfo{pages}{3696} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Moore et~al.}(2010)\citenamefont{Moore, McClure,
-  Rogers, and Schindler}}]{Moore:2010gs}
-\bibinfo{author}{\bibfnamefont{J.~W.} \bibnamefont{Moore}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{McClure}},
-  \bibinfo{author}{\bibfnamefont{L.~A.} \bibnamefont{Rogers}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.~E.}
-  \bibnamefont{Schindler}}, \bibinfo{journal}{Conserv. Lett.}
-  \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{340} (\bibinfo{year}{2010}).
-
-\bibitem[{\citenamefont{Carlson et~al.}(2011)\citenamefont{Carlson,
-  Satterthwaite, and Fleming}}]{Carlson:2011ce}
-\bibinfo{author}{\bibfnamefont{S.~M.} \bibnamefont{Carlson}},
-  \bibinfo{author}{\bibfnamefont{W.~H.} \bibnamefont{Satterthwaite}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{I.~A.}
-  \bibnamefont{Fleming}}, \bibinfo{journal}{Can. J. Fish. Aquat. Sci.}
-  \textbf{\bibinfo{volume}{68}}, \bibinfo{pages}{1579} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Braun et~al.}(2016)\citenamefont{Braun, Moore, Candy,
-  and Bailey}}]{Braun:2016ib}
-\bibinfo{author}{\bibfnamefont{D.~C.} \bibnamefont{Braun}},
-  \bibinfo{author}{\bibfnamefont{J.~W.} \bibnamefont{Moore}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Candy}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{R.~E.} \bibnamefont{Bailey}},
-  \bibinfo{journal}{Ecography} \textbf{\bibinfo{volume}{39}},
-  \bibinfo{pages}{317} (\bibinfo{year}{2016}).
-
-\bibitem[{\citenamefont{Simpson}(1953)}]{simpson1953major}
-\bibinfo{author}{\bibfnamefont{G.~G.} \bibnamefont{Simpson}},
-  \emph{\bibinfo{title}{{The Major Features of Evolution}}}
-  (\bibinfo{publisher}{Simon and Schuster}, \bibinfo{address}{New York},
-  \bibinfo{year}{1953}).
-
-\bibitem[{\citenamefont{Lande}(1976)}]{Lande:1976ga}
-\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Lande}},
-  \bibinfo{journal}{Evolution} \textbf{\bibinfo{volume}{30}},
-  \bibinfo{pages}{314} (\bibinfo{year}{1976}).
-
-\bibitem[{\citenamefont{Shelton and Mangel}(2011)}]{Shelton:2011eq}
-\bibinfo{author}{\bibfnamefont{A.~O.} \bibnamefont{Shelton}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Mangel}},
-  \bibinfo{journal}{Proc. Natl. Acad. Sci. USA} \textbf{\bibinfo{volume}{108}},
-  \bibinfo{pages}{7075} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Jasper et~al.}(2013)\citenamefont{Jasper, Habicht,
-  Moffitt, Brenner, Marsh, Lewis, Fox, Grauvogel, Olive, and
-  Grant}}]{Jasper:2013cc}
-\bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{Jasper}},
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Habicht}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Moffitt}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Brenner}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Marsh}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Lewis}},
-  \bibinfo{author}{\bibfnamefont{E.~C.} \bibnamefont{Fox}},
-  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Grauvogel}},
-  \bibinfo{author}{\bibfnamefont{S.~D.~R.} \bibnamefont{Olive}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{W.~S.} \bibnamefont{Grant}},
-  \bibinfo{journal}{PLoS ONE} \textbf{\bibinfo{volume}{8}},
-  \bibinfo{pages}{e81916} (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Schreiber et~al.}(2011)\citenamefont{Schreiber,
-  B{\"u}rger, and Bolnick}}]{Schreiber:2011wx}
-\bibinfo{author}{\bibfnamefont{S.~J.} \bibnamefont{Schreiber}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{B{\"u}rger}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.~I.}
-  \bibnamefont{Bolnick}}, \bibinfo{journal}{Ecology}
-  \textbf{\bibinfo{volume}{92}}, \bibinfo{pages}{1582} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Gibert and Brassil}(2014)}]{Gilbert:2014ee}
-\bibinfo{author}{\bibfnamefont{J.~P.} \bibnamefont{Gibert}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{C.~E.} \bibnamefont{Brassil}},
-  \bibinfo{journal}{Ecol Evol} \textbf{\bibinfo{volume}{4}},
-  \bibinfo{pages}{3703} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Gibert and DeLong}(2015)}]{Gibert:2015kc}
-\bibinfo{author}{\bibfnamefont{J.~P.} \bibnamefont{Gibert}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{J.~P.} \bibnamefont{DeLong}},
-  \bibinfo{journal}{Adv Ecol Res} \textbf{\bibinfo{volume}{52}},
-  \bibinfo{pages}{45} (\bibinfo{year}{2015}).
-
-\bibitem[{\citenamefont{Ronce and Kirkpatrick}(2001)}]{Ronce:2001dp}
-\bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Ronce}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Kirkpatrick}},
-  \bibinfo{journal}{Evolution} \textbf{\bibinfo{volume}{55}},
-  \bibinfo{pages}{1520} (\bibinfo{year}{2001}).
-
-\bibitem[{\citenamefont{Berdahl et~al.}(2014)\citenamefont{Berdahl, Westley,
-  Levin, Couzin, and Quinn}}]{Berdahl:2014bl}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Berdahl}},
-  \bibinfo{author}{\bibfnamefont{P.~A.~H.} \bibnamefont{Westley}},
-  \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Levin}},
-  \bibinfo{author}{\bibfnamefont{I.~D.} \bibnamefont{Couzin}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{Fish Fish.} \textbf{\bibinfo{volume}{17}},
-  \bibinfo{pages}{525} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Candy and Beacham}(2000)}]{Candy:2000hu}
-\bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{Candy}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.~D.} \bibnamefont{Beacham}},
-  \bibinfo{journal}{Fish Res} \textbf{\bibinfo{volume}{47}},
-  \bibinfo{pages}{41} (\bibinfo{year}{2000}).
-
-\bibitem[{\citenamefont{Schick and Lindley}(2007)}]{JPE:JPE1383}
-\bibinfo{author}{\bibfnamefont{R.~S.} \bibnamefont{Schick}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{S.~T.} \bibnamefont{Lindley}},
-  \bibinfo{journal}{J. Appl. Ecol.} \textbf{\bibinfo{volume}{44}},
-  \bibinfo{pages}{1116} (\bibinfo{year}{2007}).
-
-\bibitem[{\citenamefont{Schindler
-  et~al.}(2015{\natexlab{b}})\citenamefont{Schindler, Armstrong, and
-  Reed}}]{Schindler:2015gf}
-\bibinfo{author}{\bibfnamefont{D.~E.} \bibnamefont{Schindler}},
-  \bibinfo{author}{\bibfnamefont{J.~B.} \bibnamefont{Armstrong}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{T.~E.} \bibnamefont{Reed}},
-  \bibinfo{journal}{Front. Ecol. Environ.} \textbf{\bibinfo{volume}{13}},
-  \bibinfo{pages}{257} (\bibinfo{year}{2015}{\natexlab{b}}).
-
-\bibitem[{\citenamefont{Ovaskainen and Hanski}(2002)}]{Ovaskainen:2002il}
-\bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Ovaskainen}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Hanski}},
-  \bibinfo{journal}{Theor Popul Biol} \textbf{\bibinfo{volume}{61}},
-  \bibinfo{pages}{285} (\bibinfo{year}{2002}).
-
-\bibitem[{\citenamefont{Anderson
-  et~al.}(2013{\natexlab{a}})\citenamefont{Anderson, Cooper, and
-  Dulvy}}]{Anderson:2013gb}
-\bibinfo{author}{\bibfnamefont{S.~C.} \bibnamefont{Anderson}},
-  \bibinfo{author}{\bibfnamefont{A.~B.} \bibnamefont{Cooper}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{N.~K.} \bibnamefont{Dulvy}},
-  \bibinfo{journal}{Methods Ecol Evol} \textbf{\bibinfo{volume}{4}},
-  \bibinfo{pages}{971} (\bibinfo{year}{2013}{\natexlab{a}}).
-
-\bibitem[{\citenamefont{Loreau and de~Mazancourt}(2008)}]{Loreau:2008ju}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Loreau}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{de~Mazancourt}},
-  \bibinfo{journal}{Am. Nat.} \textbf{\bibinfo{volume}{172}},
-  \bibinfo{pages}{E48} (\bibinfo{year}{2008}).
-
-\bibitem[{\citenamefont{Yeakel et~al.}(2014)\citenamefont{Yeakel, Moore,
-  Guimar{\~a}es~Jr, and de~Aguiar}}]{Yeakel:2013vz}
-\bibinfo{author}{\bibfnamefont{J.~D.} \bibnamefont{Yeakel}},
-  \bibinfo{author}{\bibfnamefont{J.~W.} \bibnamefont{Moore}},
-  \bibinfo{author}{\bibfnamefont{P.~R.} \bibnamefont{Guimar{\~a}es~Jr}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.~A.~M.}
-  \bibnamefont{de~Aguiar}}, \bibinfo{journal}{Ecol. Lett.}
-  \textbf{\bibinfo{volume}{17}}, \bibinfo{pages}{273} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Guckenheimer and Holmes}(1983)}]{GuckHolmes}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Guckenheimer}}
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Holmes}},
-  \emph{\bibinfo{title}{{Nonlinear Oscillations, Dynamical Systems, and
-  Bifurcations of Vector Fields}}} (\bibinfo{publisher}{Springer},
-  \bibinfo{address}{New York}, \bibinfo{year}{1983}).
-
-\bibitem[{\citenamefont{Kuznetsov}(1998)}]{AleksandrovichKuznetsov:1995p2580}
-\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Kuznetsov}},
-  \emph{\bibinfo{title}{{Elements of applied bifurcation theory}}}
-  (\bibinfo{publisher}{Springer}, \bibinfo{address}{New York},
-  \bibinfo{year}{1998}).
-
-\bibitem[{\citenamefont{Carlson and Seamons}(2008)}]{Carlson:2008hl}
-\bibinfo{author}{\bibfnamefont{S.~M.} \bibnamefont{Carlson}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.~R.} \bibnamefont{Seamons}},
-  \bibinfo{journal}{Evol Appl} \textbf{\bibinfo{volume}{1}},
-  \bibinfo{pages}{222} (\bibinfo{year}{2008}).
-
-\bibitem[{\citenamefont{Scheffer et~al.}(2009)\citenamefont{Scheffer,
-  Bascompte, Brock, Brovkin, Carpenter, Dakos, Held, van Nes, Rietkerk, and
-  Sugihara}}]{Scheffer:2009gg}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Scheffer}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Bascompte}},
-  \bibinfo{author}{\bibfnamefont{W.~A.} \bibnamefont{Brock}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Brovkin}},
-  \bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{Carpenter}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Dakos}},
-  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Held}},
-  \bibinfo{author}{\bibfnamefont{E.~H.} \bibnamefont{van Nes}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Rietkerk}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Sugihara}},
-  \bibinfo{journal}{Nature} \textbf{\bibinfo{volume}{461}}, \bibinfo{pages}{53}
-  (\bibinfo{year}{2009}).
-
-\bibitem[{\citenamefont{Lade and Gross}(2012)}]{Lade:2012eu}
-\bibinfo{author}{\bibfnamefont{S.~J.} \bibnamefont{Lade}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Gross}},
-  \bibinfo{journal}{PLoS Comp. Biol.} \textbf{\bibinfo{volume}{8}},
-  \bibinfo{pages}{e1002360} (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Boettiger et~al.}(2013)\citenamefont{Boettiger, Ross,
-  and Hastings}}]{Anonymous:2013br}
-\bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Boettiger}},
-  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Ross}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Hastings}},
-  \bibinfo{journal}{Theor. Ecol.} \textbf{\bibinfo{volume}{6}},
-  \bibinfo{pages}{255} (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Dakos and Bascompte}(2014)}]{Dakos:2014br}
-\bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Dakos}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Bascompte}},
-  \bibinfo{journal}{Proc. Natl. Acad. Sci. USA} \textbf{\bibinfo{volume}{111}},
-  \bibinfo{pages}{17546} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Krko{\v s}ek and Drake}(2014)}]{Krkosek:2014ch}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Krko{\v s}ek}}
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{J.~M.} \bibnamefont{Drake}},
-  \bibinfo{journal}{Proc. Roy. Soc. B} \textbf{\bibinfo{volume}{281}},
-  \bibinfo{pages}{20133221} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Kuehn}(2011)}]{Kuehn:2010p2591}
-\bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Kuehn}},
-  \bibinfo{journal}{Physica D} \textbf{\bibinfo{volume}{240}},
-  \bibinfo{pages}{1020} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Donohue et~al.}(2013)\citenamefont{Donohue, Petchey,
-  Montoya, Jackson, McNally, Viana, Healy, Lurgi, O'Connor, and
-  Emmerson}}]{Donohue:2013iu}
-\bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Donohue}},
-  \bibinfo{author}{\bibfnamefont{O.~L.} \bibnamefont{Petchey}},
-  \bibinfo{author}{\bibfnamefont{J.~M.} \bibnamefont{Montoya}},
-  \bibinfo{author}{\bibfnamefont{A.~L.} \bibnamefont{Jackson}},
-  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{McNally}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Viana}},
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Healy}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Lurgi}},
-  \bibinfo{author}{\bibfnamefont{N.~E.} \bibnamefont{O'Connor}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.~C.}
-  \bibnamefont{Emmerson}}, \bibinfo{journal}{Ecol. Lett.}
-  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{421} (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Levin}(1992)}]{Levin:1992p1472}
-\bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Levin}},
-  \bibinfo{journal}{Ecology} \textbf{\bibinfo{volume}{73}},
-  \bibinfo{pages}{1943} (\bibinfo{year}{1992}).
-
-\bibitem[{\citenamefont{Meinhardt}(2012)}]{Meinhardt:2012hw}
-\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Meinhardt}},
-  \bibinfo{journal}{Interface Focus} \textbf{\bibinfo{volume}{2}},
-  \bibinfo{pages}{407} (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Hanski}(1999)}]{Hanski:1999vu}
-\bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Hanski}},
-  \emph{\bibinfo{title}{{Metapopulation Ecology}}} (\bibinfo{publisher}{Oxford
-  University Press}, \bibinfo{address}{Oxford}, \bibinfo{year}{1999}).
-
-\bibitem[{\citenamefont{Boughton}(1999)}]{Boughton:1999fa}
-\bibinfo{author}{\bibfnamefont{D.~A.} \bibnamefont{Boughton}},
-  \bibinfo{journal}{Ecology} \textbf{\bibinfo{volume}{80}},
-  \bibinfo{pages}{2727} (\bibinfo{year}{1999}).
-
-\bibitem[{\citenamefont{Secor et~al.}(2009)\citenamefont{Secor, Kerr, and
-  Cadrin}}]{Secor:2009ena}
-\bibinfo{author}{\bibfnamefont{D.~H.} \bibnamefont{Secor}},
-  \bibinfo{author}{\bibfnamefont{L.~A.} \bibnamefont{Kerr}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{S.~X.} \bibnamefont{Cadrin}},
-  \bibinfo{journal}{ICES J Mar Sci} \textbf{\bibinfo{volume}{66}},
-  \bibinfo{pages}{1726} (\bibinfo{year}{2009}).
-
-\bibitem[{\citenamefont{Christie et~al.}(2012)\citenamefont{Christie, Marine,
-  French, and Blouin}}]{Christie:2012bj}
-\bibinfo{author}{\bibfnamefont{M.~R.} \bibnamefont{Christie}},
-  \bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Marine}},
-  \bibinfo{author}{\bibfnamefont{R.~A.} \bibnamefont{French}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.~S.}
-  \bibnamefont{Blouin}}, \bibinfo{journal}{Proc. Natl. Acad. Sci. USA}
-  \textbf{\bibinfo{volume}{109}}, \bibinfo{pages}{238} (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Chilcote}(2003)}]{Chilcote:2003bb}
-\bibinfo{author}{\bibfnamefont{M.~W.} \bibnamefont{Chilcote}},
-  \bibinfo{journal}{Can. J. Fish. Aquat. Sci.} \textbf{\bibinfo{volume}{60}},
-  \bibinfo{pages}{1057} (\bibinfo{year}{2003}).
-
-\bibitem[{\citenamefont{Araki et~al.}(2007)\citenamefont{Araki, Cooper, and
-  Blouin}}]{Araki:2007cm}
-\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Araki}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Cooper}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{M.~S.} \bibnamefont{Blouin}},
-  \bibinfo{journal}{Science} \textbf{\bibinfo{volume}{318}},
-  \bibinfo{pages}{100} (\bibinfo{year}{2007}).
-
-\bibitem[{\citenamefont{Westley et~al.}(2012)\citenamefont{Westley, { Corinne
-  M. Conway}, and Fleming}}]{Westley:2012ui}
-\bibinfo{author}{\bibfnamefont{P.~A.~H.} \bibnamefont{Westley}},
-  \bibinfo{author}{\bibnamefont{{ Corinne M. Conway}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{I.~A.} \bibnamefont{Fleming}},
-  \bibinfo{journal}{Evol. Ecol. Res.} \textbf{\bibinfo{volume}{14}},
-  \bibinfo{pages}{147} (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Anderson
-  et~al.}(2013{\natexlab{b}})\citenamefont{Anderson, Faulds, Atlas, and
-  Quinn}}]{Anderson:2013bf}
-\bibinfo{author}{\bibfnamefont{J.~H.} \bibnamefont{Anderson}},
-  \bibinfo{author}{\bibfnamefont{P.~L.} \bibnamefont{Faulds}},
-  \bibinfo{author}{\bibfnamefont{W.~I.} \bibnamefont{Atlas}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{journal}{Evol Appl} \textbf{\bibinfo{volume}{6}},
-  \bibinfo{pages}{165} (\bibinfo{year}{2013}{\natexlab{b}}).
-
-\bibitem[{\citenamefont{Pess et~al.}(2014)\citenamefont{Pess, Quinn, Gephard,
-  and Saunders}}]{Pess:2014isa}
-\bibinfo{author}{\bibfnamefont{G.~R.} \bibnamefont{Pess}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Quinn}},
-  \bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{Gephard}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Saunders}},
-  \bibinfo{journal}{Rev Fish Biol Fisher} \textbf{\bibinfo{volume}{24}},
-  \bibinfo{pages}{881} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Ford}(2002)}]{Ford:2002ip}
-\bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Ford}},
-  \bibinfo{journal}{Conserv Biol} \textbf{\bibinfo{volume}{16}},
-  \bibinfo{pages}{815} (\bibinfo{year}{2002}).
-
-\bibitem[{\citenamefont{Liermann et~al.}(2017)\citenamefont{Liermann, PESS,
-  McHenry, McMillan, Elofson, Bennett, and Moses}}]{Liermann:2017gj}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Liermann}},
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{PESS}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{McHenry}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{McMillan}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Elofson}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Bennett}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Moses}}, \bibinfo{journal}{T
-  Am Fish Soc} \textbf{\bibinfo{volume}{17}}, \bibinfo{pages}{1}
-  (\bibinfo{year}{2017}).
+\begin{thebibliography}{10}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Brown:1977gk}
+Brown JH, Kodric-Brown A, 1977 {Turnover rates in insular biogeography: effect
+  of immigration on extinction}.
+\newblock \emph{Ecology} \textbf{58}, 445--449
+
+\bibitem{Earn:2000fm}
+Earn DJD, Levin SA, Rohani P, 2000 {Coherence and conservation}.
+\newblock \emph{Science} \textbf{290}, 1360--1364
+
+\bibitem{Anonymous:2015gf}
+Schindler DE, Armstrong JB, Reed TE, 2015 {The portfolio concept in ecology and
+  evolution}.
+\newblock \emph{Front. Ecol. Environ.} \textbf{13}, 257--263
+
+\bibitem{Abbott:2017hl}
+Abbott RE, Doak DF, Peterson ML, 2017 {Portfolio effects, climate change, and
+  the persistence of small populations: analyses on the rare plant Saussurea
+  weberi.}
+\newblock \emph{Ecology} \textbf{98}, 1071--1081
+
+\bibitem{Thibaut:2012km}
+Thibaut LM, Connolly SR, 2013 {Understanding diversity-stability relationships:
+  towards a unified model of portfolio effects.}
+\newblock \emph{Ecol. Lett.} \textbf{16}, 140--150
+
+\bibitem{MilnerGulland:2011vm}
+Milner-Gulland EJ, Fryxell JM, Sinclair ARE, 2011 \emph{{Animal Migration}}.
+\newblock Oxford: Oxford University Press
+
+\bibitem{Bell:2011ki}
+Bell G, Gonzalez A, 2011 {Adaptation and evolutionary rescue in metapopulations
+  experiencing environmental deterioration}.
+\newblock \emph{Science} \textbf{332}, 1327--1330
+
+\bibitem{Carlson:2014is}
+Carlson SM, Cunningham CJ, Westley PAH, 2014 {Evolutionary rescue in a changing
+  world}.
+\newblock \emph{Trends Ecol. Evol.} \textbf{29}, 521--530
+
+\bibitem{Muhlfeld:2014hs}
+Muhlfeld CC, Kovach RP, Jones LA, Al-Chokhachy R, Boyer MC, Leary RF, Lowe WH,
+  Luikart G, Allendorf FW, 2014 {Invasive hybridization in a threatened species
+  is accelerated by climate change}.
+\newblock \emph{Nature Climate Change} \textbf{4}, 620--624
+
+\bibitem{Lowe:2015ft}
+Lowe WH, Muhlfeld CC, Allendorf FW, 2015 {Spatial sorting promotes the spread
+  of maladaptive hybridization}.
+\newblock \emph{Trends Ecol. Evol.} \textbf{30}, 456--462
+
+\bibitem{H:2013fs}
+Westley PAH, Quinn TP, 2013 {Rates of straying by hatchery-produced Pacific
+  salmon (\emph{Oncorhynchus} spp.) and steelhead (\emph{Oncorhynchus mykiss})
+  differ among species, life history types, and populations}.
+\newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{70}, 735--746
+
+\bibitem{Keefer:2014gg}
+Keefer ML, Caudill CC, 2014 {Homing and straying by anadromous salmonids: a
+  review of mechanisms and rates}.
+\newblock \emph{Rev Fish Biol Fisher} \textbf{24}, 333--368
+
+\bibitem{Bett:2017ha}
+Bett NN, Hinch SG, Burnett NJ, Donaldson MR, Naman SM, 2017 {Causes and
+  consequences of straying into small populations of Pacific salmon}.
+\newblock \emph{Fisheries} \textbf{42}, 220--230
+
+\bibitem{Berdahl:2015kv}
+Berdahl A, Torney CJ, Schertzer E, Levin SA, 2015 {On the evolutionary
+  interplay between dispersal and local adaptation in heterogeneous
+  environments}.
+\newblock \emph{Evolution} \textbf{69}, 1390--1405
+
+\bibitem{Berdahl:2016dx}
+Berdahl A, 2016 {Collective behavior as a driver of critical transitions in
+  migratory populations}.
+\newblock \emph{Movement Ecology} \textbf{4}, 1--12
+
+\bibitem{Simons:2004jo}
+Simons AM, 2004 {Many wrongs: The advantage of group navigation}.
+\newblock \emph{Trends Ecol. Evol.} \textbf{19}, 453--455
+
+\bibitem{Brenner:2012gl}
+Brenner RE, Moffitt SD, Grant WS, 2012 {Straying of hatchery salmon in Prince
+  William Sound, Alaska}.
+\newblock \emph{Environ Biol Fish} \textbf{94}, 179--195
+
+\bibitem{Johnson:2012fe}
+Johnson RC, Weber PK, Wikert JD, Workman ML, MacFarlane RB, Grove MJ, Schmitt
+  AK, 2012 {Managed metapopulations: do salmon hatchery
+  {\textquoteleft}sources{\textquoteright} lead to in-river
+  {\textquoteleft}sinks{\textquoteright} in conservation?}
+\newblock \emph{PLoS ONE} \textbf{7}, e28880--11
+
+\bibitem{Fullerton:2011ii}
+Fullerton AH, Lindley ST, Pess GR, Feist BE, Steel EA, Mcelhany P, 2011 {Human
+  influence on the spatial structure of threatened Pacific salmon
+  metapopulations}.
+\newblock \emph{Conserv Biol} \textbf{25}, 932--944
+
+\bibitem{Quinn:2011tf}
+Quinn TP, 2011 \emph{{The Behavior and Ecology of Pacific Salmon and Trout}}.
+\newblock Vancouver: UBC Press
+
+\bibitem{Jonsson:2011kg}
+Jonsson B, Jonsson N, 2011 \emph{{Ecology of Atlantic Salmon and Brown Trout}}.
+\newblock Dordrecht: Springer Netherlands
+
+\bibitem{Quinn:1993ge}
+Quinn TP, 1993 {A review of homing and straying of wild and hatchery-produced
+  salmon}.
+\newblock \emph{Fish Res} \textbf{18}, 29--44
+
+\bibitem{Hendry:2004wf}
+Hendry AP, Bohlin T, Jonsson B, Berg OK, 2004 {The evolution of philopatry and
+  dispersal: homing versus straying in salmonids}.
+\newblock In AP~Hendry, SC~Stearns, eds., \emph{Evolution Illuminated}. Oxford:
+  Oxford University Press on Demand
+
+\bibitem{Schtickzelle:2007wb}
+Schtickzelle N, Quinn TP, 2007 {A metapopulation perspective for salmon and
+  other anadromous fish}.
+\newblock \emph{Fish Fish.} \textbf{8}, 297--314
+
+\bibitem{Anderson:2014cx}
+Anderson SC, Moore JW, McClure MM, Dulvy NK, Cooper AB, 2015 {Portfolio
+  conservation of metapopulations under climate change}.
+\newblock \emph{Ecol. Appl.} \textbf{25}, 559--572
+
+\bibitem{Keefer:2008bs}
+Keefer ML, Caudill CC, Peery CA, Lee SR, 2008 {Transporting juvenile salmonids
+  around dams impairs adult migration}.
+\newblock \emph{Ecol. Appl.} \textbf{18}, 1888--1900
+
+\bibitem{Westley:2015to}
+Westley PAH, Dittman AH, Ward EJ, Quinn TP, 2015 {Signals of climate,
+  conspecific density, and watershed features in patterns of homing and
+  dispersal by Pacific salmon.}
+\newblock \emph{Ecology} \textbf{96}, 2823--2833
+
+\bibitem{Bond:2016dz}
+Bond MH, Westley PAH, Dittman AH, Holecek D, Marsh T, Quinn TP, 2016 {Combined
+  effects of barge transportation, river environment, and rearing location on
+  straying and migration of adult snake river fall-run Chinook salmon}.
+\newblock \emph{T Am Fish Soc} \textbf{146}, 60--73
+
+\bibitem{Peterson:2014gy}
+Peterson DA, Hilborn R, Hauser L, 2014 {Local adaptation limits lifetime
+  reproductive success of dispersers in a wild salmon metapopulation}.
+\newblock \emph{Nat Commun} \textbf{5}, 3696
+
+\bibitem{Moore:2010gs}
+Moore JW, McClure M, Rogers LA, Schindler DE, 2010 {Synchronization and
+  portfolio performance of threatened salmon}.
+\newblock \emph{Conserv. Lett.} \textbf{3}, 340--348
+
+\bibitem{Carlson:2011ce}
+Carlson SM, Satterthwaite WH, Fleming IA, 2011 {Weakened portfolio effect in a
+  collapsed salmon population complex}.
+\newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{68}, 1579--1589
+
+\bibitem{Braun:2016ib}
+Braun DC, Moore JW, Candy J, Bailey RE, 2016 {Population diversity in salmon:
+  linkages among response, genetic and life history diversity}.
+\newblock \emph{Ecography} \textbf{39}, 317--328
+
+\bibitem{simpson1953major}
+Simpson GG, 1953 \emph{{The Major Features of Evolution}}.
+\newblock New York: Simon and Schuster
+
+\bibitem{Lande:1976ga}
+Lande R, 1976 {Natural selection and random genetic drift in phenotypic
+  evolution}.
+\newblock \emph{Evolution} \textbf{30}, 314--334
+
+\bibitem{Shelton:2011eq}
+Shelton AO, Mangel M, 2011 {Fluctuations of fish populations and the magnifying
+  effects of fishing.}
+\newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{108}, 7075--7080
+
+\bibitem{Jasper:2013cc}
+Jasper JR, Habicht C, Moffitt S, Brenner R, Marsh J, Lewis B, Fox EC, Grauvogel
+  Z, Olive SDR, Grant WS, 2013 {Source-sink estimates of genetic introgression
+  show influence of hatchery strays on wild chum salmon populations in Prince
+  William Sound, Alaska}.
+\newblock \emph{PLoS ONE} \textbf{8}, e81916
+
+\bibitem{Schreiber:2011wx}
+Schreiber SJ, B{\"u}rger R, Bolnick DI, 2011 {The community effects of
+  phenotypic and genetic variation within a predator population.}
+\newblock \emph{Ecology} \textbf{92}, 1582--1593
+
+\bibitem{Gilbert:2014ee}
+Gibert JP, Brassil CE, 2014 {Individual phenotypic variation reduces
+  interaction strengths in a consumer{\textendash}resource system}.
+\newblock \emph{Ecol Evol} \textbf{4}, 3703--3713
+
+\bibitem{Gibert:2015kc}
+Gibert JP, DeLong JP, 2015 {Individual variation decreases interference
+  competition but increases species persistence}.
+\newblock \emph{Adv Ecol Res} \textbf{52}, 45--64
+
+\bibitem{Ronce:2001dp}
+Ronce O, Kirkpatrick M, 2001 {When sources become sinks: migrational meltdown
+  in heterogeneous habitats}.
+\newblock \emph{Evolution} \textbf{55}, 1520
+
+\bibitem{Berdahl:2014bl}
+Berdahl A, Westley PAH, Levin SA, Couzin ID, Quinn TP, 2014 {A collective
+  navigation hypothesis for homeward migration in anadromous salmonids}.
+\newblock \emph{Fish Fish.} \textbf{17}, 525--542
+
+\bibitem{Candy:2000hu}
+Candy JR, Beacham TD, 2000 {Patterns of homing and straying in southern British
+  Columbia coded-wire tagged Chinook salmon (\emph{Oncorhynchus tshawytscha})
+  populations}.
+\newblock \emph{Fish Res} \textbf{47}, 41--56
+
+\bibitem{JPE:JPE1383}
+Schick RS, Lindley ST, 2007 {Directed connectivity among fish populations in a
+  riverine network}.
+\newblock \emph{J. Appl. Ecol.} \textbf{44}, 1116--1126
+
+\bibitem{Schindler:2015gf}
+Schindler DE, Armstrong JB, Reed TE, 2015 {The portfolio concept in ecology and
+  evolution}.
+\newblock \emph{Front. Ecol. Environ.} \textbf{13}, 257--263
+
+\bibitem{Ovaskainen:2002il}
+Ovaskainen O, Hanski I, 2002 {Transient dynamics in metapopulation response to
+  perturbation}.
+\newblock \emph{Theor Popul Biol} \textbf{61}, 285--295
+
+\bibitem{Anderson:2013gb}
+Anderson SC, Cooper AB, Dulvy NK, 2013 {Ecological prophets: quantifying
+  metapopulation portfolio effects}.
+\newblock \emph{Methods Ecol Evol} \textbf{4}, 971--981
+
+\bibitem{Loreau:2008ju}
+Loreau M, de~Mazancourt C, 2008 {Species synchrony and its drivers: neutral and
+  nonneutral community dynamics in fluctuating environments}.
+\newblock \emph{Am. Nat.} \textbf{172}, E48--E66
+
+\bibitem{Yeakel:2013vz}
+Yeakel JD, Moore JW, Guimar{\~a}es~Jr PR, de~Aguiar MAM, 2014 {Synchronisation
+  and stability in river metapopulation networks}.
+\newblock \emph{Ecol. Lett.} \textbf{17}, 273--283
+
+\bibitem{GuckHolmes}
+Guckenheimer J, Holmes P, 1983 \emph{{Nonlinear Oscillations, Dynamical
+  Systems, and Bifurcations of Vector Fields}}.
+\newblock New York: Springer
+
+\bibitem{AleksandrovichKuznetsov:1995p2580}
+Kuznetsov Y, 1998 \emph{{Elements of Applied Bifurcation Theory}}.
+\newblock New York: Springer
+
+\bibitem{Carlson:2008hl}
+Carlson SM, Seamons TR, 2008 {A review of quantitative genetic components of
+  fitness in salmonids: implications for adaptation to future change}.
+\newblock \emph{Evol Appl} \textbf{1}, 222--238
+
+\bibitem{Scheffer:2009gg}
+Scheffer M, Bascompte J, Brock WA, Brovkin V, Carpenter SR, Dakos V, Held H,
+  van Nes EH, Rietkerk M, Sugihara G, 2009 {Early-warning signals for critical
+  transitions}.
+\newblock \emph{Nature} \textbf{461}, 53--59
+
+\bibitem{Lade:2012eu}
+Lade SJ, Gross T, 2012 {Early warning signals for critical transitions: A
+  generalized modeling approach}.
+\newblock \emph{PLoS Comp. Biol.} \textbf{8}, e1002360
+
+\bibitem{Anonymous:2013br}
+Boettiger C, Ross N, Hastings A, 2013 {Early warning signals: the charted and
+  uncharted territories}.
+\newblock \emph{Theor. Ecol.} \textbf{6}, 255--264
+
+\bibitem{Dakos:2014br}
+Dakos V, Bascompte J, 2014 {Critical slowing down as early warning for the
+  onset of collapse in mutualistic communities}.
+\newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{111}, 17546--17551
+
+\bibitem{Krkosek:2014ch}
+Krko{\v s}ek M, Drake JM, 2014 {On signals of phase transitions in salmon
+  population dynamics}.
+\newblock \emph{Proc. Roy. Soc. B} \textbf{281}, 20133221
+
+\bibitem{Kuehn:2010p2591}
+Kuehn C, 2011 {A mathematical framework for critical transitions: bifurcations,
+  fast-slow systems and stochastic dynamics}.
+\newblock \emph{Physica D} \textbf{240}, 1020--1035
+
+\bibitem{Donohue:2013iu}
+Donohue I, Petchey OL, Montoya JM, Jackson AL, McNally L, Viana M, Healy K,
+  Lurgi M, O'Connor NE, Emmerson MC, 2013 {On the dimensionality of ecological
+  stability.}
+\newblock \emph{Ecol. Lett.} \textbf{16}, 421--429
+
+\bibitem{Secor:2009ena}
+Secor DH, Kerr LA, Cadrin SX, 2009 {Connectivity effects on productivity,
+  stability, and persistence in a herring metapopulation model}.
+\newblock \emph{ICES J Mar Sci} \textbf{66}, 1726--1732
+
+\bibitem{Christie:2012bj}
+Christie MR, Marine ML, French RA, Blouin MS, 2012 {Genetic adaptation to
+  captivity can occur in a single generation.}
+\newblock \emph{Proc. Natl. Acad. Sci. USA} \textbf{109}, 238--242
+
+\bibitem{Chilcote:2003bb}
+Chilcote MW, 2003 {Relationship between natural productivity and the frequency
+  of wild fish in mixed spawning populations of wild and hatchery steelhead
+  (\emph{Oncorhynchus mykiss})}.
+\newblock \emph{Can. J. Fish. Aquat. Sci.} \textbf{60}, 1057--1067
+
+\bibitem{Araki:2007cm}
+Araki H, Cooper B, Blouin MS, 2007 {Genetic effects of captive breeding cause a
+  rapid, cumulative fitness decline in the wild}.
+\newblock \emph{Science} \textbf{318}, 100--103
+
+\bibitem{Westley:2012ui}
+Westley PAH, { Corinne M Conway}, Fleming IA, 2012 {Phenotypic divergence of
+  exotic fish populations is shaped by spatial proximity and habitat
+  differences across an invaded landscape}.
+\newblock \emph{Evol. Ecol. Res.} \textbf{14}, 147--167
+
+\bibitem{Anderson:2013bf}
+Anderson JH, Faulds PL, Atlas WI, Quinn TP, 2013 {Reproductive success of
+  captively bred and naturally spawned Chinook salmon colonizing newly
+  accessible habitat}.
+\newblock \emph{Evol Appl} \textbf{6}, 165--179
+
+\bibitem{Pess:2014isa}
+Pess GR, Quinn TP, Gephard SR, Saunders R, 2014 {Re-colonization of Atlantic
+  and Pacific rivers by anadromous fishes: linkages between life history and
+  the benefits of barrier removal}.
+\newblock \emph{Rev Fish Biol Fisher} \textbf{24}, 881--900
+
+\bibitem{Ford:2002ip}
+Ford MJ, 2002 {Selection in captivity during supportive breeding may reduce
+  fitness in the wild}.
+\newblock \emph{Conserv Biol} \textbf{16}, 815--825
+
+\bibitem{Liermann:2017gj}
+Liermann M, PESS G, McHenry M, McMillan J, Elofson M, Bennett T, Moses R, 2017
+  {Relocation and recolonization of Coho salmon \emph{Oncorhynchus kisutch} in
+  two tributaries to the elwha river: Implications for management and
+  monitoring}.
+\newblock \emph{T Am Fish Soc} \textbf{17}, 1--39
 
 \end{thebibliography}

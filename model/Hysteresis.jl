@@ -1,5 +1,5 @@
 
-
+using RCall
 using Distributions
 include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
 include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
@@ -7,7 +7,8 @@ include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.
 
 #Analysis over m
 tmax=10000;
-mvec = [collect(0.0:0.001:0.1);collect(0.1:-0.001:0.001)];
+mvec1 = collect(0.0:0.0001:0.1);
+mvec = [mvec1 ; reverse(mvec1)];
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
@@ -22,14 +23,16 @@ pe=zeros(Float64,length(mvec));
 eigs = Array(Array{Complex{Float64}},length(mvec));
 maxeigs = Array{Float64}(length(mvec));
 maximeigs = Array{Float64}(length(mvec));
+mineigs = Array{Float64}(length(mvec));
+minimeigs = Array{Float64}(length(mvec));
 
 z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=8;
-tau=0.5;
-h=0.5;
+thetadiff=6;
+tau=1;
+h=0.7;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -41,13 +44,17 @@ burnin=0.80
   
   if i == 1
       n0 = [2,2];
+    #   x0 = [theta1 + rand(Normal(0,0.0001)),(theta1 + thetadiff)  + rand(Normal(0,0.0001))];
+    x0 = [theta1 ,(theta1 + thetadiff)];
   else
       n0 = [n1mean[i-1],n2mean[i-1]];
+      x0 = [x1mean[i-1],x2mean[i-1]];
   end
   
   n1, n2, x1, x2, w1, w2 = 
   KevinEvolveSS(
     n0,
+    x0,
     tmax,
     z,
     rmax,
@@ -78,18 +85,21 @@ burnin=0.80
   aggmean[i] = mean(n1trim+n2trim);
   aggsd[i] = std(n1trim+n2trim);
 
-  x1mean[i] = theta1-mean(x1trim);
-  x2mean[i] = (theta1+thetadiff)-mean(x2trim);
+  x1mean[i] = mean(x1trim);
+  x2mean[i] = mean(x2trim);
   
   # #Calculate the Jacobian
-  # Jac = KevinJacobian(mean(n1trim),mean(n2trim),mean(x1trim),mean(x2trim),
-  # z,rmax,beta,theta1,thetadiff,tau,sigma,m)
-  # eigs[i]=eigvals(Jac)
-  # 
-  # re = real(eigs[i]);
-  # im = imag(eigs[i]);
-  # maxeigs[i] = maximum(re);
-  # maximeigs[i] = maximum(im);
+  #Calculate the Jacobian
+  Jac = KevinJacobian(mean(n1trim),mean(n2trim),mean(x1trim),mean(x2trim),
+  z,rmax,beta,theta1,thetadiff,tau,h,sigmaE,sigmaG,m)
+  eigs[i]=eigvals(Jac)
+  
+  re = real(eigs[i]);
+  im = imag(eigs[i]);
+  maxeigs[i] = maximum(re);
+  mineigs[i] = minimum(re);
+  maximeigs[i] = maximum(im);
+  minimeigs[i] = minimum(im);
   
   # pe[i] = (mean([std(n1trim),std(n2trim)])/mean([mean(n1trim),mean(n2trim)])) *
   # (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
@@ -103,13 +113,39 @@ namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/fi
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
-pdf($namespace,height=5,width=6)
-plot($(mvec[1:midpoint]),$(n1mean[1:midpoint]),col=cols[1],xlab="Straying rate m",ylab="Steady state biomass",ylim=c(1,1000),type='l')
+#pdf($namespace,height=5,width=6)
+plot($(mvec[1:midpoint]),$(n1mean[1:midpoint]),col=cols[1],xlab="Straying rate m",ylab="Steady state biomass",ylim=c(1,1500),type='l')
 lines($(mvec[1:midpoint]),$(n2mean[1:midpoint]),col=cols[2])
 lines($(mvec[midpoint+1:length(mvec)]),$(n1mean[midpoint+1:length(n1mean)]),col=cols[1],lty=2)
 lines($(mvec[midpoint+1:length(mvec)]),$(n2mean[midpoint+1:length(n2mean)]),col=cols[2],lty=2)
 types = c('Increasing m','Decreasing m')
-legend(x=0.065,y=1000,legend=types,col='black',lty=c(1,2),xpd=TRUE,cex=0.9, bty="n")
-dev.off()
+legend(x=0.15,y=1500,legend=types,col='black',lty=c(1,2),xpd=TRUE,cex=0.9, bty="n")
+#dev.off()
 """
 
+
+
+reigs = Array{Float64}(length(mvec),4);
+for i=1:length(mvec)
+    reigs[i,1] = real(eigs[i][1]);
+    reigs[i,2] = real(eigs[i][2]);
+    reigs[i,3] = real(eigs[i][3]);
+    reigs[i,4] = real(eigs[i][4]);
+end
+#Plot Jacobian Eigenvalues
+# namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_eigs.pdf");
+R"""
+library(RColorBrewer)
+cols = brewer.pal(3,'Set1')
+#pdf($namespace,height=8,width=5)
+par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
+plot($mvec,$n1mean,pch='.',col='black',cex=0.5,xlab='Straying rate m',ylab='Steady state biomass')
+points($mvec,$n2mean,pch='.',col='black',cex=0.5)
+
+plot($(mvec),$(reigs[:,1]),ylim=c(0,1),col='black',pch='.',cex=0.5,xlab='Straying rate m',ylab='Re[Jacobian eigenvalue]')
+points($(mvec),$(reigs[:,2]),col='black',pch='.',cex=0.5)
+points($(mvec),$(reigs[:,3]),col='black',pch='.',cex=0.5)
+points($(mvec),$(reigs[:,4]),col='black',pch='.',cex=0.5)
+lines(seq(-1,1,0.1),rep(1,21))
+#dev.off()
+"""
