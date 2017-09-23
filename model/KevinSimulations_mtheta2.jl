@@ -477,7 +477,7 @@ dev.off()
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/FinalDraft_rev/fig_mtheta_rt.pdf");
 R"""
 library(RColorBrewer)
-library(shape)
+#library(shape)
 pal = brewer.pal(9,'Greys')
 pdf($namespace,height=4,width=5)
 palsub = pal[c(4,6,8)];
@@ -488,7 +488,7 @@ lines($mvec2,$(ma_rth[:,3]),col=palsub[3],cex=0.5,lwd=2)
 arrows(0.122,2800,0.122,1800,length=0.05,angle=40,lwd=3)
 types = c('subordinate extinct','dominant extinct','near-collapse')
 legend(x=0.14,y=8000,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=0.9, bty="n") #,title=expression(paste(Delta,theta))
-text(0.122,4000,'PFB')
+text(0.122,4000,'DCB')
 text(0.034,90,'*',cex=2)
 dev.off()
 """

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 SEP 2017 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 SEP 2017 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,21 +351,21 @@ Overfull \vbox (2.63571pt too high) has occurred while \output is active []
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./ucsealnew.pdf>] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 120--124
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 140--142
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
  []
 
-[5] [6] [7] [8]
+[6] [7] [8]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ˜ in font ptmr7t!
@@ -373,14 +373,13 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
  [9]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 259.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 260.
 
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 259.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 260.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ˜ in font ptmr7t!
@@ -402,11 +401,10 @@ Missing character: There is no ˜ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-
 <signature.jpg, id=52, 485.815pt x 225.84375pt>
 File: signature.jpg Graphic file (type jpg)
  <use signature.jpg>
-Package pdftex.def Info: signature.jpg used on input line 273.
+Package pdftex.def Info: signature.jpg used on input line 274.
 (pdftex.def)             Requested size: 97.16127pt x 45.16794pt.
  [10]
 [11 <./signature.jpg>] (./ReviewResponses.aux) ) 
@@ -427,7 +425,7 @@ blic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw
 /symbol/usyr.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb
 8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ReviewResponses.pdf (11 pages, 313562 bytes).
+Output written on ReviewResponses.pdf (11 pages, 313899 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
