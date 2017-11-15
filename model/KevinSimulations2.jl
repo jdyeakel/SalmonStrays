@@ -61,7 +61,7 @@ eigvals(Jac)
 
 #Analysis over m
 tmax=10000;
-mvec = collect(0.0:0.0001:0.5);
+mvec = collect(0.0:0.001:0.5);
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
@@ -81,9 +81,9 @@ z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=4;
+thetadiff=3;
 tau=1.0;
-h=0.5;
+h=0.2;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -146,6 +146,11 @@ burnin=0.80
 end
 
 R"""
+plot($mvec,$n1mean,pch='.',xlab="Stray rate",ylab="Steady state",cex=0.5)
+points($mvec,$n2mean,pch='.',cex=0.5)
+"""
+
+R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
 plot($mvec,$n1mean,pch='.',col=cols[1],xlab="Stray rate",ylab="Steady state",cex=0.5)
@@ -153,12 +158,13 @@ points($mvec,$n2mean,pch='.',col=cols[2],cex=0.5)
 """
 
 
+
 #Steady state plot
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft_rev/fig_traj.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(4,'Set1')
-pdf($namespace,height=8,width=5)
+#pdf($namespace,height=8,width=5)
 par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
 plot($mvec,$n1mean,pch='.',col=cols[4],xlab="Straying rate m",ylab="Steady state biomass",cex=0.5,ylim=c(0,max($n1mean)),las=1)
 points($mvec,$n2mean,pch='.',col=cols[4],cex=0.5)
@@ -170,7 +176,7 @@ points($mvec,$x2mean,pch=".",col=cols[2])
 arrows($(mvec[indmax(pe)]),3.4,$(mvec[indmax(pe)]),2.5,length=0.05,angle=40,lwd=3)
 text($(mvec[indmax(pe)]),4,'DCB')
 text(par('usr')[1]-0.09,5,'(b)', xpd=TRUE)
-dev.off()
+#dev.off()
 """
 
 #Trait offset plot
