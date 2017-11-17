@@ -1,12 +1,9 @@
 #Figure 5
 
 
-using Distributions
-using RCall
-using HDF5
-using JLD
+@everywhere using Distributions, RCall, JLD, HDF5
 
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/movingaverage.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/movingaverage.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_ddm.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
@@ -16,7 +13,7 @@ include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/movingaverage.
 # Figure 5
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
+mvec=collect(0.0:0.001:0.3);
 hvec = collect(0.0:0.01:1.0);
 
 
@@ -75,11 +72,11 @@ perror=0.01;
       (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
     end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
+mvec=collect(0.0:0.001:0.3);
 hvec = collect(0.0:0.01:1.0);
 
 
@@ -138,12 +135,12 @@ perror=0.01;
     (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta3.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta3.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
+mvec=collect(0.0:0.001:0.3);
 hvec = collect(0.0:0.01:1.0);
 
 
@@ -201,11 +198,11 @@ perror=0.01;
     (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta8.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
 #Analysis over m & theta divergence
-indmvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.3);
 hvec = collect(0.0:0.01:1.0);
 
 
@@ -265,12 +262,12 @@ perror=0.01;
     (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 #THETADIFF = 3
 
 #Analysis over m & theta divergence
-indmvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.3);
 hvec = collect(0.0:0.01:1.0);
 
 
@@ -331,11 +328,11 @@ perror=0.01;
     (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta3_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta3_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
 #Analysis over m & theta divergence
-indmvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.3);
 hvec = collect(0.0:0.01:1.0);
 
 
@@ -396,18 +393,18 @@ perror=0.01;
     (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta8_ddm.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe);
 
 
 ######################
 #LOAD AND BUILD FIGURE
 ######################
 
-mvec=collect(0.0:0.001:0.45);
-sigmavec = collect(0.1:0.1:3.0);
+mvec=collect(0.0:0.001:0.3);
+# sigmavec = collect(0.1:0.1:3.0);
 hvec = collect(0.0:0.01:1.0);
 #Import constant m version
-d_m = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m.jld"));
+d_m = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m.jld"));
 #This loads the dictionary
 n1mean_m = d_m["n1mean"];
 n2mean_m = d_m["n2mean"];
@@ -417,7 +414,7 @@ pe_m = d_m["pe"];
 pena_m = pe_m;
 pena_m[find(x->x==true,isnan(pe_m))] = 1;
 
-d_m3 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta3.jld"));
+d_m3 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta3.jld"));
 #This loads the dictionary
 n1mean_m3 = d_m3["n1mean"];
 n2mean_m3 = d_m3["n2mean"];
@@ -428,7 +425,7 @@ pena_m3 = pe_m3;
 pena_m3[find(x->x==true,isnan(pe_m3))] = 1;
 
 
-d_m8 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8.jld"));
+d_m8 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta8.jld"));
 #This loads the dictionary
 n1mean_m8 = d_m8["n1mean"];
 n2mean_m8 = d_m8["n2mean"];
@@ -441,9 +438,9 @@ pena_m8[find(x->x==true,isnan(pe_m8))] = 1;
 
 
 #Analysis over m & theta divergence
-indmvec=collect(0.0:0.001:0.45);
+indmvec=collect(0.0:0.001:0.3);
 C=1000;
-d_ddm = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_ddm.jld"));
+d_ddm = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_ddm.jld"));
 #This loads the dictionary
 n1mean_ddm = d_ddm["n1mean"];
 n2mean_ddm = d_ddm["n2mean"];
@@ -453,7 +450,7 @@ pe_ddm = d_ddm["pe"];
 pena_ddm = pe_ddm;
 pena_ddm[find(x->x==true,isnan(pe_ddm))] = 1;
 
-d_ddm3 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta3_ddm.jld"));
+d_ddm3 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta3_ddm.jld"));
 #This loads the dictionary
 n1mean_ddm3 = d_ddm3["n1mean"];
 n2mean_ddm3 = d_ddm3["n2mean"];
@@ -464,7 +461,7 @@ pena_ddm3 = pe_ddm3;
 pena_ddm3[find(x->x==true,isnan(pe_ddm3))] = 1;
 
 
-d_ddm8 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m_theta8_ddm.jld"));
+d_ddm8 = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m_theta8_ddm.jld"));
 #This loads the dictionary
 n1mean_ddm8 = d_ddm8["n1mean"];
 n2mean_ddm8 = d_ddm8["n2mean"];
@@ -612,15 +609,15 @@ mddmlist = collect(1:10:length(ma_medpe5_ddm));
 #lines($(ma_mvecsmooth),$(ma_medpe8smooth),col=pal[3],lwd=3)
 #lines($(ma_mvecsmooth),$(ma_medpe3smooth),col=pal[1],lwd=3)
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/FinalDraft_rev/fig_thetaPEmvm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/FinalDraft3/fig_thetaPEmvm.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,'Set1')
 pdf($namespace,height=8,width=5)
 par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
 plot($(ma_mvecsmooth),$(ma_medpe5smooth),col=pal[2],type='l',ylim=c(1,max($([ma_medpe3[mlist] ma_medpe5[mlist] ma_medpe8[mlist]]))),xlab='m, m*',ylab='PE',lwd=3,las=1)
-arrows(0.053,2.48,0.053,2.35,length=0.05,angle=40,lwd=3)
-text(0.053,2.55,'DCB')
+arrows(0.053,3.18,0.053,3.00,length=0.05,angle=40,lwd=3)
+text(0.053,3.32,'DCB')
 
 points($(ma_medindm5max[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=16,cex=0.8)
 points($(ma_medindm5min[mddmlist]),$(ma_medpe5_ddm[mddmlist]),col=pal[2],pch=16,cex=0.8)
@@ -629,7 +626,7 @@ for (i in 1:l) {
   segments($(ma_medindm5max[mddmlist])[i],$(ma_medpe5_ddm[mddmlist])[i],$(ma_medindm5min[mddmlist])[i],$(ma_medpe5_ddm[mddmlist])[i],col=paste(pal[2],'60',sep=''))
 }
 xleft<-0.0;xright<-0.45;ybottom<-1;ytop<-3;
-text(-0.09,2.65,'(a)', xpd=TRUE)
+text(-0.05,3.4,'(a)', xpd=TRUE)
 
 plot($(ma_mvecsmooth),$(ma_medpe5smooth),col=pal[2],type='l',ylim=c(1,max($([ma_medpe3[mlist] ma_medpe5[mlist] ma_medpe8[mlist]]))),xlab='m, m*',ylab='PE',lwd=3,las=1)
 lines($(ma_mvecsmooth),$(ma_medpe8smooth),col=pal[3],lwd=3)
@@ -647,8 +644,8 @@ for (i in 1:l) {
   segments($(ma_medindm5max[mddmlist])[i],$(ma_medpe5_ddm[mddmlist])[i],$(ma_medindm5min[mddmlist])[i],$(ma_medpe5_ddm[mddmlist])[i],col=paste(pal[2],'60',sep=''))
   segments($(ma_medindm8max[mddmlist])[i],$(ma_medpe8_ddm[mddmlist])[i],$(ma_medindm8min[mddmlist])[i],$(ma_medpe8_ddm[mddmlist])[i],col=paste(pal[3],'60',sep=''))
 }
-text(-0.09,2.65,'(b)', xpd=TRUE)
-legend(x=0.41,y=2.6,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal,cex=0.8, bty="n",title=expression(paste(Delta,theta)))
+text(-0.05,3.4,'(b)', xpd=TRUE)
+legend(x=0.27,y=3.35,legend=c(3,5,8),col=pal,pch=22,xpd=TRUE,pt.bg=pal,cex=0.8, bty="n",title=expression(paste(Delta,theta)))
 dev.off()
 """
 

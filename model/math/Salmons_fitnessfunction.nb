@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    523283,       8756]
-NotebookOptionsPosition[    522392,       8723]
-NotebookOutlinePosition[    522782,       8740]
-CellTagsIndexPosition[    522739,       8737]
+NotebookDataLength[    525658,       8838]
+NotebookOptionsPosition[    524537,       8797]
+NotebookOutlinePosition[    524929,       8814]
+CellTagsIndexPosition[    524886,       8811]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -229,6 +229,26 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.719714603202016*^9, 3.7197146422179947`*^9}, {
+  3.71971469048664*^9, 3.719714695728414*^9}, {3.719728377455017*^9, 
+  3.719728396411229*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\[Theta]", "-", 
+   RowBox[{"w1", " ", "\[Mu]1"}], "-", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "w1"}], ")"}], " ", "\[Mu]2"}]}], 
+  RowBox[{
+   SuperscriptBox["\[Sigma]", "2"], "+", 
+   SuperscriptBox["\[Tau]", "2"]}]]], "Output",
+ CellChangeTimes->{3.719728390596644*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{"meanFit1", "=", 
   RowBox[{"FullSimplify", "[", 
@@ -327,6 +347,60 @@ Cell[BoxData[
    SuperscriptBox["\[Tau]", "2"]}]]], "Output",
  CellChangeTimes->{{3.719669516404934*^9, 3.7196695407979097`*^9}, 
    3.719671938539032*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "What", " ", "we", " ", "need", " ", "to", " ", "use", " ", "instead"}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"Log", "[", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"-", 
+          FractionBox[
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"\[Theta]", "-", "\[Mu]"}], ")"}], "2"], 
+           RowBox[{"2", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox["\[Sigma]", "2"], "+", 
+              SuperscriptBox["\[Tau]", "2"]}], ")"}]}]]}]], " ", "\[Tau]", 
+        " ", "rmax"}], 
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["\[Tau]", "2"], "+", 
+         SuperscriptBox["\[Sigma]", "2"]}]]], "]"}], ",", "\[Mu]"}], "]"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{"\[Mu]", "->", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"w1", "*", "\[Mu]1"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", "w1"}], ")"}], "*", "\[Mu]2"}]}], ")"}]}], 
+    "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.71972839952188*^9, 3.719728406930765*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\[Theta]", "-", 
+   RowBox[{"w1", " ", "\[Mu]1"}], "-", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "w1"}], ")"}], " ", "\[Mu]2"}]}], 
+  RowBox[{
+   SuperscriptBox["\[Sigma]", "2"], "+", 
+   SuperscriptBox["\[Tau]", "2"]}]]], "Output",
+ CellChangeTimes->{3.7197284088584747`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8722,7 +8796,7 @@ bynidw6PU0N1xLIst23bbuu6/ldOw12zBYm4+wNebRNh\
 }, Open  ]]
 },
 WindowSize->{1282, 930},
-WindowMargins->{{15, Automatic}, {4, Automatic}},
+WindowMargins->{{119, Automatic}, {Automatic, 19}},
 Magnification:>1.25 Inherited,
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
 21, 2016)",
@@ -8747,15 +8821,23 @@ Cell[6088, 191, 989, 30, 98, "Output"]
 }, Open  ]],
 Cell[7092, 224, 154, 3, 39, "Input"],
 Cell[CellGroupData[{
-Cell[7271, 231, 2309, 65, 211, "Input"],
-Cell[9583, 298, 461, 14, 56, "Output"],
-Cell[10047, 314, 461, 14, 90, "Output"]
+Cell[7271, 231, 210, 3, 66, "Input"],
+Cell[7484, 236, 326, 10, 56, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10545, 333, 3234, 82, 274, "Input"],
-Cell[13782, 417, 254437, 4151, 302, 153409, 2493, "CachedBoxData", "BoxData", \
+Cell[7847, 251, 2309, 65, 211, "Input"],
+Cell[10159, 318, 461, 14, 56, "Output"],
+Cell[10623, 334, 461, 14, 56, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11121, 353, 1201, 37, 139, "Input"],
+Cell[12325, 392, 328, 10, 56, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12690, 407, 3234, 82, 274, "Input"],
+Cell[15927, 491, 254437, 4151, 302, 153409, 2493, "CachedBoxData", "BoxData", \
 "Output"],
-Cell[268222, 4570, 254154, 4150, 302, 154108, 2508, "CachedBoxData", \
+Cell[270367, 4644, 254154, 4150, 302, 154108, 2508, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]]
 }

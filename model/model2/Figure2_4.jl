@@ -1,19 +1,22 @@
 #Figure 2
 #Figure 4
 
-using Distributions
-using RCall
-using HDF5
-using JLD
+@everywhere using Distributions
+@everywhere using RCall
+@everywhere using HDF5
+@everywhere using JLD
 
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveExtinct.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/timeSS.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
 
 
+
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.45);
-hvec = collect(0.0:0.01:1.0);
+mvec=collect(0.0:0.001:0.3);
+hvec = collect(0.0:0.005:1.0);
 
 
 n1mean=SharedArray(Float64,length(hvec),length(mvec));
@@ -34,10 +37,14 @@ z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=5.0;
+thetadiff=4.0;
 tau=1.0;
 sigmaE=0;
 sigmaG=1;
+
+extpop="both";
+refuge=0.01;
+t_ext = Int64(round(tmax/2));
 
 perror=0.01;
 
@@ -115,17 +122,20 @@ perror=0.01;
       
     end
 end
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"n1meanE",n1meanE,"n2meanE",n2meanE,"x1meanE",x1meanE,"x2meanE",x2meanE,"peE",peE,"rtE",rtE);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"n1meanE",n1meanE,"n2meanE",n2meanE,"x1meanE",x1meanE,"x2meanE",x2meanE,"peE",peE,"rtE",rtE);
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_sig_h_m.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_sig_h_m.jld"));
 #This loads the dictionary
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
 x1mean = d["x1mean"];
 x2mean = d["x2mean"];
 pe = d["pe"];
-pe_Ext = d["peE"];
-rt_Ext = d["rtE"]
+peE = d["peE"];
+rtE = d["rtE"];
+
+rt_ext = rtE;
+pe_ext = peE;
 
 bifvalue = bifdet(
 n1mean,
@@ -135,37 +145,37 @@ hvec
 );
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_MDPE_hm.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_MDPE_hm.pdf");
 R"""
 library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=10)
 par(mfrow=c(1,4))
 image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
-points($(bifvalue),type='l',cex=1)
+#points($(bifvalue),type='l',cex=1)
 text(par('usr')[1]-0.12,1.05,'(a)', xpd=TRUE)
 image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
-points($(bifvalue),type='l',cex=1)
+#points($(bifvalue),type='l',cex=1)
 text(par('usr')[1]-0.12,1.05,'(b)', xpd=TRUE)
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
-points($(bifvalue),type='l',cex=1)
+#points($(bifvalue),type='l',cex=1)
 text(par('usr')[1]-0.12,1.05,'(c)', xpd=TRUE)
-plot($(rt_ext[1:50,:]),$(pe_ext[1:50,:]),log='x',ylim=c(1,3),xlim=c(18,300),pch='.',xlab='Recovery time',ylab='PE',las=1)
+plot($(rt_ext[1:50,:]),$(pe_ext[1:50,:]),log='xy',ylim=c(1,3),xlim=c(18,150),pch='.',xlab='Recovery time',ylab='PE',las=1)
 text(7,3.18,'(d)', xpd=TRUE)
 dev.off()
 """
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_traitdiff.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_traitdiff.pdf");
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
 pdf($namespace,height=4,width=5)
-plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.5),ylab=expression(paste('Phenotypic diversity, ',Delta,mu,'*')),xlab='m',las=1)
+plot($mvec,$(traitdiff[26,:]),type='l',xlim=c(0,0.33),ylab=expression(paste('Phenotypic diversity, ',Delta,mu,'*')),xlab='m',las=1)
 lines($mvec,$(traitdiff[51,:]),type='l')
 lines($mvec,$(traitdiff[76,:]),type='l')
 lines($mvec,$(traitdiff[101,:]),type='l')
-text(rep(0.49,4),$(traitdiff[[26 51 76 101],451]),c('0.25','0.50','0.75','1.00'),cex=0.8)
-text(0.48,2.1,expression(paste(h^2)),cex=0.8)
+text(rep(0.32,4),$(traitdiff[[26 51 76 101],301]),c('0.25','0.50','0.75','1.00'),cex=0.8)
+text(0.315,1.8,expression(paste(h^2)),cex=0.8)
 dev.off()
 """
 

@@ -46,31 +46,74 @@ function KevinEvolve_ddm(
     m1[t] = 1 - (a0 + (1-a0)*(n1[t]/(C+n1[t])));
     m2[t] = 1 - (a0 + (1-a0)*(n2[t]/(C+n2[t])));
     
+    # n1[t+1] = ((1-m1[t])*n1[t] + m2[t]*n2[t])*exp(-z) +
+    # ((rfunc(x1[t],theta1) + rand(pdist))*(n1[t]-m1[t]*n1[t]) +
+    # (rfunc(x2[t],theta1) + rand(pdist))*m2[t]*n2[t]) * 
+    # exp(-beta*((1-m1[t])*n1[t]+m2[t]*n2[t]));
+    # 
+    # n2[t+1] = ((1-m2[t])*n2[t] + m1[t]*n1[t])*exp(-z) +
+    # ((rfunc(x2[t],(theta1 + thetadiff)) + rand(pdist))*(n2[t]-m2[t]*n2[t]) +
+    # (rfunc(x1[t],(theta1 + thetadiff)) + rand(pdist))*m1[t]*n1[t]) * 
+    # exp(-beta*((1-m2[t])*n2[t]+m1[t]*n1[t]));
+    # 
+    # w1[t] = (n1[t]-m1[t]*n1[t])/(n1[t]-m1[t]*n1[t]+m2[t]*n2[t]);
+    # 
+    # w2[t] = (n2[t]-m2[t]*n2[t])/(n2[t]-m2[t]*n2[t]+m1[t]*n1[t]);
+    # 
+    # meanfit1[t] = (rmax*w1[t]*(theta1-x1[t])*tau*exp(-((theta1-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))) / 
+    # ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-((theta1-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w1[t])*tau)/
+    # (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-((theta1-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w1[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
+    # 
+    # meanfit2[t] = (rmax*w2[t]*((theta1 + thetadiff)-x2[t])*tau*exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))) / 
+    # ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-(((theta1 + thetadiff)-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w2[t])*tau)/
+    # (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w2[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
+    # 
+    # x1[t+1] = w1[t]*x1[t] + (1-w1[t])*x2[t] + (h)*(( sigmaG^2))*meanfit1[t];
+    # 
+    # x2[t+1] = w2[t]*x2[t] + (1-w2[t])*x1[t] + (h)*(( sigmaG^2))*meanfit2[t];
+    
+    
+    
+    w1[t] = (n1[t]-m1[t]*n1[t])/(n1[t]-m1[t]*n1[t]+m2[t]*n2[t]);
+      
+    w2[t] = (n2[t]-m2[t]*n2[t])/(n2[t]-m2[t]*n2[t]+m1[t]*n1[t]);
+    
+    # n1[t+1] = ((1-m)*n1[t] + m*n2[t])*exp(-z) +
+    # ((rfunc(x1[t],theta1) + rand(pdist))*(n1[t]-m*n1[t]) +
+    # (rfunc(x2[t],theta1) + rand(pdist))*m*n2[t]) * 
+    # exp(-beta*((1-m)*n1[t]+m*n2[t]));
+    # 
+    # n2[t+1] = ((1-m)*n2[t] + m*n1[t])*exp(-z) +
+    # ((rfunc(x2[t],(theta1 + thetadiff)) + rand(pdist))*(n2[t]-m*n2[t]) +
+    # (rfunc(x1[t],(theta1 + thetadiff)) + rand(pdist))*m*n1[t]) * 
+    # exp(-beta*((1-m)*n2[t]+m*n1[t]));
+    
     n1[t+1] = ((1-m1[t])*n1[t] + m2[t]*n2[t])*exp(-z) +
-    ((rfunc(x1[t],theta1) + rand(pdist))*(n1[t]-m1[t]*n1[t]) +
-    (rfunc(x2[t],theta1) + rand(pdist))*m2[t]*n2[t]) * 
+    ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1) + rand(pdist))*((1-m1[t])*n1[t]+m2[t]*n2[t])) * 
     exp(-beta*((1-m1[t])*n1[t]+m2[t]*n2[t]));
     
     n2[t+1] = ((1-m2[t])*n2[t] + m1[t]*n1[t])*exp(-z) +
-    ((rfunc(x2[t],(theta1 + thetadiff)) + rand(pdist))*(n2[t]-m2[t]*n2[t]) +
-    (rfunc(x1[t],(theta1 + thetadiff)) + rand(pdist))*m1[t]*n1[t]) * 
+    ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff)) + rand(pdist))*((1-m2[t])*n2[t]+m1[t]*n1[t])) * 
     exp(-beta*((1-m2[t])*n2[t]+m1[t]*n1[t]));
     
-    w1[t] = (n1[t]-m1[t]*n1[t])/(n1[t]-m1[t]*n1[t]+m2[t]*n2[t]);
+
     
-    w2[t] = (n2[t]-m2[t]*n2[t])/(n2[t]-m2[t]*n2[t]+m1[t]*n1[t]);
+    # meanfit1[t] = (rmax*w1[t]*(theta1-x1[t])*tau*exp(-((theta1-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))) / 
+    # ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-((theta1-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w1[t])*tau)/
+    # (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-((theta1-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w1[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
     
-    meanfit1[t] = (rmax*w1[t]*(theta1-x1[t])*tau*exp(-((theta1-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))) / 
-    ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-((theta1-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w1[t])*tau)/
-    (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-((theta1-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w1[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
+    # meanfit2[t] = (rmax*w2[t]*((theta1 + thetadiff)-x2[t])*tau*exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))) / 
+    # ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-(((theta1 + thetadiff)-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w2[t])*tau)/
+    # (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w2[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
     
-    meanfit2[t] = (rmax*w2[t]*((theta1 + thetadiff)-x2[t])*tau*exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))) / 
-    ((((sigmaE^2 + sigmaG^2) + tau^2)^(3/2))*(((exp(-(((theta1 + thetadiff)-x1[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*(1-w2[t])*tau)/
-    (sqrt((sigmaE^2 + sigmaG^2)+tau^2))) +  ((exp(-(((theta1 + thetadiff)-x2[t])^2)/(2*((sigmaE^2 + sigmaG^2)+tau^2)))*rmax*w2[t]*tau)/(sqrt((sigmaE^2 + sigmaG^2)+tau^2)))));
+    meanfit1[t] = (theta1 - w1[t]*x1[t] - (1 - w1[t])*x2[t])/((sigmaE^2 + sigmaG^2) + tau^2);
+    
+    meanfit2[t] = ((theta1 + thetadiff) - w2[t]*x2[t] - (1 - w2[t])*x1[t])/((sigmaE^2 + sigmaG^2) + tau^2);
     
     x1[t+1] = w1[t]*x1[t] + (1-w1[t])*x2[t] + (h)*(( sigmaG^2))*meanfit1[t];
     
     x2[t+1] = w2[t]*x2[t] + (1-w2[t])*x1[t] + (h)*(( sigmaG^2))*meanfit2[t];
+    
     
   end
   

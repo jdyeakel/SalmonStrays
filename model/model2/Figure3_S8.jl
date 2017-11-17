@@ -1,6 +1,6 @@
 #Figure 3
 #Figure S8
-using Distributions, RCall, JLD, HDF5
+@everywhere using Distributions, RCall, JLD, HDF5
 
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_ddm.jl")
@@ -15,7 +15,7 @@ using Distributions, RCall, JLD, HDF5
 #Analysis over m
 tmax=10000;
 
-mvec = collect(0.0001:0.001:0.5);
+mvec = collect(0.0001:0.001:0.3);
 pvec = ["small","large","both"];
 hvec = [0.2, 0.8]
 reps = 100;
@@ -24,7 +24,7 @@ z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=5;
+thetadiff=4;
 tau=1.0;
 C=1000;
 sigmaE=0;
@@ -125,9 +125,9 @@ m2mean = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
   end
 end
 
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_relax.jld"),"rt",rt,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_relax.jld"),"rt",rt,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean);
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_relax.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_relax.jld"));
 #This loads the dictionary
 rt = d["rt"];
 rt_ddm = d["rt_ddm"];
@@ -137,9 +137,6 @@ m2mean = d["m2mean"];
 
 ma_rth2 = mean([rt[i,:,:,1] for i=1:reps]);
 ma_rth8 = mean([rt[i,:,:,2] for i=1:reps]);
-
-
-
 
 ma_rth2_ddm = mean([rt_ddm[i,:,:,1] for i=1:reps]);
 ma_rth8_ddm = mean([rt_ddm[i,:,:,2] for i=1:reps]);
@@ -151,7 +148,7 @@ ma1_m8_ddm = mean([m1mean[i,:,:,2] for i=1:reps]);
 ma2_m8_ddm = mean([m2mean[i,:,:,2] for i=1:reps]);
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft_rev/fig_relax_lowh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_relax_lowh.pdf");
 R"""
 library(RColorBrewer)
 pdf($namespace,height=4,width=10)
@@ -180,16 +177,16 @@ for (i in 1:length($mvec)) {
 }
 text(-0.072,max($(ma_rth2_ddm)),'(b)', xpd=TRUE)
 types = c('subordinate extinct','dominant extinct','near-collapse')
-legend(x=0.18,y=130,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
-arrows($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),10,$(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),12,length=0.05,angle=40,lwd=3)
-text($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:100,3]),3]),9,'DCB')
+legend(x=0.115,y=130,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+arrows($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),10,$(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),12,length=0.05,angle=40,lwd=3)
+text($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),9,'DCB')
 
 
 dev.off()
 """
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_relax_highh.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_relax_highh.pdf");
 R"""
 library(RColorBrewer)
 pdf($namespace,height=4,width=10)

@@ -142,9 +142,9 @@ dev.off()
 
 
 #Analysis over m & theta divergence
-mvec = collect(0.0001:0.001:0.5);
-thetadiffvec = collect(0.0:0.1:10.0);
-hvec = collect(0.1:0.1:0.9);
+mvec = collect(0.0001:0.001:0.3);
+thetadiffvec = collect(0.0:0.1:6.0);
+hvec = collect(0.1:0.1:0.8);
 reps = 50;
 
 thetadiffarray=SharedArray(Float64,reps,length(thetadiffvec),length(hvec),length(mvec));
@@ -284,9 +284,9 @@ t_ext = Int64(round(tmax/2));
   end
 end
 
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_habitathetero_ext.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"rt",rt,"n1mean_ddm",n1mean_ddm,"n2mean_ddm",n2mean_ddm,"x1mean_ddm",x1mean_ddm,"x2mean_ddm",x2mean_ddm,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean,"pe_ddm",pe_ddm,"thetadiffarray",thetadiffarray);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_habitathetero_ext.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"pe",pe,"rt",rt,"n1mean_ddm",n1mean_ddm,"n2mean_ddm",n2mean_ddm,"x1mean_ddm",x1mean_ddm,"x2mean_ddm",x2mean_ddm,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean,"pe_ddm",pe_ddm,"thetadiffarray",thetadiffarray);
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data2/data_habitathetero_ext.jld"));
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_habitathetero_ext.jld"));
 #This loads the dictionary
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
@@ -322,7 +322,7 @@ for i=1:length(hvec)
   end
 end
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_thetadiffN.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_thetadiffN.pdf");
 R"""
 pdf($namespace,height=4,width=5)
 library(RColorBrewer)
@@ -349,7 +349,7 @@ ma_rt8 = movingaverage(mean([rt[81,i,:] for i=1:5]),window);
 
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs2/fig_relaxtheta2.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_relaxtheta2.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(3,'Set1')
@@ -397,7 +397,7 @@ asymvec = collect(0.0:0.001:0.1);
 
 #Analysis over m
 tmax=10000;
-mvec = collect(0.0:0.001:1);
+mvec = collect(0.0:0.0005:0.5);
 # n1ts = zeros(Float64,length(mvec),tmax);
 # n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=SharedArray(Float64,length(asymvec),length(mvec));
@@ -419,9 +419,9 @@ pe=SharedArray(Float64,length(asymvec),length(mvec));
     rmax=2.0;
     beta=0.001;
     theta1=5.0;
-    thetadiff=4;
+    thetadiff=3.25;
     tau=1.0;
-    h=0.5;
+    h=0.2;
     sigmaE=0;
     sigmaG=1;
     perror=0.01;
@@ -484,12 +484,12 @@ pe=SharedArray(Float64,length(asymvec),length(mvec));
   end
 end
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/figs_asym/fig_density.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_density.pdf");
 R"""
 library(RColorBrewer)
 pdf($namespace,height=5,width=6)
 cols = rev(colorRampPalette(brewer.pal(11, "Spectral"))(length($asymvec)))
-plot($mvec,$(n1mean[length(asymvec),:]),pch=16,col=cols[1],xlab="Stray rate",ylab="Steady state",cex=0.5)
+plot($mvec,$(n1mean[length(asymvec),:]),pch=16,col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",cex=0.5,ylim=c(200,1500))
 points($mvec,$(n2mean[length(asymvec),:]),pch=16,col=cols[1],cex=0.5)
 """
 for a=length(asymvec)-1:-1:1
@@ -499,3 +499,5 @@ for a=length(asymvec)-1:-1:1
     """
 end
 R"dev.off()"
+
+

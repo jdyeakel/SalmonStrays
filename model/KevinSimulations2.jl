@@ -77,11 +77,11 @@ eigs = Array(Array{Complex{Float64}},length(mvec));
 maxeigs = Array{Float64}(length(mvec));
 maximeigs = Array{Float64}(length(mvec));
 
-z=0.5;
+z=10000;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=3;
+thetadiff=2.2;
 tau=1.0;
 h=0.2;
 sigmaE=0;

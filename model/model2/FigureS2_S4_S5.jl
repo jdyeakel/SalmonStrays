@@ -5,16 +5,16 @@ using RCall
 
 
 thetascale = 2;
-m=collect(0:0.01:0.5);
+m=collect(0:0.01:0.3);
 thetadiff=zeros(length(m));
 for i = 1:length(m)
     thetadiff[i] = (1-2*m[i])/(thetascale*m[i])
 end
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft_rev/fig_mthetarelation.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_mthetarelation.pdf");
 R"""
 pdf($namespace,height=5,width=6)
-plot($thetadiff,$m,type='l',ylab='Straying rate m',xlab=expression(paste('Habitat heterogeneity ',Delta,theta)),ylim=c(0,0.5))
+plot($thetadiff,$m,type='l',ylab='Straying rate m',xlab=expression(paste('Habitat heterogeneity ',Delta,theta)),ylim=c(0,0.3),xlim=c(0,10))
 dev.off()
 """
 
@@ -149,15 +149,14 @@ dev.off()
 """
 
 
-using RCall
-using Distributions
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
+@everywhere using RCall, Distributions
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
 
 
 #Analysis over m
 tmax=10000;
-mvec1 = collect(0.0:0.0001:0.15);
+mvec1 = collect(0.0:0.0001:0.2);
 mvec = [mvec1 ; reverse(mvec1)];
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
@@ -170,19 +169,19 @@ aggsd=zeros(Float64,length(mvec));
 x1mean=zeros(Float64,length(mvec));
 x2mean=zeros(Float64,length(mvec));
 pe=zeros(Float64,length(mvec));
-eigs = Array(Array{Complex{Float64}},length(mvec));
-maxeigs = Array{Float64}(length(mvec));
-maximeigs = Array{Float64}(length(mvec));
-mineigs = Array{Float64}(length(mvec));
-minimeigs = Array{Float64}(length(mvec));
+# eigs = Array(Array{Complex{Float64}},length(mvec));
+# maxeigs = Array{Float64}(length(mvec));
+# maximeigs = Array{Float64}(length(mvec));
+# mineigs = Array{Float64}(length(mvec));
+# minimeigs = Array{Float64}(length(mvec));
 
 z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=6;
+thetadiff=3.4;
 tau=1;
-h=0.7;
+h=0.2;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -240,16 +239,16 @@ burnin=0.80
   
   # #Calculate the Jacobian
   #Calculate the Jacobian
-  Jac = KevinJacobian(mean(n1trim),mean(n2trim),mean(x1trim),mean(x2trim),
-  z,rmax,beta,theta1,thetadiff,tau,h,sigmaE,sigmaG,m)
-  eigs[i]=eigvals(Jac)
-  
-  re = real(eigs[i]);
-  im = imag(eigs[i]);
-  maxeigs[i] = maximum(re);
-  mineigs[i] = minimum(re);
-  maximeigs[i] = maximum(im);
-  minimeigs[i] = minimum(im);
+  # Jac = KevinJacobian(mean(n1trim),mean(n2trim),mean(x1trim),mean(x2trim),
+  # z,rmax,beta,theta1,thetadiff,tau,h,sigmaE,sigmaG,m)
+  # eigs[i]=eigvals(Jac)
+  # 
+  # re = real(eigs[i]);
+  # im = imag(eigs[i]);
+  # maxeigs[i] = maximum(re);
+  # mineigs[i] = minimum(re);
+  # maximeigs[i] = maximum(im);
+  # minimeigs[i] = minimum(im);
   
   # pe[i] = (mean([std(n1trim),std(n2trim)])/mean([mean(n1trim),mean(n2trim)])) *
   # (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
@@ -259,7 +258,7 @@ burnin=0.80
   
 end
 midpoint = Int64(floor(length(n1mean)/2));
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft_rev/fig_hysteresis.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_hysteresis.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
