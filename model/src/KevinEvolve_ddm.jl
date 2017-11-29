@@ -88,12 +88,18 @@ function KevinEvolve_ddm(
     # (rfunc(x1[t],(theta1 + thetadiff)) + rand(pdist))*m*n1[t]) * 
     # exp(-beta*((1-m)*n2[t]+m*n1[t]));
     
-    n1[t+1] = ((1-m1[t])*n1[t] + m2[t]*n2[t])*exp(-z) +
-    ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1) + rand(pdist))*((1-m1[t])*n1[t]+m2[t]*n2[t])) * 
+    # n1[t+1] = ((1-m1[t])*n1[t] + m2[t]*n2[t])*exp(-z) +
+    # ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1) + rand(pdist))*((1-m1[t])*n1[t]+m2[t]*n2[t])) * 
+    # exp(-beta*((1-m1[t])*n1[t]+m2[t]*n2[t]));
+    # 
+    # n2[t+1] = ((1-m2[t])*n2[t] + m1[t]*n1[t])*exp(-z) +
+    # ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff)) + rand(pdist))*((1-m2[t])*n2[t]+m1[t]*n1[t])) * 
+    # exp(-beta*((1-m2[t])*n2[t]+m1[t]*n1[t]));
+    
+    n1[t+1] = ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1) + rand(pdist))*((1-m1[t])*n1[t]+m2[t]*n2[t])) * 
     exp(-beta*((1-m1[t])*n1[t]+m2[t]*n2[t]));
     
-    n2[t+1] = ((1-m2[t])*n2[t] + m1[t]*n1[t])*exp(-z) +
-    ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff)) + rand(pdist))*((1-m2[t])*n2[t]+m1[t]*n1[t])) * 
+    n2[t+1] = ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff)) + rand(pdist))*((1-m2[t])*n2[t]+m1[t]*n1[t])) * 
     exp(-beta*((1-m2[t])*n2[t]+m1[t]*n1[t]));
     
 

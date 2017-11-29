@@ -17,8 +17,10 @@ function KevinEvolve_asym(
   rv1 = 0.0;
   rv2 = 0.0;
   if asym > 0.0
-      rv1 = abs(rand(Normal(0,asym)));
-      rv2 = -abs(rand(Normal(0,asym)));
+      # rv1 = abs(rand(Normal(0,asym)));
+      # rv2 = -abs(rand(Normal(0,asym)));
+      rv1 = asym;
+      rv2 = -asym;
   end
   rmax1 = rmax*(1+rv1);
   rmax2 = rmax1*(1+rv2);
@@ -68,12 +70,18 @@ function KevinEvolve_asym(
       # (rfunc(x1[t],(theta1 + thetadiff)) + rand(pdist))*m*n1[t]) * 
       # exp(-beta*((1-m)*n2[t]+m*n1[t]));
       
-      n1[t+1] = ((1-m)*n1[t] + m*n2[t])*exp(-z) +
-      ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1,rmax1) + rand(pdist))*((1-m)*n1[t]+m*n2[t])) * 
+      # n1[t+1] = ((1-m)*n1[t] + m*n2[t])*exp(-z) +
+      # ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1,rmax1) + rand(pdist))*((1-m)*n1[t]+m*n2[t])) * 
+      # exp(-beta1*((1-m)*n1[t]+m*n2[t]));
+      # 
+      # n2[t+1] = ((1-m)*n2[t] + m*n1[t])*exp(-z) +
+      # ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff),rmax2) + rand(pdist))*((1-m)*n2[t]+m*n1[t])) * 
+      # exp(-beta2*((1-m)*n2[t]+m*n1[t]));
+      
+      n1[t+1] = ((rfunc(w1[t]*x1[t] + (1-w1[t])*x2[t],theta1,rmax1) + rand(pdist))*((1-m)*n1[t]+m*n2[t])) * 
       exp(-beta1*((1-m)*n1[t]+m*n2[t]));
       
-      n2[t+1] = ((1-m)*n2[t] + m*n1[t])*exp(-z) +
-      ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff),rmax2) + rand(pdist))*((1-m)*n2[t]+m*n1[t])) * 
+      n2[t+1] = ((rfunc(w2[t]*x2[t] + (1-w2[t])*x1[t],(theta1 + thetadiff),rmax2) + rand(pdist))*((1-m)*n2[t]+m*n1[t])) * 
       exp(-beta2*((1-m)*n2[t]+m*n1[t]));
       
 

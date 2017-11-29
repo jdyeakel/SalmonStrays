@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  16 NOV 2017 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 NOV 2017 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -468,88 +468,88 @@ Package pdftex.def Info: fig_PDF.pdf used on input line 289.
 File: fig_mthetarelation.pdf Graphic file (type pdf)
 
 <use fig_mthetarelation.pdf>
-Package pdftex.def Info: fig_mthetarelation.pdf used on input line 403.
+Package pdftex.def Info: fig_mthetarelation.pdf used on input line 397.
 (pdftex.def)             Requested size: 178.50311pt x 148.75545pt.
  <fig_recovery.pdf, id=90, 433.62pt x 361.35pt>
 File: fig_recovery.pdf Graphic file (type pdf)
 
 <use fig_recovery.pdf>
-Package pdftex.def Info: fig_recovery.pdf used on input line 416.
+Package pdftex.def Info: fig_recovery.pdf used on input line 410.
 (pdftex.def)             Requested size: 178.50311pt x 148.75545pt.
  <fig_eigs.pdf, id=91, 361.35pt x 578.16pt>
 File: fig_eigs.pdf Graphic file (type pdf)
 
 <use fig_eigs.pdf>
-Package pdftex.def Info: fig_eigs.pdf used on input line 428.
+Package pdftex.def Info: fig_eigs.pdf used on input line 422.
 (pdftex.def)             Requested size: 178.50311pt x 285.60342pt.
  <fig_hysteresis.pdf, id=92, 433.62pt x 361.35pt>
 File: fig_hysteresis.pdf Graphic file (type pdf)
 
 <use fig_hysteresis.pdf>
-Package pdftex.def Info: fig_hysteresis.pdf used on input line 441.
+Package pdftex.def Info: fig_hysteresis.pdf used on input line 435.
 (pdftex.def)             Requested size: 178.50311pt x 148.75545pt.
  <fig_relax_large.pdf, id=93, 433.62pt x 578.16pt>
 File: fig_relax_large.pdf Graphic file (type pdf)
 
 <use fig_relax_large.pdf>
-Package pdftex.def Info: fig_relax_large.pdf used on input line 455.
+Package pdftex.def Info: fig_relax_large.pdf used on input line 449.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
  <fig_relax_small.pdf, id=94, 433.62pt x 578.16pt>
 File: fig_relax_small.pdf Graphic file (type pdf)
 
 <use fig_relax_small.pdf>
-Package pdftex.def Info: fig_relax_small.pdf used on input line 469.
+Package pdftex.def Info: fig_relax_small.pdf used on input line 463.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
  <fig_relax_highh.pdf, id=95, 722.7pt x 289.08pt>
 File: fig_relax_highh.pdf Graphic file (type pdf)
 
 <use fig_relax_highh.pdf>
-Package pdftex.def Info: fig_relax_highh.pdf used on input line 484.
+Package pdftex.def Info: fig_relax_highh.pdf used on input line 478.
 (pdftex.def)             Requested size: 458.99689pt x 183.59904pt.
  <fig_thetadiffN.pdf, id=96, 361.35pt x 289.08pt>
 File: fig_thetadiffN.pdf Graphic file (type pdf)
 
 <use fig_thetadiffN.pdf>
-Package pdftex.def Info: fig_thetadiffN.pdf used on input line 498.
+Package pdftex.def Info: fig_thetadiffN.pdf used on input line 492.
 (pdftex.def)             Requested size: 203.99689pt x 163.19817pt.
  <fig_relaxtheta2.pdf, id=97, 722.7pt x 289.08pt>
 File: fig_relaxtheta2.pdf Graphic file (type pdf)
 
 <use fig_relaxtheta2.pdf>
-Package pdftex.def Info: fig_relaxtheta2.pdf used on input line 510.
+Package pdftex.def Info: fig_relaxtheta2.pdf used on input line 504.
 (pdftex.def)             Requested size: 408.00156pt x 163.20258pt.
 
 <fig_MDPE_hm_mtheta_rt.pdf, id=98, 289.08pt x 289.08pt>
 File: fig_MDPE_hm_mtheta_rt.pdf Graphic file (type pdf)
 
 <use fig_MDPE_hm_mtheta_rt.pdf>
-Package pdftex.def Info: fig_MDPE_hm_mtheta_rt.pdf used on input line 525.
+Package pdftex.def Info: fig_MDPE_hm_mtheta_rt.pdf used on input line 519.
 (pdftex.def)             Requested size: 178.50311pt x 178.49992pt.
 
 <fig_relax_inertia.pdf, id=99, 433.62pt x 578.16pt>
 File: fig_relax_inertia.pdf Graphic file (type pdf)
 
 <use fig_relax_inertia.pdf>
-Package pdftex.def Info: fig_relax_inertia.pdf used on input line 538.
+Package pdftex.def Info: fig_relax_inertia.pdf used on input line 532.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
  <fig_relax_mtheta.pdf, id=100, 722.7pt x 289.08pt>
 File: fig_relax_mtheta.pdf Graphic file (type pdf)
 
 <use fig_relax_mtheta.pdf>
-Package pdftex.def Info: fig_relax_mtheta.pdf used on input line 554.
+Package pdftex.def Info: fig_relax_mtheta.pdf used on input line 548.
 (pdftex.def)             Requested size: 408.00156pt x 163.20258pt.
  <fig_asymdensity.pdf, id=101, 433.62pt x 361.35pt>
 File: fig_asymdensity.pdf Graphic file (type pdf)
 
 <use fig_asymdensity.pdf>
-Package pdftex.def Info: fig_asymdensity.pdf used on input line 567.
+Package pdftex.def Info: fig_asymdensity.pdf used on input line 561.
 (pdftex.def)             Requested size: 178.50311pt x 148.75545pt.
 
 <fig_relax_both_lowh.pdf, id=102, 433.62pt x 578.16pt>
 File: fig_relax_both_lowh.pdf Graphic file (type pdf)
 
 <use fig_relax_both_lowh.pdf>
-Package pdftex.def Info: fig_relax_both_lowh.pdf used on input line 583.
+Package pdftex.def Info: fig_relax_both_lowh.pdf used on input line 577.
 (pdftex.def)             Requested size: 178.50311pt x 238.00873pt.
  [10 <./fig_mthetarelation.pdf> <./fig_recovery.pdf>] [11 <./fig_eigs.pdf> <./f
 ig_hysteresis.pdf>] [12 <./fig_relax_large.pdf> <./fig_relax_small.pdf>] [13 <.
@@ -592,7 +592,7 @@ ive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texliv
 e/2016/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on supp.pdf (16 pages, 2420220 bytes).
+Output written on supp.pdf (16 pages, 2160972 bytes).
 PDF statistics:
  295 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams

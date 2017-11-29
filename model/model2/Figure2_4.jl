@@ -33,11 +33,11 @@ peE=SharedArray(Float64,length(hvec),length(mvec));
 rtE=SharedArray(Float64,length(hvec),length(mvec));
 
 tmax=10000;
-z=0.5;
+z=2;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=4.0;
+thetadiff=2.4;
 tau=1.0;
 sigmaE=0;
 sigmaG=1;
@@ -151,16 +151,16 @@ library(RColorBrewer)
 pal = rev(brewer.pal(9,"Blues"))
 pdf($namespace,height=3,width=10)
 par(mfrow=c(1,4))
-image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,3000),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
+image(x=$mvec,y=$hvec,z=t($(n1mean[:,:]))+t($(n2mean[:,:])),zlim=c(0,1000),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
 #points($(bifvalue),type='l',cex=1)
 text(par('usr')[1]-0.12,1.05,'(a)', xpd=TRUE)
-image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,1500),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
+image(x=$mvec,y=$hvec,z=sqrt((t($(n1mean[:,:]))-t($(n2mean[:,:])))^2),zlim=c(0,500),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
 #points($(bifvalue),type='l',cex=1)
 text(par('usr')[1]-0.12,1.05,'(b)', xpd=TRUE)
 image(x=$mvec,y=$hvec,z=t($(pe[:,:])),zlim=c(1,2),col=pal,xlab='m',ylab=expression(paste(h^2)),las=1)
 #points($(bifvalue),type='l',cex=1)
 text(par('usr')[1]-0.12,1.05,'(c)', xpd=TRUE)
-plot($(rt_ext[1:50,:]),$(pe_ext[1:50,:]),log='xy',ylim=c(1,3),xlim=c(18,150),pch='.',xlab='Recovery time',ylab='PE',las=1)
+plot($(rt_ext[1:50,:]),$(pe_ext[1:50,:]),log='xy',ylim=c(1,3),xlim=c(18,300),pch='.',xlab='Recovery time',ylab='PE',las=1,col='#00000025')
 text(7,3.18,'(d)', xpd=TRUE)
 dev.off()
 """
@@ -175,7 +175,6 @@ lines($mvec,$(traitdiff[51,:]),type='l')
 lines($mvec,$(traitdiff[76,:]),type='l')
 lines($mvec,$(traitdiff[101,:]),type='l')
 text(rep(0.32,4),$(traitdiff[[26 51 76 101],301]),c('0.25','0.50','0.75','1.00'),cex=0.8)
-text(0.315,1.8,expression(paste(h^2)),cex=0.8)
+text(0.315,1.0,expression(paste(h^2)),cex=0.8)
 dev.off()
 """
-

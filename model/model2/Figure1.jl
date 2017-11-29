@@ -1,13 +1,13 @@
 #Figure 1
-using Distributions
-using RCall
+@everywhere using Distributions
+@everywhere using RCall
 
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
 
 #Analysis over m
 tmax=10000;
-mvec = collect(0.0:0.001:0.3);
+mvec = collect(0.0:0.0001:0.3);
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
 n1mean=zeros(Float64,length(mvec));
@@ -23,16 +23,16 @@ eigs = Array(Array{Complex{Float64}},length(mvec));
 maxeigs = Array{Float64}(length(mvec));
 maximeigs = Array{Float64}(length(mvec));
 
-z=0.5;
+z=2;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=3.3;
+thetadiff=2.0;
 tau=1.0;
 h=0.2;
 sigmaE=0;
 sigmaG=1;
-perror=0.01;
+perror=0.00;
 
 burnin=0.80
 @time for i=1:length(mvec)
@@ -90,6 +90,7 @@ burnin=0.80
   (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
   
 end
+diffn = n1mean .- n2mean;
 #Steady state plot
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_traj.pdf");
 R"""
@@ -104,9 +105,8 @@ text($(mvec[indmax(pe)]),1375,'DCB')
 text(par('usr')[1]-0.09,1300,'(a)', xpd=TRUE)
 plot($mvec,$x1mean,pch=".",col=cols[1],ylim=c(-5,5),xlab="Straying rate m",ylab="Trait offset",las=1)
 points($mvec,$x2mean,pch=".",col=cols[2])
-arrows($(mvec[indmax(pe)]),3.4,$(mvec[indmax(pe)]),2.5,length=0.05,angle=40,lwd=3)
-text($(mvec[indmax(pe)]),4,'DCB')
+arrows($(mvec[indmax(diffn)]),3.4,$(mvec[indmax(diffn)]),2.5,length=0.05,angle=40,lwd=3)
+text($(mvec[indmax(diffn)]),4,'PB')
 text(par('usr')[1]-0.09,5,'(b)', xpd=TRUE)
 dev.off()
 """
-

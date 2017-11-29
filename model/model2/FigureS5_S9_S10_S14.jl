@@ -415,16 +415,16 @@ pe=SharedArray(Float64,length(asymvec),length(mvec));
 
 @sync @parallel for a=1:length(asymvec)
     asym = asymvec[a];
-    z=0.5;
+    z=2;
     rmax=2.0;
-    beta=0.001;
+    beta=0.01;
     theta1=5.0;
     thetadiff=3.25;
     tau=1.0;
     h=0.2;
     sigmaE=0;
     sigmaG=1;
-    perror=0.01;
+    perror=0.00;
 
     burnin=0.80
     for i=1:length(mvec)
@@ -484,20 +484,20 @@ pe=SharedArray(Float64,length(asymvec),length(mvec));
   end
 end
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_density.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_density2.pdf");
 R"""
 library(RColorBrewer)
 pdf($namespace,height=5,width=6)
 cols = rev(colorRampPalette(brewer.pal(11, "Spectral"))(length($asymvec)))
-plot($mvec,$(n1mean[length(asymvec),:]),pch=16,col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",cex=0.5,ylim=c(200,1500))
-points($mvec,$(n2mean[length(asymvec),:]),pch=16,col=cols[1],cex=0.5)
+plot($mvec,$(n1mean[length(asymvec),:]),pch='.',col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",ylim=c(500,1600))
+points($mvec,$(n2mean[length(asymvec),:]),pch='.',col=cols[1])
+colseq = $(collect(1:10:length(asymvec)));
+legend(x=0.42,y=1620,legend=$(asymvec)[colseq],col=cols[colseq],pch=22,xpd=TRUE,pt.bg=cols[colseq],cex=0.8, bty="n",title=expression(paste(Asymmetry)))
 """
 for a=length(asymvec)-1:-1:1
     R"""
-    points($mvec,$(n1mean[a,:]),pch=16,col=cols[$a],cex=0.5)
-    points($mvec,$(n2mean[a,:]),pch=16,col=cols[$a],cex=0.5)
+    points($mvec,$(n1mean[a,:]),pch='.',col=cols[$a])
+    points($mvec,$(n2mean[a,:]),pch='.',col=cols[$a])
     """
 end
 R"dev.off()"
-
-

@@ -24,9 +24,9 @@ z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=4;
+thetadiff=2.4;
 tau=1.0;
-C=1000;
+C=300;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -158,12 +158,12 @@ par(mfrow=c(1,2),mai = c(0.8, 0.8, 0.1, 0.1))
 plot($mvec,$(ma_rth2[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth2))),las=1)
 lines($mvec,$(ma_rth2[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth2[:,3]),col=palsub[3],cex=0.5,lwd=2)
-text(par('usr')[1]-0.09,max($(ma_rth2)),'(a)', xpd=TRUE)
+text(par('usr')[1]-0.052,max($(ma_rth2)),'(a)', xpd=TRUE)
 arrows($(mvec[indmax(ma_rth2[1:100,1])]),10,$(mvec[indmax(ma_rth2[1:100,1])]),12,length=0.05,angle=40,lwd=3)
-text($(mvec[indmax(ma_rth2[1:100,1])]),9,'DCB')
+text($(mvec[indmax(ma_rth2[1:100,1])]),9,'PB')
 
 
-plot($(ma1_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth2_ddm))),las=1)
+plot($(ma1_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth2))),las=1)
 points($(ma2_m2_ddm[:,1]),$(ma_rth2_ddm[:,1]),col=palsub[1],cex=0.5,pch=16)
 points($(ma1_m2_ddm[:,2]),$(ma_rth2_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma2_m2_ddm[:,2]),$(ma_rth2_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
@@ -175,11 +175,11 @@ for (i in 1:length($mvec)) {
   segments($(ma1_m2_ddm[:,2])[i],$(ma_rth2_ddm[:,2])[i],$(ma2_m2_ddm[:,2])[i],$(ma_rth2_ddm[:,2])[i],col=palsub[2])
   segments($(ma1_m2_ddm[:,3])[i],$(ma_rth2_ddm[:,3])[i],$(ma2_m2_ddm[:,3])[i],$(ma_rth2_ddm[:,3])[i],col=palsub[3])
 }
-text(-0.072,max($(ma_rth2_ddm)),'(b)', xpd=TRUE)
+text(-0.05,max($(ma_rth2)),'(b)', xpd=TRUE)
 types = c('subordinate extinct','dominant extinct','near-collapse')
-legend(x=0.115,y=130,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+legend(x=0.13,y=230,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
 arrows($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),10,$(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),12,length=0.05,angle=40,lwd=3)
-text($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),9,'DCB')
+text($(ma1_m2_ddm[indmax(ma_rth2_ddm[1:200,3]),3]),9,'PB')
 
 
 dev.off()
@@ -194,12 +194,12 @@ pal = brewer.pal(9,'Greys')
 palsub = pal[c(4,6,8)];
 par(mfrow=c(1,2),mai = c(0.8, 0.8, 0.1, 0.1))
 
-plot($mvec,$(ma_rth8[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth8))))
+plot($mvec,$(ma_rth8[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='m',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth8_ddm))))
 lines($mvec,$(ma_rth8[:,2]),col=palsub[2],cex=0.5,lwd=2)
 lines($mvec,$(ma_rth8[:,3]),col=palsub[3],cex=0.5,lwd=2)
-text(par('usr')[1]-0.085,max($(ma_rth8))+500,'(a)', xpd=TRUE)
-types = c('subordinate poulation ext','dominant population ext','near-collapse')
-legend(x=0.2,y=3500,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+text(par('usr')[1]-0.05,max($(ma_rth8))+10,'(a)', xpd=TRUE)
+types = c('subordinate extinct','dominant extinct','near-collapse')
+legend(x=0.15,y=1500,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
 
 
 plot($(ma1_m8_ddm[:,1]),$(ma_rth8_ddm[:,1]),col=palsub[1],log='y',cex=0.5,pch=16,xlab='m*',ylab='Recovery time',ylim=c(min($rt_ddm),max($(ma_rth8_ddm))))
@@ -208,7 +208,7 @@ points($(ma1_m8_ddm[:,2]),$(ma_rth8_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma2_m8_ddm[:,2]),$(ma_rth8_ddm[:,2]),col=palsub[2],cex=0.5,pch=16)
 points($(ma1_m8_ddm[:,3]),$(ma_rth8_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
 points($(ma2_m8_ddm[:,3]),$(ma_rth8_ddm[:,3]),col=palsub[3],cex=0.5,pch=16)
-text(-0.072,max($(ma_rth8_ddm))+150,'(b)', xpd=TRUE)
+text(-0.06,max($(ma_rth8))+150,'(b)', xpd=TRUE)
 #text(0.01,max($(ma_rth8_ddm)),expression(paste(h^2,'=0.8')))
 for (i in 1:length($mvec)) {
   segments($(ma1_m8_ddm[:,1])[i],$(ma_rth8_ddm[:,1])[i],$(ma2_m8_ddm[:,1])[i],$(ma_rth8_ddm[:,1])[i],col=palsub[1])
