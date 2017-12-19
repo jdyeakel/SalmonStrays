@@ -1,12 +1,12 @@
 using RCall
 using Distributions
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
-include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
 
 
 #Analysis over m
 tmax=10000;
-mvec1 = collect(0.0:0.0001:0.15);
+mvec1 = collect(0.0:0.0001:0.5);
 mvec = [mvec1 ; reverse(mvec1)];
 n1ts = zeros(Float64,length(mvec),tmax);
 n2ts = zeros(Float64,length(mvec),tmax);
@@ -29,9 +29,9 @@ z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=6;
+thetadiff=2;
 tau=1;
-h=0.7;
+h=0.2;
 sigmaE=0;
 sigmaG=1;
 perror=0.01;
@@ -108,17 +108,19 @@ burnin=0.80
   
 end
 midpoint = Int64(floor(length(n1mean)/2));
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft_rev/fig_hysteresis.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_traj.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(3,'Set1')
 pdf($namespace,height=5,width=6)
-plot($(mvec[1:midpoint]),$(n1mean[1:midpoint]),col=cols[1],xlab="Straying rate m",ylab="Steady state biomass",ylim=c(1,1500),type='l')
+plot($(mvec[1:midpoint]),$(n1mean[1:midpoint]),col=cols[1],xlab="Straying (m)",ylab="Steady state biomass",xlim=c(0,0.5),ylim=c(1,400),type='l')
 lines($(mvec[1:midpoint]),$(n2mean[1:midpoint]),col=cols[2])
 lines($(mvec[midpoint+1:length(mvec)]),$(n1mean[midpoint+1:length(n1mean)]),col=cols[1],lty=2)
 lines($(mvec[midpoint+1:length(mvec)]),$(n2mean[midpoint+1:length(n2mean)]),col=cols[2],lty=2)
+text(0.04,380,'RII', xpd=TRUE)
+text(0.18,380,'RI', xpd=TRUE)
 types = c('Increasing m','Decreasing m')
-legend(x=0.1,y=1500,legend=types,col='black',lty=c(1,2),xpd=TRUE,cex=0.9, bty="n")
+#legend(x=0.1,y=500,legend=types,col='black',lty=c(1,2),xpd=TRUE,cex=0.9, bty="n")
 dev.off()
 """
 

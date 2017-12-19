@@ -1,0 +1,266 @@
+\documentclass{revtex4}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{anyfontsize}
+
+\usepackage[font={small}]{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+
+\begin{document}
+\title{Supplementary Materials: Eco-evolutionary dynamics, density-dependent dispersal, and collective behavior: implications for salmon metapopulation robustness}
+% \author{
+% Justin D. Yeakel${}^{1,2,*}$, Jean P. Gibert${}^{1}$, Peter A. H. Westley${}^{3}$, \& Jonathan W. Moore${}^{4}$ \\
+% ${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
+% ${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
+% ${}^3$College of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\
+% ${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
+% ${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
+% }
+\maketitle
+
+We aim to understand how straying between populations may affect phenotypic evolution, and how in turn this evolutionary change may lead to changes in ecological dynamics as they unfold. 
+To do so, we build upon Lande's classic formulation of phenotypic evolution \citep{Lande:1976ga}. In what follows, we  
+1) re-derive Lande's phenotypic evolution equation for one population to introduce the reader to the main concepts and assumptions of the framework used, and,
+2) explain how we used this framework for the case of two populations connected by dispersal.
+
+\section*{I. Phenotypic evolution from one to two sites}
+
+\textbf{Trait evolution in one site} To keep track of the evolution of a phenotypic trait $x$ with probability density function $p$ and mean $\overline{x}$ and variance $\sigma^{2}$, we need a few basic ingredients. First, we define the mean fitness,$\overline{W}$ of the population of individuals bearing the trait $x$ as:
+
+\begin{equation}\label{1}
+\overline{W}=\int_{} p(x)W(x)\,dx.
+\end{equation}
+We also define the mean phenotype in the population as  
+
+\begin{equation}\label{2}
+\overline{x}=\int_{} xp(x)\,dx,
+\end{equation}
+and the mean phenotype after selection (but before reproduction), $\overline{x}_{w}$ \cite{Falconer:1967tg}, as:
+
+\begin{equation}\label{3}
+\overline{x}_{w}=\frac{1}{\overline{W}}\int_{} xp(x)W(x)\,dx.
+\end{equation}
+Then, we can assess how the change in the phenotype $x$ occurs over time using
+\begin{equation}\label{4}
+\Delta x=x(t+1)-x(t),
+\end{equation}
+which can be rewritten as:
+\begin{equation}\label{5}
+\Delta x=h^{2}(\overline{x}_{w}-x(t)),
+\end{equation}
+where $h^{2}$ is the heritability of the trait, and the difference $\overline{x}_{w}-x(t)$ is the classical "selection differential"  \cite{Falconer:1967tg,Lande:1976ga}. In other words, \ref{5} is none other that the Breeder's equation. 
+
+To understand how $x$ changes over time, we first need to understand how the mean fitness of the population changes with a change in the mean trait value or $\frac{\partial \overline{W}}{\partial \overline{x}}$ (i.e. the shape of the "adaptive landscape"). Using \ref{1} we have:
+
+\begin{equation}\label{6}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\frac{\partial}{\partial \overline{x}}\int_{} p(x)W(x)\,dx.
+\end{equation}
+Using Leibniz rule we can pass the derivative under the integral sign, 
+\begin{equation}\label{7}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \frac{\partial p(x)}{\partial \overline{x}}W(x)\,dx,
+\end{equation}
+and assuming $p$ is Gaussian (i.e. of the form $\frac{1}{\sqrt{2 \pi \sigma^{2}}} e^{-\frac{1}{2}\frac{(x-\overline{x})^{2}}{\sigma^{2}}} $), we calculate the derivative of $p$ with respect to $\overline{x}$, which leads to:
+
+\begin{equation}\label{8}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \Big[\frac{x-\overline{x}}{\sigma^{2}}\Big] p(x)W(x)\,dx.
+\end{equation}
+We can now expand in \ref{8} to get,
+\begin{equation}\label{9}
+\frac{\partial \overline{W}}{\partial \overline{x}}=
+\frac{1}{\sigma^{2}}\int_{}xp(x)W(x)\,dx-\frac{\overline{x}}{\sigma^{2}}\int_{}p(x)W(x)\,dx,
+\end{equation}
+which making use of equations \ref{1} and \ref{3}, becomes $\frac{\partial \overline{W}}{\partial \overline{x}}=
+\frac{\overline{W}}{\sigma^{2}}\overline{x}_{w}-\frac{\overline{x}}{\sigma^{2}}\overline{W}$, and can be factored as $\frac{\partial \overline{W}}{\partial \overline{x}}=
+\frac{\overline{W}}{\sigma^{2}}(\overline{x}_{w}-\overline{x})$. Using \ref{5}, we can rearrange this expression to obtain an equation that relates the change in the average phenotype from one time step to the next to the amount of heritable variation, $\sigma^{2}h^{2}$, and the adaptive landscape $\frac{\partial \overline{W}}{\partial \overline{x}}$:
+\begin{equation}\label{10}
+\Delta \overline{x}=\frac{\sigma^{2}h^{2}}{\overline{W}}\frac{\partial \overline{W}}{\partial \overline{x}}=\sigma^{2}h^{2}\frac{\partial \ln\overline{W}}{\partial \overline{x}}.
+\end{equation}
+Equation \ref{10} (Lande 1976's equation 7), is a staple of evolutionary biology. It is also possible to use \ref{10} and \ref{4} to write a recurrence relationship that allows to simulating evolutionary change over time in a trait $x$ as:
+\begin{equation}\label{11}
+\overline{x}(t+1)=\overline{x}(t)+\sigma^{2}h^{2}\frac{\partial \ln\overline{W}}{\partial \overline{x}}.
+\end{equation}
+Equation \ref{11} thus assumes the existence of one population with a normally distributed trait in which selection occurs before reproduction, the probability of surviving to reproduce depends on the value of the trait different individuals have, and that the trait is normally distributed after reproduction. \\
+
+\textbf{Expanding the single site approach to two sites linked by dispersal} In what follows we show how Lande's approach can be used to calculate the magnitude of the phenotypic change between two populations with one trait with two different means in each site.
+We will then 1) show why it is not necessarily useful to use the obtained expression in a simulation context, and 2) introduce an approximation that retains the features important for exploring how trait and population dynamics impact each other in the case of dispersing populations. 
+
+We explore the case of two populations that exchange migrants, with a normally distributed trait $x$ that controls recruitment (as explained in the main text), with each population having a different mean, $\mu_{i}$ and $\mu_{j}$, and same variance $\sigma^{2}$. For simplicity, we will focus on a local population $i$ relative to the connected population $j$.
+
+When individuals from population $j$ stray into population $i$, and individuals of population $i$ stray into population $j$, the phenotypic distribution of trait $x$ in population $i$ is a mixture distribution, $p(x)$, of the form:
+
+\begin{equation}\label{12}
+p(x)=\omega_i g(x,\mu_{i})+(1-\omega_i)g(x,\mu_{j}).
+\end{equation}
+where $g(\cdot)$ is the Gaussian probability density function, and $\omega_i$ is the proportion of the mixed population that is composed of individuals local to site $i$ relative to those that have dispersed into site $i$ from site $j$.
+This distribution has a mean $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$. As before, we define the mean fitness as in equation \ref{1}, only that now $p$ is a mixture distribution. Let us use Lande's approach to obtain an expression for the change in the mean phenotype of the mixture distribution from one time step to the next. We thus ask, what is the change in $\overline{W}$ with a change in $\overline{x}$? We can use Lande's approach \cite{Lande:1976ga} to derive equation \ref{7}, replacing $p(x)$ by the mixture (equation \ref{12}) to obtain 
+
+\begin{equation}\label{13}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \frac{\partial (\omega_i g(x,\mu_{i})+(1-\omega_i)g(x,\mu_{j}))}{\partial \overline{x}}W(x)\,dx.
+\end{equation}
+To obtain the derivative of equation \ref{13}, we introduce a change in variables, which is provided by the fact that $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$:
+\begin{equation} \label{14}
+	\begin{cases} 
+		\mu_{i}=\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i}\\
+		\mu_{j}=\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i}\\
+	\end{cases}.
+\end{equation}
+We can thus replace equation \ref{14} into \ref{13},
+\begin{equation}\label{15}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \frac{\partial (\omega_i g(x,\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i})+(1-\omega_i)g(x,\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i}))}{\partial \overline{x}}W(x)\,dx,
+\end{equation} 
+which, after expanding and taking the derivatives with respect to $\overline{x}$ becomes:
+
+\begin{align}\label{16}
+\frac{\partial \overline{W}}{\partial \overline{x}}=&\int_{} \omega_i\Bigg[\frac{x-\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i}}{\omega_i \sigma^{2}}\Bigg] g(x,\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i})W(x)\,dx \\ \nonumber 
+&+ \int_{} (1-\omega_i)\Bigg[\frac{x-\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i}}{(1-\omega_i) \sigma^{2}}\Bigg] g(x,\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i})W(x)\,dx.
+\end{align}
+To simplify notation, at this point we can come back to the original variables $\mu_{i}$ and $\mu_{j}$. We then expand and collect terms to get:
+\begin{align}\label{17}
+\frac{\partial \overline{W}}{\partial \overline{x}}&=\frac{1}{\sigma^{2}}\Bigg[\int_{}xg(x,\mu_{i})W(x)\,dx - \mu_{i}\int_{}g(x,\mu_{i})W(x)\,dx \\ \nonumber 
+&+ \int_{}xg(x,\mu_{j})W(x)\,dx - \mu_{j}\int_{}g(x,\mu_{j})W(x)\,dx\Bigg].
+\end{align}
+Using equations \ref{1} and \ref{3}, we can define the following quantities,
+
+\begin{equation}\label{18}
+\overline{W}_{i}=\int_{} g(x,\mu_{i})W(x)\,dx 
+\end{equation}
+\begin{equation}\label{19}
+\overline{W}_{j}=\int_{} g(x,\mu_{j})W(x)\,dx  
+\end{equation}
+\begin{equation}\label{20}
+\overline{x}_{w,i}=\frac{1}{\overline{W}}\int_{}xg(x,\mu_{i})W(x)\,dx
+\end{equation}
+\begin{equation}\label{21}
+\overline{x}_{w,j}=\frac{1}{\overline{W}}\int_{}xg(x,\mu_{j})W(x)\,dx, 
+\end{equation}
+then replace them into equation \ref{17}:
+\begin{equation}\label{22}
+\begin{aligned}
+\frac{\partial \overline{W}}{\partial \overline{x}} &=\frac{1}{\sigma^{2}}\Big[\overline{x}_{w,i} \overline{W}_{i} - \mu_{i}\overline{W}_{i} + \overline{x}_{w,j} \overline{W}_{j} - \mu_{j}\overline{W}_{j}\Big]  \\ 
+&= \frac{1}{\sigma^{2}}\Big[ \overline{W}_{i}(\overline{x}_{w,i}-\mu_{i}) + \overline{W}_{j}(\overline{x}_{w,j}-\mu_{j})\Big].
+\end{aligned}
+\end{equation}
+Using equation \ref{5} and rearranging terms we get:
+\begin{equation}\label{23}
+\overline{W}_{i}\Delta \mu_{i} + \overline{W}_{j}\Delta\mu_{j} = \sigma^{2}h^{2}\frac{\partial \overline{W}}{\partial \overline{x}} ,
+\end{equation}
+with $\overline{W}=\omega_i\overline{W}_{i}+(1-\omega_i)\overline{W}_{j}$. Equation \ref{23} relates how changes in either $\mu_{i}$ or $\mu_{j}$ lead to changes in fitness, and vice-versa. However, it doesn't tell us anything as to how straying may lead to evolutionary change, or how that may feedback onto ecological dynamics. Because of this, we will once again use the change of variables in \ref{14}, to rewrite \ref{23} as:
+\begin{equation}\label{24}
+\overline{W}_{i}\Big(\frac{\Delta\overline{x}-(1-\omega_i)\Delta\mu_{j}}{\omega_i} \Big)+\overline{W}_{j}\Big(\frac{\Delta\overline{x}-\omega_i\Delta\mu_{i}}{1-\omega_i} \Big)= \sigma^{2}h^{2}\frac{\partial \overline{W}}{\partial \overline{x}}, 
+\end{equation}
+which can be simplified and rearranged to obtain an expression for the change in the mean phenotype of the mixture distribution,
+\begin{equation}\label{25}
+\Delta\overline{x}=\Big[ \sigma^{2}h^{2}\frac{\partial \overline{W}}{\partial \overline{x}} + \Big(\frac{(1-\omega_i)}{\omega_i}\overline{W}_{i}\Delta\mu_{j}+\frac{\omega_i}{1-\omega_i}\overline{W}_{j}\Delta\mu_{i} \Big) \Big] \frac{\omega_i(1-\omega_i)}{(1-\omega_i)\overline{W}_{i}+\omega_i\overline{W}_{j}}.
+\end{equation}
+By multiplying \ref{25} by $\frac{\overline{W}}{\overline{W}}$, we can further rewrite the equation as:
+\begin{equation}\label{26}
+\Delta\overline{x}=\Big[ \sigma^{2}h^{2}\frac{\partial \ln\overline{W}}{\partial \overline{x}} + \frac{1}{\overline{W}}\Big(\frac{(1-\omega_i)}{\omega_i}\overline{W}_{i}\Delta\mu_{j}+\frac{\omega_i}{1-\omega_i}\overline{W}_{j}\Delta\mu_{i} \Big) \Big] \frac{\omega_i(1-\omega_i)\overline{W}}{(1-\omega_i)\overline{W}_{i}+\omega_i\overline{W}_{j}},
+\end{equation}
+which has a similar form to Lande's equation (\ref{10}), but shows the explicit dependence of the change in the mean of the mix on the proportion of straying individuals. A symmetrical expression can be derived for the other site. 
+
+While some understanding can be gained using equation \ref{26}, the expression does not easily allow us to simulate the change in $\overline{x}$ over time because the change in $\mu_{i}$ and $\mu_{j}$ is difficult to track in closed form. Moreover, this equation only holds for the first time step, and as new dispersing individuals arrive and the trait distribution is again updated by the influx of individuals from the other site, the mix becomes a mix of mixes, such that the analytical expressions presented above no longer hold. \\
+
+\textbf{The Gaussian approximation used in the main text}
+The above issue presents us with a tradeoff: we can either track changes in phenotype exactly for a single generation, or we can track changes in phenotype across multiple generations using an approximation. Given that our central goal is to gain an understanding of the feedback between evolutionary and ecological processes in salmon populations with dispersal in explicit space, we simplify the complexities created by phenotypic evolution by assuming that, as new migrants arrive, the mixture distribution can be locally approximated by a Gaussian distribution with a mean equal to that of the mix. Based on this assumption, we can directly use Lande's equation (here equation \ref{10}), without violating the original assumptions that led to its current form. 
+
+The model in the main text thus assumes the existence of a normally distributed trait in each population with means $\mu_{i}$ and $\mu_{j}$. Then straying occurs, and the the populations now have a mixture distribution as in \ref{12}. To keep track of the mean of that mix, we assume the mixture distribution to be Gaussian with mean $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$, which is true whenever straying is low enough, or the two means are not too different from one another. Then selection and reproduction occur at the same time leading to a new generation with a normally distributed trait distribution whose.
+
+In a previous paper by Ronce and Kirkpatrick \citep{Ronce:2001dp}, it was shown that assumptions similar to the ones we make do not qualitatively alter the ecological or evolutionary dynamics observed.
+ 
+
+% \section*{II. Additional Figures}
+\bibliographystyle{prsb}
+% \bibliography{aa_kevin}
+
+\begin{thebibliography}{1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Falconer:1967tg}
+Falconer DS, 1967 \emph{{Introduction to Quantitative Genetics}}.
+\newblock Edinburgh: Oliver and Boyd LTD
+
+\bibitem{Lande:1976ga}
+Lande R, 1976 {Natural selection and random genetic drift in phenotypic
+  evolution}.
+\newblock \emph{Evolution} \textbf{30}, 314--334
+
+\bibitem{Ronce:2001dp}
+Ronce O, Kirkpatrick M, 2001 {When sources become sinks: migrational meltdown
+  in heterogeneous habitats}.
+\newblock \emph{Evolution} \textbf{55}, 1520
+
+\end{thebibliography}
+
+
+\clearpage
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_recovery.pdf}
+\caption{
+Example of the numerical procedure used to estimate recovery time. After a disturbance is introduced, the recovery time is calculated by measuring the point in time where $N_T$ (in black), which is the aggregate of both populations (blue, red), settles to within one standard deviation of the new equilibrium $N_T^*$. 
+} \label{fig:recovery}
+\end{figure}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_density.png}
+\caption{
+Steady-state densities of both populations as a function of $m$: one in a dominant state and one in a subordinate state.
+Steady-states for populations with symmetrical values ($\alpha=0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown with cool tones.
+As the asymmetry among populations between sites increases ($\alpha>0$), their vital rates diverge, such that the maximal growth at sites 1 and 2 is now $r_{\rm max,1}=(1 + \alpha)r_{\rm max,2}$ and $\beta_1=(1+\alpha)\beta_2$ where $\alpha$ is increased from $0$ to $0.1$, thereby increasing the asymmetry in vital rates.
+Steady-states for populations with increasingly asymmetric values ($\alpha\rightarrow 0.1$) for vital rates $r_{\rm max}$ and $\beta$ are shown in warmer tones.
+The lower-density values that appear between $m=0.06$ and $m=0.1$ represent populations that have been trapped in the low-density basins of attraction associated with regime I.
+Increasing the asymmetry in vital rates does not impact the qualitative nature of the dynamics.
+} \label{fig:symmetry}
+\end{figure}
+
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_pevsrt.pdf}
+\caption{
+Comparison of portfolio effects vs. recovery time following the near-collapse of both populations.
+} \label{fig:pevsrt}
+\end{figure}
+
+
+
+
+
+\end{document}

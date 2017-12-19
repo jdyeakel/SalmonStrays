@@ -38,7 +38,7 @@ burnin=0.80
 @time for i=1:length(mvec)
   m=mvec[i];
   
-  n1, n2, x1, x2, w1, w2 = 
+  n1_pre, n2_pre, x1_pre, x2_pre, w1, w2 = 
   KevinEvolve(
     tmax,
     z,
@@ -53,11 +53,25 @@ burnin=0.80
     m,
     perror
     );
-
+    
+    # if n1_pre[tmax-1] < n2_pre[tmax-1]
+        n1 = copy(n2_pre);
+        n2 = copy(n1_pre);
+        x1 = copy(x2_pre);
+        x2 = copy(x1_pre);
+    # else
+    #     n1 = copy(n1_pre);
+    #     n2 = copy(n2_pre);
+    #     x1 = copy(x1_pre);
+    #     x2 = copy(x2_pre);
+    # end
+    
   n1trim = n1[Int64(floor(tmax*burnin)):tmax];
   n2trim = n2[Int64(floor(tmax*burnin)):tmax];
   x1trim = x1[Int64(floor(tmax*burnin)):tmax];
-  x2trim = x2[Int64(floor(tmax*burnin)):tmax]
+  x2trim = x2[Int64(floor(tmax*burnin)):tmax];
+  
+  
   
   n1ts[i,:] = n1;
   n2ts[i,:] = n2;
@@ -92,7 +106,7 @@ burnin=0.80
 end
 diffn = n1mean .- n2mean;
 #Steady state plot
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_traj.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/FinalDraft3/fig_traj.pdf");
 R"""
 library(RColorBrewer)
 cols = brewer.pal(4,'Set1')
@@ -100,9 +114,14 @@ pdf($namespace,height=8,width=5)
 par(mfrow=c(2,1),mai = c(0.8, 0.8, 0.1, 0.1))
 plot($mvec,$n1mean,pch='.',col=cols[4],xlab="Straying rate m",ylab="Steady state biomass",cex=0.5,ylim=c(0,max($n1mean)+200),las=1)
 points($mvec,$n2mean,pch='.',col=cols[4],cex=0.5)
-arrows($(mvec[indmax(pe)]),1300,$(mvec[indmax(pe)]),1200,length=0.05,angle=40,lwd=3)
-text($(mvec[indmax(pe)]),1375,'DCB')
+#arrows($(mvec[indmax(diffn)]),350,$(mvec[indmax(diffn)]),300,length=0.05,angle=40,lwd=3)
+text($(mvec[indmax(diffn)])+0.01,200,'PB')
 text(par('usr')[1]-0.09,1300,'(a)', xpd=TRUE)
+lines(rep($(mvec[indmax(diffn)]),1001),seq(0,1000))
+lines(rep($(mvec[indmax(diffn)])-0.05,1001),seq(0,1000))
+text($(mvec[indmax(diffn)])-0.025,400,'regime I',cex=0.75)
+text($(mvec[indmax(diffn)])+0.025,400,'regime II',cex=0.75)
+
 plot($mvec,$x1mean,pch=".",col=cols[1],ylim=c(-5,5),xlab="Straying rate m",ylab="Trait offset",las=1)
 points($mvec,$x2mean,pch=".",col=cols[2])
 arrows($(mvec[indmax(diffn)]),3.4,$(mvec[indmax(diffn)]),2.5,length=0.05,angle=40,lwd=3)

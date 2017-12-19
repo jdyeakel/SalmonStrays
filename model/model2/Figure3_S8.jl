@@ -15,16 +15,16 @@
 #Analysis over m
 tmax=10000;
 
-mvec = collect(0.0001:0.001:0.3);
+mvec = collect(0.0001:0.001:0.5);
 pvec = ["small","large","both"];
-hvec = [0.2, 0.8]
+hvec = 0.2;
 reps = 100;
 
 z=0.5;
 rmax=2.0;
 beta=0.001;
 theta1=5.0;
-thetadiff=2.4;
+thetadiff=2.0;
 tau=1.0;
 C=300;
 sigmaE=0;
@@ -43,9 +43,12 @@ t_ext = Int64(round(tmax/2));
 
 
 rt = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
+pe = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
+
 rt_ddm = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
 m1mean = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
 m2mean = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
+pe = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
 
 @sync @parallel for r=1:reps
   
@@ -58,7 +61,7 @@ m2mean = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
       
       extpop = pvec[j];
       
-      for k=1:2
+      for k=1:1
         
         h = hvec[k];
         
@@ -82,42 +85,50 @@ m2mean = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
         
         t_ss, relaxtime = timeSS(n1,n2,t_ext);
         
+        n1trim = n1[Int64(floor(tmax*burnin)):tmax-1];
+        n2trim = n2[Int64(floor(tmax*burnin)):tmax-1];
+        
         rt[r,i,j,k] = relaxtime;
         
-
-        #Do the same thing for density-dependent m
+        pe[r,i,j,k] = mean([(std(n1trim)/mean(n1trim)),(std(n2trim)/mean(n2trim))])*
+        (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
+        
+        # 
+        # #Do the same thing for density-dependent m
+        # 
+        # 
+        # n1_ddm, n2_ddm, x1_ddm, x2_ddm, w1_ddm, w2_ddm, m1_ddm, m2_ddm = 
+        # KevinEvolveExtinct_ddm(
+        # tmax, 
+        # z, 
+        # rmax,
+        # beta,
+        # theta1,
+        # thetadiff,
+        # tau,
+        # h,
+        # a0,
+        # C,
+        # sigmaE,
+        # sigmaG,
+        # perror,
+        # extpop,
+        # t_ext,
+        # refuge
+        # )
+        # 
+        # t_ss_ddm, relaxtime_ddm = timeSS(n1_ddm,n2_ddm,t_ext);
+        # 
+        # rt_ddm[r,i,j,k] = relaxtime_ddm;
+        # 
+        # #Steady state stray rate?
+        # m1trim = m1_ddm[Int64(floor(tmax*burnin)):tmax-1];
+        # m2trim = m2_ddm[Int64(floor(tmax*burnin)):tmax-1];
+        # 
+        # m1mean[r,i,j,k] = mean(m1trim);
+        # m2mean[r,i,j,k] = mean(m2trim);
         
         
-        n1_ddm, n2_ddm, x1_ddm, x2_ddm, w1_ddm, w2_ddm, m1_ddm, m2_ddm = 
-        KevinEvolveExtinct_ddm(
-        tmax, 
-        z, 
-        rmax,
-        beta,
-        theta1,
-        thetadiff,
-        tau,
-        h,
-        a0,
-        C,
-        sigmaE,
-        sigmaG,
-        perror,
-        extpop,
-        t_ext,
-        refuge
-        )
-      
-        t_ss_ddm, relaxtime_ddm = timeSS(n1_ddm,n2_ddm,t_ext);
-        
-        rt_ddm[r,i,j,k] = relaxtime_ddm;
-        
-        #Steady state stray rate?
-        m1trim = m1_ddm[Int64(floor(tmax*burnin)):tmax-1];
-        m2trim = m2_ddm[Int64(floor(tmax*burnin)):tmax-1];
-        
-        m1mean[r,i,j,k] = mean(m1trim);
-        m2mean[r,i,j,k] = mean(m2trim);
         
         
       end
@@ -125,10 +136,11 @@ m2mean = SharedArray{Float64}(reps,length(mvec),length(pvec),length(hvec));
   end
 end
 
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_relax.jld"),"rt",rt,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean);
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_relax.jld"),"rt",rt,"rt_ddm",rt_ddm,"m1mean",m1mean,"m2mean",m2mean,"pe",pe);
 
 d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_relax.jld"));
 #This loads the dictionary
+pe = d["pe"];
 rt = d["rt"];
 rt_ddm = d["rt_ddm"];
 m1mean = d["m1mean"];
@@ -136,17 +148,46 @@ m2mean = d["m2mean"];
 
 
 ma_rth2 = mean([rt[i,:,:,1] for i=1:reps]);
-ma_rth8 = mean([rt[i,:,:,2] for i=1:reps]);
+ma_pe = mean([pe[i,:,:,1] for i=1:reps]);
+# ma_rth8 = mean([rt[i,:,:,2] for i=1:reps]);
 
-ma_rth2_ddm = mean([rt_ddm[i,:,:,1] for i=1:reps]);
-ma_rth8_ddm = mean([rt_ddm[i,:,:,2] for i=1:reps]);
+# ma_rth2_ddm = mean([rt_ddm[i,:,:,1] for i=1:reps]);
+# ma_rth8_ddm = mean([rt_ddm[i,:,:,2] for i=1:reps]);
+# 
+# #mean stray rates
+# ma1_m2_ddm = mean([m1mean[i,:,:,1] for i=1:reps]);
+# ma2_m2_ddm = mean([m2mean[i,:,:,1] for i=1:reps]);
+# ma1_m8_ddm = mean([m1mean[i,:,:,2] for i=1:reps]);
+# ma2_m8_ddm = mean([m2mean[i,:,:,2] for i=1:reps]);
 
-#mean stray rates
-ma1_m2_ddm = mean([m1mean[i,:,:,1] for i=1:reps]);
-ma2_m2_ddm = mean([m2mean[i,:,:,1] for i=1:reps]);
-ma1_m8_ddm = mean([m1mean[i,:,:,2] for i=1:reps]);
-ma2_m8_ddm = mean([m2mean[i,:,:,2] for i=1:reps]);
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_mpert.pdf");
+R"""
+library(RColorBrewer)
+pdf($namespace,height=4,width=10)
+pal = brewer.pal(9,'Greys')
+palsub = pal[c(4,6,8)];
+par(mfrow=c(1,2),mai = c(0.8, 0.8, 0.1, 0.1))
+plot($mvec,$(ma_pe[:,1]),col=palsub[1],type='l',cex=0.5,lwd=2,xlab='Straying (m)',ylab='Portfolio effect',las=1,ylim=c(1,max($ma_pe)))
+lines($mvec,$(ma_pe[:,2]),col=palsub[2],cex=0.5,lwd=2)
+lines($mvec,$(ma_pe[:,3]),col=palsub[3],cex=0.5,lwd=2)
+text(par('usr')[1]-0.085,max($(ma_pe)),'(a)', xpd=TRUE)
+text(0.04,max($(ma_pe)),'RI', xpd=TRUE)
+text(0.18,max($(ma_pe)),'RII', xpd=TRUE)
+plot($mvec,$(ma_rth2[:,1]),col=palsub[1],type='l',log='y',cex=0.5,lwd=2,xlab='Straying (m)',ylab='Recovery time',ylim=c(min($rt),max($(ma_rth2))),las=1)
+lines($mvec,$(ma_rth2[:,2]),col=palsub[2],cex=0.5,lwd=2)
+lines($mvec,$(ma_rth2[:,3]),col=palsub[3],cex=0.5,lwd=2)
+text(par('usr')[1]-0.088,max($(ma_rth2)),'(b)', xpd=TRUE)
+text(0.04,max($(ma_rth2)),'RI', xpd=TRUE)
+text(0.18,max($(ma_rth2)),'RII', xpd=TRUE)
+types = c('subordinate extinct','dominant extinct','near-collapse')
+legend(x=0.28,y=530,legend=types,col=palsub,pch=22,xpd=TRUE,pt.bg=palsub,cex=1, bty="n") #,title=expression(paste(Delta,theta))
+dev.off()
+"""
 
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_pevsrt.pdf");
+R"""
+plot($(ma_pe[:,:]),$(ma_rth2[:,:]),pch='.',log='xy')
+"""
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_relax_lowh.pdf");
 R"""

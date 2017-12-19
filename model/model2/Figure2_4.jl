@@ -11,26 +11,26 @@
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/timeSS.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
-
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/movingaverage.jl")
 
 
 #Analysis over m & theta divergence
-mvec=collect(0.0:0.001:0.3);
-hvec = collect(0.0:0.005:1.0);
+mvec=collect(0.0:0.0005:0.3);
+hvec = collect(0.0:0.01:0.5);
 
 
-n1mean=SharedArray(Float64,length(hvec),length(mvec));
-n2mean=SharedArray(Float64,length(hvec),length(mvec));
-x1mean=SharedArray(Float64,length(hvec),length(mvec));
-x2mean=SharedArray(Float64,length(hvec),length(mvec));
-pe=SharedArray(Float64,length(hvec),length(mvec));
+n1mean=SharedArray{Float64}(length(hvec),length(mvec));
+n2mean=SharedArray{Float64}(length(hvec),length(mvec));
+x1mean=SharedArray{Float64}(length(hvec),length(mvec));
+x2mean=SharedArray{Float64}(length(hvec),length(mvec));
+pe=SharedArray{Float64}(length(hvec),length(mvec));
 
-n1meanE=SharedArray(Float64,length(hvec),length(mvec));
-n2meanE=SharedArray(Float64,length(hvec),length(mvec));
-x1meanE=SharedArray(Float64,length(hvec),length(mvec));
-x2meanE=SharedArray(Float64,length(hvec),length(mvec));
-peE=SharedArray(Float64,length(hvec),length(mvec));
-rtE=SharedArray(Float64,length(hvec),length(mvec));
+n1meanE=SharedArray{Float64}(length(hvec),length(mvec));
+n2meanE=SharedArray{Float64}(length(hvec),length(mvec));
+x1meanE=SharedArray{Float64}(length(hvec),length(mvec));
+x2meanE=SharedArray{Float64}(length(hvec),length(mvec));
+peE=SharedArray{Float64}(length(hvec),length(mvec));
+rtE=SharedArray{Float64}(length(hvec),length(mvec));
 
 tmax=10000;
 z=2;
@@ -46,7 +46,7 @@ extpop="both";
 refuge=0.01;
 t_ext = Int64(round(tmax/2));
 
-perror=0.01;
+perror=0.001;
 
 @sync @parallel for k=1:length(hvec)
     
@@ -145,6 +145,19 @@ hvec
 );
 
 
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_pevsrt.pdf");
+R"""
+library(RColorBrewer)
+pal = rev(brewer.pal(9,"Blues"))
+pdf($namespace,height=5,width=5)
+par(mfrow=c(1,1))
+plot($(rt_ext),$(pe_ext),log='xy',ylim=c(1,3),xlim=c(18,300),pch='.',xlab='Recovery time',ylab='Portfolio effect',las=1,col='#00000025')
+text(7,3.18,'(d)', xpd=TRUE)
+dev.off()
+"""
+
+
+
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_MDPE_hm.pdf");
 R"""
 library(RColorBrewer)
@@ -166,6 +179,7 @@ dev.off()
 """
 
 
+
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_traitdiff.pdf");
 traitdiff = abs(-1*(x1mean[:,:]-theta1) - (-1*(x2mean[:,:]-(theta1+thetadiff))));
 R"""
@@ -178,3 +192,26 @@ text(rep(0.32,4),$(traitdiff[[26 51 76 101],301]),c('0.25','0.50','0.75','1.00')
 text(0.315,1.0,expression(paste(h^2)),cex=0.8)
 dev.off()
 """
+
+
+#Which h2 = 0.2
+indh = find(x->x==0.2,hvec)[1];
+pe_ma = movingaverage([mvec peE[indh,:]],10);
+rt_ma = movingaverage([mvec rtE[indh,:]],5);
+
+R"""
+par(mfrow=c(1,3))
+plot($mvec,$(peE[indh,:]),type='l')
+plot($mvec,$(rtE[indh,:]),log='y',type='l')
+plot($(peE[indh,:]),$(rtE[indh,:]),log='y')
+"""
+
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_mpert.pdf");
+R"""
+pdf($namespace,height=4,width=10)
+par(mfrow=c(1,2),mai = c(0.9, 0.9, 0.1, 0.1))
+plot($pe_ma,type='l',xlab='Straying (m)',ylab='Portfolio effect',xlim=c(0,0.3))
+plot($rt_ma,log='y',xlab='Straying (m)',ylab='Recovery time',type='l',xlim=c(0,0.3))
+dev.off()
+"""
+

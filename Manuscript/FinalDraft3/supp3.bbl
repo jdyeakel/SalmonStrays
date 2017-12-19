@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Falconer:1967tg}
+Falconer DS, 1967 \emph{{Introduction to Quantitative Genetics}}.
+\newblock Edinburgh: Oliver and Boyd LTD
+
+\bibitem{Lande:1976ga}
+Lande R, 1976 {Natural selection and random genetic drift in phenotypic
+  evolution}.
+\newblock \emph{Evolution} \textbf{30}, 314--334
+
+\bibitem{Ronce:2001dp}
+Ronce O, Kirkpatrick M, 2001 {When sources become sinks: migrational meltdown
+  in heterogeneous habitats}.
+\newblock \emph{Evolution} \textbf{55}, 1520
+
+\end{thebibliography}

@@ -4,11 +4,11 @@
 using RCall
 
 
-thetascale = 20;
-m=collect(0:0.01:0.5);
-thetadiff=zeros(length(m));
-for i = 1:length(m)
-    thetadiff[i] = (1-2*m[i])/(thetascale*m[i])
+thetascale=20;
+thetadiff=collect(0:0.01:3.0);
+m = zeros(length(thetadiff));
+for i=1:length(thetadiff)
+    m[i] = 1/(2+thetascale*thetadiff[i])
 end
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/Manuscript/FinalDraft3/fig_mthetarelation.pdf");
@@ -17,6 +17,8 @@ pdf($namespace,height=5,width=6)
 plot($thetadiff,$m,type='l',ylab='Straying rate m',xlab=expression(paste('Habitat heterogeneity ',Delta,theta)),ylim=c(0,0.5),xlim=c(0,3))
 dev.off()
 """
+
+
 
 using Distributions
 using RCall
