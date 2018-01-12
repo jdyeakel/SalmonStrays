@@ -1,0 +1,141 @@
+\documentclass[twocolumn,preprintnumbers,amsmath,amssymb,superscriptaddress]{revtex4}
+%\usepackage[pdftex]{graphicx}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{anyfontsize}
+
+
+%\usepackage{epstopdf}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{multirow}
+\usepackage{color}
+%\usepackage{multibox}
+%\usepackage{rotating}
+%\usepackage{lineno}
+%\usepackage[left]{lineno}
+%\usepackage[comma,sort&compress]{natbib}
+%\usepackage{authblk}
+%\usepackage{multicol}
+
+%\bibliographystyle{ieeetr}
+
+
+%\linenumbers
+%\setlength\linenumbersep{3pt}
+
+\begin{document}
+
+
+%\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
+%\title{Community assembly and dynamics by the deconstruction of species interactions}
+\title{Salmon straying description}
+%\author{Justin D. Yeakel${}^{1,2,*}$, Christopher P. Kempes${}^{2}$, \& Sidney Redner${}^{2,3}$ \\ \\
+%${}^1$School of Natural Science, University of California Merced, Merced, CA \\
+%${}^2$The Santa Fe Institute, Santa Fe, NM \\
+%${}^3$Department of Physics, Boston University, Boston MA \\
+%${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
+%}
+
+
+
+\maketitle
+
+
+
+\section*{Model Description}
+
+\noindent {\bf Goal:} incorporate the effects of straying into an eco-evolutionary model of population dynamics.
+
+\begin{itemize}
+\item Consider a 2-site system, where each site has a different optimum trait value $(\theta_1, \theta_2)$, where if the population has a trait value equal to the optimum $x_1=\theta_1$, the growth rate is maximized.
+\item When strays come into the population, they bring trait values equal to those of their native habitat (likely farther from the local optimum), and this will tend to push the local population away from the optimum if the rate of straying is too high
+\item The traits evolve through time in response to changes in fitness of the populations
+\item Though straying will generally be bad for a local population, they also serve to rescue the population from local extinction. We aim to explore this tradeoff
+\end{itemize}
+
+
+\noindent A more rigorous explanation:
+
+Let's consider 2 populations that change over time according to the following population dynamics:
+
+\begin{eqnarray}
+  \dot{N_1} &= \bar{a_1}(\bar{x_1})R(N_1,N_2)-\mu N_1 \\
+  \dot{N_2} &= \bar{a_2}(\bar{x_2})R(N_1,N_2)-\mu N_2
+\end{eqnarray}
+
+\noindent where $\bar{a_i}$ is the mean growth rate of population $i$, which depends on the mean trait value of that population $\bar{x_i}$, $R(N_1,N_2)$ is the recruitment function, which depends on the density of the local population $N_1$ as well as those that stray in from population $N_2$, and $\mu$ is the mortality rate... let's say it is the same for both, and that most mortality is happening out in the ocean (where the populations are mixed).
+
+The growth rate is maximized if the trait value is equal to the optimum trait value $\theta_i$, and falls off in a Gaussian manner as you move away from this optimum, so
+
+\begin{equation}
+  a_i(x_i) = \alpha_i\exp\left(\frac{(x_i-\theta_i)^2}{2\tau_i^2}\right)
+\end{equation}
+
+\noindent where $\alpha_i$ is the maximal growth rate, and $\tau_i$ determines how steeply the growth rate falls as distance to the optimum increases.
+If we assume that the trait $x_i$ is normally distributed with a weighted mean composed of both resident $i$ and straying $j$ individuals where $\eta$ is the proportion of the mixed population that are strays, then $\bar{x_i} = (1-\eta)x_i + \eta x_j$.
+We then assume that the trait distribution has some variance $\sigma^2$ and that the pdf is given $p(x,\bar{x_i})$, such that the mean growth rate is $\bar{a_i}(\bar{x_i}) = \int_{-\infty}^\infty a_i(x)p(x,\bar{x_i}){\rm d}x$, which is written
+
+\begin{equation}
+  \bar{a_i}(\bar{x_i}) = \frac{\alpha_i \tau_i}{\sqrt{\sigma^2+\tau^2}}\exp\left(-\frac{\bar{x_i}-\theta_i)^2}{2(\sigma^2+\tau_i^2)}\right)
+\end{equation}
+
+We have 2 differential equations describing the two populations through time, and now we need to show how the trait values change through time.
+This depends on how we define the relative fitness of the populations, which in this case is pretty straightforward.
+We define fitness as the per capita population change
+
+\begin{equation}
+  W_i = a_i(x_i)\frac{R(N_i,N_j)}{N_i}-\mu,
+\end{equation}
+
+\noindent where $R(N_i,N_j)$ is some unspecified recruitment function (say Shephard), but one that acts on the total reproducing population, adjusting for incoming and outgoing strays $N_i + \eta(N_j - N_i)$.
+The mean fitness is then $\bar{W_i}=\int_{-\infty}^\infty W(a_i,N_i,N_j)p(x_i,\bar{x_i}){\rm d}x$ which is $\bar{W_i}=\bar{a_i}(\bar{x_i})\frac{R(N_i,N_j)}{N_i}-\mu$.
+
+Finally, from Lande (1976), we get the differential equation describing how the mean trait value changes over time, where
+
+\begin{equation}
+  \dot{\bar{x_i}} = \sigma^2_{\rm G} \frac{d\bar{W_i}}{d\bar{x_i}}
+\end{equation}
+
+\noindent where $\sigma^2_{\rm G}$ is the component of the trait variation that is genetic.
+So the full system for the 2-site system would be
+
+\begin{align}
+  \dot{N_1} &= \bar{a_1}(\bar{x_1})R(N_1,N_2)-\mu N_1 \\
+  \dot{N_2} &= \bar{a_2}(\bar{x_2})R(N_1,N_2)-\mu N_2 \\
+  \dot{\bar{x_1}} &= \sigma^2_{\rm G} \frac{d\bar{W_1}}{d\bar{x_1}} \\
+  \dot{\bar{x_2}} &= \sigma^2_{\rm G} \frac{d\bar{W_2}}{d\bar{x_2}}
+\end{align}
+
+SO: the populations change over time, and the rate at which they change depends on the mismatch between the optimum trait value of the site and the mean trait value of the population.
+The fitness of that population determines the rate of change for the trait value itself, which is a mix of local and straying trait values... as the rate of straying increases, the more difficulty the system should have to zero in towards the optimum trait value.
+
+A few things I should mention: This works because we assume the variance of the trait values is static.
+Of course, as we mix trait values from local and straying populations, we do change the variance a little.
+We are ignoring this.
+I'd argue that we can ignore this as long as the proportion of strays entering the local population is relatively small.
+Changes in variance can be addressed, but the problem becomes so complicated that it would be better to resort to simulation.
+On that line, it might be good to write a simulation version of this model so that we could examine whether changes in trait variance over time are really that important... in my opinion, this is a second or third order problem that we could explore later.
+There is a lot to explore if you guys accept that small amounts of straying shouldn't change the variance too much.
+
+I'm currently displaying the proportion of the population that are strays as a single parameter $\eta = cN_j/(N_i+cN_j)$ where $c$ is the proportion of the remote population that is straying... i.e. if $c$ is small, so is $\eta$ as long as $N_1$ and $N_2$ are similar in magnitude.
+I think that it would be really fun to explore the case where $c$ is density dependent on $N_j$, as you guys were describing in our last meeting.
+If it was a relatively simple function of $N_j$, that would be pretty easy to incorporate.
+
+Okay - that's all for now! I hope that this is coherent - I'm on beer 3.
+
+
+
+
+
+\end{document}

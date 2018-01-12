@@ -1,0 +1,588 @@
+\RequirePackage{lineno}
+\documentclass{revtex4}
+%\usepackage[pdftex]{graphicx}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{anyfontsize}
+
+\usepackage[font={small}]{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{xr}
+\externaldocument[extfig-]{msv6}
+%\usepackage{epstopdf}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{multirow}
+\usepackage{color}
+%\usepackage{multibox}
+%\usepackage{rotating}
+% \usepackage{lineno}
+
+%\usepackage[left]{lineno}
+%\usepackage[comma,sort&compress]{natbib}
+%\usepackage{authblk}
+%\usepackage{multicol}
+
+\linespread{1.5}
+
+\usepackage{natbib}
+\bibpunct{(}{)}{,}{a}{}{;}
+
+% \bibliographystyle{prsb}
+
+% \usepackage{bibunits}
+
+\newcommand{\beginsupplement}{%
+        \clearpage
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+% \pagewiselinenumbers
+\linenumbers
+% \setlength\linenumbersep{3pt}
+
+\begin{document}
+
+% \Blindtext
+%\title{Simple rules yield complex communities: deconstructed species interactions and the assembly of communities}
+%\title{Community assembly and dynamics by the deconstruction of species interactions}
+\title{Supplementary Materials: Eco-evolutionary dynamics and collective dispersal: implications for salmon metapopulation robustness}
+\author{
+Justin D. Yeakel${}^{1,2,*}$, Jean P. Gibert${}^{1}$, Peter A. H. Westley${}^{3}$, \& Jonathan W. Moore${}^{4}$ \\
+${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
+${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
+${}^3$College of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\
+${}^4$Earth${}_2$Oceans Research Group, Simon Fraser University, Vancouver BC, Canada \\
+${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
+}
+
+\maketitle
+
+\beginsupplement
+
+We aim to understand how straying between populations may affect phenotypic evolution, and how in turn this evolutionary change may lead to changes in ecological dynamics as they unfold. 
+To do so, we build upon ideas from classic papers (Lande 1976, most notably). 
+In what follows, we show 
+1) how the application of Lande's equation for the case of two populations linked by dispersal leads to complex equations of trait evolution that are not easily modeled,
+2) that this complex trait distribution can be approximated as a single Gaussian distribution, and
+3) under what conditions this approximation is appropriate.
+
+\section*{I. Phenotypic evolution from one to two sites}
+
+\textbf{Trait evolution in one site} To keep track of the evolution of a phenotypic trait $x$ with probability density function $p$ and mean $\overline{x}$ and variance $\sigma^{2}$, we need a few basic ingredients. First, we define the mean fitness,$\overline{W}$ of the population of individuals bearing the trait $x$ as:
+
+\begin{equation}\label{1}
+\overline{W}=\int_{} p(x)W(x)\,dx.
+\end{equation}
+We also define the mean phenotype in the population as  
+
+\begin{equation}\label{2}
+\overline{x}=\int_{} xp(x)\,dx,
+\end{equation}
+and the mean phenotype after selection (but before reproduction), $\overline{x}_{w}$ \cite{Falconer:1967tg}, as:
+
+\begin{equation}\label{3}
+\overline{x}_{w}=\frac{1}{\overline{W}}\int_{} xp(x)W(x)\,dx.
+\end{equation}
+Then, we can assess how the change in the phenotype $x$ occurs over time following
+\begin{equation}\label{4}
+\Delta x=x(t+1)-x(t),
+\end{equation}
+which can be rewritten as:
+\begin{equation}\label{5}
+\Delta x=h^{2}(\overline{x}_{w}-x(t)),
+\end{equation}
+where $h^{2}$ is the heritability of the trait, and the difference $\overline{x}_{w}-x(t)$ is the classical "selection differential"  \cite{Falconer:1967tg,Lande:1976ga}. In other words, \ref{5} is none other that the Breeder's equation. 
+
+To understand how $x$ changes over time, we first need to understand how the mean fitness of the population changes with a change in the mean trait value or $\frac{\partial \overline{W}}{\partial \overline{x}}$ (i.e. the shape of the "adaptive landscape"). Using \ref{1} we have:
+
+\begin{equation}\label{6}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\frac{\partial}{\partial \overline{x}}\int_{} p(x)W(x)\,dx.
+\end{equation}
+Using Leibniz rule we can pass the derivative under the integral sign, 
+\begin{equation}\label{7}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \frac{\partial p(x)}{\partial \overline{x}}W(x)\,dx,
+\end{equation}
+and assuming $p$ is Gaussian (i.e. of the form $\frac{1}{\sqrt{2 \pi \sigma^{2}}} e^{-\frac{1}{2}\frac{(x-\overline{x})^{2}}{\sigma^{2}}} $), we calculate the derivative of $p$ with respect to $\overline{x}$, which leads to:
+
+\begin{equation}\label{8}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \Big[\frac{x-\overline{x}}{\sigma^{2}}\Big] p(x)W(x)\,dx.
+\end{equation}
+We can now expand in \ref{8} to get,
+\begin{equation}\label{9}
+\frac{\partial \overline{W}}{\partial \overline{x}}=
+\frac{1}{\sigma^{2}}\int_{}xp(x)W(x)\,dx-\frac{\overline{x}}{\sigma^{2}}\int_{}p(x)W(x)\,dx,
+\end{equation}
+which making use of equations \ref{1} and \ref{3}, becomes $\frac{\partial \overline{W}}{\partial \overline{x}}=
+\frac{\overline{W}}{\sigma^{2}}\overline{x}_{w}-\frac{\overline{x}}{\sigma^{2}}\overline{W}$, which can be factored as $\frac{\partial \overline{W}}{\partial \overline{x}}=
+\frac{\overline{W}}{\sigma^{2}}(\overline{x}_{w}-\overline{x})$. Using \ref{5}, we can rearrange this expression to obtain an equation that related the change in the average phenotype from one time step to the next to the amount of heritable variation, $\sigma^{2}h^{2}$, and the adaptive landscape $\frac{\partial \overline{W}}{\partial \overline{x}}$:
+\begin{equation}\label{10}
+\Delta \overline{x}=\frac{\sigma^{2}h^{2}}{\overline{W}}\frac{\partial \overline{W}}{\partial \overline{x}}=\sigma^{2}h^{2}\frac{\partial \ln\overline{W}}{\partial \overline{x}}.
+\end{equation}
+Equation \ref{10} (Lande 1976's equation 7), is a staple of evolutionary biology. It is also possible to use \ref{10} and \ref{4} to write a recurrence relationship that allows to simulating evolutionary change over time in a trait $x$ as:
+\begin{equation}\label{11}
+\overline{x}(t+1)=\overline{x}(t)+\sigma^{2}h^{2}\frac{\partial \ln\overline{W}}{\partial \overline{x}}.
+\end{equation}
+
+\textbf{Expanding the single site approach to two sites linked by dispersal} In what follows we show how Lande's approach can be used to calculate the magnitude of the phenotypic change between two populations with one trait with two different means in each site.
+We will then 1) show why it is not necessarily useful to use the obtained expression in a simulation context, and 2) introduce an approximation that retains the features important for exploring how trait and population dynamics impact each other in the case of dispersing populations. In Section II, we will explore how well the approximation reproduces the underlying trait dynamics.
+Specifically, we will discuss in what cases it is exact and for which cases the approximation becomes problematic, such that it should be avoided.
+
+We explore the case of two populations that exchange migrants, with a normally distributed trait $x$ that controls recruitment (as explained in the main text), with each population having a different mean, $\mu_{i}$ and $\mu_{j}$, and same variance $\sigma^{2}$. For simplicity, we will focus on a local population $i$ relative to the connected population $j$.
+
+When individuals from population $j$ stray into population $i$, and individuals of population $i$ stray into population $j$, the phenotypic distribution of trait $x$ in population $i$ is a mixture distribution, $p(x)$, of the form:
+
+\begin{equation}\label{12}
+p(x)=\omega_i g(x,\mu_{i})+(1-\omega_i)g(x,\mu_{j}).
+\end{equation}
+where $g(\cdot)$ is the Gaussian probability density function, and $\omega_i$ is the proportion of the mixed population that is composed of individuals local to site $i$ relative to those that have dispersed into site $i$ from site $j$.
+This distribution has a mean $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$. As before, we define the mean fitness as in equation \ref{1}, only that now $p$ is a mixture distribution. Let us use Lande's approach to obtain an expression for the change in the mean phenotype of the mixture distribution from one time step to the next. We thus ask, what is the change in $\overline{W}$ with a change in $\overline{x}$? We can use Lande's approach \cite{Lande:1976ga} to derive equation \ref{7}, replacing $p(x)$ by the mixture (equation \ref{12}) to obtain 
+
+\begin{equation}\label{13}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \frac{\partial (\omega_i g(x,\mu_{i})+(1-\omega_i)g(x,\mu_{j}))}{\partial \overline{x}}W(x)\,dx.
+\end{equation}
+To obtain the derivative of equation \ref{13}, we introduce a change in variables, which is provided by the fact that $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$:
+\begin{equation} \label{14}
+	\begin{cases} 
+		\mu_{i}=\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i}\\
+		\mu_{j}=\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i}\\
+	\end{cases}.
+\end{equation}
+We can thus replace equation \ref{14} into \ref{13},
+\begin{equation}\label{15}
+\frac{\partial \overline{W}}{\partial \overline{x}}=\int_{} \frac{\partial (\omega_i g(x,\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i})+(1-\omega_i)g(x,\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i}))}{\partial \overline{x}}W(x)\,dx,
+\end{equation} 
+which, after expanding and taking the derivatives with respect to $\overline{x}$ becomes:
+
+\begin{align}\label{16}
+\frac{\partial \overline{W}}{\partial \overline{x}}=&\int_{} \omega_i\Bigg[\frac{x-\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i}}{\omega_i \sigma^{2}}\Bigg] g(x,\frac{\overline{x}-(1-\omega_i)\mu_{j}}{\omega_i})W(x)\,dx \\ \nonumber 
+&+ \int_{} (1-\omega_i)\Bigg[\frac{x-\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i}}{(1-\omega_i) \sigma^{2}}\Bigg] g(x,\frac{\overline{x}-\omega_i\mu_{i}}{1-\omega_i})W(x)\,dx.
+\end{align}
+To simplify notation, at this point we can come back to the original variables $\mu_{i}$ and $\mu_{j}$. We then expand and collect terms to get:
+\begin{align}\label{17}
+\frac{\partial \overline{W}}{\partial \overline{x}}&=\frac{1}{\sigma^{2}}\Bigg[\int_{}xg(x,\mu_{i})W(x)\,dx - \mu_{i}\int_{}g(x,\mu_{i})W(x)\,dx \\ \nonumber 
+&+ \int_{}xg(x,\mu_{j})W(x)\,dx - \mu_{j}\int_{}g(x,\mu_{j})W(x)\,dx\Bigg].
+\end{align}
+Using equations \ref{1} and \ref{3}, we can define the following quantities,
+
+\begin{equation}\label{18}
+\overline{W}_{i}=\int_{} g(x,\mu_{i})W(x)\,dx 
+\end{equation}
+\begin{equation}\label{19}
+\overline{W}_{j}=\int_{} g(x,\mu_{j})W(x)\,dx  
+\end{equation}
+\begin{equation}\label{20}
+\overline{x}_{w,i}=\frac{1}{\overline{W}}\int_{}xg(x,\mu_{i})W(x)\,dx
+\end{equation}
+\begin{equation}\label{21}
+\overline{x}_{w,j}=\frac{1}{\overline{W}}\int_{}xg(x,\mu_{j})W(x)\,dx, 
+\end{equation}
+then replace them into equation \ref{17}:
+\begin{equation}\label{22}
+\begin{aligned}
+\frac{\partial \overline{W}}{\partial \overline{x}} &=\frac{1}{\sigma^{2}}\Big[\overline{x}_{w,i} \overline{W}_{i} - \mu_{i}\overline{W}_{i} + \overline{x}_{w,j} \overline{W}_{j} - \mu_{j}\overline{W}_{j}\Big]  \\ 
+&= \frac{1}{\sigma^{2}}\Big[ \overline{W}_{i}(\overline{x}_{w,i}-\mu_{i}) + \overline{W}_{j}(\overline{x}_{w,j}-\mu_{j})\Big].
+\end{aligned}
+\end{equation}
+Using equation \ref{5} and rearranging terms we get:
+\begin{equation}\label{23}
+\overline{W}_{i}\Delta \mu_{i} + \overline{W}_{j}\Delta\mu_{j} = \sigma^{2}h^{2}\frac{\partial \overline{W}}{\partial \overline{x}} ,
+\end{equation}
+with $\overline{W}=\omega_i\overline{W}_{i}+(1-\omega_i)\overline{W}_{j}$. Equation \ref{23} relates how changes in either $\mu_{i}$ or $\mu_{j}$ lead to changes in fitness, and vice-versa. However, it doesn't tell us anything as to how straying may lead to evolutionary change, or how that may feedback onto ecological dynamics. Because of this, we will once again use the change of variables in \ref{14}, to rewrite \ref{23} as:
+\begin{equation}\label{24}
+\overline{W}_{i}\Big(\frac{\Delta\overline{x}-(1-\omega_i)\Delta\mu_{j}}{\omega_i} \Big)+\overline{W}_{j}\Big(\frac{\Delta\overline{x}-\omega_i\Delta\mu_{i}}{1-\omega_i} \Big)= \sigma^{2}h^{2}\frac{\partial \overline{W}}{\partial \overline{x}}, 
+\end{equation}
+which can be simplified and rearranged to obtain an expression for the change in the mean phenotype of the mixture distribution,
+\begin{equation}\label{25}
+\Delta\overline{x}=\Big[ \sigma^{2}h^{2}\frac{\partial \overline{W}}{\partial \overline{x}} + \Big(\frac{(1-\omega_i)}{\omega_i}\overline{W}_{i}\Delta\mu_{j}+\frac{\omega_i}{1-\omega_i}\overline{W}_{j}\Delta\mu_{i} \Big) \Big] \frac{\omega_i(1-\omega_i)}{(1-\omega_i)\overline{W}_{i}+\omega_i\overline{W}_{j}}.
+\end{equation}
+By multiplying \ref{25} by $\frac{\overline{W}}{\overline{W}}$, we can further rewrite the equation as:
+\begin{equation}\label{26}
+\Delta\overline{x}=\Big[ \sigma^{2}h^{2}\frac{\partial \ln\overline{W}}{\partial \overline{x}} + \frac{1}{\overline{W}}\Big(\frac{(1-\omega_i)}{\omega_i}\overline{W}_{i}\Delta\mu_{j}+\frac{\omega_i}{1-\omega_i}\overline{W}_{j}\Delta\mu_{i} \Big) \Big] \frac{\omega_i(1-\omega_i)\overline{W}}{(1-\omega_i)\overline{W}_{i}+\omega_i\overline{W}_{j}},
+\end{equation}
+which has a similar form to Lande's equation (\ref{10}), but shows the explicit dependence of the change in the mean of the mix on the proportion of straying individuals. A symmetrical expression can be derived for the other site. 
+
+While some understanding can be gained using equation \ref{26}, the expression does not easily allow us to simulate the change in $\overline{x}$ over time because the change in $\mu_{i}$ and $\mu_{j}$ is difficult to track in closed form. Moreover, this equation only holds for the first time step, and as new dispersing individuals arrive and the trait distribution is again updated by the influx of individuals from the other site, the mix becomes a mix of mixes, such that the analytical expressions presented above no longer hold. 
+
+This presents a tradeoff: we can either track changes in phenotype exactly for a single generation, or we can track changes in phenotype across multiple generations using an approximation. Given that our central goal is to gain an understanding of the feedback between evolutionary and ecological processes in salmon populations with dispersal in explicit space, we simplify the complexities created by phenotypic evolution by assuming that, as new migrants arrive, the mixture distribution can be locally approximated by a Gaussian distribution with a mean equal to that of the mix. Below, we show why this approximation is appropriate for describing the phenotypic distributions under most conditions relevant to our questions. Moreover, based on this assumption, we are able to use Lande's equation (here equation \ref{10}), without violating the original assumptions that led to its current form.
+
+
+
+
+\section*{II. Gaussian approximation for the mixed trait distribution}
+We assume a Gaussian distribution to approximate the more complex trait distribution that results when two populations with two distinct trait distributions are linked by gene flow and reproduction.
+Here and throughout, we refer to the resident population as $i$ and the connected population as $j$, though both populations stray simultaneously.
+The Gaussian approximation is assumed to have a mean that is equal to the mean of the mixed trait distribution $\omega_i\mu_i + (1-\omega_i)\mu_j$ with a constant variance $\sigma^2$, equal to the original trait variance prior to mixing.
+We employ this approximation because a mixed trait distribution that remixes and recombines (through reproduction) at each time-step becomes complicated very quickly, as we shall demonstrate from a mechanistic perspective.
+\emph{Importantly, because the evolutionary framework tracks only the mean and not the variability through time, this approximation is exact with respect to the first moment.}
+Accordingly, the only attribute that is approximate is the assumption of normality.
+Below we will show that a constant variance of $\sigma^2$ for the mixed trait distribution is a good approximation in most relevant cases, and becomes increasingly accurate when 1) generations become less overlapping (i.e. the case of semelparity), and 2) with density-dependent straying ratios.
+
+
+{\bf The trait distribution at $\bm{t=0}$.} At time $t=0$, it is assumed that individuals from two separate populations have not yet mixed. 
+Thus, the mean trait values for both populations are equal to the optimal trait values that accord to their respective habitats $\mu_i(t=0) = \theta_i$, and that their trait values are distributed as $X_i=x_i \sim g(x_i,\mu_i,\sigma) = \mathcal{N}(\mu_i,\sigma)$.
+Here and henceforth we use upper-case to denote random variables, and lower-case to denote specific values of random variables.
+
+{\bf The trait distribution at $\bm{t=1}$.} At time $t=1$, dispersal of individuals from site $j$ to site $i$, and vice versa, has begun.
+The proportion of individuals that disperse to and from each population is given by the stray ratio $m$.
+The calculation of the mixed distribution that results from dispersal and subsequent recruitment incorporates the following processes:
+\emph{1)} dispersal of strays into the local population from the remote population, and vice versa;
+\emph{2)} recruitment of juveniles that are produced from this mixed distribution (under the assumption of random mating); 
+\emph{3)} mortality of individuals in the adult class.
+These events occur in the order in which they are listed.
+
+The mixed trait distribution for site $i$ immediately following dispersal is simply a mixed Gaussian with weights determined by the proportion of the population that are residents $i$ and the proportion that are strays $j$, such that 
+\begin{equation}
+  p(x_{\rm disperse}) = \omega_i g(x_i,\mu_i,\sigma) + (1-\omega_i)g(x_j,\mu_j,\sigma),
+\end{equation}
+where the proportion of the population $i$ composed of \emph{resident} individuals is
+\begin{equation}
+  \omega_i = \frac{(1-m)N_i}{(1-m)N_i + mN_j},
+\end{equation}
+and the proportion of population $i$ composed of strays is $(1-\omega_i)$.
+Once individuals in both habitats mix, they mate without preference.
+Recruits are assumed to have trait values intermediate to their parents such that $x_{\rm r} = (x_{1} + x_{2})/2$ where trait values $X_1=x_{1}\sim p(x_{\rm disperse})$ and $X_2=x_{2}\sim p(x_{\rm disperse})$.
+We thus assume that parental traits are drawn independently from the mixed distribution $p(x_{\rm disperse})$, conditional on the requirement that $x_2 = 2x_r - x_1$, which we get when rearranging the equation for $x_{\rm r}$.
+Incorporating this condition and that traits are independently drawn from the mix of residents and strays yields the probability density for the trait value of recruits,
+\begin{equation}
+  q(x_{\rm r}) = \int_{-\infty}^\infty 2p(x_1)p(2x_{\rm r}-x_1){\rm d}x_1.
+\end{equation}
+The mean of the recruit trait distribution is calculated to be
+\begin{equation}
+{\rm E}\{q(x_{\rm r})\}=\omega_i\mu_i + (1-\omega_i)\mu_j,
+\end{equation} 
+and the variance is
+\begin{equation}
+  {\rm Var}\{q(x_{\rm r})\} = \frac{m^2 N_j^2 \left(4 \mu_j^2+\sigma ^2\right)+(m-1)^2 N_i^2 \left(4 \mu_i^2+\sigma ^2\right)-(m-1) m N_i N_j \left(\mu_i^2+6 \mu_i \mu_j+\mu_j^2+2 \sigma ^2\right)}{2 (-m N_i+m N_j+N_i)^2}.
+\end{equation}
+
+The relative contribution of trait values from resident parents, stray parents, and recruits depends on the numbers of each within the mixed population.
+The number of residents is $(1-m)N_i$, and the number of strays is $mN_j$.
+However, because adult mortality occurs after reproduction, we must adjust these numbers to account for only those who survive, which is given by ${\rm e}^{-Z}$.
+As $Z\rightarrow \infty$, the population becomes semelparous, as the adult class gives way to new recruits at each timestep. 
+Accordingly, the number of adult residents and strays is given by $(1-m)N_i{\rm e}^{-Z}$ and  $mN_i{\rm e}^{-Z}$, respectively.
+In contrast, the number of recruits is given by the combined contribution of resident and straying individuals to recruit production as 
+\begin{equation}
+N_r = \int_{-\infty}^{\infty}r_{\rm max}{\rm e}^{\frac{(x_{\rm r}-\theta_i)^2}{2\tau^2}}q(x_{\rm r})dx_{\rm r}((1-m)N_i + mN_j){\rm e}^{(-\beta((1-m)N_i + mN_j))},
+\end{equation}
+where $\theta_i$ is the optimal trait value in site $i$, $r_{\rm max}$ is the maximum recruitment rate, and $\tau$ is the strength of selection.
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.7\textwidth]{fig_PDF.pdf}
+\caption{
+Clockwise from the upper-left. The calculated probability distribution function (PDF) for individuals in population $i$ after immigration from population $j$, recruitment, and mortality (blue) vs. the Gaussian approximation used for the dynamical system (green), with
+a) low stray ratio, large straying population, overlapping generations: $m=0.1$, $Z=0.5$;
+b) maximal stray ratio, overlapping generations: $m=0.5$, $Z=0.5$;
+c) maximal stray ratio, non-overlapping generations: $m=0.5$, $Z=1000$;
+d) density-dependent stray ratio, non-overlapping generations: $m=m_0(1-N_i/(C+N_i))$, $Z=1000$, where $m_0=0.2$ and $C=1000$.
+The mean and variability of both distributions is shown by a point (mean) and line ($\sigma$) at the base of each distribution.
+} \label{fig:PDF}
+\end{figure}
+
+
+
+The proportion of individuals from the resident, straying, and recruitment classes following mortality at site $i$ are then $c_i$, $c_j$, and $c_r$ respectively, where
+\begin{align}
+c_i &= \frac{(1-m)N_i{\rm e}^{-Z}}{(1-m)N_i{\rm e}^{-Z} + m N_j{\rm e}^{-Z} + N_r} \\ \nonumber
+c_j &= \frac{m N_j{\rm e}^{-Z}}{(1-m)N_i{\rm e}^{-Z} + m N_j{\rm e}^{-Z} + N_r} \\ \nonumber
+c_r &= \frac{N_r}{(1-m)N_i{\rm e}^{-Z} + m N_j{\rm e}^{-Z} + N_r}.
+\end{align}
+where $c_i + c_j + c_r= 1$.
+The trait value distribution for time $t=1$ is then calculated as a mix of trait distributions from 1) surviving residents, 2) surviving strays, and 3) their offspring, such that
+\begin{equation}
+  g_{{\rm next}}(x_i) = c_i g(x_i) + c_j g(x_j) + c_r q(x_r).
+\end{equation}
+The expectation of this distribution is
+\begin{equation}
+{\rm E}\{g_{\rm next}(x_i)\}=\omega_i\mu_i + (1-\omega_i)\mu_j.
+\end{equation}
+
+% variance a that has a closed form solution, but that is not easily readable.
+% \begin{align}
+%   {\rm Var}\{g_{{\rm next}}(x_i)\}=&\frac{(\mu_i-\mu_j)^2 (2 (m-1)^2 N_i^2 c_j^2-(m-1) N_i c_j (2 (m-1) N_i+m N_j (1-4 c_i))}{2 (-m N_i+m N_j+N_i)^2} \\ \nonumber
+%   &+ \frac{m N_j (c_i-1) (-m N_i+2 m N_j c_i+N_i))-\sigma ^2 (c_i+c_j+1) (-m N_i+m N_j+N_i)^2}{2 (-m N_i+m N_j+N_i)^2}.
+% \end{align}
+
+Importantly, ${\rm E}\{g_{{\rm next}}(x_i)\}$ is exactly equal to the trait mean for the original mix, as well as the trait mean for recruits.
+Thus, a Gaussian approximation distributed as $\mathcal{N}(\omega_i\mu_i + (1-\omega_i)\mu_j,\sigma)$ will not alter the dynamics under the assumption of constant variance in Eq 4.
+Moreover, the mixed distribution described above becomes more complex at the next timestep, as two multi-modal trait distributions then mix and recombine through recruitment.
+One could make the argument that a Gaussian approximation does not represent the multi-modality in trait values inherent to a mixed distribution, and thus underestimates variance.
+Although the Gaussian approximation exactly captures the expectation, we next explore to what extent the approximation does and does not capture the variability expressed in $g(x_{\rm next})$.
+
+%Discussion of factors that increase or decrease accuracy of the approximation
+The Gaussian approximation $\mathcal{N}(\omega_i\mu_i + (1-\omega_i)\mu_j,\sigma)$ will generally underestimate the true variance of the mix, but not by much.
+If the straying ratio is low, (ca. 0.0 to 0.2), the Gaussian approximation is very similar to the actual distribution (Fig. \ref{fig:PDF}a).
+As the straying ratio increases, so does the bimodality of the actual distribution, and this magnifies our underestimate of variance (Fig. \ref{fig:PDF}b).
+The relevant dynamics observed in our model generally occur between $m=0.05$ and $m=0.2$, where estimates of variance are similar.
+Decreasing the overlap between generations also leads to greater similarity in the actual distribution and the Gaussian approximation, and the potential bias introduced by bimodality will be less for cases of non-overlapping generations, or semelparity (Fig. \ref{fig:PDF}c).
+Most importantly, density-dependent straying increases the accuracy of our Gaussian approximation by actively suppressing the straying ratio (Fig. \ref{fig:PDF}d).
+
+Because the Gaussian approximation is exact to first order, and generally provides a good approximation of realized variance, we suggest that the use of Lande's formulation for the change in mean trait values through time under the assumption of constant variance is appropriate.
+Because our estimate of variance is generally an underestimate, the rate of recruitment will be a slight overestimate, and the timescale of trait evolution will generally be slower.
+Changes in the rate of recruitment (Fig. \ref{fig:symmetry}) and heritability do not have an impact on our qualitative findings, and this suggests any bias that our approximation introduces by underestimating true variance is minimal.
+
+Under these assumptions, the governing equations for the dynamic system are then written as
+
+\begin{align}
+  &N_i(t+1) = \\ \nonumber
+  &\left((1-m)N_i(t) + m N_j(t) \right){\rm e}^{-Z} \\ \nonumber
+  &+ R_i[\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\theta_i]\left((1-m)N_i + mN_j\right) \\ \nonumber
+  &\times {\rm e}^{-\beta ((1-m)N_i(t) + m N_j(t))},
+  \label{eq:N}
+\end{align}
+where the trait distribution for recruits is also approximated by the Gaussian 
+${\rm pr}(x_i) \approx \mathcal{N}(\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\sigma^2)$, where the mean is the analytical expectation.
+This gives the rate of recruitment as 
+\begin{align}
+  &R_i[\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\theta_i] = \\ \nonumber
+  &\int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i-\theta_i)^2}{2\tau^2}\right\} {\rm pr}(x_i,\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\sigma^2) {\rm d}x_i +\tilde{P}_i\\ \nonumber
+  &= \frac{r_{\rm max} \tau  }{\sqrt{\sigma ^2+\tau ^2}}\exp\left\{-\frac{(\theta_i-(\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t)))^2}{2 \left(\sigma ^2+\tau ^2\right)}\right\} +\tilde{P}_i.
+\end{align}
+The mean of the trait distribution then changes as
+\begin{align}
+  \label{eq:mu}
+  \mu_i(t+1) &= \omega_i\mu_i(t) + (1-\omega_i)\mu_j(t) + h^2\sigma^2\frac{\partial}{\partial \mu^\prime}\ln\left(R_i[\mu^\prime,\theta_i] \right), \\ \nonumber
+  &= \omega_i\mu_i(t) + (1-\omega_i)\mu_j(t) + h^2\sigma^2\left(\frac{\theta_i - \omega_i\mu_i - (1-\omega_i)\mu_j}{\sigma^2+\tau^2} \right),
+\end{align}
+given $\mu^\prime = \omega_i \mu_i(t)+ (1-\omega_i)\mu_j(t)$.
+
+
+\bibliography{aa_kevin}
+
+\clearpage
+
+
+\section*{II. Additional Figures}
+
+% \begin{figure}
+%   \captionsetup{justification=raggedright,
+% singlelinecheck=false
+% }
+% \centering
+% \includegraphics[width=0.7\textwidth]{fig_contSD.pdf}
+% \caption{
+% Magnitude of difference in the standard deviation for the calculated PDF for individuals in population $i$ after 1) immigration from population $j$, 2) recruitment, and 3) adult mortality vs. the Gaussian approximation where $\sigma=1$.
+% Values $<1$ reflect underestimates of variability; values $>1$ reflect overestimates.
+% Top row is for constant straying ratio, and the bottom row is for density-dependent straying ratio under different treatments of habitat heterogeneity (left column $\Delta \theta=5$; right column $(\Delta \theta=8$).
+% } \label{fig:contourSD}
+% \end{figure}
+% 
+
+
+
+
+\begin{figure}[h]
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_mthetarelation.pdf}
+\caption{
+In some cases, habitat heterogeneity may be assumed to determine the rate of straying, if for example:
+1) sites are distributed over greater spatial distances, where habitat differences are assumed to be greater between more distant sites, or 2) individuals have behaviors promoting dispersal between habitats that are more similar. To examine such cases, we use the relationship $m= 0.5(1 + \Delta\theta)^{-1}$ where maximum straying is assumed to occur at $m=0.5$ (perfect mixing).
+} \label{fig:mthetarelation}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_recovery.pdf}
+\caption{
+Example of the numerical procedure used to estimate recovery time. After a disturbance is introduced, the recovery time is calculated by measuring the point in time where $N_T$ (in black), which is the aggregate of both populations (blue, red) settles to within one standard deviation of the new equilibrium $N_T^*$. 
+} \label{fig:recovery}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_eigs.pdf}
+\caption{
+The real parts of the four eigenvalues for the Jacobian matrix of the 4-dimensional system.
+The cusp bifurcation occurs when the dominant eigenvalue crosses the unit circle at $+1$. 
+} \label{fig:eigs}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_hysteresis.pdf}
+\caption{
+Increasing the straying rate results in the transition from a single steady-state for both populations to a dominant and subordinate states. If the straying rate is subsequently lowered, the single steady-state is not easily obtained, which is the hallmark of hysteresis.
+} \label{fig:hysteresis}
+\end{figure}
+
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_relax_large.pdf}
+\caption{
+Extinction of high-density population with a high straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{extfig-fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_hdlh}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_relax_small.pdf}
+\caption{
+Extinction of low-density population with a high constant straying rate $m=0.4$ and low trait heritability $h^2=0.2$ (see figure \ref{extfig-fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_ldlh}
+\end{figure}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.9\textwidth]{fig_relax_highh.pdf}
+\caption{
+Recovery time of $N_T$ following the extinction of either the low-density (light gray) or high-density (gray) population, or the near-collapse of both (dark gray) assuming (a) constant straying rates $m$ and (b) density-dependent straying rates (evaluated at the steady-state $m^*$) with trait heritability $h^2=0.8$.
+If $m$ is density-dependent, in the alternative stable state regime there are two straying rates observed: one each for the low- and high-density populations, respectively, which are linked by a horizontal line.
+} \label{fig:relax_highh}
+\end{figure}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.4\textwidth]{fig_thetadiffN.pdf}
+\caption{
+Median difference in population densities taken over the straying rate as a function of habitat heterogeneity $\Delta\theta$.
+Solid lines are for constant $m$; dashed lines are for density-dependent $m$.} \label{fig:thetadiffN}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.8\textwidth]{fig_relaxtheta2.pdf}
+\caption{
+(a) Recovery time after near collapse of both populations as a function of straying rate $m$ and habitat heterogeneity $\Delta\theta$.
+(b) The same as (a) but including recovery times when straying is density-dependent evaluated at $m^*$, shown by linked point pairs.
+Recovery times for systems with density-dependent straying are longer when straying is low and shorter when straying is high, mirroring the change in portfolio effects with respect to density-dependent straying shown in figure \ref{extfig-fig:thetaPE}.
+} \label{fig:relaxtheta}
+\end{figure}
+
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+  \centering
+  \includegraphics[width=0.35\textwidth]{fig_MDPE_hm_mtheta_rt.pdf}
+  \caption{
+  Portfolio effects as a function of straying rate $m$ and trait heritability $h^2$ when the rate of straying is $m = 0.5(1 + \Delta\theta)^{-1}$. Alternative steady-states emerge for low values of $m$ (left of the cusp bifurcation, denoted by the black line), whereas a single steady-state exists for high $m$.
+  } \label{fig:mthetaPE}
+\end{figure}
+
+% \clearpage
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_relax_inertia.pdf}
+\caption{
+Population inversion where increased differences in trait optima between sites $\Delta\theta$ corresponds to lower rates of straying $m$.
+At low rates of straying $m=0.02$ ($\Delta\theta=24$), extinction of the dominant population leads to slower-than-expected recovery times because the subordinate population is isolated enough to evolve towards its own trait optimum. %until growth of the dominant population overwhelms this local selection.
+In this case, $m$ is less than $m=0.034$ (denoted by the asterisk in figure \ref{extfig-fig:mtheta}), such that isolation allows the subordinate population to `run away' from the influence of the dominant population.
+This leads to a switch in subordinate/dominant states for the two populations.
+If $m$ is low but greater than $0.034$, isolation permits the subordinate population to `run away' from the influence of the dominant population, until it is overwhelmed by the recovering dominant population, and reverts back to its previous trait mean prior to disturbance.
+} \label{fig:inertia}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+  \centering
+  \includegraphics[width=0.8\textwidth]{fig_relax_mtheta.pdf}
+  \caption{
+  Recovery times for three disturbance types when the straying rate covaries with habitat heterogeneity as $m = 0.5(1 + \Delta\theta)^{-1}$ for constant (a) and density-dependent (b) straying rates.
+  The cusp bifurcation is not as clear in (b) because $\Delta\theta$ is a function of the individual straying rate $m_0$, whereas the x-axis in (b) is the straying rate at the steady-state $m^*$.
+  Despite this difference, the general behavior shown in (a) are the same in (b).
+  } \label{fig:mthetamvm}
+\end{figure}
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_asymdensity.pdf}
+\caption{
+Steady-state densities of both populations as a function of $m$, where a cusp bifurcation indicates the emergence of alternative steady-states: one in a dominant state and one in a subordinate state.
+Steady-states for populations with symmetrical values ($\alpha=0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown with cool tones.
+As the asymmetry among populations between sites increases ($\alpha>0$), their vital rates diverge, such that the maximal growth at sites 1 and 2 is now $r_{\rm max}(1)=r_{\rm max}(1+\tilde{rv}_1)$ and $r_{\rm max}(2)=r_{\rm max}(1+\tilde{rv}_2)$ where $rv_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $r_{\rm max}=2$. 
+Similarly the strength of density dependence is calculated at sites 1 and 2 as $\beta(1)=\beta(1+\tilde{rv}_1)$ and $\beta(2)=\beta(1+\tilde{rv}_2)$ where $\tilde{rv}_{1,2}$ are independently drawn from $\rm{Normal}(0,\alpha)$ and $\beta=0.001$.
+Steady-states for populations with increasingly asymmetric values ($\alpha\rightarrow 0.1$) for vital rates $r_{\rm max}$ and $\beta$ are shown in warmer tones.
+} \label{fig:symmetry}
+\end{figure}
+
+
+\begin{figure}
+  \captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+\centering
+\includegraphics[width=0.35\textwidth]{fig_relax_both_lowh.pdf}
+\caption{
+Near collapse of both populations with a low straying rate $m=0.1$ and low trait heritability $h^2=0.2$ (see figure \ref{extfig-fig:relax}a).
+Black line marks the calculated point of recovery post-perturbation.
+Trait optima are $\theta_1 = 10$ (blue population trajectory) and $\theta_2 = 5$ (red population).
+} \label{fig:relaxtraj_bothlh}
+\end{figure}
+
+
+
+
+\end{document}
