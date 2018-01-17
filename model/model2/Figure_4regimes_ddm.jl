@@ -180,37 +180,40 @@ L[[2]] = abs($n1mean_ddm-$n2mean_ddm)
 boxplot(L)
 """
 
-
+@everywhere using Distributions, RCall, JLD, HDF5
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
+@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS_ddm.jl")
 
 #Analysis over m and C
 tmax=10000;
-mvec = collect(0.0:0.005:0.5);
+mvec1 = collect(0.0:0.0001:0.5);
+mvec = [mvec1 ; reverse(mvec1)];
 cexpvec = collect(1:0.01:5);
-n1ts = zeros(Float64,length(mvec),tmax);
-n2ts = zeros(Float64,length(mvec),tmax);
-n1mean=zeros(Float64,length(mvec));
-n2mean=zeros(Float64,length(mvec));
-n1sd=zeros(Float64,length(mvec));
-n2sd=zeros(Float64,length(mvec));
-aggmean=zeros(Float64,length(mvec));
-aggsd=zeros(Float64,length(mvec));
-x1mean=zeros(Float64,length(mvec));
-x2mean=zeros(Float64,length(mvec));
-pe=zeros(Float64,length(mvec));
+# n1ts = zeros(Float64,length(mvec),tmax);
+# n2ts = zeros(Float64,length(mvec),tmax);
+n1mean=SharedArray{Float64}(length(mvec));
+n2mean=SharedArray{Float64}(length(mvec));
+n1sd=SharedArray{Float64}(length(mvec));
+n2sd=SharedArray{Float64}(length(mvec));
+aggmean=SharedArray{Float64}(length(mvec));
+aggsd=SharedArray{Float64}(length(mvec));
+x1mean=SharedArray{Float64}(length(mvec));
+x2mean=SharedArray{Float64}(length(mvec));
+pe=SharedArray{Float64}(length(mvec));
 
-n1ts_ddm = zeros(Float64,length(mvec),length(cexpvec),tmax);
-n2ts_ddm = zeros(Float64,length(mvec),length(cexpvec),tmax);
-n1mean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-n2mean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-n1sd_ddm=zeros(Float64,length(mvec),length(cexpvec));
-n2sd_ddm=zeros(Float64,length(mvec),length(cexpvec));
-aggmean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-aggsd_ddm=zeros(Float64,length(mvec),length(cexpvec));
-x1mean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-x2mean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-m1mean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-m2mean_ddm=zeros(Float64,length(mvec),length(cexpvec));
-pe_ddm=zeros(Float64,length(mvec),length(cexpvec));
+# n1ts_ddm = zeros(Float64,length(mvec),length(cexpvec),tmax);
+# n2ts_ddm = zeros(Float64,length(mvec),length(cexpvec),tmax);
+n1mean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+n2mean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+n1sd_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+n2sd_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+aggmean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+aggsd_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+x1mean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+x2mean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+m1mean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+m2mean_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
+pe_ddm=SharedArray{Float64}(length(mvec),length(cexpvec));
 
 z=2;
 rmax=2.0;
@@ -225,99 +228,141 @@ perror=0.00;
 
 
 burnin=0.80
-@time for i=1:length(mvec)
-  m=mvec[i];
+@sync @parallel for j=1:length(cexpvec)
   
-  n1, n2, x1, x2, w1, w2 = 
-  KevinEvolve(
-    tmax,
-    z,
-    rmax,
-    beta,
-    theta1,
-    thetadiff,
-    tau,
-    h,
-    sigmaE,
-    sigmaG,
-    m,
-    perror
-    );
+  C = 10^(Float64(cexpvec[j]));
+  
+  for i=1:length(mvec)
+      
+      m=mvec[i];
+      
+      if i == 1
+          n0 = [2,2];
+        #   x0 = [theta1 + rand(Normal(0,0.0001)),(theta1 + thetadiff)  + rand(Normal(0,0.0001))];
+        x0 = [theta1 ,(theta1 + thetadiff)];
+      else
+          n0 = [n1mean[i-1],n2mean[i-1]];
+          x0 = [x1mean[i-1],x2mean[i-1]];
+      end
+      
+      n1, n2, x1, x2, w1, w2 = 
+      KevinEvolveSS(
+      n0,
+      x0,
+      tmax,
+      z,
+      rmax,
+      beta,
+      theta1,
+      thetadiff,
+      tau,
+      h,
+      sigmaE,
+      sigmaG,
+      m,
+      perror
+        );
 
-  n1trim = n1[Int64(floor(tmax*burnin)):tmax-1];
-  n2trim = n2[Int64(floor(tmax*burnin)):tmax-1];
-  x1trim = x1[Int64(floor(tmax*burnin)):tmax-1];
-  x2trim = x2[Int64(floor(tmax*burnin)):tmax-1]
-  
-  n1ts[i,:] = n1;
-  n2ts[i,:] = n2;
-  
-  n1mean[i] = mean(n1trim);
-  n2mean[i] = mean(n2trim);
-  n1sd[i] = std(n1trim);
-  n2sd[i] = std(n2trim);
-  
-  aggmean[i] = mean(n1trim+n2trim);
-  aggsd[i] = std(n1trim+n2trim);
+      n1trim = n1[Int64(floor(tmax*burnin)):tmax-1];
+      n2trim = n2[Int64(floor(tmax*burnin)):tmax-1];
+      x1trim = x1[Int64(floor(tmax*burnin)):tmax-1];
+      x2trim = x2[Int64(floor(tmax*burnin)):tmax-1]
+      
+      # n1ts[i,:] = n1;
+      # n2ts[i,:] = n2;
+      
+      n1mean[i] = mean(n1trim);
+      n2mean[i] = mean(n2trim);
+      n1sd[i] = std(n1trim);
+      n2sd[i] = std(n2trim);
+      
+      aggmean[i] = mean(n1trim+n2trim);
+      aggsd[i] = std(n1trim+n2trim);
 
-  x1mean[i] = theta1-mean(x1trim);
-  x2mean[i] = (theta1+thetadiff)-mean(x2trim);
-  
-  for j=1:length(cexpvec)
-    
-    C = 10^(Float64(cexpvec[j]));
-    
-    a0 = 1-m;
-    
-    n1_ddm, n2_ddm, x1_ddm, x2_ddm, w1_ddm, w2_ddm, m1_ddm, m2_ddm = 
-    KevinEvolve_ddm(
-    tmax, 
-    z, 
-    rmax,
-    beta,
-    theta1,
-    thetadiff,
-    tau,
-    h,
-    a0,
-    C,
-    sigmaE,
-    sigmaG,
-    perror
-      );
-    
-    n1trim_ddm = n1_ddm[Int64(floor(tmax*burnin)):tmax-1];
-    n2trim_ddm = n2_ddm[Int64(floor(tmax*burnin)):tmax-1];
-    x1trim_ddm = x1_ddm[Int64(floor(tmax*burnin)):tmax-1];
-    x2trim_ddm = x2_ddm[Int64(floor(tmax*burnin)):tmax-1]
-    
-    n1ts_ddm[i,j,:] = n1_ddm;
-    n2ts_ddm[i,j,:] = n2_ddm;
-    
-    n1mean_ddm[i,j] = mean(n1trim_ddm);
-    n2mean_ddm[i,j] = mean(n2trim_ddm);
-    n1sd_ddm[i,j] = std(n1trim_ddm);
-    n2sd_ddm[i,j] = std(n2trim_ddm);
-    
-    aggmean_ddm[i,j] = mean(n1trim_ddm+n2trim_ddm);
-    aggsd_ddm[i,j] = std(n1trim_ddm+n2trim_ddm);
+      x1mean[i] = theta1-mean(x1trim);
+      x2mean[i] = (theta1+thetadiff)-mean(x2trim);
+      
 
-    x1mean_ddm[i,j] = theta1-mean(x1trim_ddm);
-    x2mean_ddm[i,j] = (theta1+thetadiff)-mean(x2trim_ddm);
-    
-    m1mean_ddm[i,j] = mean(m1_ddm[Int64(floor(tmax*burnin)):tmax-1]);
-    m2mean_ddm[i,j] = mean(m2_ddm[Int64(floor(tmax*burnin)):tmax-1]);
-    
-    pe_ddm[i,j] = mean([(std(n1trim)/mean(n1trim)),(std(n2trim)/mean(n2trim))])*
-    (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
+        
+        a0 = 1-m;
+        
+        if i == 1
+            n0_ddm = [2,2];
+          #   x0 = [theta1 + rand(Normal(0,0.0001)),(theta1 + thetadiff)  + rand(Normal(0,0.0001))];
+          x0_ddm = [theta1 ,(theta1 + thetadiff)];
+        else
+            n0_ddm = [n1mean_ddm[i-1,j],n2mean_ddm[i-1,j]];
+            x0_ddm = [x1mean_ddm[i-1,j],x2mean_ddm[i-1,j]];
+        end
+        
+        n1_ddm, n2_ddm, x1_ddm, x2_ddm, w1_ddm, w2_ddm, m1_ddm, m2_ddm = 
+        KevinEvolveSS_ddm(
+        n0_ddm,
+        x0_ddm,
+        tmax, 
+        z, 
+        rmax,
+        beta,
+        theta1,
+        thetadiff,
+        tau,
+        h,
+        a0,
+        C,
+        sigmaE,
+        sigmaG,
+        perror
+          );
+        
+        n1trim_ddm = n1_ddm[Int64(floor(tmax*burnin)):tmax-1];
+        n2trim_ddm = n2_ddm[Int64(floor(tmax*burnin)):tmax-1];
+        x1trim_ddm = x1_ddm[Int64(floor(tmax*burnin)):tmax-1];
+        x2trim_ddm = x2_ddm[Int64(floor(tmax*burnin)):tmax-1]
+        
+        # n1ts_ddm[i,j,:] = n1_ddm;
+        # n2ts_ddm[i,j,:] = n2_ddm;
+        
+        n1mean_ddm[i,j] = mean(n1trim_ddm);
+        n2mean_ddm[i,j] = mean(n2trim_ddm);
+        n1sd_ddm[i,j] = std(n1trim_ddm);
+        n2sd_ddm[i,j] = std(n2trim_ddm);
+        
+        aggmean_ddm[i,j] = mean(n1trim_ddm+n2trim_ddm);
+        aggsd_ddm[i,j] = std(n1trim_ddm+n2trim_ddm);
+
+        x1mean_ddm[i,j] = mean(x1trim_ddm);
+        x2mean_ddm[i,j] = mean(x2trim_ddm);
+        
+        m1mean_ddm[i,j] = mean(m1_ddm[Int64(floor(tmax*burnin)):tmax-1]);
+        m2mean_ddm[i,j] = mean(m2_ddm[Int64(floor(tmax*burnin)):tmax-1]);
+        
+        pe_ddm[i,j] = mean([(std(n1trim)/mean(n1trim)),(std(n2trim)/mean(n2trim))])*
+        (1/(std(n1trim+n2trim)/mean(n1trim+n2trim)))
     
   end
   
 end
 
+save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_meandiff.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"n1mean_ddm",n1mean_ddm,"n2mean_ddm",n2mean_ddm,"x1mean_ddm",x1mean_ddm,"x2mean_ddm",x2mean_ddm,"m1mean_ddm",m1mean_ddm,"m2mean_ddm",m2mean_ddm,"pe_ddm",pe_ddm);
+
+
+d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_meandiff.jld"));
+n1mean = d["n1mean"];
+n2mean = d["n2mean"];
+x1mean = d["x1mean"];
+x2mean = d["x2mean"];
+n1mean_ddm = d["n1mean_ddm"];
+n2mean_ddm = d["n2mean_ddm"];
+x1mean_ddm = d["x1mean_ddm"];
+x2mean_ddm = d["x2mean_ddm"];
+m1mean_ddm = d["m1mean_ddm"];
+m2mean_ddm = d["m2mean_ddm"];
+pe_ddm = d["pe_ddm"];
+
 midpoint = find(x->x==0.25,mvec)[1];
+endpoint = find(x->x==0.5,mvec)[1];
 diff_low = abs(n1mean_ddm[1:midpoint,:] .- n2mean_ddm[1:midpoint,:]);
-diff_high = abs(n1mean_ddm[midpoint+1:length(mvec),:] .- n2mean_ddm[midpoint+1:length(mvec),:]);
+diff_high = abs(n1mean_ddm[midpoint+1:endpoint,:] .- n2mean_ddm[midpoint+1:endpoint,:]);
 meandiff_low = mapslices(mean,diff_low,1);
 meandiff_high = mapslices(mean,diff_high,1);
 
@@ -328,7 +373,7 @@ jvec[2]=Int64(find(x->x==2,cexpvec)[1]);
 jvec[3]=Int64(find(x->x==3,cexpvec)[1]);
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_meandiff.pdf");
+namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_meandiff2.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(5,'Set1')
@@ -338,45 +383,45 @@ plot(10^$cexpvec,$meandiff_low,log='x',pch=16,col=pal[2],cex=0.8,ylim=c(0,500),x
 points(10^$cexpvec,$meandiff_high,pch=16,col=pal[1],cex=0.8)
 lines(10^$cexpvec,rep($(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint]))),length($cexpvec)),lty=2,col=pal[2])
 text(10^$(cexpvec[length(cexpvec)])-50000,$(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint])))+20,expression(paste('Low m, ',m[0],sep='')),col=pal[2])
-lines(10^$cexpvec,rep($(mean(abs(n1mean[midpoint+1:length(mvec)]-n2mean[midpoint+1:length(mvec)]))),length($cexpvec)),lty=2,col=pal[1])
+lines(10^$cexpvec,rep($(mean(abs(n1mean[midpoint+1:endpoint]-n2mean[midpoint+1:endpoint]))),length($cexpvec)),lty=2,col=pal[1])
 text(x=10^$(cexpvec[length(cexpvec)])-50000,y=$(mean(abs(n1mean[midpoint+1:length(mvec)]-n2mean[midpoint+1:length(mvec)])))+20,expression(paste('High m, ',m[0],sep='')),col=pal[1])
 
 cvec = 10^$(cexpvec[jvec])
 
 #Inset figs
 par(fig = c(0.04,0.44, 0.7, 0.995), new = T)
-plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
-points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
-points($mvec,$(n1mean_ddm[:,jvec[1]]),pch='.',cex=2,col=pal[3])
-points($mvec,$(n2mean_ddm[:,jvec[1]]),pch='.',cex=2,col=pal[3])
+plot($mvec,$n1mean,pch='.',cex=1,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
+points($mvec,$n2mean,pch='.',cex=1,col=pal[4])
+points($(mvec[1:endpoint]),$(n1mean_ddm[1:endpoint,jvec[1]]),pch='.',cex=1,col=pal[3])
+points($(mvec[1:endpoint]),$(n2mean_ddm[1:endpoint,jvec[1]]),pch='.',cex=1,col=pal[3])
 text(0.25,380,paste('C=',cvec[1],sep=''),xpd=T,cex=0.9)
 text(-0.06,200,'N*',xpd=T)
 text(0.25,-60,expression(paste('m, ',m[0])),xpd=T)
 lines(seq(0,$(mvec[midpoint]),length.out=10),rep(0,10),col=pal[2],lwd=3)
 lines(seq($(mvec[midpoint]),0.5,length.out=10),rep(0,10),col=pal[1],lwd=3)
-segments($mvec,$(n1mean_ddm[:,jvec[1]]),$mvec,$(n2mean_ddm[:,jvec[1]]),col=pal[3],lwd=0.3)
+segments($mvec,$(n1mean_ddm[:,jvec[1]]),$mvec,$(n2mean_ddm[:,jvec[1]]),col=paste(pal[3],10,sep=''),lwd=0.1)
 
 par(fig = c(0.32,0.72, 0.7, 0.995), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
 points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
-points($mvec,$(n1mean_ddm[:,jvec[2]]),pch='.',cex=2,col=pal[3])
-points($mvec,$(n2mean_ddm[:,jvec[2]]),pch='.',cex=2,col=pal[3])
+points($mvec,$(n1mean_ddm[:,jvec[2]]),pch='.',cex=1,col=pal[3])
+points($mvec,$(n2mean_ddm[:,jvec[2]]),pch='.',cex=1,col=pal[3])
 text(0.25,380,paste('C=',cvec[2],sep=''),xpd=T,cex=0.9)
 text(0.25,-60,expression(paste('m, ',m[0])),xpd=T)
 lines(seq(0,$(mvec[midpoint]),length.out=10),rep(0,10),col=pal[2],lwd=3)
 lines(seq($(mvec[midpoint]),0.5,length.out=10),rep(0,10),col=pal[1],lwd=3)
-segments($mvec,$(n1mean_ddm[:,jvec[2]]),$mvec,$(n2mean_ddm[:,jvec[2]]),col=pal[3],lwd=0.3)
+segments($mvec,$(n1mean_ddm[:,jvec[2]]),$mvec,$(n2mean_ddm[:,jvec[2]]),col=paste(pal[3],10,sep=''),lwd=0.1)
 
 par(fig = c(0.6,0.99, 0.7, 0.995), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
 points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
-points($mvec,$(n1mean_ddm[:,jvec[3]]),pch='.',cex=2,col=pal[3])
-points($mvec,$(n2mean_ddm[:,jvec[3]]),pch='.',cex=2,col=pal[3])
+points($mvec,$(n1mean_ddm[:,jvec[3]]),pch='.',cex=1,col=pal[3])
+points($mvec,$(n2mean_ddm[:,jvec[3]]),pch='.',cex=1,col=pal[3])
 text(0.25,380,paste('C=',cvec[3],sep=''),xpd=T,cex=0.9)
 text(0.25,-60,expression(paste('m, ',m[0])),xpd=T)
 lines(seq(0,$(mvec[midpoint]),length.out=10),rep(0,10),col=pal[2],lwd=3)
 lines(seq($(mvec[midpoint]),0.5,length.out=10),rep(0,10),col=pal[1],lwd=3)
-segments($mvec,$(n1mean_ddm[:,jvec[3]]),$mvec,$(n2mean_ddm[:,jvec[3]]),col=pal[3],lwd=0.3)
+segments($mvec,$(n1mean_ddm[:,jvec[3]]),$mvec,$(n2mean_ddm[:,jvec[3]]),col=paste(pal[3],10,sep=''),lwd=0.1)
 
 #Second row
 
@@ -384,27 +429,27 @@ segments($mvec,$(n1mean_ddm[:,jvec[3]]),$mvec,$(n2mean_ddm[:,jvec[3]]),col=pal[3
 par(fig = c(0.04,0.44, 0.5, 0.8), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
 points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
-points($(m1mean_ddm[:,jvec[1]]),$(n1mean_ddm[:,jvec[1]]),pch='.',cex=2,col=pal[3])
-points($(m2mean_ddm[:,jvec[1]]),$(n2mean_ddm[:,jvec[1]]),pch='.',cex=2,col=pal[3])
+points($(m1mean_ddm[:,jvec[1]]),$(n1mean_ddm[:,jvec[1]]),pch='.',cex=1,col=pal[3])
+points($(m2mean_ddm[:,jvec[1]]),$(n2mean_ddm[:,jvec[1]]),pch='.',cex=1,col=pal[3])
 text(-0.06,200,'N*',xpd=T)
 text(0.25,-60,'m, m*',xpd=T)
-segments($(m1mean_ddm[:,jvec[1]]),$(n1mean_ddm[:,jvec[1]]),$(m2mean_ddm[:,jvec[1]]),$(n2mean_ddm[:,jvec[1]]),col=pal[3],lwd=0.3)
+segments($(m1mean_ddm[:,jvec[1]]),$(n1mean_ddm[:,jvec[1]]),$(m2mean_ddm[:,jvec[1]]),$(n2mean_ddm[:,jvec[1]]),col=paste(pal[3],10,sep=''),lwd=0.1)
 
 par(fig = c(0.32,0.72, 0.5, 0.8), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
 points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
-points($(m1mean_ddm[:,jvec[2]]),$(n1mean_ddm[:,jvec[2]]),pch='.',cex=2,col=pal[3])
-points($(m2mean_ddm[:,jvec[2]]),$(n2mean_ddm[:,jvec[2]]),pch='.',cex=2,col=pal[3])
+points($(m1mean_ddm[:,jvec[2]]),$(n1mean_ddm[:,jvec[2]]),pch='.',cex=1,col=pal[3])
+points($(m2mean_ddm[:,jvec[2]]),$(n2mean_ddm[:,jvec[2]]),pch='.',cex=1,col=pal[3])
 text(0.25,-60,'m, m*',xpd=T)
-segments($(m1mean_ddm[:,jvec[2]]),$(n1mean_ddm[:,jvec[2]]),$(m2mean_ddm[:,jvec[2]]),$(n2mean_ddm[:,jvec[2]]),col=pal[3],lwd=0.1)
+segments($(m1mean_ddm[:,jvec[2]]),$(n1mean_ddm[:,jvec[2]]),$(m2mean_ddm[:,jvec[2]]),$(n2mean_ddm[:,jvec[2]]),col=paste(pal[3],10,sep=''),lwd=0.1)
 
 par(fig = c(0.6,0.99, 0.5, 0.8), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
 points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
-points($(m1mean_ddm[:,jvec[3]]),$(n1mean_ddm[:,jvec[3]]),pch='.',cex=2,col=pal[3])
-points($(m2mean_ddm[:,jvec[3]]),$(n2mean_ddm[:,jvec[3]]),pch='.',cex=2,col=pal[3])
+points($(m1mean_ddm[:,jvec[3]]),$(n1mean_ddm[:,jvec[3]]),pch='.',cex=1,col=pal[3])
+points($(m2mean_ddm[:,jvec[3]]),$(n2mean_ddm[:,jvec[3]]),pch='.',cex=1,col=pal[3])
 text(0.25,-60,'m, m*',xpd=T)
-segments($(m1mean_ddm[:,jvec[3]]),$(n1mean_ddm[:,jvec[3]]),$(m2mean_ddm[:,jvec[3]]),$(n2mean_ddm[:,jvec[3]]),col=pal[3],lwd=0.3)
+segments($(m1mean_ddm[:,jvec[3]]),$(n1mean_ddm[:,jvec[3]]),$(m2mean_ddm[:,jvec[3]]),$(n2mean_ddm[:,jvec[3]]),col=paste(pal[3],10,sep=''),lwd=0.1)
 dev.off()
 """
 

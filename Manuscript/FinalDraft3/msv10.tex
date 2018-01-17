@@ -155,7 +155,7 @@ Given that locally distinct populations are often linked by straying, there is a
 Here we seek to explore how collective density-dependent straying influences the stability and robustness of metapopulations through ecological and evolutionary processes.
 To address this question we build upon an established eco-evolutionary model of two populations occupying different sites that are linked by straying individuals, each with an associated trait distribution subject to natural selection determined by local conditions \citep{Ronce:2001dp}.
 Specifically we compared (a) density-independent (constant) straying with (b) density-dependent straying as a function of the rate at which individuals stray and the strength of collective behaviour across (c) increasing environmental heterogeneity, by assessing two measures of metapopulation robustness: the portfolio effect and the time required for a population(s) to recover following an induced disturbance. 
-This model enables us to explore the tradeoff between the potentially detrimental erosion of local adaptation vs. the positive effects of demographic and evolutionary rescue, both of which are facilitated by straying and the effects of collective navigation. 
+This model enables us to explore the tradeoff between the potentially detrimental erosion of local adaptation vs. the positive effects of demographic rescue, both of which are facilitated by straying and the effects of collective navigation. 
 
 
 
@@ -176,8 +176,8 @@ As $m \rightarrow 0.5$, the populations are perfectly mixed.
 
 
 We used the discrete Ricker framework described by Shelton and Mangel \citep{Shelton:2011eq} as the basis for our two-site metapopulation model, with the added effect that the size of the local population $N_i$ is altered by mixing $mN_j$ individuals from the remote population.
-Moreover, we assume that there is no demographic overlap between generations, consistent with the life history of many populations of pink salmon (\emph{O. gorbuscha}) who all mature at two years of age and die after one reproductive season..
-In this sense, both populations serve simultaneously as donor and recipient populations.
+Moreover, we assume that there is no demographic overlap between generations, consistent with the life history of many populations of pink salmon (\emph{O. gorbuscha}) who all mature at two years of age and die after one reproductive season.
+% In this sense, both populations serve simultaneously as donor and recipient populations.
 Because total recruitment will be determined by both locals (with a mean trait value closer to the site optimum) and strays (with mean trait values farther from the local optimum), the recruitment of the aggregate is determined by the mean of the trait mix $R_i(\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\theta_i)$, where
 \begin{equation}
 \omega_i=\frac{(1-m)N_i(t)}{(1-m) N_i(t) + m N_j(t)}.
@@ -196,7 +196,7 @@ Taken together, the difference equation that determines changes in population si
 \begin{align}
   \label{eq:R}
   &R_i[\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\theta_i] = \\ \nonumber
-  &\int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i-\theta_i)^2}{2\tau^2}\right\} {\rm pr}(x_i,\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\sigma^2) {\rm d}x_i +\tilde{P}_i\\ \nonumber
+  &\int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i-\theta_i)^2}{2\tau^2}\right\} {\rm p}(x_i,\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\sigma^2) {\rm d}x_i +\tilde{P}_i\\ \nonumber
   &= \frac{r_{\rm max} \tau  }{\sqrt{\sigma ^2+\tau ^2}}\exp\left\{-\frac{(\theta_i-(\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t)))^2}{2 \left(\sigma ^2+\tau ^2\right)}\right\} +\tilde{P}_i.
 \end{align}
 
@@ -211,7 +211,7 @@ Recent studies of wild sockeye salmon have indeed found that straying individual
 Because individuals from the local population are mixed with individuals from the remote population via straying and subsequent reproduction, the resulting trait distribution is a complex mixture of trait distributions.
 We make two simplifying assumptions.
 First, we approximate the distribution resulting from the mix of remote and local individuals prior to reproduction as a Gaussian distribution, where $X_i=x_i$ with probability $g(x_i)$.
-The expectation of the actual trait distribution as well as the Gaussian approximation are the same, such that ${\rm E}\{g(x_i)\} = \omega_i\mu_i + (1-\omega_i)\mu_j$, with weights corresponding to the proportion of the mixed population that are local individuals, $\omega_i$, and straying individuals, $1-\omega_i$.
+The expectation of the actual trait distribution as well as the Gaussian approximation are the same, such that ${\rm E}\{X_i\} = \omega_i\mu_i + (1-\omega_i)\mu_j$, with weights corresponding to the proportion of the mixed population that are local individuals, $\omega_i$, and straying individuals, $1-\omega_i$.
 Thus, strays can successfully reproduce and introduce their genotypes into the recipient population, which is supported by observations in wild populations \citep{Jasper:2013cc}.
 Second, we assumed that changes in trait variance through time are minimal, such that $\sigma^2$ is constant over time, which is a common simplification in eco-evolutionary models of population dynamics \citep{Lande:1976ga,Ronce:2001dp,Schreiber:2011wx,Gilbert:2014ee,Gibert:2015kc}.
 These simplifications are the same as those introduced by Ronce and Kirkpatrick, and were shown to have negligible impacts on dynamics \citep{Ronce:2001dp}.
@@ -227,7 +227,8 @@ Following Lande \citep{Lande:1976ga}, and given our assumption of trait distribu
   &= \omega_i\mu_i(t) + (1-\omega_i)\mu_j(t) + h^2\sigma^2\left(\frac{\theta_i - \omega_i\mu_i - (1-\omega_i)\mu_j}{\sigma^2+\tau^2} \right),
 \end{align}
 with $\mu^\prime = \omega_i \mu_i(t)+ (1-\omega_i)\mu_j(t)$.
-Although trait heritability among salmonids is variable, most life-history traits have an $h^2 < 0.5$ \citep{Carlson:2008hl}, and for all additional analyses we have conservatively set $h^2=0.2$.\\
+Although trait heritability among salmonids is variable, most life-history traits have an $h^2 < 0.5$ \citep{Carlson:2008hl}, and for all additional analyses we have conservatively set $h^2=0.2$.
+Together, equations \ref{eq:N} and \ref{eq:mu} for two linked habitats $i$ and $j$ define the 4-dimensional system of difference equations that describe the eco-evolutionary dynamics of the metapopulation. \\
 
 
 \noindent {\bf (b) Density-dependent straying}
@@ -241,11 +242,15 @@ Following Berdahl et al. \citep{Berdahl:2016dx}, given the probability that an i
   \label{eq:ddm}
 \end{equation}
 
-\noindent where $C$ is a half-saturation constant, and determines to what extent collective behaviour, as a function of group size, diminishes straying.
+\noindent where $C$ is a half-saturation constant, determining to what extent collective behaviour, as a function of group size, diminishes straying.
 If $C$ is small, relatively small groups of organisms `correct' for even high individual error rates, suppressing straying between sites.
 In the context of our model, small values of $C$ indicate that the effects of collective behaviour on modifying straying are strong.
-As $C \rightarrow \infty$, groups of any size have no impact on straying, such that $m(t) \rightarrow m_0$, and the model reverts to that of constant straying.
-When $C \ll \infty$ and the population density is high, $m(t) \rightarrow 0$, whereas if the population is small, individuals operate without regard to the collective, such that $m(t) \rightarrow m_0$, such that in all cases, $m(t) < m_0$.
+% As $C \rightarrow \infty$, groups of any size have no impact on straying, such that $m(t) \rightarrow m_0$, and the model reverts to that of constant straying.
+% When $C \ll \infty$ and the population density is high, $m(t) \rightarrow 0$, whereas if the population is small, individuals operate without regard to the collective, such that $m(t) \rightarrow m_0$, such that in all cases, $m(t) < m_0$.
+Henceforth, we refer to $C$ as determining the strength of collective behavior: as $C\rightarrow\infty$, the effect of collective behavior becomes weaker, such that the size of the population has no impact on straying, and $m(t)\rightarrow m_0$.
+In contrast, if $C \ll \infty$, the effect of collective behavior is strong, and smaller populations reduce $m(t)$.
+Although the strength of collective behavior depends both on $C$ as well as the probability that an individual strays $m_0$, for a specific value of $m_0$, a lower $C$ reduces straying for smaller population sizes, increasing the strength of collective behavior.
+Accordingly, although the strength of collective behavior is not exclusively determined by $C$, we believe that it is an effective moniker in this case, and use it for this purpose while acknowledging that it is not a perfect descriptor.
 % For realistic population densities, $m(t) < m_0$.\\
 % We note that at the limit $C\rightarrow \infty$, the density-dependent straying rate becomes constant such that $m(t) \rightarrow m_0$, and this corresponds to the original formulation where $m=m_0$.
 
@@ -352,7 +357,7 @@ For lower $m$, recovery of single extinctions is impacted by the appearance of l
 For intermediate values of $m$ (regime II), the time to recovery is only diminished when the subordinate population becomes extinct, whereas the time to recovery following near-collapse and the extinction of the dominant population are similar and grow until Regime II is exited at high $m$.
 In the case where the subordinate population is extirpated, the most rapid recovery rate occurs when straying is low ($m = 0.08$). 
 In contrast, when the dominant population goes extinct, the most rapid recovery is associated with minimal straying. 
-It should be noted that when there is no straying ($m = 0$), recovery from extinction is infinite and these values are not shown. 
+It should be noted that when there is no straying ($m = 0$), recovery time is infinite and these values are not shown. 
 The relationship between straying and recovery time in the case of synchronous population disturbance is generally positive.
 
 
@@ -399,7 +404,7 @@ In this parameter space, collective migration can mean that the low-density popu
 
 
 
-Observed changes in metapopulation robustness are due to changes in alternative stable state regimes I and II as the strength of collective behaviour increases (lower $C$, figure \ref{fig:bifurcationsddm}a). 
+Sharp changes in metapopulation robustness are due to changes in alternative stable state regimes I and II as the strength of collective behaviour increases (lower $C$, figure \ref{fig:bifurcationsddm}a). 
 When collective behaviour is weak (large $C$), alternative stable states tend to occur at low-intermediate values of individual straying $m_0$.
 As collective behaviour is strengthened (smaller $C$), Regime II is avoided at lower valus of $m_0$ and expands for higher values of $m_0$.
 When the effects of collective behavior are very strong, Regime II then collapses (black region in figure \ref{fig:bifurcationsddm}a) and gives way to regime I, which plays a larger role over a larger range of $m_0$ when $C$ is low (gray region in figure \ref{fig:bifurcationsddm}a).
@@ -430,7 +435,7 @@ Importantly, when the strength of collective behaviour is intermediate, both reg
 As habitat heterogeneity ($\Delta\theta$) increases, even small amounts of straying can lead to the appearance of alternative stable states, and this is in direct accord with the findings of Ronce and Kirkpatrick \citep{Ronce:2001dp}.
 However, if straying is density-dependent, the strength of collective behaviour has a large influence on the occurrence of both alternative stable state regimes I and II.
 When heterogeneity is low and the effects of collective behaviour are weak such that straying is constant (high $C$), regime II occurs for small-intermediate $m_0$, and regime I does not play a role (figure \ref{fig:bifurcationsddm}b), mirroring the findings of Ronce and Kirkpatrick \citep{Ronce:2001dp}.
-The absence of regime I implies that there are no hidden stable state configurations that might trap a disturbed population in a low-density state.
+The absence of regime I implies that there are no hidden stable state configurations that might trap a disturbed population in an asymmetric low-density state.
 As the strength of collective behaviour increases, regime I appears at a cusp and becomes increasingly dominant with greater individual straying.
 For sites distributed across more heterogeneous habitats, the alternative stable state regimes I and II expand (figure \ref{fig:bifurcationsddm}a,c).
 % Only when habitat heterogeneity is intermediate does regime II play a significant role as straying is relatively constant (figure \ref{fig:hystheta}b).
@@ -528,7 +533,7 @@ We highlight three important findings that contribute to our understanding of co
 First, if the effects of collective behaviour are very strong (low $C$), metapopulation robustness is increased, due primarily to the avoidance of alternative stable state regime II (figures \ref{fig:pert},\ref{fig:bifurcationsddm}a).
 This means that - despite potentially high individual error rates - group formation minimizes straying. 
 This occurs when groups of $\leq 10^2$ individuals significantly minimizes straying, which is likely unrealistic.
-Moreover, when the effects of collective behaviour are strong, regime II gives way to the dominance of regime I, which harbors low-density basins of attraction (dashed lines in figure \ref{fig:traj}) that can effectively trap disturbed populations in a subordinate stable state, not unlike the allee effects observed in the collective migration model explored by Berdahl et al. \citep{Berdahl:2016dx}.
+Moreover, when the effects of collective behaviour are strong, regime II gives way to the dominance of regime I, which harbors low-density basins of attraction (dashed lines in figure \ref{fig:traj}) that can effectively trap disturbed populations in a subordinate stable state, not unlike the Allee effects observed in the collective migration model explored by Berdahl et al. \citep{Berdahl:2016dx}.
 % The existence of these hidden basins of attraction could present large challenges to the management of populations in these regimes.
 
 
@@ -544,13 +549,13 @@ Together, this suggests that when the effects of collective behaviour are interm
 % The decline in metapopulation robustness only holds if individual straying is very high.
 Empirical observations of straying support low-intermediate levels of individual error rates in most species \citep{H:2013fs,Keefer:2014gg}.
 If $m_0$ is low ($m_0<0.25$),
-1) the differences between the numerical densities of the subordinate and dominant populations are less exaggerated, and the range of $m_0$ that avoids the alternative stable state regime II is larger (figures \ref{fig:cb}, \ref{fig:bifurcationsddm}a),
-2) the portfolio effect is exaggerated, meaning that the variance of the combined metapopulation is dampening variance observed in the constituent populations (figure \ref{fig:pert}a), and
+1) alternative stable state regime II tends to be avoided for a larger range of $m_0$ (figures \ref{fig:cb}, \ref{fig:bifurcationsddm}a),
+2) the portfolio effect is exaggerated, meaning that the variance of the combined metapopulation has dampened variance relative to its constituent populations (figure \ref{fig:pert}a), and
 3) the time required for the population(s) to recover following an induced disturbance is lower (figure \ref{fig:pert}b).
-Interestingly, the largest portfolio effects are observed when straying is just large enough to enter regime II, where one population assumes a subordinate state.
+Interestingly, the largest portfolio effects are observed when straying is just large enough to enter regime II, where one population assumes a subordinate state, and the differences between the subordinate and dominant population densities is largest.
 This does not appear, in fact, to be a robust condition because the system relies to a large extent on the dominant population as the source, whereas the subordinate population assumes the role of a sink.
 However, recovery time was measured with respect to the aggregate biomass of the metapopulation ($N_T = N_i + N_j$), and despite the source-sink dynamics that emerge in regime II, the aggregate biomass of the system recovers more quickly in this region following the near-collapse of both populations (figure \ref{fig:mpert}b).
-If the perspective is shifted to the robustness of the aggregate biomass of the metapopulation, the existence of asymmetric dominant/subordinate alternative stable states could in one sense be considered robust, despite the fact that one population is always at greater risk of stochastic extinction.
+From this perspective, the existence of asymmetric dominant/subordinate alternative stable states could be considered to be more robust with respect to the recovery time of the total biomass, or less robust because one population is always at greater risk of stochastic extinction.
 
 
 
@@ -1156,7 +1161,7 @@ Alternative stable state regimes I and II corresponding to those in figure \ref{
 (a) Portfolio effect as a function of $m$.
 (b) Recovery time as a function of $m$.
 Measures of metapopulation robustness are shown with respect to different induced disturbances: the near-collapse of both populations (black), and the lone extinction of either the dominant (dark gray) or subordinate (light gray) population.
-Portfolio effects are different for the near-collapse and single extinction scenarios due to one population becoming trapped in a low-density basin of attraction in the alternative stable state regime I.
+Portfolio effects are different for the near-collapse and single extinction scenarios due to different CVs for the populations and aggregate in alternative basins of attraction that exist in regimes I and II.
 } \label{fig:mpert}
 \end{figure*}
 
@@ -1184,7 +1189,7 @@ singlelinecheck=false
 \centering
 \includegraphics[width=0.75\textwidth]{fig_rtpe_ddm.pdf}
 \caption{
-Measures of metapopulation robustness for the density-dependent straying model as a function of individual straying $m_0$ and the strength of collective behaviour $C$ (note the $\rm log_10$ scale, including 
+Measures of metapopulation robustness for the density-dependent straying model as a function of individual straying $m_0$ and the strength of collective behaviour $C$ (note the $\rm log_{10}$ scale, including 
 a) the Portfolio effect,
 b) the time to recovery following near-collapse of both populations,
 c) the time to recovery following the extinction of the subordinate population, and
@@ -1201,7 +1206,7 @@ singlelinecheck=false
 \centering
 \includegraphics[width=0.75\textwidth]{fig_hysteresis_ddm.pdf}
 \caption{
-Alternative stable state regimes I (gray) and II (black) as a function of individual straying $m_0$ and the strength of collective behaviour $C$ (note the $\rm log_10$ scale).
+Alternative stable state regimes I (gray) and II (black) as a function of individual straying $m_0$ and the strength of collective behaviour $C$ (note the $\rm log_{10}$ scale).
 Regime I signifies parameter space where there is either 1) an intermediate-density, symmetric, steady state, or 2) an asymmetric dominant/subordinate density.
 Regime II signifies parameter space where there is an asymmetric dominant/subordinate steady state density.
 The white space to the left (lower values of $m_0$) signifies high-density, symmetric, stable states, and the white space to the right (higher values of $m_0$) signifies low-density, symmetric, steady states.
@@ -1217,7 +1222,7 @@ singlelinecheck=false
 \centering
 \includegraphics[width=0.5\textwidth]{fig_hysteresis_ddm_mtheta.pdf}
 \caption{
-Alternative stable state regimes I (gray) and II (black) as a function of individual straying $m_0$ and the strength of collective behaviour $C$ (note the $\rm log_10$ scale), for the case where individual straying increases with lower habitat heterogeneity (inset).
+Alternative stable state regimes I (gray) and II (black) as a function of individual straying $m_0$ and the strength of collective behaviour $C$ (note the $\rm log_{10}$ scale), for the case where individual straying increases with lower habitat heterogeneity (inset).
 Regime I signifies parameter space where there is either 1) an intermediate-density, symmetric, steady state, or 2) an asymmetric dominant/subordinate density.
 Regime II signifies parameter space where there is an asymmetric dominant/subordinate steady state density.
 } \label{fig:mtheta}
