@@ -104,7 +104,7 @@ Intraspecific diversity can increase the resilience and stability of species or 
 This diversity-stability linkage occurs when there are asynchronous population dynamics within the metapopulation. 
 This asynchrony will increase the potential for demographic rescue \citep{Brown:1977gk,Earn:2000fm} and also decrease the variability of processes that integrate across the metapopulation \citep{Anonymous:2015gf}. 
 For example, different responses to climate variability within populations of a rare plant reduced fluctuations in abundance \citep{Abbott:2017hl}. 
-This statistical buffer has traditionally been quantified as the Portfolio Effect (PE), which is the ratio of the population coefficient of variation (CV) to the CV of the aggregated metapopulation \citep{Thibaut:2012km}. 
+This statistical buffer has traditionally been quantified as the Portfolio Effect (PE), which is the ratio of the population's coefficient of variation (CV) to the CV of the aggregated metapopulation \citep{Thibaut:2012km}. 
 Strengthened portfolio effects are expected to increase the robustness of metapopulations to external disturbances, and by extension promote persistence \citep{Thibaut:2012km}.
 In contrast, homogenization of populations leading to greater synchronization and weakened PE may be a harbinger of metapopulation collapse and extinction \citep{Carlson:2011ce}.
 
@@ -300,40 +300,53 @@ We measured recovery time following three types of induced disturbance: (\emph{i
 
 \section{Results}
 
-%Alternative stable states
-% \noindent Density-independent straying lowers stable state densities for both populations by (\emph{i}) the numerical loss of locally-adapted individuals from donor to recipient populations and (\emph{ii}) the introduction of maladapted individuals and their associated traits to the recipient population from the donor population (figure \ref{fig:traj}).
-% The decline in steady-state densities is abrupt: as straying increases, the system moves from a single stable state where the populations have the same (symmetric) densities, to a region with alternative stable states.
-% Two types of alternative stable state regimes occur in this system, and have important effects on robustness.
-% The first that is encountered at lower straying $m$, separated by a fold bifurcation \citep{AleksandrovichKuznetsov:1995p2580}, has an intermediate stable state, as well as a dominant and subordinate stable state (regime II in figure \ref{fig:traj}).
-% Because the intermediate state is stable, the dominant and subordinate densities are not encountered unless the system is pushed into basins of attraction that define these states (dashed lines in figure \ref{fig:traj}).
-% The second type of alternative stable state regime (regime I) is separated from regime II by a pitchfork bifurcation.
-% Here the only stable points are the dominant (high) and subordinate (low) stable state densities (regime I in figure \ref{fig:traj}).
-% Importantly, we find that increasing the asymmetry in the vital rates of populations between sites does not significantly alter the presence or position of these different regimes (figure \ref{fig:symmetry}).\\
 
+% 
+% \noindent At low values of density-independent straying the system approaches a fixed point at which both populations persist at equal population size. 
+% As we increase the straying rate a fold bifurcation occurs in which another fixed point is created (figure \ref{fig:traj}, inset). 
+% In this alternative state the population sizes are asymmetric. 
+% The population with the larger population size, i.e. the dominant population, is well-adapted and reproduces quickly. 
+% A small fraction of this population that strays to the subordinate site constitutes a considerable inflow, such that the population in the subordinate site is not as well adapted, which in turn reduces reproduction and stabilizes the asymmetry. 
+% 
+% In a regime found at low straying rates (regime I) both the symmetric and the asymmetric state are stable fixed points of the system (figure \ref{fig:traj}, dashed lines). 
+% Which of these fixed points is approached depends on the initial conditions. 
+% The dividing line that separates initial conditions that approach the symmetric solution and initial states that approach the asymmetric solution is a separatrix that runs through an unstable fixed point (figure \ref{fig:traj}, inset) that was also created in the fold bifurcation. 
+% The set of all initial states from which the system approaches the symmetric state is said to be that state's basin of attraction. 
+% As we increase the straying rate this basin of attraction shrinks and and eventually vanishes. At this point the unstable asymmetric state collides with the stable symmetric state. 
+% A bifurcation occurs in which the the unstable asymmetric state vanishes and the symmetric state is destabilized. 
+% This is a subcritical pitchfork bifurcation that only occurs in systems with symmetries. 
+% After this bifurcation the stable asymmetric state is the only attractor. 
+% 
+% We find a wide regime (regime II) where the system will always approach an asymmetric state where one population is suppressed. 
+% However, if the straying is increased further the imbalance in population sizes becomes harder to maintain. 
+% As the straying rate is increased we reach a critical point where the stable asymmetric fixed point becomes symmetric and collides with the unstable symmetric fixed point. 
+% The system undergoes a bifurcation that is the supercritical form of the subcritical bifurcation encountered earlier. 
+% In this bifurcation the stable asymmetric fixed point vanishes while the unstable symmetric state is stabilized. 
+% After this bifurcation the symmetric state is the only attractor in the system.
+% Importantly, we find that increasing the asymmetry in the vital rates of populations between sites does not significantly alter the presence or position of these different regimes (figure \ref{fig:symmetry}).
 
-\noindent At low values of density-independent straying the system approaches a fixed point at which both populations persist at equal population size. 
-As we increase the straying rate a fold bifurcation occurs in which another fixed point is created (figure \ref{fig:traj}, inset). 
-In this alternative state the population sizes are asymmetric. 
-The population with the larger population size, i.e. the dominant population, is well-adapted and reproduces quickly. 
-A small fraction of this population that strays to the subordinate site constitutes a considerable inflow, such that the population in the subordinate site is not as well adapted, which in turn reduces reproduction and stabilizes the asymmetry. 
+\noindent At low values of density-independent straying the system approaches a fixed point at which both populations persist at equal population size, but as we increase straying, other fixed points are created in which the population sizes are asymmetric (figure \ref{fig:traj}, inset).
+The system's underlying symmetry implies that for every asymmetric fixed point there must be another `mirror-image' fixed point in which we find the same population sizes, but where the identities of the populations are reversed.
+Asymmetric fixed points appear in bifurcations as a critical value of the straying parameter is crossed. 
+As the noise in the system is negligible for the purposes of the bifurcation diagram we can use concepts of deterministic bifurcation theory. 
+Based on the Jacobian eigenvalues we conjecture that these bifurcations are fold bifurcations. 
+In a generic fold bifurcation of maps, two new fixed points are created, one of which is unstable, while the other is stable. 
+In the present case, two of these bifurcations occur at the same time, one which creates fixed points where the first population is dominant in the stable fixed point, whereas the second bifurcation creates the mirror-image fixed points where the second population is dominant in the stable fixed point.      
 
-In a regime found at low straying rates (regime I) both the symmetric and the asymmetric state are stable fixed points of the system (figure \ref{fig:traj}, dashed lines). 
+In the asymmetric states the dominant population is well-adapted and reproduces quickly. 
+The (small) fraction of this population that strays to the subordinate site constitutes a considerable inflow, such that the population in the subordinate site is not as well adapted, which in turn reduces reproduction and stabilizes the asymmetry. 
+In a regime found at low straying rates (regime I) both the symmetric and the asymmetric states are stable fixed points of the system (figure \ref{fig:traj}, dashed lines). 
 Which of these fixed points is approached depends on the initial conditions. 
-The dividing line that separates initial conditions that approach the symmetric solution and initial states that approach the asymmetric solution is a separatrix that runs through an unstable fixed point (figure \ref{fig:traj}, inset) that was also created in the fold bifurcation. 
-The set of all initial states from which the system approaches the symmetric state is said to be that state's basin of attraction. 
-As we increase the straying rate this basin of attraction shrinks and and eventually vanishes. At this point the unstable asymmetric state collides with the stable symmetric state. 
-A bifurcation occurs in which the the unstable asymmetric state vanishes and the symmetric state is destabilized. 
-This is a subcritical pitchfork bifurcation that only occurs in systems with symmetries. 
-After this bifurcation the stable asymmetric state is the only attractor. 
 
+As we increase straying, the asymmetric states eventually collide with the stable symmetric state. 
+A subcritical pitchfork bifurcation occurs in which the unstable asymmetric states vanishes and the symmetric state is destabilized. 
+After this bifurcation the stable asymmetric states are the only attractors. 
 We find a wide regime (regime II) where the system will always approach an asymmetric state where one population is suppressed. 
 However, if the straying is increased further the imbalance in population sizes becomes harder to maintain. 
-As the straying rate is increased we reach a critical point where the stable asymmetric fixed point becomes symmetric and collides with the unstable symmetric fixed point. 
-The system undergoes a bifurcation that is the supercritical form of the subcritical bifurcation encountered earlier. 
-In this bifurcation the stable asymmetric fixed point vanishes while the unstable symmetric state is stabilized. 
-After this bifurcation the symmetric state is the only attractor in the system.
-Importantly, we find that increasing the asymmetry in the vital rates of populations between sites does not significantly alter the presence or position of these different regimes (figure \ref{fig:symmetry}).
-
+Eventually we reach a critical point where the stable asymmetric fixed points become symmetric and collide with the unstable symmetric fixed point. 
+The system undergoes a supercritical pitchfork bifurcation, in which the stable asymmetric fixed points vanish while the unstable symmetric fixed point is stabilized. 
+After this bifurcation the symmetric fixed point is the only attractor in the system. 
+Importantly, we find that increasing the asymmetry in the vital rates of populations between sites does not significantly alter the presence or position of these different regimes (figure \ref{symmetry}).
 
 
 %ROBUSTNESS
@@ -404,10 +417,10 @@ In this parameter space, collective migration can mean that the low-density popu
 
 
 
-Sharp changes in metapopulation robustness are due to changes in alternative stable state regimes I and II as the strength of collective behaviour increases (lower $C$, figure \ref{fig:bifurcationsddm}a). 
+Sharp changes in metapopulation robustness are due to changes in alternative stable state regimes I and II as the strength of collective behaviour increases (lower $C$, figure \ref{fig:bifurcationsddm}b). 
 When collective behaviour is weak (large $C$), alternative stable states tend to occur at low-intermediate values of individual straying $m_0$.
 As collective behaviour is strengthened (smaller $C$), Regime II is avoided at lower valus of $m_0$ and expands for higher values of $m_0$.
-When the effects of collective behavior are very strong, Regime II then collapses (black region in figure \ref{fig:bifurcationsddm}a) and gives way to regime I, which plays a larger role over a larger range of $m_0$ when $C$ is low (gray region in figure \ref{fig:bifurcationsddm}a).
+When the effects of collective behavior are very strong, Regime II then collapses (black region in figure \ref{fig:bifurcationsddm}b) and gives way to regime I, which plays a larger role over a larger range of $m_0$ when $C$ is low (gray region in figure \ref{fig:bifurcationsddm}b).
 Importantly, when the strength of collective behaviour is intermediate, both regimes I and II are relevant at low-intermediate $m_0$.
 % In this case, the combined effect of regimes I and II leads to the observed increase in robustness at low-intermediate $m_0$ and subsequent decline with high $m_0$.
 
@@ -434,10 +447,10 @@ Importantly, when the strength of collective behaviour is intermediate, both reg
 \noindent{\bf (c) The role of habitat heterogeneity and changing selective landscapes}\\
 As habitat heterogeneity ($\Delta\theta$) increases, even small amounts of straying can lead to the appearance of alternative stable states, and this is in direct accord with the findings of Ronce and Kirkpatrick \citep{Ronce:2001dp}.
 However, if straying is density-dependent, the strength of collective behaviour has a large influence on the occurrence of both alternative stable state regimes I and II.
-When heterogeneity is low and the effects of collective behaviour are weak such that straying is constant (high $C$), regime II occurs for small-intermediate $m_0$, and regime I does not play a role (figure \ref{fig:bifurcationsddm}b), mirroring the findings of Ronce and Kirkpatrick \citep{Ronce:2001dp}.
+When heterogeneity is low and the effects of collective behaviour are weak such that straying is constant (high $C$), regime II occurs for small-intermediate $m_0$, and regime I does not play a role (figure \ref{fig:bifurcationsddm}a), mirroring the findings of Ronce and Kirkpatrick \citep{Ronce:2001dp}.
 The absence of regime I implies that there are no hidden stable state configurations that might trap a disturbed population in an asymmetric low-density state.
 As the strength of collective behaviour increases, regime I appears at a cusp and becomes increasingly dominant with greater individual straying.
-For sites distributed across more heterogeneous habitats, the alternative stable state regimes I and II expand (figure \ref{fig:bifurcationsddm}a,c).
+For sites distributed across more heterogeneous habitats, the alternative stable state regimes I and II expand (figure \ref{fig:bifurcationsddm}b,c).
 % Only when habitat heterogeneity is intermediate does regime II play a significant role as straying is relatively constant (figure \ref{fig:hystheta}b).
 % For high $\Delta\theta$, there is no longer any sanctum from regimes I or II except for very high individual straying.
 Regime II dominates all but very high individual straying when the effects of collective behaviour are weak (high $C$), and very low individual straying when the effects of collective behaviour are strong (low $C$).
@@ -530,7 +543,7 @@ Here we explore the implications of this collective navigation on metapopulation
 We highlight three important findings that contribute to our understanding of collective movement suggesting that density-dependent straying may play an important role in the persistence of metapopulations over evolutionary time.
 % We will first examine the potentially unrealistic case of very strong collective behaviour, and then discuss the more complicated, but more realistic case of intermediate collective behaviour.
 
-First, if the effects of collective behaviour are very strong (low $C$), metapopulation robustness is increased, due primarily to the avoidance of alternative stable state regime II (figures \ref{fig:pert},\ref{fig:bifurcationsddm}a).
+First, if the effects of collective behaviour are very strong (low $C$), metapopulation robustness is increased, due primarily to the avoidance of alternative stable state regime II (figures \ref{fig:pert},\ref{fig:bifurcationsddm}b).
 This means that - despite potentially high individual error rates - group formation minimizes straying. 
 This occurs when groups of $\leq 10^2$ individuals significantly minimizes straying, which is likely unrealistic.
 Moreover, when the effects of collective behaviour are strong, regime II gives way to the dominance of regime I, which harbors low-density basins of attraction (dashed lines in figure \ref{fig:traj}) that can effectively trap disturbed populations in a subordinate stable state, not unlike the Allee effects observed in the collective migration model explored by Berdahl et al. \citep{Berdahl:2016dx}.
@@ -539,7 +552,7 @@ Moreover, when the effects of collective behaviour are strong, regime II gives w
 
 Our second important finding reveals that when the effects of collective behaviour are intermediate, metapopulation robustness is impacted in three ways, depending on the magnitude of individual straying.
 % Empirical studies suggest that collective behaviour occurs when group sizes are around 100-1000 (REFSXX).
-Here, the system is generally in alternative stable state regime I or II except for perhaps unrealistically low levels of individual straying (figure \ref{fig:bifurcationsddm}a).
+Here, the system is generally in alternative stable state regime I or II except for perhaps unrealistically low levels of individual straying (figure \ref{fig:bifurcationsddm}b).
 If individual straying is high ($m_0>0.25$),
 1) there is a magnified difference between the numerical densities of the subordinate and dominant populations, effectively pushing the subordinate population to lower steady state densities (figure \ref{fig:cb}),
 2) the portfolio effect is low, such that the coefficient of variance for the aggregate metapopulation biomass is on-par with the coefficient of variance of its constituent populations, and
@@ -549,7 +562,7 @@ Together, this suggests that when the effects of collective behaviour are interm
 % The decline in metapopulation robustness only holds if individual straying is very high.
 Empirical observations of straying support low-intermediate levels of individual error rates in most species \citep{H:2013fs,Keefer:2014gg}.
 If $m_0$ is low ($m_0<0.25$),
-1) alternative stable state regime II tends to be avoided for a larger range of $m_0$ (figures \ref{fig:cb}, \ref{fig:bifurcationsddm}a),
+1) alternative stable state regime II tends to be avoided for a larger range of $m_0$ (figures \ref{fig:cb}, \ref{fig:bifurcationsddm}b),
 2) the portfolio effect is exaggerated, meaning that the variance of the combined metapopulation has dampened variance relative to its constituent populations (figure \ref{fig:pert}a), and
 3) the time required for the population(s) to recover following an induced disturbance is lower (figure \ref{fig:pert}b).
 Interestingly, the largest portfolio effects are observed when straying is just large enough to enter regime II, where one population assumes a subordinate state, and the differences between the subordinate and dominant population densities is largest.
@@ -1137,14 +1150,20 @@ $T$ & Terminal simulation time & $10^5$\\
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.75\textwidth]{fig_traj.pdf}
+\includegraphics[width=0.75\textwidth]{fig_traj2.pdf}
 \caption{
-The steady-state densities of $N_i$ and $N_j$ vs. straying $m$ for the constant straying model. 
-Alternative stable states exist for regimes I and II, labeled RI and RII, respectively.
-Two configurations exist in regime I: a symmetric, intermediate state (solid line), and an asymmetric dominant/subordinate state (red and blue dashed lines, respectively).
-One configuration exists in regime II: an asymmetric dominant/subordinate state (red and blue lines, respectively).
-Inset: An illustration of the alternative stable states (solid lines) in regime I (light gray area) and II (dark gray area).
-The dividing line that separates initial conditions that approach the symmetric (sym.) and asymmetric (asym.) solution is a separatrix (dashed line) that runs through an unstable fixed point.
+% The steady-state densities of $N_i$ and $N_j$ vs. straying $m$ for the constant straying model. 
+% Alternative stable states exist for regimes I and II, labeled RI and RII, respectively.
+% Two configurations exist in regime I: a symmetric, intermediate state (solid line), and an asymmetric dominant/subordinate state (red and blue dashed lines, respectively).
+% One configuration exists in regime II: an asymmetric dominant/subordinate state (red and blue lines, respectively).
+% Inset: An illustration of the alternative stable states (solid lines) in regime I (light gray area) and II (dark gray area).
+% The dividing line that separates initial conditions that approach the symmetric (sym.) and asymmetric (asym.) solution is a separatrix (dashed line) that runs through an unstable fixed point.
+The steady-state densities of $N_i$ and $N_j$ vs.~straying $m$ for the constant straying model. 
+Alternative stable states exist for regimes I and II, labeled RI and RII, respectively. 
+In regime I the system can approach qualitatively different states: a symmetric, intermediate state (purple points), and asymmetric dominant/subordinate states (red and blue points, respectively). 
+In regime II only one type of attractor exists: an asymmetric dominant/subordinate state (red and blue points, respectively), and its mirror image where identities of dominant and subordinate are exchanged.
+Inset: A qualitative sketch of the bifurcation diagram, showing the stable (solid lines) and unstable (dashed line) fixed points in regime I (light gray area) and II (dark gray area).
+The symmetric condition (sym.) is the horizontal line at the base of the inset, whereas the asymmetric condition (asym.) is represented by the curved line.
 } \label{fig:traj}
 \end{figure}
 
@@ -1171,12 +1190,13 @@ Portfolio effects are different for the near-collapse and single extinction scen
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.75\textwidth]{fig_meandiff.pdf}
+\includegraphics[width=0.75\textwidth]{fig_meandiff2.pdf}
 \caption{
 Comparison of steady state population densities for the constant straying model and density-dependent straying model.
 Inset: stable state densities for the constant straying model (purple) and density-dependent straying model (green) for different strengths of collective behaviour.
 Low $C$ corresponds to strong effects of collective behaviour.
-The top row shows stable state densities as a function of individual straying $m_0$; the bottom row shows stable state densities as a function of straying at the stable state $m(t)^*$
+The top row shows stable state densities as a function of individual straying $m_0$; the bottom row shows stable state densities as a function of straying at the stable state $m(t)^*$.
+Vertical green lines link paired subordinate and dominant population densities.
 Main: The absolute difference in stable state densities averaged across intervals of low straying ($0 < m,m_0 < 0.25$; blue) and high straying ($0.25 < m,m_0 < 0.5$; red).
 } \label{fig:cb}
 \end{figure*}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JAN 2018 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 JAN 2018 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -330,7 +330,7 @@ Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 \c@subfigure=\count120
 \c@subtable=\count121
 )
-No file msv10.aux.
+(./msv10.aux)
 \openout1 = `msv10.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -348,6 +348,7 @@ LaTeX Font Info:    ... okay on input line 64.
 Class revtex4 Info: Patching LaTeX tabular. on input line 64.
 Class revtex4 Info: cite was not loaded (OK!) on input line 64.
 Class revtex4 Info: multicol was not loaded (OK!) on input line 64.
+
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
@@ -455,797 +456,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
-
-Package natbib Warning: Citation `Brown:1977gk' on page 1 undefined on input li
-ne 105.
-
-
-Package natbib Warning: Citation `Earn:2000fm' on page 1 undefined on input lin
-e 105.
-
-
-Package natbib Warning: Citation `Anonymous:2015gf' on page 1 undefined on inpu
-t line 105.
-
-
-Package natbib Warning: Citation `Abbott:2017hl' on page 1 undefined on input l
-ine 106.
-
-
-Package natbib Warning: Citation `Thibaut:2012km' on page 1 undefined on input 
-line 107.
-
-
-Package natbib Warning: Citation `Thibaut:2012km' on page 1 undefined on input 
-line 108.
-
-
-Package natbib Warning: Citation `Carlson:2011ce' on page 1 undefined on input 
-line 109.
-
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package natbib Warning: Citation `MilnerGulland:2011vm' on page 2 undefined on 
-input line 113.
-
-
-Package natbib Warning: Citation `Bell:2011ki' on page 2 undefined on input lin
-e 114.
-
-
-Package natbib Warning: Citation `Carlson:2014is' on page 2 undefined on input 
-line 114.
-
-
-Package natbib Warning: Citation `Earn:2000fm' on page 2 undefined on input lin
-e 116.
-
-
-Package natbib Warning: Citation `Satterthwaite:2015ge' on page 2 undefined on 
-input line 116.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 2 undefined on input li
-ne 119.
-
-
-Package natbib Warning: Citation `Muhlfeld:2014hs' on page 2 undefined on input
- line 119.
-
-
-Package natbib Warning: Citation `Lowe:2015ft' on page 2 undefined on input lin
-e 120.
-
-
-Package natbib Warning: Citation `Travis:2013en' on page 2 undefined on input l
-ine 128.
-
-
-Package natbib Warning: Citation `H:2013fs' on page 2 undefined on input line 1
-28.
-
-
-Package natbib Warning: Citation `Keefer:2014gg' on page 2 undefined on input l
-ine 128.
-
-
-Package natbib Warning: Citation `Bett:2017ha' on page 2 undefined on input lin
-e 128.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 2 undefined on input 
-line 130.
-
-
-Package natbib Warning: Citation `HardestyMoore:wg' on page 2 undefined on inpu
-t line 130.
-
-
-Package natbib Warning: Citation `Berdahl:2017uu' on page 2 undefined on input 
-line 130.
-
-
-Package natbib Warning: Citation `Simons:2004jo' on page 2 undefined on input l
-ine 131.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 2 undefined on input 
-line 131.
-
-
-Package natbib Warning: Citation `Berdahl:2017uu' on page 2 undefined on input 
-line 131.
-
-
-Package natbib Warning: Citation `Berdahl:2014bl' on page 2 undefined on input 
-line 132.
-
-
-Package natbib Warning: Citation `Brenner:2012gl' on page 2 undefined on input 
-line 145.
-
-
-Package natbib Warning: Citation `Johnson:2012fe' on page 2 undefined on input 
-line 145.
-
-
-Package natbib Warning: Citation `Fullerton:2011ii' on page 2 undefined on inpu
-t line 145.
-
-
-Package natbib Warning: Citation `Quinn:2011tf' on page 2 undefined on input li
-ne 146.
-
-
-Package natbib Warning: Citation `Jonsson:2011kg' on page 2 undefined on input 
-line 146.
-
-
-Package natbib Warning: Citation `Keefer:2014gg' on page 2 undefined on input l
-ine 146.
-
-
-Package natbib Warning: Citation `Quinn:1993ge' on page 2 undefined on input li
-ne 146.
-
-
-Package natbib Warning: Citation `Hendry:2004wf' on page 2 undefined on input l
-ine 146.
-
-
-Package natbib Warning: Citation `Hendry:2004wf' on page 2 undefined on input l
-ine 147.
-
-
-Package natbib Warning: Citation `Schtickzelle:2007wb' on page 2 undefined on i
-nput line 148.
-
-
-Package natbib Warning: Citation `Anderson:2014cx' on page 2 undefined on input
- line 148.
-
-
-Package natbib Warning: Citation `Keefer:2014gg' on page 2 undefined on input l
-ine 149.
-
-
-Package natbib Warning: Citation `Bett:2017ha' on page 2 undefined on input lin
-e 149.
-
-
-Package natbib Warning: Citation `Keefer:2008bs' on page 2 undefined on input l
-ine 149.
-
-
-Package natbib Warning: Citation `Westley:2015to' on page 2 undefined on input 
-line 149.
-
-
-Package natbib Warning: Citation `Bond:2016dz' on page 2 undefined on input lin
-e 149.
-
-
-Package natbib Warning: Citation `Peterson:2014gy' on page 2 undefined on input
- line 150.
-
-
-Package natbib Warning: Citation `Berdahl:2017uu' on page 2 undefined on input 
-line 150.
-
-
-Package natbib Warning: Citation `Moore:2010gs' on page 2 undefined on input li
-ne 151.
-
-
-Package natbib Warning: Citation `Carlson:2011ce' on page 2 undefined on input 
-line 151.
-
-
-Package natbib Warning: Citation `Braun:2016ib' on page 2 undefined on input li
-ne 151.
-
-[2]
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 3 undefined on input li
-ne 156.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 3 undefined on input li
-ne 165.
-
-
-Package natbib Warning: Citation `simpson1953major' on page 3 undefined on inpu
-t line 170.
-
-
-Package natbib Warning: Citation `Lande:1976ga' on page 3 undefined on input li
-ne 170.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 3 undefined on input li
-ne 170.
-
-
-Package natbib Warning: Citation `Reisenbichler:1988ex' on page 3 undefined on 
-input line 171.
-
-
-Package natbib Warning: Citation `Shelton:2011eq' on page 3 undefined on input 
-line 178.
-
-[3]
-
-Package natbib Warning: Citation `Peterson:2014gy' on page 4 undefined on input
- line 206.
-
-
-Package natbib Warning: Citation `Jasper:2013cc' on page 4 undefined on input l
-ine 215.
-
-
-Package natbib Warning: Citation `Lande:1976ga' on page 4 undefined on input li
-ne 216.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 4 undefined on input li
-ne 216.
-
-
-Package natbib Warning: Citation `Schreiber:2011wx' on page 4 undefined on inpu
-t line 216.
-
-
-Package natbib Warning: Citation `Gilbert:2014ee' on page 4 undefined on input 
-line 216.
-
-
-Package natbib Warning: Citation `Gibert:2015kc' on page 4 undefined on input l
-ine 216.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 4 undefined on input li
-ne 217.
-
-
-Package natbib Warning: Citation `Lande:1976ga' on page 4 undefined on input li
-ne 222.
-
-[4]
-
-Package natbib Warning: Citation `Carlson:2008hl' on page 5 undefined on input 
-line 230.
-
-
-LaTeX Warning: Reference `eq:N' on page 5 undefined on input line 231.
-
-
-LaTeX Warning: Reference `eq:mu' on page 5 undefined on input line 231.
-
-
+[2] [3] [4]
 Underfull \hbox (badness 10000) in paragraph at lines 228--232
 
  []
 
-
-Package natbib Warning: Citation `Berdahl:2014bl' on page 5 undefined on input 
-line 236.
-
-
-Package natbib Warning: Citation `Berdahl:2017uu' on page 5 undefined on input 
-line 236.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 5 undefined on input 
-line 238.
-
-
-Package natbib Warning: Citation `Anderson:2014cx' on page 5 undefined on input
- line 267.
-
-
-Package natbib Warning: Citation `Schindler:2015gf' on page 5 undefined on inpu
-t line 267.
-
-
-Package natbib Warning: Citation `Ovaskainen:2002il' on page 5 undefined on inp
-ut line 267.
-
-
-Package natbib Warning: Citation `Anderson:2013gb' on page 5 undefined on input
- line 270.
-
-
-Package natbib Warning: Citation `Loreau:2008ju' on page 5 undefined on input l
-ine 280.
-
-
-Package natbib Warning: Citation `Anderson:2014cx' on page 5 undefined on input
- line 280.
-
-
-Package natbib Warning: Citation `Yeakel:2013vz' on page 5 undefined on input l
-ine 280.
-
 [5]
-
-Package natbib Warning: Citation `GuckHolmes' on page 6 undefined on input line
- 284.
-
-
-LaTeX Warning: Reference `fig:recovery' on page 6 undefined on input line 288.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--295
+Underfull \hbox (badness 10000) in paragraph at lines 295--299
 
  []
-
-
-LaTeX Warning: Reference `fig:traj' on page 6 undefined on input line 311.
-
-
-LaTeX Warning: Reference `fig:traj' on page 6 undefined on input line 316.
-
-
-LaTeX Warning: Reference `fig:traj' on page 6 undefined on input line 318.
 
 [6]
 
-LaTeX Warning: Reference `fig:symmetry' on page 7 undefined on input line 331.
+LaTeX Warning: Reference `symmetry' on page 7 undefined on input line 349.
 
 
-LaTeX Warning: Reference `fig:mpert' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Reference `fig:mpert' on page 7 undefined on input line 339.
-
-
-LaTeX Warning: Reference `fig:mpert' on page 7 undefined on input line 344.
-
-
-LaTeX Warning: Reference `fig:mpert' on page 7 undefined on input line 351.
-
-
-Package natbib Warning: Citation `Scheffer:2009gg' on page 7 undefined on input
- line 362.
-
-
-Package natbib Warning: Citation `Scheffer:2009gg' on page 7 undefined on input
- line 362.
-
-
-Package natbib Warning: Citation `Lade:2012eu' on page 7 undefined on input lin
-e 362.
-
-
-Package natbib Warning: Citation `Anonymous:2013br' on page 7 undefined on inpu
-t line 362.
-
-
-Package natbib Warning: Citation `Dakos:2014br' on page 7 undefined on input li
-ne 362.
-
-
-Package natbib Warning: Citation `Krkosek:2014ch' on page 7 undefined on input 
-line 362.
-
-
-LaTeX Warning: Reference `fig:pevsrt' on page 7 undefined on input line 365.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 360--369
+Underfull \hbox (badness 10000) in paragraph at lines 377--386
 
  []
 
-[7]
-
-LaTeX Warning: Reference `eq:ddm' on page 8 undefined on input line 373.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 8 undefined on input 
-line 373.
-
-
-LaTeX Warning: Reference `eq:ddm' on page 8 undefined on input line 375.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 8 undefined on input 
-line 375.
-
-
-LaTeX Warning: Reference `fig:cb' on page 8 undefined on input line 384.
-
-
-LaTeX Warning: Reference `fig:cb' on page 8 undefined on input line 385.
-
-
-LaTeX Warning: Reference `fig:cb' on page 8 undefined on input line 387.
-
-
-LaTeX Warning: Reference `fig:cb' on page 8 undefined on input line 388.
-
-
-LaTeX Warning: Reference `fig:mpert' on page 8 undefined on input line 394.
-
-
-LaTeX Warning: Reference `fig:pert' on page 8 undefined on input line 395.
-
-
-LaTeX Warning: Reference `fig:pert' on page 8 undefined on input line 396.
-
-[8]
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 9 undefined on input lin
-e 403.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 9 undefined on input lin
-e 406.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 9 undefined on input lin
-e 406.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 9 undefined on input li
-ne 431.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 9 undefined on input lin
-e 433.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 9 undefined on input li
-ne 433.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 9 undefined on input lin
-e 436.
-
-
-Package natbib Warning: Citation `Peterson:2014gy' on page 9 undefined on input
- line 445.
-
-
-Package natbib Warning: Citation `Lin:2008kl' on page 9 undefined on input line
- 445.
-
-
-LaTeX Warning: Reference `fig:mtheta' on page 9 undefined on input line 446.
-
-
-LaTeX Warning: Reference `fig:mtheta' on page 9 undefined on input line 448.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 9 undefined on input li
-ne 467.
-
-
-Package natbib Warning: Citation `Anderson:2013gb' on page 9 undefined on input
- line 468.
-
-
-Package natbib Warning: Citation `Anonymous:2015gf' on page 9 undefined on inpu
-t line 468.
-
-
-Package natbib Warning: Citation `Ovaskainen:2002il' on page 9 undefined on inp
-ut line 469.
-
-
-LaTeX Warning: Reference `fig:pevsrt' on page 9 undefined on input line 470.
-
-
-Package natbib Warning: Citation `Donohue:2013iu' on page 9 undefined on input 
-line 470.
-
-
-LaTeX Warning: Reference `eq:ddm' on page 9 undefined on input line 472.
-
-
-Package natbib Warning: Citation `Berdahl:2014bl' on page 9 undefined on input 
-line 475.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 9 undefined on input 
-line 475.
-
-[9]
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 10 undefined on input l
-ine 499.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 10 undefined on input l
-ine 500.
-
-
-LaTeX Warning: Reference `fig:traj' on page 10 undefined on input line 501.
-
-
-LaTeX Warning: Reference `fig:pert' on page 10 undefined on input line 501.
-
-
-LaTeX Warning: Reference `fig:pert' on page 10 undefined on input line 504.
-
-
-LaTeX Warning: Reference `fig:pert' on page 10 undefined on input line 529.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 10 undefined on input li
-ne 529.
-
-
-LaTeX Warning: Reference `fig:traj' on page 10 undefined on input line 532.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 10 undefined on input
- line 532.
-
-[10]
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 11 undefined on input li
-ne 538.
-
-
-LaTeX Warning: Reference `fig:cb' on page 11 undefined on input line 540.
-
-
-LaTeX Warning: Reference `fig:pert' on page 11 undefined on input line 542.
-
-
-Package natbib Warning: Citation `H:2013fs' on page 11 undefined on input line 
-546.
-
-
-Package natbib Warning: Citation `Keefer:2014gg' on page 11 undefined on input 
-line 546.
-
-
-LaTeX Warning: Reference `fig:cb' on page 11 undefined on input line 548.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 11 undefined on input li
-ne 548.
-
-
-LaTeX Warning: Reference `fig:pert' on page 11 undefined on input line 549.
-
-
-LaTeX Warning: Reference `fig:pert' on page 11 undefined on input line 550.
-
-
-LaTeX Warning: Reference `fig:mpert' on page 11 undefined on input line 553.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 11 undefined on input li
-ne 576.
-
-
-Package natbib Warning: Citation `Westley:2015to' on page 11 undefined on input
- line 577.
-
-
-LaTeX Warning: Reference `fig:bifurcationsddm' on page 11 undefined on input li
-ne 579.
-
-
-Package natbib Warning: Citation `Christie:2012bj' on page 11 undefined on inpu
-t line 582.
-
-
-Package natbib Warning: Citation `Chilcote:2003bb' on page 11 undefined on inpu
-t line 583.
-
-
-Package natbib Warning: Citation `Araki:2007cm' on page 11 undefined on input l
-ine 583.
-
-[11]
-
-Package natbib Warning: Citation `Reisenbichler:1988ex' on page 12 undefined on
- input line 586.
-
-
-Package natbib Warning: Citation `Fraser:2011co' on page 12 undefined on input 
-line 586.
-
-
-Package natbib Warning: Citation `Westley:2012ui' on page 12 undefined on input
- line 586.
-
-
-Package natbib Warning: Citation `Candy:2000hu' on page 12 undefined on input l
-ine 587.
-
-
-Package natbib Warning: Citation `JPE:JPE1383' on page 12 undefined on input li
-ne 587.
-
-
-Package natbib Warning: Citation `Peterson:2014gy' on page 12 undefined on inpu
-t line 588.
-
-
-LaTeX Warning: Reference `fig:mtheta' on page 12 undefined on input line 589.
-
-
-LaTeX Warning: Reference `fig:mtheta' on page 12 undefined on input line 590.
-
-
-Package natbib Warning: Citation `Anderson:2013bf' on page 12 undefined on inpu
-t line 592.
-
-
-Package natbib Warning: Citation `Pess:2014isa' on page 12 undefined on input l
-ine 592.
-
-
-Package natbib Warning: Citation `H:2013fs' on page 12 undefined on input line 
-603.
-
-
-Package natbib Warning: Citation `Heino:1997vf' on page 12 undefined on input l
-ine 605.
-
-
-Package natbib Warning: Citation `Carrara:2014cy' on page 12 undefined on input
- line 605.
-
-
-Package natbib Warning: Citation `Yeakel:2013vz' on page 12 undefined on input 
-line 605.
-
-
-Package natbib Warning: Citation `Gilarranz:2017fs' on page 12 undefined on inp
-ut line 605.
-
-
-Package natbib Warning: Citation `Stanford:2017bu' on page 12 undefined on inpu
-t line 613.
-
-
-Package natbib Warning: Citation `Berdahl:2014bl' on page 12 undefined on input
- line 614.
-
-
-Package natbib Warning: Citation `Leider:1989gx' on page 12 undefined on input 
-line 614.
-
-
-Package natbib Warning: Citation `Pess:2012by' on page 12 undefined on input li
-ne 614.
-
-
-Package natbib Warning: Citation `Pess:2014isa' on page 12 undefined on input l
-ine 614.
-
-
-Package natbib Warning: Citation `Milner:2008gb' on page 12 undefined on input 
-line 614.
-
-
-Package natbib Warning: Citation `Berdahl:2017uu' on page 12 undefined on input
- line 616.
-
-[12]
-
-Package natbib Warning: Citation `Ford:2002ip' on page 13 undefined on input li
-ne 621.
-
-
-Package natbib Warning: Citation `Brenner:2012gl' on page 13 undefined on input
- line 621.
-
-
-Package natbib Warning: Citation `Ruzzante:1994bu' on page 13 undefined on inpu
-t line 624.
-
-
-Package natbib Warning: Citation `Jonsson:2011kg' on page 13 undefined on input
- line 624.
-
-
-Package natbib Warning: Citation `Berdahl:2016dx' on page 13 undefined on input
- line 643.
-
-
-Package natbib Warning: Citation `Ronce:2001dp' on page 13 undefined on input l
-ine 645.
-
-
-Package natbib Warning: Citation `HardestyMoore:wg' on page 13 undefined on inp
-ut line 646.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 642--654
+[7] [8] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 659--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--654
+Underfull \hbox (badness 10000) in paragraph at lines 659--671
 
  []
 
-[13]
+[13] [14] [15] [16] [17] [18]
 
-LaTeX Warning: Reference `LastBibItem' on page 14 undefined on input line 669.
-
-[14] [15] [16] [17] [18]
-
-pdfTeX warning: pdflatex (file ./fig_traj.pdf): PDF inclusion: found PDF versio
-n <1.7>, but at most version <1.5> allowed
-<fig_traj.pdf, id=82, 433.62pt x 361.35pt>
-File: fig_traj.pdf Graphic file (type pdf)
- <use fig_traj.pdf>
-Package pdftex.def Info: fig_traj.pdf used on input line 1136.
+pdfTeX warning: pdflatex (file ./fig_traj2.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<fig_traj2.pdf, id=82, 433.62pt x 361.35pt>
+File: fig_traj2.pdf Graphic file (type pdf)
+ <use fig_traj2.pdf>
+Package pdftex.def Info: fig_traj2.pdf used on input line 1153.
 (pdftex.def)             Requested size: 382.5pt x 318.76642pt.
 
 <fig_mpert.pdf, id=83, 722.7pt x 289.08pt>
 File: fig_mpert.pdf Graphic file (type pdf)
  <use fig_mpert.pdf>
-Package pdftex.def Info: fig_mpert.pdf used on input line 1153.
+Package pdftex.def Info: fig_mpert.pdf used on input line 1176.
 (pdftex.def)             Requested size: 510.0pt x 203.99991pt.
 
-
-LaTeX Warning: Reference `fig:traj' on page 19 undefined on input line 1161.
-
-<fig_meandiff.pdf, id=84, 505.89pt x 433.62pt>
-File: fig_meandiff.pdf Graphic file (type pdf)
- <use fig_meandiff.pdf>
-Package pdftex.def Info: fig_meandiff.pdf used on input line 1170.
+<fig_meandiff2.pdf, id=84, 505.89pt x 433.62pt>
+File: fig_meandiff2.pdf Graphic file (type pdf)
+ <use fig_meandiff2.pdf>
+Package pdftex.def Info: fig_meandiff2.pdf used on input line 1193.
 (pdftex.def)             Requested size: 382.5pt x 327.8608pt.
 
 <fig_rtpe_ddm.pdf, id=85, 722.7pt x 578.16pt>
 File: fig_rtpe_ddm.pdf Graphic file (type pdf)
  <use fig_rtpe_ddm.pdf>
-Package pdftex.def Info: fig_rtpe_ddm.pdf used on input line 1186.
+Package pdftex.def Info: fig_rtpe_ddm.pdf used on input line 1210.
 (pdftex.def)             Requested size: 382.5pt x 305.99988pt.
 
-<fig_hysteresis_ddm.pdf, id=86, 650.43pt x 433.62pt>
+<fig_hysteresis_ddm.pdf, id=86, 722.7pt x 289.08pt>
 File: fig_hysteresis_ddm.pdf Graphic file (type pdf)
 
 <use fig_hysteresis_ddm.pdf>
-Package pdftex.def Info: fig_hysteresis_ddm.pdf used on input line 1203.
-(pdftex.def)             Requested size: 382.5pt x 255.00652pt.
+Package pdftex.def Info: fig_hysteresis_ddm.pdf used on input line 1227.
+(pdftex.def)             Requested size: 382.5pt x 152.99994pt.
 
 <fig_hysteresis_ddm_mtheta.pdf, id=87, 433.62pt x 361.35pt>
 File: fig_hysteresis_ddm_mtheta.pdf Graphic file (type pdf)
 
 <use fig_hysteresis_ddm_mtheta.pdf>
-Package pdftex.def Info: fig_hysteresis_ddm_mtheta.pdf used on input line 1219.
+Package pdftex.def Info: fig_hysteresis_ddm_mtheta.pdf used on input line 1243.
 
 (pdftex.def)             Requested size: 255.0pt x 212.49992pt.
- [19 <./fig_traj.pdf>] [20 <./fig_mpert.pdf>] [21 <./fig_meandiff.pdf>] [22 <./
-fig_rtpe_ddm.pdf>] [23 <./fig_hysteresis_ddm.pdf>] [24 <./fig_hysteresis_ddm_mt
-heta.pdf>]
-
-Class revtex4 Warning: Endnote numbers changed: rerun LaTeX.
-
-
-Package natbib Warning: There were undefined citations.
-
-[25] (./msv10.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ [19 <./fig_traj2.pdf>] [20 <./fig_mpert.pdf>] [21 <./fig_meandiff2.pdf>] [22 <
+./fig_rtpe_ddm.pdf> <./fig_hysteresis_ddm.pdf>] [23 <./fig_hysteresis_ddm_mthet
+a.pdf>] [24] (./msv10.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
- 7108 strings out of 493014
- 102567 string characters out of 6133351
- 187544 words of memory out of 5000000
- 10506 multiletter control sequences out of 15000+600000
+ 7111 strings out of 493014
+ 102607 string characters out of 6133351
+ 189012 words of memory out of 5000000
+ 10507 multiletter control sequences out of 15000+600000
  21597 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,39p,1779b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,39p,1779b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -1270,9 +567,9 @@ ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/cm-super/sfss0500.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2016/texmf-dist/fo
 nts/type1/public/cm-super/sfti1000.pfb>
-Output written on msv10.pdf (25 pages, 1697467 bytes).
+Output written on msv10.pdf (24 pages, 2537727 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
+ 243 PDF objects out of 1000 (max. 8388607)
  174 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)

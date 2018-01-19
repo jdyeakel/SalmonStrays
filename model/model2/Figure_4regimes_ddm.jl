@@ -367,6 +367,15 @@ meandiff_low = mapslices(mean,diff_low,1);
 meandiff_high = mapslices(mean,diff_high,1);
 
 
+less = find(x->x<=0.25,mvec);
+more = find(x->x>0.25,mvec);
+diff_low = abs(n1mean_ddm[less,:] .- n2mean_ddm[less,:]);
+diff_high = abs(n1mean_ddm[more,:] .- n2mean_ddm[more,:]);
+meandiff_low = mapslices(mean,diff_low,1);
+meandiff_high = mapslices(mean,diff_high,1);
+
+
+
 jvec=Array{Int64}(3);
 jvec[1]=Int64(find(x->x==1,cexpvec)[1]);
 jvec[2]=Int64(find(x->x==2,cexpvec)[1]);
@@ -379,12 +388,13 @@ library(RColorBrewer)
 pal = brewer.pal(5,'Set1')
 pdf($namespace,height=6,width=7)
 par(fig = c(0,1,0,1),mai = c(0.8, 0.8, 0.1, 0.1))
-plot(10^$cexpvec,$meandiff_low,log='x',pch=16,col=pal[2],cex=0.8,ylim=c(0,500),xlab='C',ylab='Mean difference in steady state densities')
-points(10^$cexpvec,$meandiff_high,pch=16,col=pal[1],cex=0.8)
-lines(10^$cexpvec,rep($(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint]))),length($cexpvec)),lty=2,col=pal[2])
+plot(10^$cexpvec,$meandiff_low,log='x',type='l',lwd=3,col=pal[2],cex=0.8,ylim=c(0,600),xlab='C',ylab='Mean difference in steady state densities')
+points(10^$cexpvec,$meandiff_low,col=pal[2],cex=1)
+lines(10^$cexpvec,$meandiff_high,lwd=3,col=pal[1],cex=0.8)
+lines(10^$cexpvec,rep($(mean(abs(n1mean[less]-n2mean[less]))),length($cexpvec)),lty=2,col=pal[2])
 text(10^$(cexpvec[length(cexpvec)])-50000,$(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint])))+20,expression(paste('Low m, ',m[0],sep='')),col=pal[2])
-lines(10^$cexpvec,rep($(mean(abs(n1mean[midpoint+1:endpoint]-n2mean[midpoint+1:endpoint]))),length($cexpvec)),lty=2,col=pal[1])
-text(x=10^$(cexpvec[length(cexpvec)])-50000,y=$(mean(abs(n1mean[midpoint+1:length(mvec)]-n2mean[midpoint+1:length(mvec)])))+20,expression(paste('High m, ',m[0],sep='')),col=pal[1])
+lines(10^$cexpvec,rep($(mean(abs(n1mean[more]-n2mean[more]))),length($cexpvec)),lty=2,col=pal[1])
+text(x=10^$(cexpvec[length(cexpvec)])-50000,y=$(mean(abs(n1mean[midpoint+1:length(mvec)]-n2mean[midpoint+1:length(mvec)])))-35,expression(paste('High m, ',m[0],sep='')),col=pal[1])
 
 cvec = 10^$(cexpvec[jvec])
 
@@ -399,7 +409,7 @@ text(-0.06,200,'N*',xpd=T)
 text(0.25,-60,expression(paste('m, ',m[0])),xpd=T)
 lines(seq(0,$(mvec[midpoint]),length.out=10),rep(0,10),col=pal[2],lwd=3)
 lines(seq($(mvec[midpoint]),0.5,length.out=10),rep(0,10),col=pal[1],lwd=3)
-segments($mvec,$(n1mean_ddm[:,jvec[1]]),$mvec,$(n2mean_ddm[:,jvec[1]]),col=paste(pal[3],10,sep=''),lwd=0.1)
+segments($(mvec[collect(1:5:length(mvec))]),$(n1mean_ddm[:,jvec[1]][collect(1:5:length(mvec))]),$(mvec[collect(1:5:length(mvec))]),$(n2mean_ddm[:,jvec[1]][collect(1:5:length(mvec))]),col=paste(pal[3],99,sep=''),lwd=0.5)
 
 par(fig = c(0.32,0.72, 0.7, 0.995), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
@@ -410,7 +420,7 @@ text(0.25,380,paste('C=',cvec[2],sep=''),xpd=T,cex=0.9)
 text(0.25,-60,expression(paste('m, ',m[0])),xpd=T)
 lines(seq(0,$(mvec[midpoint]),length.out=10),rep(0,10),col=pal[2],lwd=3)
 lines(seq($(mvec[midpoint]),0.5,length.out=10),rep(0,10),col=pal[1],lwd=3)
-segments($mvec,$(n1mean_ddm[:,jvec[2]]),$mvec,$(n2mean_ddm[:,jvec[2]]),col=paste(pal[3],10,sep=''),lwd=0.1)
+segments($(mvec[collect(1:50:length(mvec))]),$(n1mean_ddm[:,jvec[2]][collect(1:50:length(mvec))]),$(mvec[collect(1:50:length(mvec))]),$(n2mean_ddm[:,jvec[2]][collect(1:50:length(mvec))]),col=paste(pal[3],99,sep=''),lwd=0.5)
 
 par(fig = c(0.6,0.99, 0.7, 0.995), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
@@ -421,7 +431,7 @@ text(0.25,380,paste('C=',cvec[3],sep=''),xpd=T,cex=0.9)
 text(0.25,-60,expression(paste('m, ',m[0])),xpd=T)
 lines(seq(0,$(mvec[midpoint]),length.out=10),rep(0,10),col=pal[2],lwd=3)
 lines(seq($(mvec[midpoint]),0.5,length.out=10),rep(0,10),col=pal[1],lwd=3)
-segments($mvec,$(n1mean_ddm[:,jvec[3]]),$mvec,$(n2mean_ddm[:,jvec[3]]),col=paste(pal[3],10,sep=''),lwd=0.1)
+segments($(mvec[collect(1:50:length(mvec))]),$(n1mean_ddm[:,jvec[3]][collect(1:50:length(mvec))]),$(mvec[collect(1:50:length(mvec))]),$(n2mean_ddm[:,jvec[3]][collect(1:50:length(mvec))]),col=paste(pal[3],99,sep=''),lwd=0.5)
 
 #Second row
 
@@ -433,7 +443,7 @@ points($(m1mean_ddm[:,jvec[1]]),$(n1mean_ddm[:,jvec[1]]),pch='.',cex=1,col=pal[3
 points($(m2mean_ddm[:,jvec[1]]),$(n2mean_ddm[:,jvec[1]]),pch='.',cex=1,col=pal[3])
 text(-0.06,200,'N*',xpd=T)
 text(0.25,-60,'m, m*',xpd=T)
-segments($(m1mean_ddm[:,jvec[1]]),$(n1mean_ddm[:,jvec[1]]),$(m2mean_ddm[:,jvec[1]]),$(n2mean_ddm[:,jvec[1]]),col=paste(pal[3],10,sep=''),lwd=0.1)
+segments($(m1mean_ddm[:,jvec[1]][collect(1:50:length(mvec))]),$(n1mean_ddm[:,jvec[1]][collect(1:50:length(mvec))]),$(m2mean_ddm[:,jvec[1]][collect(1:50:length(mvec))]),$(n2mean_ddm[:,jvec[1]][collect(1:50:length(mvec))]),col=paste(pal[3],99,sep=''),lwd=0.5)
 
 par(fig = c(0.32,0.72, 0.5, 0.8), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
@@ -441,7 +451,7 @@ points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
 points($(m1mean_ddm[:,jvec[2]]),$(n1mean_ddm[:,jvec[2]]),pch='.',cex=1,col=pal[3])
 points($(m2mean_ddm[:,jvec[2]]),$(n2mean_ddm[:,jvec[2]]),pch='.',cex=1,col=pal[3])
 text(0.25,-60,'m, m*',xpd=T)
-segments($(m1mean_ddm[:,jvec[2]]),$(n1mean_ddm[:,jvec[2]]),$(m2mean_ddm[:,jvec[2]]),$(n2mean_ddm[:,jvec[2]]),col=paste(pal[3],10,sep=''),lwd=0.1)
+segments($(m1mean_ddm[:,jvec[2]][collect(1:50:length(mvec))]),$(n1mean_ddm[:,jvec[2]][collect(1:50:length(mvec))]),$(m2mean_ddm[:,jvec[2]][collect(1:50:length(mvec))]),$(n2mean_ddm[:,jvec[2]][collect(1:50:length(mvec))]),col=paste(pal[3],99,sep=''),lwd=0.5)
 
 par(fig = c(0.6,0.99, 0.5, 0.8), new = T)
 plot($mvec,$n1mean,pch='.',cex=2,col=pal[4],xaxt='n',yaxt='n',ann=F,ylim=c(0,400))
@@ -449,10 +459,15 @@ points($mvec,$n2mean,pch='.',cex=2,col=pal[4])
 points($(m1mean_ddm[:,jvec[3]]),$(n1mean_ddm[:,jvec[3]]),pch='.',cex=1,col=pal[3])
 points($(m2mean_ddm[:,jvec[3]]),$(n2mean_ddm[:,jvec[3]]),pch='.',cex=1,col=pal[3])
 text(0.25,-60,'m, m*',xpd=T)
-segments($(m1mean_ddm[:,jvec[3]]),$(n1mean_ddm[:,jvec[3]]),$(m2mean_ddm[:,jvec[3]]),$(n2mean_ddm[:,jvec[3]]),col=paste(pal[3],10,sep=''),lwd=0.1)
+segments($(m1mean_ddm[:,jvec[3]][collect(1:50:length(mvec))]),$(n1mean_ddm[:,jvec[3]][collect(1:50:length(mvec))]),$(m2mean_ddm[:,jvec[3]][collect(1:50:length(mvec))]),$(n2mean_ddm[:,jvec[3]][collect(1:50:length(mvec))]),col=paste(pal[3],99,sep=''),lwd=0.5)
 dev.off()
 """
 
+
+lines(10^$cexpvec,rep($(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint]))),length($cexpvec)),lty=2,col=pal[2])
+text(10^$(cexpvec[length(cexpvec)])-50000,$(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint])))+20,expression(paste('Low m, ',m[0],sep='')),col=pal[2])
+lines(10^$cexpvec,rep($(mean(abs(n1mean[midpoint+1:endpoint]-n2mean[midpoint+1:endpoint]))),length($cexpvec)),lty=2,col=pal[1])
+text(x=10^$(cexpvec[length(cexpvec)])-50000,y=$(mean(abs(n1mean[midpoint+1:length(mvec)]-n2mean[midpoint+1:length(mvec)])))+20,expression(paste('High m, ',m[0],sep='')),col=pal[1])
 
 
 R"""
@@ -676,7 +691,7 @@ R"""
 library(RColorBrewer)
 library(fields)
 pal = rev(brewer.pal(9,"Blues"))
-pal2 = brewer.pal(11,"Spectral")
+pal2 = rev(brewer.pal(11,"Spectral"))
 pdf($namespace,height=4,width=10)
 par(mfrow=c(1,2),mai = c(0.8, 0.8, 0.3, 0.9))
 image.plot(x=$mvec,y=$cexpvec,z=$mpe_ddm,zlim=c(min($(mpe_ddm[!isnan(mpe_ddm)])),2),col=pal,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
@@ -722,7 +737,7 @@ R"""
 library(RColorBrewer)
 library(fields)
 pal = rev(brewer.pal(9,"Blues"))
-pal2 = brewer.pal(11,"Spectral")
+pal2 = rev(brewer.pal(11,"Spectral"))
 pdf($namespace,height=10,width=10)
 par(mfrow=c(2,2),mai = c(0.8, 0.8, 0.3, 0.9))
 image.plot(x=$mvec,y=$cexpvec,z=$mpe_ddm_s,zlim=c(min($(mpe_ddm_s[!isnan(mpe_ddm_s)])),2),col=pal,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
@@ -756,25 +771,28 @@ dev.off()
 """
 
 
+##############
+#Figure 4
+##############
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_rtpe_ddm.pdf");
 R"""
 library(RColorBrewer)
 library(fields)
 pal = rev(brewer.pal(9,"Blues"))
-pal2 = brewer.pal(11,"Spectral")
+pal2 = rev(brewer.pal(11,"Spectral"))
 pdf($namespace,height=8,width=10)
 par(mfrow=c(2,2),mai = c(0.8, 0.8, 0.3, 0.9))
 image.plot(x=$mvec,y=$cexpvec,z=$mpe_ddm,zlim=c(min($(mpe_ddm[!isnan(mpe_ddm)])),2),col=pal,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
-text(x=0.25,y=5.2,'PE',xpd=T)
-image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm,10),zlim=c(min(log($mrt_ddm,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab='')
+text(x=0.25,y=5.2,'Portfolio effect',xpd=T)
+image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm,10),zlim=c(min(log($mrt_ddm,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
 text(x=0.43,y=4.8,'Near-collapse',xpd=T,col='black')
-text(x=0.25,y=5.2,expression(paste(log[10],' Recovery time')),xpd=T)
-image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_s,10),zlim=c(min(log($mrt_ddm_s,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab='')
-text(x=0.25,y=5.2,expression(paste(log[10],' Recovery time')),xpd=T)
+text(x=0.25,y=5.2,expression(paste(log[10],'Recovery time')),xpd=T)
+image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_s,10),zlim=c(min(log($mrt_ddm_s,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
+text(x=0.25,y=5.2,expression(paste(log[10],'Recovery time')),xpd=T)
 text(x=0.4,y=4.8,'Subordinate extinct',xpd=T,col='black')
-image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_l,10),zlim=c(min(log($mrt_ddm_l,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab='')
-text(x=0.25,y=5.2,expression(paste(log[10],' Recovery time')),xpd=T)
+image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_l,10),zlim=c(min(log($mrt_ddm_l,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
+text(x=0.25,y=5.2,expression(paste(log[10],'Recovery time')),xpd=T)
 text(x=0.42,y=4.8,'Dominant extinct',xpd=T,col='black')
 dev.off()
 """
@@ -1205,20 +1223,22 @@ dev.off()
 
 namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_hysteresis_ddm.pdf");
 R"""
-pdf($namespace,height=6,width=9)
-layout(matrix(c(1,2,1,3), 2, 2, byrow = TRUE))
-par(mai = c(0.8, 0.7, 0.3, 0.1))
-image(x=$fmvec,y=$cexpvec,z=$fdiffmeanbin2,xlim=c(0,0.5),xlab='Straying (m)',ylab=expression(paste(log[10],' C')),col=c('white','black'),main=expression(paste('Intermediate heterogeneity (',Delta,theta,'=2.0)',sep='')))
-image(x=$fmvec,y=$cexpvec,z=$hystdiff2,xlab='Straying ratio m',ylab=expression(paste(log[10],' C')),col=c('#ffffff00','gray'),add=T)
-text(par('usr')[1]-0.080,5.15,'(a)', xpd=TRUE)
+pdf($namespace,height=4,width=10)
+#layout(matrix(c(1,2,1,3), 2, 2, byrow = TRUE))
+par(mfrow=c(1,3),mai = c(0.8, 0.7, 0.3, 0.1))
 
-image(x=$fmvec,y=$cexpvec,z=$fdiffmeanbin1,xlim=c(0,0.5),xlab='Straying (m)',ylab=expression(paste(log[10],' C')),col=c('white','black'),main=expression(paste('Low heterogeneity (',Delta,theta,'=1.8)',sep='')))
+image(x=$fmvec,y=$cexpvec,z=$fdiffmeanbin1,xlim=c(0,0.5),xlab=expression(paste('Individual straying ',m[0],sep='')),ylab=expression(paste(log[10],' C')),col=c('white','black'),main=expression(paste('Low heterogeneity (',Delta,theta,'=1.8)',sep='')))
 image(x=$fmvec,y=$cexpvec,z=$hystdiff1,xlab='Straying ratio m',ylab=expression(paste(log[10],' C')),col=c('#ffffff00','gray'),add=T)
-text(par('usr')[1]-0.080,5.35,'(b)', xpd=TRUE)
+text(par('usr')[1]-0.1,5.15,'(a)', xpd=TRUE,cex=1.5)
 
-image(x=$fmvec,y=$cexpvec,z=$fdiffmeanbin3,xlim=c(0,0.5),xlab='Straying (m)',ylab=expression(paste(log[10],' C')),col=c('white','black'),main=expression(paste('High heterogeneity (',Delta,theta,'=2.2)',sep='')))
+image(x=$fmvec,y=$cexpvec,z=$fdiffmeanbin2,xlim=c(0,0.5),xlab=expression(paste('Individual straying ',m[0],sep='')),ylab=expression(paste(log[10],' C')),col=c('white','black'),main=expression(paste('Intermediate heterogeneity (',Delta,theta,'=2.0)',sep='')))
+image(x=$fmvec,y=$cexpvec,z=$hystdiff2,xlab='Straying ratio m',ylab=expression(paste(log[10],' C')),col=c('#ffffff00','gray'),add=T)
+text(par('usr')[1]-0.1,5.15,'(b)', xpd=TRUE,cex=1.5)
+
+
+image(x=$fmvec,y=$cexpvec,z=$fdiffmeanbin3,xlim=c(0,0.5),xlab=expression(paste('Individual straying ',m[0],sep='')),ylab=expression(paste(log[10],' C')),col=c('white','black'),main=expression(paste('High heterogeneity (',Delta,theta,'=2.2)',sep='')))
 image(x=$fmvec,y=$cexpvec,z=$hystdiff3,xlab='Straying ratio m',ylab=expression(paste(log[10],' C')),col=c('#ffffff00','gray'),add=T)
-text(par('usr')[1]-0.080,5.35,'(c)', xpd=TRUE)
+text(par('usr')[1]-0.1,5.15,'(c)', xpd=TRUE,cex=1.5)
 dev.off()
 """
 
