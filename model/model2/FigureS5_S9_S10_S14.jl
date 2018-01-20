@@ -389,13 +389,17 @@ dev.off()
 @everywhere using RCall
 @everywhere using HDF5
 @everywhere using JLD
+# 
+# @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_asym.jl")
+# @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
+# @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
 
-@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_asym.jl")
-@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/qualsfunc.jl")
-@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/bifdet.jl")
+@everywhere include("$(homedir())/src/KevinEvolve_asym.jl")
+@everywhere include("$(homedir())/src/qualsfunc.jl")
+@everywhere include("$(homedir())/src/bifdet.jl")
 
 
-asymvec = collect(0.0:0.001:0.1);
+asymvec = collect(0.0:0.001:0.5);
 
 #Analysis over m
 tmax=10000;
@@ -415,13 +419,13 @@ pe=SharedArray(Float64,length(asymvec),length(mvec));
 # maxeigs = SharedArray{Float64}(length(asymvec),length(mvec));
 # maximeigs = SharedArray{Float64}(length(asymvec),length(mvec));
 
-@sync @parallel for a=1:length(asymvec)
+@time @sync @parallel for a=1:length(asymvec)
     asym = asymvec[a];
     z=2;
     rmax=2.0;
-    beta=0.01;
+    beta=0.001;
     theta1=5.0;
-    thetadiff=3.25;
+    thetadiff=2.0;
     tau=1.0;
     h=0.2;
     sigmaE=0;
@@ -486,12 +490,13 @@ pe=SharedArray(Float64,length(asymvec),length(mvec));
   end
 end
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_density2.pdf");
+# namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_density2.pdf");
+namespace = string("$(homedir())/fig_density2.pdf");
 R"""
 library(RColorBrewer)
 pdf($namespace,height=5,width=6)
 cols = rev(colorRampPalette(brewer.pal(11, "Spectral"))(length($asymvec)))
-plot($mvec,$(n1mean[length(asymvec),:]),pch='.',col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",ylim=c(500,1600))
+plot($mvec,$(n1mean[length(asymvec),:]),pch='.',col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",ylim=c(0,500))
 points($mvec,$(n2mean[length(asymvec),:]),pch='.',col=cols[1])
 colseq = $(collect(1:10:length(asymvec)));
 legend(x=0.42,y=1620,legend=$(asymvec)[colseq],col=cols[colseq],pch=22,xpd=TRUE,pt.bg=cols[colseq],cex=0.8, bty="n",title=expression(paste(Asymmetry)))

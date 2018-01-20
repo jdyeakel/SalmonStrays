@@ -5,6 +5,10 @@ using Distributions, RCall
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolve_ddm.jl")
 @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinJacobian.jl")
 
+@everywhere include("$(homedir())/src/KevinEvolve.jl")
+@everywhere include("$(homedir())/src/KevinEvolve_ddm.jl")
+@everywhere include("$(homedir())/src/KevinJacobian.jl")
+
 #Analysis over m
 tmax=10000;
 mvec = collect(0.0:0.001:0.5);
@@ -783,15 +787,15 @@ pal = rev(brewer.pal(9,"Blues"))
 pal2 = rev(brewer.pal(11,"Spectral"))
 pdf($namespace,height=8,width=10)
 par(mfrow=c(2,2),mai = c(0.8, 0.8, 0.3, 0.9))
-image.plot(x=$mvec,y=$cexpvec,z=$mpe_ddm,zlim=c(min($(mpe_ddm[!isnan(mpe_ddm)])),2),col=pal,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
+image.plot(x=$mvec,y=$cexpvec,z=$mpe_ddm,zlim=c(min($(mpe_ddm[!isnan(mpe_ddm)])),2),col=pal,xlab=expression(paste('Individual straying ',m[0])),ylab=expression(paste(log[10],' C')))
 text(x=0.25,y=5.2,'Portfolio effect',xpd=T)
-image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm,10),zlim=c(min(log($mrt_ddm,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
+image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm,10),zlim=c(min(log($mrt_ddm,10)),2.2),col=pal2,xlab=expression(paste('Individual straying ',m[0])),ylab=expression(paste(log[10],' C')))
 text(x=0.43,y=4.8,'Near-collapse',xpd=T,col='black')
 text(x=0.25,y=5.2,expression(paste(log[10],'Recovery time')),xpd=T)
-image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_s,10),zlim=c(min(log($mrt_ddm_s,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
+image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_s,10),zlim=c(min(log($mrt_ddm_s,10)),2.2),col=pal2,xlab=expression(paste('Individual straying ',m[0])),ylab=expression(paste(log[10],' C')))
 text(x=0.25,y=5.2,expression(paste(log[10],'Recovery time')),xpd=T)
 text(x=0.4,y=4.8,'Subordinate extinct',xpd=T,col='black')
-image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_l,10),zlim=c(min(log($mrt_ddm_l,10)),2.2),col=pal2,xlab=expression(paste(m[0])),ylab=expression(paste(log[10],' C')))
+image.plot(x=$mvec,y=$cexpvec,z=log($mrt_ddm_l,10),zlim=c(min(log($mrt_ddm_l,10)),2.2),col=pal2,xlab=expression(paste('Individual straying ',m[0])),ylab=expression(paste(log[10],' C')))
 text(x=0.25,y=5.2,expression(paste(log[10],'Recovery time')),xpd=T)
 text(x=0.42,y=4.8,'Dominant extinct',xpd=T,col='black')
 dev.off()
