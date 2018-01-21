@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 DEC 2017 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 JAN 2018 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -869,37 +869,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--181
 [3] [4] <fig_recovery.pdf, id=112, 433.62pt x 361.35pt>
 File: fig_recovery.pdf Graphic file (type pdf)
  <use fig_recovery.pdf>
-Package pdftex.def Info: fig_recovery.pdf used on input line 224.
+Package pdftex.def Info: fig_recovery.pdf used on input line 226.
 (pdftex.def)             Requested size: 149.37958pt x 124.48393pt.
 
-<fig_density.png, id=113, 433.62pt x 361.24675pt>
-File: fig_density.png Graphic file (type png)
- <use fig_density.png>
-Package pdftex.def Info: fig_density.png used on input line 237.
-(pdftex.def)             Requested size: 149.37958pt x 124.44835pt.
+<fig_density2.pdf, id=113, 433.62pt x 361.35pt>
+File: fig_density2.pdf Graphic file (type pdf)
+ <use fig_density2.pdf>
+Package pdftex.def Info: fig_density2.pdf used on input line 239.
+(pdftex.def)             Requested size: 149.37958pt x 124.48393pt.
 
-<fig_pevsrt.pdf, id=115, 361.35pt x 361.35pt>
+<fig_pevsrt.pdf, id=114, 361.35pt x 361.35pt>
 File: fig_pevsrt.pdf Graphic file (type pdf)
  <use fig_pevsrt.pdf>
-Package pdftex.def Info: fig_pevsrt.pdf used on input line 256.
+Package pdftex.def Info: fig_pevsrt.pdf used on input line 258.
 (pdftex.def)             Requested size: 149.37958pt x 149.37851pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
- [5 <./fig_recovery.pdf> <./fig_density.png> <./fig_pevsrt.pdf>] (./supp3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 268.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 268.
+ [5 <./fig_recovery.pdf> <./fig_density2.pdf> <./fig_pevsrt.pdf>] (./supp3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 268.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 268.
 Package rerunfilecheck Info: File `supp3.out' has not changed.
 (rerunfilecheck)             Checksum: 6C4BD388A61B4C96CAF3D82E31BB4F49;127.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
- 20625 strings out of 493014
- 372282 string characters out of 6133351
- 490365 words of memory out of 5000000
+ 20624 strings out of 493014
+ 372283 string characters out of 6133351
+ 490361 words of memory out of 5000000
  23753 multiletter control sequences out of 15000+600000
  17298 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -927,10 +922,10 @@ onts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fon
 ts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/fonts
 /type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/public/cm-super/sfti0900.pfb>
-Output written on supp3.pdf (5 pages, 2083489 bytes).
+Output written on supp3.pdf (5 pages, 6070286 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 229 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
  40 named destinations out of 1000 (max. 500000)
  44 words of extra memory for PDF output out of 10000 (max. 10000000)
 

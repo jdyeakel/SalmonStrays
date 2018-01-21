@@ -37,7 +37,7 @@
 % }
 \maketitle
 
-We aim to understand how straying between populations may affect phenotypic evolution, and how in turn this evolutionary change may lead to changes in ecological dynamics as they unfold. 
+We aim to understand how straying between populations may affect phenotypic evolution, and how this evolutionary change may in turn lead to changes in ecological dynamics as they unfold. 
 To do so, we build upon Lande's classic formulation of phenotypic evolution \citep{Lande:1976ga}. In what follows, we  
 1) re-derive Lande's phenotypic evolution equation for one population to introduce the reader to the main concepts and assumptions of the framework used, and,
 2) explain how we used this framework for the case of two populations connected by dispersal.
@@ -182,9 +182,11 @@ While some understanding can be gained using equation \ref{26}, the expression d
 \textbf{The Gaussian approximation used in the main text}
 The above issue presents us with a tradeoff: we can either track changes in phenotype exactly for a single generation, or we can track changes in phenotype across multiple generations using an approximation. Given that our central goal is to gain an understanding of the feedback between evolutionary and ecological processes in salmon populations with dispersal in explicit space, we simplify the complexities created by phenotypic evolution by assuming that, as new migrants arrive, the mixture distribution can be locally approximated by a Gaussian distribution with a mean equal to that of the mix. Based on this assumption, we can directly use Lande's equation (here equation \ref{10}), without violating the original assumptions that led to its current form. 
 
-The model in the main text thus assumes the existence of a normally distributed trait in each population with means $\mu_{i}$ and $\mu_{j}$. Then straying occurs, and the the populations now have a mixture distribution as in \ref{12}. To keep track of the mean of that mix, we assume the mixture distribution to be Gaussian with mean $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$, which is true whenever straying is low enough, or the two means are not too different from one another. Then selection and reproduction occur at the same time leading to a new generation with a normally distributed trait distribution whose.
-
-In a previous paper by Ronce and Kirkpatrick \citep{Ronce:2001dp}, it was shown that assumptions similar to the ones we make do not qualitatively alter the ecological or evolutionary dynamics observed.
+The model used in the main text thus assumes the existence of a normally distributed trait in each population with means $\mu_{i}$ and $\mu_{j}$. 
+After straying occurs, the populations now have a mixture distribution as in \ref{12}. 
+To keep track of the mean of that mix, we approximate the mixture distribution as a Gaussian with mean $\overline{x}=\omega_i \mu_{i}+(1-\omega_i)\mu_{j}$. 
+Selection and reproduction thus occur at the same time leading to a new generation with a normally distributed trait distribution.
+In a previous paper by Ronce and Kirkpatrick \citep{Ronce:2001dp}, it was shown that assumptions similar to those made here do not qualitatively alter the observed ecological or evolutionary dynamics.
  
 
 % \section*{II. Additional Figures}
@@ -234,7 +236,7 @@ Example of the numerical procedure used to estimate recovery time. After a distu
 singlelinecheck=false
 }
 \centering
-\includegraphics[width=0.35\textwidth]{fig_density.png}
+\includegraphics[width=0.35\textwidth]{fig_density2.pdf}
 \caption{
 Steady-state densities of both populations as a function of $m$: one in a dominant state and one in a subordinate state.
 Steady-states for populations with symmetrical values ($\alpha=0$) in the vital rates $r_{\rm max}$ and $\beta$ are shown with cool tones.

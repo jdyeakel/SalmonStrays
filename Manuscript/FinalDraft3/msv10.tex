@@ -71,7 +71,7 @@
 Justin D. Yeakel${}^{1,2,*}$, Jean P. Gibert${}^{1}$, Thilo Gross${}^3$, Peter A. H. Westley${}^{4}$, \& Jonathan W. Moore${}^{5}$ \\
 ${}^1$School of Natural Sciences, University of California, Merced, Merced CA, USA \\
 ${}^2$The Santa Fe Institute, Santa Fe NM, USA \\
-${}^3$University of Bristol, Bristol, UK\\
+${}^3$Department of Engineering Mathematics, University of Bristol, Bristol, UK\\
 ${}^4$College of Fisheries and Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\
 ${}^5$Earth${}_2$Oceans Research Group, Simon Fraser University, Burnaby BC, Canada \\
 ${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com
@@ -101,8 +101,8 @@ Many migratory species, such as salmon, are remarkable in finding their way home
 \section{Introduction}
 
 Intraspecific diversity can increase the resilience and stability of species or metapopulations. 
-This diversity-stability linkage occurs when there are asynchronous population dynamics within the metapopulation. 
-This asynchrony will increase the potential for demographic rescue \citep{Brown:1977gk,Earn:2000fm} and also decrease the variability of processes that integrate across the metapopulation \citep{Anonymous:2015gf}. 
+This diversity-stability linkage can arise when there are asynchronous population dynamics within the metapopulation. 
+Such asynchrony will increase the potential for demographic rescue \citep{Brown:1977gk,Earn:2000fm} and also decrease the variability of processes that integrate across the metapopulation \citep{Anonymous:2015gf}. 
 For example, different responses to climate variability within populations of a rare plant reduced fluctuations in abundance \citep{Abbott:2017hl}. 
 This statistical buffer has traditionally been quantified as the Portfolio Effect (PE), which is the ratio of the population's coefficient of variation (CV) to the CV of the aggregated metapopulation \citep{Thibaut:2012km}. 
 Strengthened portfolio effects are expected to increase the robustness of metapopulations to external disturbances, and by extension promote persistence \citep{Thibaut:2012km}.
@@ -196,11 +196,11 @@ Taken together, the difference equation that determines changes in population si
 \begin{align}
   \label{eq:R}
   &R_i[\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\theta_i] = \\ \nonumber
-  &\int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i-\theta_i)^2}{2\tau^2}\right\} {\rm p}(x_i,\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\sigma^2) {\rm d}x_i +\tilde{P}_i\\ \nonumber
-  &= \frac{r_{\rm max} \tau  }{\sqrt{\sigma ^2+\tau ^2}}\exp\left\{-\frac{(\theta_i-(\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t)))^2}{2 \left(\sigma ^2+\tau ^2\right)}\right\} +\tilde{P}_i.
+  &\int_{-\infty}^\infty r_{\rm max}\exp\left\{\frac{(x_i-\theta_i)^2}{2\tau^2}\right\} g(x_i,\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t),\sigma^2) {\rm d}x_i +\tilde{P}_i\\ \nonumber
+  &= \frac{r_{\rm max} \tau  }{\sqrt{\sigma ^2+\tau ^2}}\exp\left\{-\frac{(\theta_i-(\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t)))^2}{2 \left(\sigma ^2+\tau ^2\right)}\right\} +\tilde{P}_i,
 \end{align}
 
-\noindent The mismatch between the mean of the local trait mix $\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t)$ and the local optimum $\theta_i$ scales the recruitment rate for the population, and $\tilde{P}_i\sim {\rm Normal}(0,0.01)$ introduces a small amount of demographic variability.
+\noindent where $g(x_i)$ is the Gaussian probability density function for the trait $x_i$. The mismatch between the mean of the local trait mix $\omega_i\mu_i(t) + (1-\omega_i)\mu_j(t)$ and the local optimum $\theta_i$ scales the recruitment rate for the population, and $\tilde{P}_i\sim {\rm Normal}(0,0.01)$ introduces a small amount of demographic variability.
 The parameter $\tau$ is the strength of selection, and controls the sensitivity of recruitment to changes in the mean trait value away from the optimum.
 Because straying individuals are emigrating from a population with a mean trait value farther from the local optimum, their rate of recruitment is diminished.
 Recent studies of wild sockeye salmon have indeed found that straying individuals have lower life-time fitness than individuals that do not stray, although it is unknown at what life-stage this selection occurs \citep{Peterson:2014gy}.

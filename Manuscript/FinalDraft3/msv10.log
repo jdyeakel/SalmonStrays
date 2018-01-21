@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 JAN 2018 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 JAN 2018 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,10 +430,11 @@ Class revtex4 Warning: Assuming \noaffiliation for  Justin D. Yeakel${}^{1,2,*}
 $, Jean P. Gibert${}^{1}$, Thilo Gross${}^3$, Peter A. H. Westley${}^{4}$, \& J
 onathan W. Moore${}^{5}$ \\ ${}^1$School of Natural Sciences, University of Cal
 ifornia, Merced, Merced CA, USA \\ ${}^2$The Santa Fe Institute, Santa Fe NM, U
-SA \\ ${}^3$University of Bristol, Bristol, UK\\ ${}^4$College of Fisheries and
- Ocean Sciences, University of Alaska, Fairbanks, Fairbanks AK, USA \\ ${}^5$Ea
-rth${}_2$Oceans Research Group, Simon Fraser University, Burnaby BC, Canada \\ 
-${}^*$To whom correspondence should be addressed: jdyeakel@gmail.com .
+SA \\ ${}^3$Department of Engineering Mathematics, University of Bristol, Brist
+ol, UK\\ ${}^4$College of Fisheries and Ocean Sciences, University of Alaska, F
+airbanks, Fairbanks AK, USA \\ ${}^5$Earth${}_2$Oceans Research Group, Simon Fr
+aser University, Burnaby BC, Canada \\ ${}^*$To whom correspondence should be a
+ddressed: jdyeakel@gmail.com .
 
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 92.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmss.fd
@@ -468,15 +469,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 295--299
  []
 
 [6]
+Underfull \hbox (badness 10000) in paragraph at lines 341--350
 
-LaTeX Warning: Reference `symmetry' on page 7 undefined on input line 349.
+ []
 
-
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 377--386
 
  []
 
-[7] [8] [9] [10] [11] [12]
+[8] [9] [10] [11] [12]
 Underfull \hbox (badness 10000) in paragraph at lines 659--671
 
  []
@@ -530,44 +532,40 @@ Package pdftex.def Info: fig_hysteresis_ddm_mtheta.pdf used on input line 1243.
 (pdftex.def)             Requested size: 255.0pt x 212.49992pt.
  [19 <./fig_traj2.pdf>] [20 <./fig_mpert.pdf>] [21 <./fig_meandiff2.pdf>] [22 <
 ./fig_rtpe_ddm.pdf>] [23 <./fig_hysteresis_ddm.pdf> <./fig_hysteresis_ddm_mthet
-a.pdf>] [24] (./msv10.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+a.pdf>] [24] (./msv10.aux) ) 
 Here is how much of TeX's memory you used:
- 7111 strings out of 493014
- 102607 string characters out of 6133351
+ 7112 strings out of 493014
+ 102617 string characters out of 6133351
  189012 words of memory out of 5000000
- 10507 multiletter control sequences out of 15000+600000
+ 10508 multiletter control sequences out of 15000+600000
  21597 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,39p,1779b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/cm-super/sfss0500.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/cm-super/sfti1000.pfb>
-Output written on msv10.pdf (24 pages, 2537821 bytes).
+ 38i,10n,39p,1779b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips
+/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on msv10.pdf (24 pages, 2537846 bytes).
 PDF statistics:
  243 PDF objects out of 1000 (max. 8388607)
  174 compressed objects within 2 object streams
