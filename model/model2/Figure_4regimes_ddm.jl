@@ -185,8 +185,10 @@ boxplot(L)
 """
 
 @everywhere using Distributions, RCall, JLD, HDF5
-@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
-@everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS_ddm.jl")
+# @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS.jl")
+# @everywhere include("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/src/KevinEvolveSS_ddm.jl")
+@everywhere include("$(homedir())/src/KevinEvolveSS.jl")
+@everywhere include("$(homedir())/src/KevinEvolveSS_ddm.jl")
 
 #Analysis over m and C
 tmax=10000;
@@ -283,8 +285,8 @@ burnin=0.80
       aggmean[i] = mean(n1trim+n2trim);
       aggsd[i] = std(n1trim+n2trim);
 
-      x1mean[i] = theta1-mean(x1trim);
-      x2mean[i] = (theta1+thetadiff)-mean(x2trim);
+      x1mean[i] = mean(x1trim);
+      x2mean[i] = mean(x2trim);
       
 
         
@@ -347,10 +349,17 @@ burnin=0.80
   
 end
 
-save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_meandiff.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"n1mean_ddm",n1mean_ddm,"n2mean_ddm",n2mean_ddm,"x1mean_ddm",x1mean_ddm,"x2mean_ddm",x2mean_ddm,"m1mean_ddm",m1mean_ddm,"m2mean_ddm",m2mean_ddm,"pe_ddm",pe_ddm);
+# save(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_meandiff.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"n1mean_ddm",n1mean_ddm,"n2mean_ddm",n2mean_ddm,"x1mean_ddm",x1mean_ddm,"x2mean_ddm",x2mean_ddm,"m1mean_ddm",m1mean_ddm,"m2mean_ddm",m2mean_ddm,"pe_ddm",pe_ddm);
+
+save(string("$(homedir())/data/data_meandiff.jld"),"n1mean",n1mean,"n2mean",n2mean,"x1mean",x1mean,"x2mean",x2mean,"n1mean_ddm",n1mean_ddm,"n2mean_ddm",n2mean_ddm,"x1mean_ddm",x1mean_ddm,"x2mean_ddm",x2mean_ddm,"m1mean_ddm",m1mean_ddm,"m2mean_ddm",m2mean_ddm,"pe_ddm",pe_ddm);
 
 
-d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_meandiff.jld"));
+# d = load(string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/model/data3/data_meandiff.jld"));
+# 
+
+d = load(string("$(homedir())/data/data_meandiff.jld"));
+
+
 n1mean = d["n1mean"];
 n2mean = d["n2mean"];
 x1mean = d["x1mean"];
@@ -386,7 +395,7 @@ jvec[2]=Int64(find(x->x==2,cexpvec)[1]);
 jvec[3]=Int64(find(x->x==3,cexpvec)[1]);
 
 
-namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_meandiff2.pdf");
+namespace = string("$(homedir())/fig_meandiff2.pdf");
 R"""
 library(RColorBrewer)
 pal = brewer.pal(5,'Set1')
@@ -396,7 +405,7 @@ plot(10^$cexpvec,$meandiff_low,log='x',type='l',lwd=3,col=pal[2],cex=0.8,ylim=c(
 points(10^$cexpvec,$meandiff_low,col=pal[2],cex=1)
 lines(10^$cexpvec,$meandiff_high,lwd=3,col=pal[1],cex=0.8)
 lines(10^$cexpvec,rep($(mean(abs(n1mean[less]-n2mean[less]))),length($cexpvec)),lty=2,col=pal[2])
-text(10^$(cexpvec[length(cexpvec)])-50000,$(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint])))+20,expression(paste('Low m, ',m[0],sep='')),col=pal[2])
+text(10^$(cexpvec[length(cexpvec)])-50000,$(mean(abs(n1mean[1:midpoint]-n2mean[1:midpoint])))+50,expression(paste('Low m, ',m[0],sep='')),col=pal[2])
 lines(10^$cexpvec,rep($(mean(abs(n1mean[more]-n2mean[more]))),length($cexpvec)),lty=2,col=pal[1])
 text(x=10^$(cexpvec[length(cexpvec)])-50000,y=$(mean(abs(n1mean[midpoint+1:length(mvec)]-n2mean[midpoint+1:length(mvec)])))-35,expression(paste('High m, ',m[0],sep='')),col=pal[1])
 

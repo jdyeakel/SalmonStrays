@@ -399,7 +399,7 @@ dev.off()
 @everywhere include("$(homedir())/src/bifdet.jl")
 
 
-asymvec = collect(0.0:0.001:0.5);
+asymvec = collect(0.1:0.01:0.4);
 
 #Analysis over m
 tmax=10000;
@@ -496,10 +496,30 @@ R"""
 library(RColorBrewer)
 pdf($namespace,height=5,width=6)
 cols = rev(colorRampPalette(brewer.pal(11, "Spectral"))(length($asymvec)))
-plot($mvec,$(n1mean[length(asymvec),:]),pch='.',col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",ylim=c(0,500))
+plot($mvec,$(n1mean[length(asymvec),:]),pch='.',col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",ylim=c(0,1000))
 points($mvec,$(n2mean[length(asymvec),:]),pch='.',col=cols[1])
 colseq = $(collect(1:10:length(asymvec)));
-legend(x=0.42,y=1620,legend=$(asymvec)[colseq],col=cols[colseq],pch=22,xpd=TRUE,pt.bg=cols[colseq],cex=0.8, bty="n",title=expression(paste(Asymmetry)))
+legend(x=0.42,y=500,legend=$(asymvec)[colseq],col=cols[colseq],pch=22,xpd=TRUE,pt.bg=cols[colseq],cex=0.8, bty="n",title=expression(paste(Asymmetry)))
+"""
+for a=length(asymvec)-1:-1:1
+    R"""
+    points($mvec,$(n1mean[a,:]),pch='.',col=cols[$a])
+    points($mvec,$(n2mean[a,:]),pch='.',col=cols[$a])
+    """
+end
+R"dev.off()"
+
+
+# namespace = string("$(homedir())/Dropbox/PostDoc/2017_SalmonStrays/manuscript/FinalDraft3/fig_density2.pdf");
+namespace = string("$(homedir())/fig_density3.pdf");
+R"""
+library(RColorBrewer)
+pdf($namespace,height=5,width=6)
+cols = rev(colorRampPalette(brewer.pal(11, "Spectral"))(length($asymvec)))
+plot($mvec,$(n1mean[length(asymvec),:]),pch='.',col=cols[1],xlab="Straying ratio (m)",ylab="Steady state",ylim=c(0,1000))
+points($mvec,$(n2mean[length(asymvec),:]),pch='.',col=cols[1])
+colseq = $(collect(1:5:length(asymvec)));
+legend(x=0.42,y=1000,legend=$(asymvec)[colseq],col=cols[colseq],pch=22,xpd=TRUE,pt.bg=cols[colseq],cex=0.8, bty="n",title=expression(paste(Asymmetry)))
 """
 for a=length(asymvec)-1:-1:1
     R"""
